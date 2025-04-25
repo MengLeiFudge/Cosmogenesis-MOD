@@ -1,0 +1,9 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/Cosmic-Exodus-MOD/FileContentIndex/7f785ec5-0a26-4ab1-8a11-75e9cfb9c2a3.vsidx
+/.vs/slnx.sqlite
+/.vs/Cosmic-Exodus-MOD/CopilotIndices/17.12.53.23981/SemanticSymbols.db-wal
+/.vs/Cosmic-Exodus-MOD
+/.vs/slnx.sqlite-journal
