@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="PublicizeAssembly" ToolsVersion="Current">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="DefaultPath.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EFF66744-FAF7-461E-B86E-7130E64E16DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectGenesis</RootNamespace>
+    <AssemblyName>ProjectGenesis</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <LangVersion>7.3</LangVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin/Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin/Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>lib\Assembly-CSharp-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="GalacticScale">
+      <HintPath>lib\GalacticScale-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>$(DSPAssemblyPath)mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>$(DSPAssemblyPath)netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>$(DSPAssemblyPath)System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>$(DSPAssemblyPath)System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>$(DSPAssemblyPath)System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(DSPAssemblyPath)UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(DSPAssemblyPath)UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(DSPAssemblyPath)UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(DSPAssemblyPath)UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(DSPAssemblyPath)UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(DSPAssemblyPath)UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(DSPAssemblyPath)UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Core" Version="5.4.17" />
+    <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.6.5" />
+    <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.2.0" />
+    <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0" />
+    <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\**\*.cs" />
+    <EmbeddedResource Include="data\*.json" />
+    <None Include="assets\*" />
+    <None Include="lib\*" />
+    <None Include="*.md" />
+    <None Include="DefaultPath.props" />
+    <None Include="nuget.config" />
+    <Content Include=".gitignore" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <DumpedAssembliesPath>$(BepinExPath)DumpedAssemblies\DSPGAME\Assembly-CSharp.dll</DumpedAssembliesPath>
+  </PropertyGroup>
+  <Target Name="PublicizeAssembly" Condition="Exists($(DumpedAssembliesPath))">
+    <Exec Command="&quot;$(SolutionDir)lib\BepInEx.AssemblyPublicizer.Cli.exe&quot; &quot;$(DumpedAssembliesPath)&quot; --output &quot;$(SolutionDir)lib\Assembly-CSharp-publicized.dll&quot;" />
+  </Target>
+  <Target Name="AfterBuild">
+    <MakeDir Directories="$(ReleasePath)" />
+    <MakeDir Directories="$(ReleasePath)plugins/" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\$(TargetName).dll" />
+    <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\texpack" />
+    <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models" />
+    <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models-lab" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins\$(TargetName).dll" />
+    <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md" />
+    <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md" />
+    <Copy SourceFiles="$(SolutionDir)assets\icon.png" DestinationFiles="$(ReleasePath)icon.png" />
+    <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack" />
+    <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models" />
+    <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(ReleasePath)plugins\genesis-models-lab" />
+    <Copy SourceFiles="$(SolutionDir)lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll" />
+  </Target>
+</Project>
