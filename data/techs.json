@@ -2747,7 +2747,7 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            52.0,
+            56.0,
             24.0
         ],
         "PreTechs": [
@@ -3188,8 +3188,8 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            48.0,
-            28.0
+            52.0,
+            24.0
         ],
         "PreTechs": [
             1936
@@ -3231,7 +3231,7 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            52.0,
+            56.0,
             20.0
         ],
         "PreTechs": [
@@ -6321,7 +6321,7 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            52.0,
+            56.0,
             16.0
         ],
         "PreTechs": [],
