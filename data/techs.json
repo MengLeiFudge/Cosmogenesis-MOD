@@ -1111,8 +1111,7 @@
         ],
         "HashNeeded": 2880000,
         "UnlockRecipes": [
-            110,
-            44
+            110
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -1156,7 +1155,8 @@
         ],
         "HashNeeded": 360000,
         "UnlockRecipes": [
-            42
+            42,
+            44
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
