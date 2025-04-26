@@ -2091,11 +2091,6 @@
     },
     {
         "Name": "T曲率引擎",
-        "ZHCN": "曲率引擎",
-        "ENUS": "Curvature engine"
-    },
-    {
-        "Name": "T曲率引擎描述",
         "ZHCN": "星系之间的距离动辄以光年计，成熟的曲率引擎是星系航行的基础。",
         "ENUS": "The distance between galaxies is often measured in light years, and a mature curvature engine is the basis for galaxy navigation."
     },

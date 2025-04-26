@@ -154,7 +154,7 @@ namespace ProjectGenesis.Patches.Logic
             }
             else
             {
-                if (LDB.items.Select(6216) == null)
+                if (LDB.items.Select(6216) == null || LDB.items.Select(6215) == null)
                 {
                     return;
                 }
@@ -166,8 +166,15 @@ namespace ProjectGenesis.Patches.Logic
                         ItemProtoID = 6216;
                         ItemCount = 1;
                     }
+                } else if (__instance.planet.theme == 6)
+                {
+                    if (Random > 0.00001 && Random <= 0.3001)
+                    {
+                        ItemProtoID = 6215;
+                        ItemCount = 1;
+                    }
                 }
-                if (ItemProtoID < 1)
+                    if (ItemProtoID < 1)
                 {
                     //Util.Log("未获得道具，随机数：" + Random.ToString());
                     return;

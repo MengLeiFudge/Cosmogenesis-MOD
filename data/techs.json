@@ -1104,10 +1104,10 @@
         "PreTechs": [],
         "PreTechsImplicit": [],
         "Items": [
-            6280
+            6006
         ],
         "ItemPoints": [
-            5
+            10
         ],
         "HashNeeded": 2880000,
         "UnlockRecipes": [
@@ -1880,10 +1880,10 @@
     },
     {
         "ID": 1405,
-        "Name": "T曲率引擎",
+        "Name": "曲率引擎",
         "IconPath": "Icons/Tech/1303",
-        "Desc": "T曲率引擎描述",
-        "Conclusion": "T曲率引擎描述",
+        "Desc": "T曲率引擎",
+        "Conclusion": "T曲率引擎",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
@@ -1904,7 +1904,7 @@
         ],
         "HashNeeded": 360000,
         "UnlockRecipes": [
-            
+            425
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -5791,7 +5791,7 @@
             48.0,
             24.0
         ],
-        "PreTechs": [1915],
+        "PreTechs": [ 1915 ],
         "PreTechsImplicit": [],
         "Items": [
             6003,
@@ -6033,6 +6033,93 @@
         "PropertyItemCounts": []
     },
     {
+        "ID": 1946,
+        "Name": "逆向掌中工厂蓝图",
+        "IconPath": "Icons/Tech/1903",
+        "Desc": "T逆向掌中工厂蓝图",
+        "Conclusion": "T逆向掌中工厂蓝图",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6215
+        ],
+        "Position": [
+            68.0,
+            4.0
+        ],
+        "PreTechs": [
+            1902
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6215
+        ],
+        "ItemPoints": [
+            20
+        ],
+        "HashNeeded": 3600,
+        "UnlockRecipes": [
+            403,
+            424
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": false,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1947,
+        "Name": "次级维度工厂",
+        "IconPath": "Icons/Tech/1903",
+        "Desc": "T次级维度工厂",
+        "Conclusion": "T次级维度工厂",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6214
+        ],
+        "Position": [
+            72.0,
+            4.0
+        ],
+        "PreTechs": [
+            1946
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6214
+        ],
+        "ItemPoints": [
+            1
+        ],
+        "HashNeeded": 7200,
+        "UnlockRecipes": [],
+        "UnlockFunctions": [
+            7
+        ],
+        "UnlockValues": [
+            0.1
+        ],
+        "Published": true,
+        "Level": 1,
+        "MaxLevel": 1,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": false,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
         "ID": 1948,
         "Name": "T光导纤维",
         "IconPath": "Assets/texpack/生物神经",
@@ -6109,6 +6196,50 @@
         "LevelCoef1": 0,
         "LevelCoef2": 0,
         "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1950,
+        "Name": "次级维度工厂",
+        "IconPath": "Icons/Tech/1903",
+        "Desc": "T次级维度工厂",
+        "Conclusion": "T次级维度工厂",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6214
+        ],
+        "Position": [
+            76.0,
+            4.0
+        ],
+        "PreTechs": [
+            1947
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6214
+        ],
+        "ItemPoints": [
+            1
+        ],
+        "HashNeeded": 14400,
+        "UnlockRecipes": [],
+        "UnlockFunctions": [
+            7
+        ],
+        "UnlockValues": [
+            0.1
+        ],
+        "Published": true,
+        "Level": 2,
+        "MaxLevel": 1000,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
