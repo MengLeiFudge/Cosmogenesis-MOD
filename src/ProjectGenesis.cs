@@ -96,8 +96,8 @@ namespace ProjectGenesis
             LDBToolCacheEntry = Config.Bind("config", "UseLDBToolCache", false,
                 "Enable LDBTool Cache, which allows you use config to fix some compatibility issues.\n启用LDBTool缓存，允许使用配置文件修复部分兼容性问题");
 
-            HideTechModeEntry = Config.Bind("config", "HideTechMode", true,
-                "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
+            //HideTechModeEntry = Config.Bind("config", "HideTechMode", true,
+            //    "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true,
                 "Show message when GenesisBook is loaded.\n首次加载时的提示信息");
@@ -366,11 +366,11 @@ namespace ProjectGenesis
             }
         }
 
-        internal static void SetConfig(bool currentLDBToolCache, bool currentHideTechMode, bool currentShowMessageBox,
+        internal static void SetConfig(bool currentLDBToolCache, bool currentShowMessageBox,
             int currentProductOverflow)
         {
             LDBToolCacheEntry.Value = currentLDBToolCache;
-            HideTechModeEntry.Value = currentHideTechMode;
+            //HideTechModeEntry.Value = currentHideTechMode;
             ShowMessageBoxEntry.Value = currentShowMessageBox;
             ProductOverflowEntry.Value = currentProductOverflow;
             logger.LogInfo("SettingChanged");

@@ -265,9 +265,9 @@
         "ENUS": "GenesisBook mod comes with a calculator, which defaults to the <color=\"#FD965ECC\">~</color> key, which can be changed in the settings in calculator ui."
     },
     {
-        "Name": "钨矿脉",
-        "ZHCN": "钨矿脉",
-        "ENUS": "Tungsten Veins"
+        "Name": "充放电集成化",
+        "ZHCN": "充放电集成化",
+        "ENUS": "Integrated Charging And Discharging"
     },
     {
         "Name": "铀矿脉",
@@ -275,9 +275,9 @@
         "ENUS": "Uranium Veins"
     },
     {
-        "Name": "盐酸海洋",
-        "ZHCN": "盐酸海洋",
-        "ENUS": "Hydrochloric Acid Ocean"
+        "Name": "中子星星系行星",
+        "ZHCN": "中子星星系行星",
+        "ENUS": "Neutron Star System Planet"
     },
     {
         "Name": "硝酸海洋",

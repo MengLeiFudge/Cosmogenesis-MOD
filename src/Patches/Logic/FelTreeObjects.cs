@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using GalacticScale;
+using HarmonyLib;
 using ProjectGenesis.Patches.UI.Utils;
 using ProjectGenesis.Utils;
 using System;
@@ -116,7 +117,7 @@ namespace ProjectGenesis.Patches.Logic
             //校验是否为指定离散矿石类型
             if (IsStone(__instance.vegePool[id].protoId) == false)
             {
-                if (LDB.items.Select(ProtoID.I激素生长菌群) == null || LDB.items.Select(ProtoID.I高速生长菌群) == null)
+                if (LDB.items.Select(ProtoID.I激素生长菌群) == null || LDB.items.Select(ProtoID.I高速生长菌群) == null || LDB.items.Select(6245) == null || LDB.items.Select(6252) == null)
                 {
                     return;
                 }
@@ -131,6 +132,18 @@ namespace ProjectGenesis.Patches.Logic
                     else if (Random > 0.05001 && Random <= 0.45001)
                     {
                         ItemProtoID = ProtoID.I激素生长菌群;
+                        ItemCount = 2;
+                    }
+                } else if (__instance.planet.theme == 14)
+                {
+                    if (Random > 0.00001 && Random <= 0.05001)
+                    {
+                        ItemProtoID = 6245;
+                        ItemCount = 1;
+                    }
+                    else if (Random > 0.05001 && Random <= 0.65001)
+                    {
+                        ItemProtoID = 6252;
                         ItemCount = 2;
                     }
                 }
@@ -154,27 +167,39 @@ namespace ProjectGenesis.Patches.Logic
             }
             else
             {
-                if (LDB.items.Select(6216) == null || LDB.items.Select(6215) == null)
+                if (LDB.items.Select(6216) == null || LDB.items.Select(6215) == null || LDB.items.Select(6244) == null)
                 {
                     return;
                 }
-                if (__instance.planet.theme == 17)
+                if (__instance.planet.star.type == EStarType.NeutronStar)
                 {
-                    //0.20概率获得未知射线遗留样本
-                    if (Random > 0.00001 && Random <= 0.4001)
+                    if (Random > 0.00001 && Random <= 0.1501)
                     {
-                        ItemProtoID = 6216;
-                        ItemCount = 1;
-                    }
-                } else if (__instance.planet.theme == 6)
-                {
-                    if (Random > 0.00001 && Random <= 0.3001)
-                    {
-                        ItemProtoID = 6215;
+                        ItemProtoID = 6244;
                         ItemCount = 1;
                     }
                 }
-                    if (ItemProtoID < 1)
+                else
+                {
+                    if (__instance.planet.theme == 17)
+                    {
+                        //0.20概率获得未知射线遗留样本
+                        if (Random > 0.00001 && Random <= 0.4001)
+                        {
+                            ItemProtoID = 6216;
+                            ItemCount = 1;
+                        }
+                    }
+                    else if (__instance.planet.theme == 6)
+                    {
+                        if (Random > 0.00001 && Random <= 0.3001)
+                        {
+                            ItemProtoID = 6215;
+                            ItemCount = 1;
+                        }
+                    }
+                }
+                if (ItemProtoID < 1)
                 {
                     //Util.Log("未获得道具，随机数：" + Random.ToString());
                     return;

@@ -84,40 +84,40 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UITechTree), nameof(UITechTree.OnTechUnlocked))]
-        [HarmonyPostfix]
-        public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
-        {
-            if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
+        //[HarmonyPatch(typeof(UITechTree), nameof(UITechTree.OnTechUnlocked))]
+        //[HarmonyPostfix]
+        //public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
+        //{
+        //    if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
 
-            RefreshNode(__instance);
-        }
+        //    RefreshNode(__instance);
+        //}
 
-        [HarmonyPatch(typeof(UITechTree), nameof(UITechTree.OnPageChanged))]
-        [HarmonyPostfix]
-        public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
-        {
-            if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
+        //[HarmonyPatch(typeof(UITechTree), nameof(UITechTree.OnPageChanged))]
+        //[HarmonyPostfix]
+        //public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
+        //{
+        //    if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
 
-            if (__instance.page != 0) { return; }
+        //    if (__instance.page != 0) { return; }
 
-            RefreshNode(__instance);
-        }
+        //    RefreshNode(__instance);
+        //}
 
-        private static void RefreshNode(UITechTree __instance)
-        {
-            GameHistoryData history = GameMain.history;
+        //private static void RefreshNode(UITechTree __instance)
+        //{
+        //    GameHistoryData history = GameMain.history;
 
-            foreach ((int tech, UITechNode node) in __instance.nodes)
-            {
-                if (tech > 1999 || node == null || node.techProto.IsHiddenTech) { continue; }
+        //    foreach ((int tech, UITechNode node) in __instance.nodes)
+        //    {
+        //        if (tech > 1999 || node == null || node.techProto.IsHiddenTech) { continue; }
 
-                bool techUnlocked = history.TechUnlocked(tech);
-                node.gameObject.SetActive(techUnlocked || node.techProto.PreTechs.Any(history.TechUnlocked));
+        //        bool techUnlocked = history.TechUnlocked(tech);
+        //        node.gameObject.SetActive(techUnlocked || node.techProto.PreTechs.Any(history.TechUnlocked));
 
-                if (node.techProto.postTechArray.Length > 0) { node.connGroup.gameObject.SetActive(techUnlocked); }
-            }
-        }
+        //        if (node.techProto.postTechArray.Length > 0) { node.connGroup.gameObject.SetActive(techUnlocked); }
+        //    }
+        //}
 
         [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.HasPrerequisite))]
         [HarmonyPatch(typeof(UITechNode), nameof(UITechNode.DeterminePrerequisiteSuffice))]

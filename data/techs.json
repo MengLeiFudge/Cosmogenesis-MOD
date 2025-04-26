@@ -922,7 +922,7 @@
         "PreItem": null,
         "Position": [
             72.0,
-            -44.0
+            -24.0
         ],
         "PreTechs": [
             1143
@@ -2736,18 +2736,18 @@
     },
     {
         "ID": 1512,
-        "Name": "T星际电力运输",
+        "Name": "充放电集成化",
         "IconPath": "Icons/Tech/1512",
         "Desc": "星际电力运输描述",
         "Conclusion": "星际电力运输结果",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            56.0,
-            24.0
+            48.0,
+            -20.0
         ],
         "PreTechs": [
-            1605
+            1924
         ],
         "PreTechsImplicit": [],
         "Items": [
@@ -3448,7 +3448,7 @@
         "PreItem": null,
         "Position": [
             56.0,
-            -20.0
+            -24.0
         ],
         "PreTechs": [
             1927
@@ -3535,7 +3535,7 @@
         "PreItem": null,
         "Position": [
             48.0,
-            -20.0
+            -24.0
         ],
         "PreTechs": [
             1925
@@ -5494,7 +5494,7 @@
         "PreItem": null,
         "Position": [
             52.0,
-            -20.0
+            -24.0
         ],
         "PreTechs": [
             1706
@@ -5611,27 +5611,33 @@
     },
     {
         "ID": 1930,
-        "Name": "T增殖燃料棒",
-        "IconPath": "Icons/Tech/1416",
-        "Desc": "T增殖燃料棒描述",
-        "Conclusion": "T增殖燃料棒描述",
-        "IsHiddenTech": false,
-        "PreItem": null,
+        "Name": "奇夸克同化反应",
+        "IconPath": "Icons/Tech/1143",
+        "Desc": "T奇夸克同化反应",
+        "Conclusion": "T奇夸克同化反应",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6244
+        ],
         "Position": [
-            -44.0,
+            80.0,
             -40.0
         ],
-        "PreTechs": [],
+        "PreTechs": [
+            1143
+        ],
         "PreTechsImplicit": [],
         "Items": [
-            6003
+            6244,
+            6006
         ],
         "ItemPoints": [
-            10
+            1,
+            100
         ],
-        "HashNeeded": 288000,
+        "HashNeeded": 36000,
         "UnlockRecipes": [
-            //409
+            121
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -5640,7 +5646,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": true,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -5769,6 +5775,49 @@
         "LevelCoef1": 0,
         "LevelCoef2": 0,
         "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1935,
+        "Name": "菌丝母株研究",
+        "IconPath": "Icons/Tech/1143",
+        "Desc": "T菌丝母株研究",
+        "Conclusion": "T菌丝母株研究",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6245
+        ],
+        "Position": [
+            80.0,
+            -44.0
+        ],
+        "PreTechs": [],
+        "PreTechsImplicit": [],
+        "Items": [
+            6245,
+            6006
+        ],
+        "ItemPoints": [
+            1,
+            100
+        ],
+        "HashNeeded": 36000,
+        "UnlockRecipes": [
+            409,
+            522
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -5979,7 +6028,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": true,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -6047,12 +6096,14 @@
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6215
+            6215,
+            6006
         ],
         "ItemPoints": [
-            20
+            1,
+            100
         ],
-        "HashNeeded": 3600,
+        "HashNeeded": 36000,
         "UnlockRecipes": [
             403,
             424

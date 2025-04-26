@@ -3248,27 +3248,33 @@
     },
     {
         "ID": 121,
-        "Name": "铝矿粉",
-        "Description": "",
+        "Name": "奇异同化反应",
+        "Description": "R奇异同化反应",
         "IconPath": "",
-        "Type": 11,
-        "GridIndex": 0,
-        "Time": 60,
+        "Type": 5,
+        "GridIndex": 1412,
+        "Time": 240,
         "Input": [
-            6202
+            6244,
+            1101,
+            1206
         ],
         "InCounts": [
-            1
+            4,
+            8,
+            4
         ],
         "Output": [
-            6273
+            1127,
+            6244
         ],
         "OutCounts": [
-            2
+            4,
+            4
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
-        "NonProductive": false
+        "NonProductive": true
     },
     {
         "ID": 122,
@@ -4594,29 +4600,35 @@
     },
     {
         "ID": 409,
-        "Name": "增殖燃料棒",
+        "Name": "菌丝神经网络",
         "Description": "",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
-        "Time": 600,
+        "Type": 14,
+        "GridIndex": 4814,
+        "Time": 720,
         "Input": [
-            6225,
-            1113
+            6245,
+            1000,
+            1031,
+            6208
         ],
         "InCounts": [
+            2,
             12,
+            6,
             1
         ],
         "Output": [
-            6241
+            6252,
+            6245
         ],
         "OutCounts": [
-            1
+            1,
+            2
         ],
         "Explicit": false,
         "Handcraft": false,
-        "NonProductive": false
+        "NonProductive": true
     },
     {
         "ID": 410,
@@ -5252,26 +5264,24 @@
     },
     {
         "ID": 522,
-        "Name": "量子储液罐",
+        "Name": "突触凝练机",
         "Description": "",
         "IconPath": "",
-        "Type": 10,
-        "GridIndex": 0,
-        "Time": 900,
+        "Type": 14,
+        "GridIndex": 4813,
+        "Time": 360,
         "Input": [
-            1107,
-            1124,
-            1305,
-            7706
+            6252,
+            5202,
+            2902
         ],
         "InCounts": [
-            16,
-            8,
+            24,
             4,
-            4
+            1
         ],
         "Output": [
-            6229
+            6253
         ],
         "OutCounts": [
             1

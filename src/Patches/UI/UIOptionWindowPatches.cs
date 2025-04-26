@@ -30,8 +30,8 @@ namespace ProjectGenesis.Patches.UI
                 "UseLDBToolCacheAdditionalText".TranslateFromJson(), new Vector2(30, -220), LDBToolCacheEntry.Value,
                 out LDBToolCacheToggle);
 
-            CreateSettingObject(pageParent, "gb-htc-setting", "HideTechMode".TranslateFromJson(),
-                "HideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -260), HideTechModeEntry.Value, out HideTechModeToggle);
+            //CreateSettingObject(pageParent, "gb-htc-setting", "HideTechMode".TranslateFromJson(),
+            //    "HideTechModeAdditionalText".TranslateFromJson(), new Vector2(30, -260), HideTechModeEntry.Value, out HideTechModeToggle);
 
             CreateSettingObject(pageParent, "gb-smb-setting", "ShowMessageBox".TranslateFromJson(),
                 "ShowMessageBoxAdditionalText".TranslateFromJson(), new Vector2(30, -300), ShowMessageBoxEntry.Value,
@@ -118,7 +118,7 @@ namespace ProjectGenesis.Patches.UI
         private static void Reset()
         {
             LDBToolCacheToggle.isOn = LDBToolCacheEntry.Value;
-            HideTechModeToggle.isOn = HideTechModeEntry.Value;
+            //HideTechModeToggle.isOn = HideTechModeEntry.Value;
             ShowMessageToggle.isOn = ShowMessageBoxEntry.Value;
             ProductOverflowComboBox.itemIndex = ProductOverflowEntry.Value;
         }
@@ -126,6 +126,7 @@ namespace ProjectGenesis.Patches.UI
         [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.OnApplyClick))]
         [HarmonyPostfix]
         public static void UIOptionWindow_OnApplyClick_Postfix() =>
-            SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, ShowMessageToggle.isOn, ProductOverflowComboBox.itemIndex);
+            //SetConfig(LDBToolCacheToggle.isOn, HideTechModeToggle.isOn, ShowMessageToggle.isOn, ProductOverflowComboBox.itemIndex);
+        SetConfig(LDBToolCacheToggle.isOn, ShowMessageToggle.isOn, ProductOverflowComboBox.itemIndex);
     }
 }
