@@ -470,7 +470,7 @@
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -712,7 +712,7 @@
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -1298,13 +1298,15 @@
         "GridIndex": 2307,
         "Time": 240,
         "Input": [
-            1108,
+            1103,
+            1104,
             1203,
             6256
         ],
         "InCounts": [
             4,
-            4,
+            3,
+            2,
             2
         ],
         "Output": [
@@ -1472,7 +1474,7 @@
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -2733,7 +2735,7 @@
             2
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -2875,7 +2877,7 @@
         "Name": "增产剂",
         "Description": "",
         "IconPath": "",
-        "Type": 16,
+        "Type": 2,
         "GridIndex": 4701,
         "Time": 180,
         "Input": [
@@ -4271,7 +4273,7 @@
         "Name": "地面电浆炮",
         "Description": "",
         "IconPath": "",
-        "Type": 4,
+        "Type": 10,
         "GridIndex": 5205,
         "Time": 480,
         "Input": [
@@ -5523,7 +5525,7 @@
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -5553,7 +5555,7 @@
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -5754,7 +5756,7 @@
         "Description": "R有机晶体重组",
         "IconPath": "Assets/texpack/有机晶体重组",
         "Type": 16,
-        "GridIndex": 4104,
+        "GridIndex": 0,
         "Time": 720,
         "Input": [
             1117
@@ -6119,7 +6121,7 @@
         "IconPath": "",
         "Type": 1,
         "GridIndex": 3305,
-        "Time": 720,
+        "Time": 360,
         "Input": [
             1107,
             1117,
@@ -6134,7 +6136,7 @@
             1118
         ],
         "OutCounts": [
-            4
+            2
         ],
         "Explicit": false,
         "Handcraft": false,
@@ -6650,7 +6652,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 5404,
+        "GridIndex": 0,
         "Time": 180,
         "Input": [
             7610,
@@ -6680,7 +6682,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 5504,
+        "GridIndex": 0,
         "Time": 480,
         "Input": [
             7612,

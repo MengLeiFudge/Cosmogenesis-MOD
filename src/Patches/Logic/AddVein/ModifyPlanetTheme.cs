@@ -19,29 +19,11 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 ModifyThemeData(theme);
 
-                //if (theme.WaterItemId == ProtoID.I水) theme.WaterItemId = ProtoID.I海水;
-
                 switch (theme.ID)
                 {
-                    case 8:
-                        //theme.WaterItemId = ProtoID.I水;
-                        //theme.Distribute = EThemeDistribute.Interstellar;
-
-                        break;
 
                     case 9:
                         theme.WaterItemId = ProtoID.I岩浆;
-                        break;
-
-                    case 12:
-                        //theme.WaterItemId = ProtoID.I硝酸;
-                        //theme.WaterHeight = -0.1f;
-                        //theme.Distribute = EThemeDistribute.Interstellar;
-                        //theme.oceanMat = LDB.themes.Select(22).oceanMat;
-                        //RemoveVein(theme, 0);
-                        //RemoveVein(theme, 1);
-                        //RemoveVein(theme, 14);
-
                         break;
 
                     case 17:
@@ -52,10 +34,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                         theme.Distribute = EThemeDistribute.Interstellar;
                         theme.Algos = new[] { 3, };
                         theme.oceanMat = LDB.themes.Select(8).oceanMat;
-                        //RemoveVein(theme, 0);
-                        //RemoveVein(theme, 14);
 
                         break;
+
                     case 19:
                         theme.Wind = 8;
                         break;
@@ -69,14 +50,14 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
             if (theme.GasItems[0] == ProtoID.I可燃冰 && theme.GasItems[1] == ProtoID.I氢)
             {
-                theme.GasItems = new[] { ProtoID.I可燃冰, ProtoID.I氢, ProtoID.I氨, };
-                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.7f, };
+                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I甲烷 };
+                //theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.7f, };
             }
-            else if (theme.GasItems[0] == ProtoID.I氢 && theme.GasItems[1] == ProtoID.I重氢)
-            {
-                theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦, };
-                theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.5f, };
-            }
+            //else if (theme.GasItems[0] == ProtoID.I氢 && theme.GasItems[1] == ProtoID.I重氢)
+            //{
+            //    theme.GasItems = new[] { ProtoID.I氢, ProtoID.I重氢, ProtoID.I氦, };
+            //    theme.GasSpeeds = new float[] { theme.GasSpeeds[0], theme.GasSpeeds[1], theme.GasSpeeds[1] * 0.5f, };
+            //}
         }
 
         private static void ModifyThemeData(ThemeProto theme)

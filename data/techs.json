@@ -513,7 +513,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": false,
+        "IsLabTech": true,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -1423,12 +1423,8 @@
             47,
             26
         ],
-        "UnlockFunctions": [
-            7
-        ],
-        "UnlockValues": [
-            0.5
-        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
         "Published": true,
         "Level": 0,
         "MaxLevel": 0,
@@ -3389,7 +3385,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": false,
+        "IsLabTech": true,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -6035,7 +6031,7 @@
     {
         "ID": 1946,
         "Name": "逆向掌中工厂蓝图",
-        "IconPath": "Icons/Tech/1903",
+        "IconPath": "Assets/texpack/主机科技",
         "Desc": "T逆向掌中工厂蓝图",
         "Conclusion": "T逆向掌中工厂蓝图",
         "IsHiddenTech": true,
@@ -6078,7 +6074,7 @@
     {
         "ID": 1947,
         "Name": "次级维度工厂",
-        "IconPath": "Icons/Tech/1903",
+        "IconPath": "Assets/texpack/主机科技",
         "Desc": "T次级维度工厂",
         "Conclusion": "T次级维度工厂",
         "IsHiddenTech": true,
@@ -6102,10 +6098,12 @@
         "HashNeeded": 7200,
         "UnlockRecipes": [],
         "UnlockFunctions": [
-            7
+            7,
+            102
         ],
         "UnlockValues": [
-            0.1
+            0.1,
+            1
         ],
         "Published": true,
         "Level": 1,
@@ -6184,12 +6182,8 @@
         ],
         "HashNeeded": 576000,
         "UnlockRecipes": [],
-        "UnlockFunctions": [
-            7
-        ],
-        "UnlockValues": [
-            0.5
-        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
         "Published": true,
         "Level": 0,
         "MaxLevel": 0,
@@ -6205,7 +6199,7 @@
     {
         "ID": 1950,
         "Name": "次级维度工厂",
-        "IconPath": "Icons/Tech/1903",
+        "IconPath": "Assets/texpack/主机科技",
         "Desc": "T次级维度工厂",
         "Conclusion": "T次级维度工厂",
         "IsHiddenTech": true,

@@ -2475,9 +2475,9 @@
         "ENUS": "Viscous liquid with irritating odor, high density, rich in many aromatic, heterocyclic and branched chain compounds and easy to extract, it is an important chemical raw material. It can be obtained by separation of oil."
     },
     {
-        "Name": "I放射性矿物",
-        "ZHCN": "超重元素由类质同象作用部分取代了成岩矿物的金属离子，形成的具有放射性的岩石，可从中分离出多种具有工业价值的超重元素化合物。",
-        "ENUS": "Superheavy elements are radioactive rocks formed by the partial replacement of metal ions in rock-forming minerals by homogeneous isomorphism, from which a variety of superheavy element compounds of industrial value can be isolated."
+        "Name": "解锁手搓",
+        "ZHCN": "所有可由物质重组工厂制造的配方全部解锁手动制造。",
+        "ENUS": "All formulas that can be manufactured by material recombination factories are unlocked for manual manufacturing."
     },
     {
         "Name": "I铀矿",

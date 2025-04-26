@@ -24,6 +24,15 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                                       Items3 = { 6001, 6002, 6003, },
                                       Items2 = { 6001, 6002, };
 
+        private static readonly int[] unlockHandcraftRecipes =
+        {
+            21, 26, 28, 29, 34, 36, 38, 39, 41, 42, 43, 44, 47, 51, 52, 53,
+            54, 57, 70, 71, 72, 73, 80, 81, 99, 100, 101, 105, 109, 115, 116, 119,
+            124, 128, 132, 135, 140, 141, 142, 143, 145, 146, 153, 154, 155, 156, 157, 159,
+            402, 403, 408, 416, 418, 424, 425, 519, 547, 709, 710, 716, 751, 752, 754, 771,
+            772, 783, 789, 793, 794, 795,
+        };
+
 
         internal static void ModifyUpgradeTeches()
         {
@@ -60,7 +69,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             tech = LDB.techs.Select(ProtoID.T集装分拣6);
             tech.Items = Items5;
             tech.ItemPoints = Enumerable.Repeat(6, 5).ToArray();
-
+            /*
             for (int i = 2501; i <= 2506; i++)
             {
                 TechProto techProto = LDB.techs.Select(i);
@@ -97,7 +106,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     }
                 }
             }
-
+            */
             ModifyAllUpgradeTechs();
 
 
@@ -311,6 +320,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     case 2201:
                         techProto.Items = new int[] { 6001 };
                         techProto.ItemPoints = new int[] { techProto.ItemPoints[0] };
+                        techProto.IsLabTech = true;
                         break;
                     case 2202:
                         techProto.Items = new int[] { 6001 };
@@ -454,6 +464,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     case 2501:
                         techProto.Items = new int[] { 6001 };
                         techProto.ItemPoints = new int[] { techProto.ItemPoints[0] };
+                        techProto.IsLabTech = true;
                         break;
                     case 2502:
                     case 2503:
@@ -754,6 +765,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             CombatDroneMotify(_techId);
             WreckFalling(_techId);
             CrackingRayTechAndItemModify(_techId);
+            UnlockRecipesHandcraft(_techId);
         }
 
 
@@ -859,7 +871,6 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         static void WreckFalling(int techId)
         {
             ItemProto itemProto;
-            RecipeProto recipeProto;
             if (techId == 5301)
             {
                 // 解锁3级的黑雾掉落
@@ -1011,19 +1022,42 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void UnlockRecipesHandcraft(int techId)
+        {
+            RecipeProto recipeProto;
+            if (techId == 1945)
+            {
+                for (int i = 0; i < unlockHandcraftRecipes.Length; i++)
+                {
+                    recipeProto = LDB.recipes.Select(unlockHandcraftRecipes[i]);
+                    recipeProto.Handcraft = true;
+                }
+            }
+        }
+
 
         [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
         [HarmonyPrefix]
         public static bool UnlockFunctionTextPatch(TechProto __instance, StringBuilder sb, ref string __result)
         {
             string text = "";
-            if (__instance.UnlockFunctions.Length > 0) 
+            if (__instance.UnlockFunctions.Length > 0)
             {
                 if (__instance.UnlockFunctions[0] == 101)
                 {
                     text = text + "黑雾".Translate() + __instance.UnlockValues[0] + "级残骸物品掉落".Translate();
                     __result = text;
                     return false;
+                }
+                if (__instance.UnlockFunctions.Length > 1) {
+                    if (__instance.UnlockFunctions[0] == 7 && __instance.UnlockFunctions[1] == 102)
+                    {
+                        text = text + "+" + __instance.UnlockValues[0].ToString("0%") + "手动合成速度".Translate();
+                        text += "\r\n";
+                        text = text + "解锁手搓".Translate();
+                        __result = text;
+                        return false;
+                    }
                 }
             }
             return true;
