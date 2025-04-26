@@ -161,8 +161,13 @@
     },
     {
         "Name": "飓风石林介绍",
-        "ZHCN": "　　飓风石林星球的地表上散布着碎石，拥有一个主要成分为二氧化硫的稠密大气。\r\n　　这类行星拥有活跃的板块构造结构，地震和火山活动频繁。此外，大气中的高浓度亚硫酸雾导致的频繁“酸雨”奇景，也曾是外星旅游爱好者论坛中的一大热门。",
-        "ENUS": "The surface of a Cyclonius planet is scattered with the rocks under a thin atmosphere composed mainly of sulfur dioxide.\r\nSuch planets possess active tectonic structures with frequent earthquakes and volcanic activities. Additionally, the frequent 'acid rain' phenomenon caused by high concentrations of sulfate aerosols in the atmosphere has also been a popular topic on forums for extraterrestrial travel enthusiasts."
+        "ZHCN": "　　飓风石林星球的地表上散布着诸多乔木留下的化石，拥有一个主要成分为氯气的稀薄大气。\r\n　　学界普遍认为这颗星球曾经拥有一个非常繁盛的生态系统，直到某种藻类进化出代谢氯气的能力。浓度逐渐上升的氯气毒杀了整个生物圈，包括制造氯气的始作俑者。\r\n　　地表被常年累月的风蚀变得平坦，没有地形的遮挡，风速变得越来越快。",
+        "ENUS": "The surface of Hurricane Stone Forest is scattered with fossils left by many trees, and it has a thin atmosphere mainly composed of chlorine gas.\r\nThe academic community generally believes that this planet once had a very prosperous ecosystem, until a certain type of algae evolved the ability to metabolize chlorine gas. The gradually increasing concentration of chlorine gas poisoned the entire biosphere, including the creators of chlorine gas production.\r\nThe surface has become flat due to years of wind erosion, without the obstruction of terrain, and the wind speed is getting faster and faster."
+    },
+    {
+        "Name": "干旱荒漠介绍",
+        "ZHCN": "　　干旱荒漠星球的地表被漫无边际的沙漠所覆盖，主要成分为二氧化碳的大气中弥散着无数细小砂砾。由于地表昼夜温差大，这类星球上常有大风，终年盛行的风带在星球上留下深浅不一的环状条纹。\r\n　　干旱荒漠星球上曾经也有过山脉，但在造山运动停止后这些耸立的山峰便逐渐被风化消磨，星球日渐平坦，最终只留下嶙峋的怪石散布在沙漠上。\r\n　　观测站曾探测到厚厚沙层下有金属反应，可能在沙层下埋藏着遗迹，或许，我们应该挖挖看？",
+        "ENUS": "The surface of arid desert planets is covered by endless deserts, with countless small gravel particles dispersed in the atmosphere mainly composed of carbon dioxide. Due to the large temperature difference between day and night on the surface, there are often strong winds on these planets, and the prevailing wind belts leave varying depths of circular stripes on the planet throughout the year.\r\nThere used to be mountains on arid desert planets, but after the mountain building movement stopped, these towering peaks were gradually eroded by weathering, and the planet became increasingly flat, leaving only rugged rocks scattered on the desert.\r\nThe observation station has detected metal reactions beneath a thick layer of sand, suggesting that there may be relics buried beneath the sand layer. Perhaps we should dig and see?"
     },
     {
         "Name": "里程碑名称29",

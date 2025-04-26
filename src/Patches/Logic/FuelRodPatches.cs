@@ -342,7 +342,7 @@ namespace ProjectGenesis.Patches.Logic
 
             if (componentFuelMask != 1) return ItemProto.fuelNeeds[componentFuelMask];
 
-            return factory.planet.gasItems.Contains(ProtoID.I氧) ? ItemProto.fuelNeeds[1] : FuelCells;
+            return factory.planet.type == EPlanetType.Ocean ? ItemProto.fuelNeeds[1] : FuelCells;
         }
 
         [HarmonyPatch(typeof(UIPowerGeneratorWindow), nameof(UIPowerGeneratorWindow.OnFuelButtonClick))]
