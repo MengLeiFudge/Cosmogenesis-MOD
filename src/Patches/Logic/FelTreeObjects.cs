@@ -108,6 +108,7 @@ namespace ProjectGenesis.Patches.Logic
 
         public static void OnMine(ref PlanetFactory __instance, int id)
         {
+            //__instance.gameData.history.techSpeed = 600;
             //参数合法性校验
             if (__instance.vegePool[id].id == 0) { return; }
             int ItemProtoID = 0;
