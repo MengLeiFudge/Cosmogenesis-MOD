@@ -2545,24 +2545,24 @@
         "ENUS": "Scanning carbon based biomass with green pyrolysis radiation to break it down into alkanes, namely crude oil. Perhaps some people say that the life of plants is also life, and using this weapon specifically targeting life is an illegitimate crime.\r\n\r\nAnd we call it efficiency."
     },
     {
-        "Name": "铝矿粉",
-        "ZHCN": "铝矿粉",
-        "ENUS": "Aluminum Ore Dust"
+        "Name": "太空损管包",
+        "ZHCN": "太空损管包",
+        "ENUS": "Space Damage Control Package"
     },
     {
-        "Name": "I铝矿粉",
-        "ZHCN": "对铝矿进行预先粉碎处理的产物，可明显提高熔炉的效率。",
-        "ENUS": "The product of pre-crushing of aluminum ore, which can significantly improve the efficiency of the furnace."
+        "Name": "I太空损管包",
+        "ZHCN": "以液态金属为主，石墨烯构筑纳米笼为骨架，组成了这个模块化损管包，一旦太空设施发生破损，它能迅速完成气密性封堵并硬化为临时装甲层。",
+        "ENUS": "Using liquid metal as the main component and graphene to construct nanocages as the skeleton, this modular damage tube package is formed. Once the space facility is damaged, it can quickly complete airtight sealing and harden into a temporary armor layer."
     },
     {
-        "Name": "铝合金",
-        "ZHCN": "铝合金",
-        "ENUS": "Aluminum Alloy"
+        "Name": "太空损管系统",
+        "ZHCN": "太空损管系统",
+        "ENUS": "Space Damage Control System"
     },
     {
-        "Name": "I铝合金",
-        "ZHCN": "轻金属材料之一，可作结构材料使用。由于具有较高的强度和良好的耐蚀性和可焊性，有着广泛的应用。",
-        "ENUS": "One of the light metal materials, can be used as structural materials. It has a wide range of applications due to its high strength and good corrosion resistance and weldability."
+        "Name": "T太空损管系统描述",
+        "ZHCN": "太空险恶的环境不仅对飞船装甲外壳提出了高要求，对损管系统也是如此，一个快速，高效，独立可复用的模块化损管包有时能挽救一艘飞船。",
+        "ENUS": "The harsh environment of space not only places high demands on the armor shell of spacecraft, but also on the damage management system. A fast, efficient, and independently reusable modular damage management package can sometimes save a spacecraft."
     },
     {
         "Name": "I氦",

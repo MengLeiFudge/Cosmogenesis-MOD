@@ -5746,6 +5746,48 @@
         "PropertyItemCounts": []
     },
     {
+        "ID": 1933,
+        "Name": "太空损管系统",
+        "IconPath": "Icons/Tech/1121",
+        "Desc": "T太空损管系统描述",
+        "Conclusion": "I太空损管系统描述",
+        "IsHiddenTech": false,
+        "PreItem": null,
+        "Position": [
+            60.0,
+            -28.0
+        ],
+        "PreTechs": [
+            1706
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6279,
+            6004
+        ],
+        "ItemPoints": [
+            10,
+            8
+        ],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [
+            115
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
         "ID": 1934,
         "Name": "T太空电梯",
         "IconPath": "Icons/Tech/1604",
