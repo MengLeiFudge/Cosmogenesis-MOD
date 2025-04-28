@@ -2540,9 +2540,9 @@
         "ENUS": "Space destroyers use dense and strong interaction materials for armor. With a larger size and the ability to accommodate a massive main gun, this complex artillery system called the \"Xiaohe Cannon\" can constrain and launch the explosive energy of fusion bombs. Commanding a destroyer requires 4 command points, so a maximum of three destroyers can be commanded simultaneously in a space formation."
     },
     {
-        "Name": "铝块",
-        "ZHCN": "铝块",
-        "ENUS": "Aluminum Ingot"
+        "Name": "R碳基裂解",
+        "ZHCN": "将碳基生物质用绿色的裂解射线扫过，将其裂解为烷烃，即：原油，或许有人说植物的命也是命，使用这种专门针对生命的武器是种不正当的罪行。\r\n\r\n而我们称之为高效。",
+        "ENUS": "Scanning carbon based biomass with green pyrolysis radiation to break it down into alkanes, namely crude oil. Perhaps some people say that the life of plants is also life, and using this weapon specifically targeting life is an illegitimate crime.\r\n\r\nAnd we call it efficiency."
     },
     {
         "Name": "铝矿粉",

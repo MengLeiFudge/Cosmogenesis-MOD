@@ -2564,7 +2564,7 @@
             1107,
             1303,
             1802,
-            1406
+            6277
         ],
         "InCounts": [
             5,
@@ -2804,7 +2804,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 12,
-        "GridIndex": 1503,
+        "GridIndex": 1310,
         "Time": 720,
         "Input": [
             5203,
@@ -4446,7 +4446,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 12,
-        "GridIndex": 1504,
+        "GridIndex": 1311,
         "Time": 480,
         "Input": [
             5204,
@@ -4807,7 +4807,7 @@
     {
         "ID": 417,
         "Name": "甲烷",
-        "Description": "",
+        "Description": "I甲烷",
         "IconPath": "",
         "Type": 2,
         "GridIndex": 4512,
@@ -4826,7 +4826,7 @@
             1,
             3
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -4996,7 +4996,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 12,
-        "GridIndex": 1505,
+        "GridIndex": 1411,
         "Time": 3600,
         "Input": [
             6215,
@@ -5054,7 +5054,7 @@
         "Description": "R石料破碎",
         "IconPath": "Assets/texpack/沙土回收_新",
         "Type": 4,
-        "GridIndex": 1601,
+        "GridIndex": 1814,
         "Time": 120,
         "Input": [
             1005
@@ -5099,7 +5099,7 @@
     {
         "ID": 506,
         "Name": "纳米塑料纤维",
-        "Description": "",
+        "Description": "I纳米塑料纤维",
         "IconPath": "",
         "Type": 2,
         "GridIndex": 4601,
@@ -5120,7 +5120,7 @@
         "OutCounts": [
             1
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -5292,28 +5292,28 @@
     },
     {
         "ID": 523,
-        "Name": "矿物处理厂",
-        "Description": "",
+        "Name": "碳基裂解",
+        "Description": "R碳基裂解",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
+        "Type": 12,
+        "GridIndex": 1410,
         "Time": 180,
         "Input": [
-            6501,
-            1103
+            1031,
+            6216
         ],
         "InCounts": [
-            3,
-            6
-        ],
-        "Output": [
-            6230
-        ],
-        "OutCounts": [
+            18,
             1
         ],
-        "Explicit": false,
-        "Handcraft": true,
+        "Output": [
+            1007
+        ],
+        "OutCounts": [
+            20
+        ],
+        "Explicit": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -5725,8 +5725,6 @@
             1
         ],
         "Output": [
-            6207,
-            6206
         ],
         "OutCounts": [
             1,
