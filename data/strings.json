@@ -2505,19 +2505,19 @@
         "ENUS": "The product of refining plutonium ore, which can support the chain reaction."
     },
     {
-        "Name": "铝矿脉",
-        "ZHCN": "铝矿脉",
-        "ENUS": "Aluminum Veins"
+        "Name": "物流立交",
+        "ZHCN": "物流立交",
+        "ENUS": "Logistics Interchange"
     },
     {
-        "Name": "铝矿",
-        "ZHCN": "铝矿",
-        "ENUS": "Aluminum ore"
+        "Name": "I物流立交",
+        "ZHCN": "地表物流网络的节点，物品在上下两层出入口进行分发和集成运输，在高度发达的工业星球，四通八达的高层的物流传送带将在高空组成新一层“人造地面”。",
+        "ENUS": "The nodes of the surface logistics network, where goods are distributed and integrated for transportation at the upper and lower entrances and exits, will form a new layer of \"artificial ground\" in the highly developed industrial planet, with high-level logistics conveyor belts extending in all directions."
     },
     {
-        "Name": "I铝矿",
-        "ZHCN": "采集铝矿脉获得，可以直接冶炼成铝块。",
-        "ENUS": "Used to smelt aluminum ingots. Obtained by gathering aluminum vein."
+        "Name": "行星物流系统描述",
+        "ZHCN": "当楼房的高度随材料学发展而拔高，在高空建造第二层，第三层人造地面将楼房连接起来成为发展的必然，工业的发展也是如此，绕过地面错综复杂的产线，物品通过物流立交在远离地面的第二地面运输，将方便地进行总线式产线规划。",
+        "ENUS": "As the height of buildings increases with the development of materials science, it is inevitable to build a second and third floor at high altitude to connect the buildings with artificial ground. The development of industry is also like this. By bypassing the complex production lines on the ground and transporting goods through logistics overpasses on the second ground far away from the ground, it will be convenient to carry out bus style production line planning."
     },
     {
         "Name": "黄铁矿脉",

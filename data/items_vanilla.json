@@ -5214,8 +5214,8 @@
   },
   {
     "ID": 2103,
-    "Name": "物流运输站",
-    "Description": "I物流运输站",
+    "Name": "物流立交",
+    "Description": "I物流立交",
     "IconPath": "Icons/ItemRecipe/logistic-station",
     "GridIndex": 2210,
     "StackSize": 10,

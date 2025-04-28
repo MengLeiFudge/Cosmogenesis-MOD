@@ -8,7 +8,7 @@ using UnityEngine;
 
 // ReSharper disable RedundantAssignment
 // ReSharper disable InconsistentNaming
-/*
+
 namespace ProjectGenesis.Patches.UI
 {
     public static class UISignalPickerPatches
@@ -72,60 +72,60 @@ namespace ProjectGenesis.Patches.UI
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnUpdate))]
-        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
-        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.TestMouseIndex))]
-        [HarmonyTranspiler]
-        [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> UISignalPicker_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            foreach (CodeInstruction ci in instructions)
-            {
-                if (ci.opcode == OpCodes.Ldc_I4_S)
-                {
-                    var operand = (sbyte)ci.operand;
+        //[HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker._OnUpdate))]
+        //[HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
+        //[HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.TestMouseIndex))]
+        //[HarmonyTranspiler]
+        //[HarmonyPriority(Priority.Last)]
+        //public static IEnumerable<CodeInstruction> UISignalPicker_Transpiler(IEnumerable<CodeInstruction> instructions)
+        //{
+        //    foreach (CodeInstruction ci in instructions)
+        //    {
+        //        if (ci.opcode == OpCodes.Ldc_I4_S)
+        //        {
+        //            var operand = (sbyte)ci.operand;
 
-                    if (operand == 14) ci.operand = (sbyte)17;
+        //            if (operand == 14) ci.operand = (sbyte)17;
 
-                    if (operand == 10) ci.operand = (sbyte)7;
-                }
+        //            if (operand == 10) ci.operand = (sbyte)7;
+        //        }
 
-                yield return ci;
-            }
-        }
+        //        yield return ci;
+        //    }
+        //}
 
-        [HarmonyPatch(typeof(UIShowSignalTipExtension), nameof(UIShowSignalTipExtension.OnUpdate))]
-        [HarmonyTranspiler]
-        [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> UIShowSignalTipExtension_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            foreach (CodeInstruction ci in instructions)
-            {
-                if (ci.opcode == OpCodes.Ldc_I4_S && (sbyte)ci.operand == 12) ci.operand = (sbyte)17;
+        //[HarmonyPatch(typeof(UIShowSignalTipExtension), nameof(UIShowSignalTipExtension.OnUpdate))]
+        //[HarmonyTranspiler]
+        //[HarmonyPriority(Priority.Last)]
+        //public static IEnumerable<CodeInstruction> UIShowSignalTipExtension_Transpiler(IEnumerable<CodeInstruction> instructions)
+        //{
+        //    foreach (CodeInstruction ci in instructions)
+        //    {
+        //        if (ci.opcode == OpCodes.Ldc_I4_S && (sbyte)ci.operand == 12) ci.operand = (sbyte)17;
 
-                yield return ci;
-            }
-        }
+        //        yield return ci;
+        //    }
+        //}
 
-        [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.SetMaterialProps))]
-        [HarmonyTranspiler]
-        [HarmonyPriority(Priority.Last)]
-        public static IEnumerable<CodeInstruction> UISignalPicker_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            foreach (CodeInstruction ci in instructions)
-            {
-                if (ci.opcode == OpCodes.Ldc_R4)
-                {
-                    var operand = (float)ci.operand;
+        //[HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.SetMaterialProps))]
+        //[HarmonyTranspiler]
+        //[HarmonyPriority(Priority.Last)]
+        //public static IEnumerable<CodeInstruction> UISignalPicker_SetMaterialProps_Transpiler(IEnumerable<CodeInstruction> instructions)
+        //{
+        //    foreach (CodeInstruction ci in instructions)
+        //    {
+        //        if (ci.opcode == OpCodes.Ldc_R4)
+        //        {
+        //            var operand = (float)ci.operand;
 
-                    if (operand is 14f) ci.operand = 17f;
+        //            if (operand is 14f) ci.operand = 17f;
 
-                    if (operand is 10f) ci.operand = 7f;
-                }
+        //            if (operand is 10f) ci.operand = 7f;
+        //        }
 
-                yield return ci;
-            }
-        }
+        //        yield return ci;
+        //    }
+        //}
 
         [HarmonyPatch(typeof(UISignalPicker), nameof(UISignalPicker.RefreshIcons))]
         [HarmonyPostfix]
@@ -148,9 +148,9 @@ namespace ProjectGenesis.Patches.UI
                 int num5 = (t.GridIndex - num4 * 1000) / 100 - 1;
                 int num6 = t.GridIndex % 100 - 1;
 
-                if (num5 < 0 || num6 < 0 || num5 >= 7 || num6 >= 17) continue;
+                if (num5 < 0 || num6 < 0 || num5 >= 10 || num6 >= 14) continue;
 
-                int index5 = num5 * 17 + num6;
+                int index5 = num5 * 14 + num6;
 
                 if (index5 < 0 || index5 >= ___indexArray.Length) continue;
 
@@ -161,4 +161,3 @@ namespace ProjectGenesis.Patches.UI
         }
     }
 }
-*/
