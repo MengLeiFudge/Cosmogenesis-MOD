@@ -2535,14 +2535,14 @@
         "ENUS": "Obtained by collecting sulphur vein, it is treated and used in making sulphuric acid."
     },
     {
-        "Name": "铝块",
-        "ZHCN": "铝块",
-        "ENUS": "Aluminum Ingot"
-    },
-    {
         "Name": "I驱逐舰",
         "ZHCN": "太空驱逐舰，使用致密强相互作用力材料做装甲。体型更大、得以塞下庞大的主炮，这套名为“小和炮”的复杂火炮系统能将聚变弹的爆炸能量约束并发射。指挥驱逐舰需要消耗 4 个指挥点数，因此在一个太空编队中最多只能同时指挥三艘驱逐舰。",
         "ENUS": "Space destroyers use dense and strong interaction materials for armor. With a larger size and the ability to accommodate a massive main gun, this complex artillery system called the \"Xiaohe Cannon\" can constrain and launch the explosive energy of fusion bombs. Commanding a destroyer requires 4 command points, so a maximum of three destroyers can be commanded simultaneously in a space formation."
+    },
+    {
+        "Name": "铝块",
+        "ZHCN": "铝块",
+        "ENUS": "Aluminum Ingot"
     },
     {
         "Name": "铝矿粉",

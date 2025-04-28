@@ -5127,7 +5127,7 @@
     {
         "ID": 509,
         "Name": "植物纤维",
-        "Description": "",
+        "Description": "I植物纤维",
         "IconPath": "",
         "Type": 14,
         "GridIndex": 4414,
@@ -5148,14 +5148,14 @@
         "OutCounts": [
             8
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
     {
         "ID": 512,
         "Name": "生物质",
-        "Description": "",
+        "Description": "I生物质",
         "IconPath": "",
         "Type": 14,
         "GridIndex": 4413,
@@ -5176,7 +5176,7 @@
         "OutCounts": [
             12
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -5673,10 +5673,12 @@
             10
         ],
         "Output": [
-            1117
+            1117,
+            6206
         ],
         "OutCounts": [
-            1
+            1,
+            4
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -6195,7 +6197,7 @@
             1000
         ],
         "InCounts": [
-            12,
+            18,
             6
         ],
         "Output": [
@@ -6204,7 +6206,7 @@
         ],
         "OutCounts": [
             2,
-            4
+            2
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -6219,12 +6221,12 @@
         "GridIndex": 4411,
         "Time": 180,
         "Input": [
-            1117,
-            1030
+            1030,
+            1000
         ],
         "InCounts": [
-            1,
-            8
+            12,
+            4
         ],
         "Output": [
             1115,
@@ -6430,7 +6432,7 @@
             6208
         ],
         "OutCounts": [
-            3
+            4
         ],
         "Explicit": true,
         "Handcraft": false,
