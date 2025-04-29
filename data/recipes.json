@@ -1568,12 +1568,12 @@
         "IconPath": "",
         "Type": 1,
         "GridIndex": 3104,
-        "Time": 60,
+        "Time": 120,
         "Input": [
             1003
         ],
         "InCounts": [
-            2
+            1
         ],
         "Output": [
             1105
@@ -1716,12 +1716,12 @@
         "IconPath": "",
         "Type": 1,
         "GridIndex": 3105,
-        "Time": 60,
+        "Time": 120,
         "Input": [
             1004
         ],
         "InCounts": [
-            1
+            2
         ],
         "Output": [
             1106
@@ -4791,7 +4791,7 @@
         "GridIndex": 2503,
         "Time": 360,
         "Input": [
-            2206,
+            6218,
             1126,
             1205
         ],

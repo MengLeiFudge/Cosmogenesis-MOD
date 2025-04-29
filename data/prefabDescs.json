@@ -238,7 +238,7 @@
     },
     {
         "ModelID": 434,
-        "AmmoBlastRadius1": 35
+        "AmmoBlastRadius1": 50
     },
     {
         "ModelID": 455,
@@ -396,7 +396,7 @@
     },
     {
         "ModelID": 813,
-        "AmmoBlastRadius1": 50,
+        "AmmoBlastRadius1": 115,
         "AmmoMoveAcc": 30,
         "AmmoTurnAcc": 30
     },

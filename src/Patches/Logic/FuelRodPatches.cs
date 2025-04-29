@@ -10,6 +10,7 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class FuelRodPatches
     {
+        public static bool useRodOnly = false;
         private static readonly int[] FuelCells =
         {
             ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, //
@@ -296,6 +297,7 @@ namespace ProjectGenesis.Patches.Logic
         public static IEnumerable<CodeInstruction> UIStorageGrid_HandPut_Transpiler(IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
         {
+            //if (useRodOnly) {
             var matcher = new CodeMatcher(instructions, generator);
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldstr, "只能放入燃料"),
