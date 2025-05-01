@@ -108,7 +108,9 @@ namespace ProjectGenesis.Patches.Logic
 
         public static void OnMine(ref PlanetFactory __instance, int id)
         {
-            //__instance.gameData.history.techSpeed = 600;
+            //__instance.gameData.history.AddTechHash(500);
+            //__instance.gameData.history.techSpeed = 6;
+            //Debug.LogFormat("scppppppppppppppppppppppppp techSpeed {0}", __instance.gameData.history.techSpeed);
             //参数合法性校验
             if (__instance.vegePool[id].id == 0) { return; }
             int ItemProtoID = 0;
@@ -216,7 +218,7 @@ namespace ProjectGenesis.Patches.Logic
         ///</summary>
         public static void GainTechAwards(int itemId, int count)
         {
-            int package = GameMain.mainPlayer.TryAddItemToPackage(itemId, count, count, true);
+            int package = GameMain.mainPlayer.TryAddItemToPackage(itemId, count, 0, true);
             if (package < count)
             {
                 UIRealtimeTip.Popup("无法获得科技奖励".Translate());

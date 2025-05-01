@@ -4909,8 +4909,8 @@
             772,
             771,
             709,
-            547,
-            710
+            710,
+            802
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -5849,8 +5849,7 @@
         ],
         "HashNeeded": 36000,
         "UnlockRecipes": [
-            409,
-            522
+            409
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -5928,6 +5927,47 @@
         ],
         "HashNeeded": 720000,
         "UnlockRecipes": [],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1938,
+        "Name": "突触凝炼机",
+        "IconPath": "Assets/texpack/虚拟技术革新",
+        "Desc": "T突触凝炼机",
+        "Conclusion": "T突触凝炼机",
+        "IsHiddenTech": false,
+        "PreItem": null,
+        "Position": [
+            84.0,
+            -44.0
+        ],
+        "PreTechs": [
+            1935
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6252
+        ],
+        "ItemPoints": [
+            1
+        ],
+        "HashNeeded": 720000,
+        "UnlockRecipes": [
+            522,
+            533
+        ],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,

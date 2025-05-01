@@ -1470,26 +1470,6 @@
         "ENUS": "Electrolyze heavy water to obtain deuterium"
     },
     {
-        "Name": "菌丝母株",
-        "ZHCN": "菌丝母株",
-        "ENUS": "Mycelium Mother Plant"
-    },
-    {
-        "Name": "I菌丝母株",
-        "ZHCN": "在红石发掘出的蕈类植物母株，据观测站报告这种覆盖了整个星球的植物疑似为同一株，如此庞大的植物网络很有研究价值。",
-        "ENUS": "The mother plants of mushroom plants excavated in Redstone are suspected to be the same plant that covers the entire planet, according to observation reports. Such a large plant network is of great research value."
-    },
-    {
-        "Name": "菌丝母株研究",
-        "ZHCN": "菌丝母株研究",
-        "ENUS": "Research on Mycelium Mother Plant"
-    },
-    {
-        "Name": "T菌丝母株研究",
-        "ZHCN": "经过研究，我们发现这种蕈类进化出了多重神经节点结构，每隔一段距离就会生长出小节点，每几个小节点之间会生长出大节点，大型节点之间甚至会使用专门的引力波器官进行信息交流，并以此形成星球级的超大型神经网络。推测这种蕈类应该是某种高级生物文明，或者就是高级生物本身在该星球逗留时遗留下来的。",
-        "ENUS": "After research, we found that this mushroom has evolved multiple neural node structures, with small nodes growing at regular intervals, large nodes growing between every few small nodes, and even using specialized gravitational wave organs for information exchange between large nodes, forming a planetary level super large neural network. It is speculated that this mushroom species may be some kind of advanced biological civilization, or it may have been left behind by advanced organisms themselves during their stay on the planet."
-    },
-    {
         "Name": "磁单极子构成",
         "ZHCN": "磁单极子构成",
         "ENUS": "Composition of magnetic monopoles"
@@ -1575,14 +1555,84 @@
         "ENUS": "Under the high temperature and high pressure of plasma, heavy oil undergoes hydrogenation, cracking, and isomerization reactions, converting into light oil."
     },
     {
+        "Name": "菌丝母株",
+        "ZHCN": "菌丝母株",
+        "ENUS": "Mycelium Mother Plant"
+    },
+    {
+        "Name": "I菌丝母株",
+        "ZHCN": "在红石发掘出的蕈类植物母株，据观测站报告这种覆盖了整个星球的植物疑似为同一株，如此庞大的植物网络很有研究价值。",
+        "ENUS": "The mother plants of mushroom plants excavated in Redstone are suspected to be the same plant that covers the entire planet, according to observation reports. Such a large plant network is of great research value."
+    },
+    {
+        "Name": "菌丝母株研究",
+        "ZHCN": "菌丝母株研究",
+        "ENUS": "Research on Mycelium Mother Plant"
+    },
+    {
+        "Name": "T菌丝母株研究",
+        "ZHCN": "经过研究，我们发现这种蕈类进化出了多重神经节点结构，每隔一段距离就会生长出小节点，每几个小节点之间会生长出大节点，大型节点之间甚至会使用专门的引力波器官进行信息交流，并以此形成星球级的超大型神经网络。推测这种蕈类应该是某种高级生物文明，或者就是高级生物本身在该星球逗留时遗留下来的。",
+        "ENUS": "After research, we found that this mushroom has evolved multiple neural node structures, with small nodes growing at regular intervals, large nodes growing between every few small nodes, and even using specialized gravitational wave organs for information exchange between large nodes, forming a planetary level super large neural network. It is speculated that this mushroom species may be some kind of advanced biological civilization, or it may have been left behind by advanced organisms themselves during their stay on the planet."
+    },
+    {
+        "Name": "大型神经网络",
+        "ZHCN": "大型神经网络",
+        "ENUS": "Large Scale Neural Network"
+    },
+    {
+        "Name": "I大型神经网络",
+        "ZHCN": "由两株母株进行有性繁殖诞生的子实体，拥有多重神经节点生长倾向，可以诱导生长为大型生物神经网络。",
+        "ENUS": "Condense the synapses of mushroom neural networks into a large network, use silicon-based neurons as intermediate interfaces, and then use a self computing research station for unified command to create a simplified version of the hash operation array for studying technologies that COSMO did not include in the Dyson Sphere project."
+    },
+    {
+        "Name": "神经芯片",
+        "ZHCN": "神经芯片",
+        "ENUS": "Neurochip"
+    },
+    {
+        "Name": "I神经芯片",
+        "ZHCN": "神经芯片是个巨大的储备池计算系统的基础原件，由错综复杂的电路、晶体管和生命维持系统将大型神经网络的数以亿计思维神经互相连接。",
+        "ENUS": "Neural chips are the fundamental components of a massive reservoir computing system, connecting billions of thought neurons in large neural networks through intricate circuits, transistors, and life support systems."
+    },
+    {
         "Name": "突触凝炼机",
         "ZHCN": "突触凝炼机",
         "ENUS": "Synaptic Condenser"
     },
     {
-        "Name": "I突触凝炼机",
-        "ZHCN": "将蕈类神经网络突触凝练组成大型网络，以硅基神经元做中转接口，再使用自演算研究站进行统一指挥，以此制造简化版哈希运算阵列，用以研究COSMO没有列入戴森球计划中的科技。",
-        "ENUS": "Condense the synapses of mushroom neural networks into a large network, use silicon-based neurons as intermediate interfaces, and then use a self computing research station for unified command to create a simplified version of the hash operation array for studying technologies that COSMO did not include in the Dyson Sphere project."
+        "Name": "T突触凝炼机",
+        "ZHCN": "将大型生物神经网络做成的神经芯片，进行算力并网，并将研究算法分配给每个神经芯片，通过这种方法模拟主脑的哈希阵列，以此来研究不属于COSMO指定的科研任务。当多个神经芯片同时运算时，算力叠加互补会让整体算力呈指数上升，但是带来的思维冲突压力也导致消耗的神经芯片数量呈指数上升。另外，研究完成或切换导致的回路切断会报废掉所有并网的神经芯片。",
+        "ENUS": "A neural chip made of a large biological neural network is connected to the grid for computing power, and research algorithms are assigned to each neural chip. Through this method, the hash array of the main brain is simulated to study research tasks that are not specified by COSMO. When multiple neural chips are operating simultaneously, the superposition and complementarity of computing power will result in an exponential increase in overall computing power, but the resulting cognitive conflict pressure also leads to an exponential increase in the number of neural chips consumed. In addition, circuit disconnection caused by research completion or switching will result in the scrapping of all connected neural chips."
+    },
+    {
+        "Name": "R突触凝炼机",
+        "ZHCN": "每执行一次该配方，会使手动研究速度加60*2^（n-1）哈希每秒，同时会使该配方下次执行消耗的神经芯片数量<color=\"#FD965ECC\">翻倍</color>。当科技研究<color=\"#FD965ECC\">完成</color>或<color=\"#FD965ECC\">切换</color>时，<color=\"#FD965ECC\">翻倍与加速均清零</color>。",
+        "ENUS": "Each execution of this recipe will increase the manual research speed by 60 * 2 ^ (n-1) hashes per second, and also <color=\"#FD965ECC\">double</color> the number of neural chips consumed in the next execution of the recipe. When technology research is <color=\"#FD965ECC\">completed</color> or <color=\"#FD965ECC\">switched</color>, <color=\"#FD965ECC\">both doubling and acceleration are reset to zero.</color>"
+    },
+    {
+        "Name": "手动研究加速",
+        "ZHCN": "手动研究加速",
+        "ENUS": "Manual Research Acceleration"
+    },
+    {
+        "Name": "I手动研究加速",
+        "ZHCN": "通过某种手段模拟主脑的矩阵解析阵列，提升研究站不能研究的科研速度。",
+        "ENUS": "Simulate the matrix analysis array of the main brain through some means to improve the research speed that cannot be studied by the research station."
+    },
+    {
+        "Name": "I大抽水机",
+        "ZHCN": "利用光子聚束技术，快速汲取大量液体。",
+        "ENUS": "Using photon beam technology, quickly extract large amounts of liquid."
+    },
+    {
+        "Name": "大气收集设施",
+        "ZHCN": "大气采集站",
+        "ENUS": "Atmospheric Collect Station"
+    },
+    {
+        "Name": "I大气收集设施",
+        "ZHCN": "可以富集并收集大气成分的自维持大型设施。",
+        "ENUS": "A large self-sustaining facility that can enrich and collect atmospheric components."
     },
     {
         "Name": "生物塑料",
@@ -2565,60 +2615,11 @@
         "ENUS": "The harsh environment of space not only places high demands on the armor shell of spacecraft, but also on the damage management system. A fast, efficient, and independently reusable modular damage management package can sometimes save a spacecraft."
     },
     {
-        "Name": "I氦",
-        "ZHCN": "宇宙中丰度第二高的元素，“太阳的元素”。",
-        "ENUS": "The second most abundant element in the universe, \"the element of the sun\"."
-    },
-    {
-        "Name": "I氦三",
-        "ZHCN": "稳定的氦同位素，它与重氢发生的聚变反应即是恒星的秘密。",
-        "ENUS": "A stable isotope of helium, whose fusion reaction with heavy hydrogen is the secret of the star."
-    },
-    {
         "Name": "I反物质约束单元",
         "ZHCN": "可以约束一单位反物质的磁阱。",
         "ENUS": "The magnetic trap that can confine one unit of antimatter."
     },
-    {
-        "Name": "I氦闪约束器",
-        "ZHCN": "以强大的磁场约束等离子体在其中环绕，坚固的材料甚至可以承受氦闪的冲击。",
-        "ENUS": "With a strong magnetic field to bind the plasma around it, the robust material can even withstand the impact of a helium flash."
-    },
-    {
-        "Name": "I钨块",
-        "ZHCN": "冶炼钨矿获得。这种元素具有划时代的潜力。",
-        "ENUS": "Obtained by smelting tungsten ore. This element has epoch-making potential."
-    },
-    {
-        "Name": "I钨强化玻璃",
-        "ZHCN": "当反应剧烈到钛强化玻璃也很难承受时，就轮到它登场了。",
-        "ENUS": "When the reaction is so violent that even titanium-reinforced glass is difficult to withstand, it is its turn to make an appearance."
-    },
-    {
-        "Name": "I钨合金",
-        "ZHCN": "加入钨的合金。在电磁力的领域中，它就是王者。",
-        "ENUS": "An alloy with tungsten added. In the field of electromagnetic force, it is the king."
-    },
-    {
-        "Name": "大抽水机",
-        "ZHCN": "聚束液体汲取设施",
-        "ENUS": "Photon beam liquid extraction facility"
-    },
-    {
-        "Name": "I大抽水机",
-        "ZHCN": "利用光子聚束技术，快速汲取大量液体。",
-        "ENUS": "Using photon beam technology, quickly extract large amounts of liquid."
-    },
-    {
-        "Name": "大气收集设施",
-        "ZHCN": "大气采集站",
-        "ENUS": "Atmospheric Collect Station"
-    },
-    {
-        "Name": "I大气收集设施",
-        "ZHCN": "可以富集并收集大气成分的自维持大型设施。",
-        "ENUS": "A large self-sustaining facility that can enrich and collect atmospheric components."
-    },
+
     {
         "Name": "I轨道采集器",
         "ZHCN": "用来采集气态行星上的资源，使用同位素温差发电来维持在轨道上工作所需的能量。",

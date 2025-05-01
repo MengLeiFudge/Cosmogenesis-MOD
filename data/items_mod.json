@@ -1581,8 +1581,8 @@
     },
     {
         "ID": 6252,
-        "Name": "蕈类神经网络",
-        "Description": "I蕈类神经网络",
+        "Name": "大型神经网络",
+        "Description": "I大型神经网络",
         "IconPath": "Assets/texpack/铁矿粉",
         "GridIndex": 4813,
         "StackSize": 100,
@@ -1629,11 +1629,11 @@
     },
     {
         "ID": 6253,
-        "Name": "突触凝炼机",
-        "Description": "I突触凝炼机",
-        "IconPath": "Assets/texpack/铜矿粉",
-        "GridIndex": 4813,
-        "StackSize": 30,
+        "Name": "神经芯片",
+        "Description": "I神经芯片",
+        "IconPath": "Assets/texpack/光学芯片",
+        "GridIndex": 4812,
+        "StackSize": 100,
         "Type": 14,
         "PreTechOverride": 0,
         "DescFields": [
@@ -1677,15 +1677,14 @@
     },
     {
         "ID": 6254,
-        "Name": "硅矿粉",
-        "Description": "I硅矿粉",
-        "IconPath": "Assets/texpack/硅矿粉",
+        "Name": "手动研究加速",
+        "Description": "I手动研究加速",
+        "IconPath": "Icons/Tech/3904",
         "GridIndex": 0,
         "StackSize": 100,
         "Type": 2,
         "PreTechOverride": 0,
         "DescFields": [
-            1,
             40
         ],
         "FuelType": 0,

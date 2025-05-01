@@ -2,10 +2,14 @@
 using HarmonyLib;
 using ProjectGenesis.Utils;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
+using WinAPI;
+using static GalacticScale.PatchOnUIGalaxySelect;
 using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.AddUpgradeTech;
 
 namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
@@ -29,9 +33,12 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             21, 26, 28, 29, 34, 36, 38, 39, 41, 42, 43, 44, 47, 51, 52, 53,
             54, 57, 70, 71, 72, 73, 80, 81, 99, 100, 101, 105, 109, 115, 116, 119,
             124, 128, 132, 135, 140, 141, 142, 143, 145, 146, 153, 154, 155, 156, 157, 159,
-            402, 403, 408, 416, 418, 424, 425, 519, 523, 547, 709, 710, 716, 751, 752, 754, 771,
+            402, 403, 408, 416, 418, 424, 425, 519, 523, 802, 709, 710, 716, 751, 752, 754, 771,
             772, 783, 789, 793, 794, 795,
         };
+
+        private static int vanillaTechSpeed = 1;
+        private static int synapticLatheTechSpeed = 1;
 
 
         internal static void ModifyUpgradeTeches()
@@ -767,6 +774,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             WreckFalling(_techId);
             CrackingRayTechAndItemModify(_techId);
             UnlockRecipesHandcraft(_techId);
+            UpdateTechSpeed(_techId);
         }
 
 
@@ -1036,6 +1044,16 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void UpdateTechSpeed(int techId)
+        {
+            TechProto techProto = LDB.techs.Select(techId);
+
+            if (techProto.UnlockFunctions.Length > 0 && techProto.UnlockFunctions[0] == 22)
+            {
+                vanillaTechSpeed++;
+            }
+        }
+
 
         [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
         [HarmonyPrefix]
@@ -1062,6 +1080,110 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 }
             }
             return true;
+        }
+
+        [HarmonyPatch(typeof(Player), nameof(Player.TryAddItemToPackage))]
+        [HarmonyPrefix]
+        public static bool TryAddItemToPackagePatch(ref Player __instance, int itemId, int count, ref int __result)
+        {
+            if (itemId == 6254 && count > 0)
+            {
+                RecipeProto recipeProto;
+                
+                if (__instance.mecha.gameData.history.currentTech > 0)
+                {
+                    if (LDB.techs.Select(__instance.mecha.gameData.history.currentTech).IsLabTech == false)
+                    {
+                        recipeProto = LDB.recipes.Select(533);
+                        if (recipeProto.ItemCounts[0] == 2)
+                        {
+                            vanillaTechSpeed = __instance.mecha.gameData.history.techSpeed;
+                        }
+                        recipeProto.ItemCounts[0] = recipeProto.ItemCounts[0] * 2;
+                        __instance.mecha.gameData.history.techSpeed += synapticLatheTechSpeed * 2;
+                        __result = 0;
+                        return false;
+                    }
+                    else
+                    {
+                        recipeProto = LDB.recipes.Select(533);
+                        recipeProto.ItemCounts[0] = 2;
+                        __instance.mecha.gameData.history.techSpeed = vanillaTechSpeed;
+                        __result = 0;
+                        return false;
+                    }
+                } else
+                {
+                    recipeProto = LDB.recipes.Select(533);
+                    if (recipeProto.ItemCounts[0] == 2)
+                    {
+                        vanillaTechSpeed = __instance.mecha.gameData.history.techSpeed;
+                    }
+                    recipeProto.ItemCounts[0] = recipeProto.ItemCounts[0] * 2;
+                    __instance.mecha.gameData.history.techSpeed += synapticLatheTechSpeed * 2;
+                    __result = 0;
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        [HarmonyPatch(typeof(GameHistoryData), nameof(GameHistoryData.RemoveTechInQueue))]
+        [HarmonyPrefix]
+        public static void RemoveTechInQueuePatch(GameHistoryData __instance, int index)
+        {
+            if (index == 0) { 
+                RecipeProto recipeProto;
+                recipeProto = LDB.recipes.Select(533);
+                recipeProto.ItemCounts[0] = 2;
+                __instance.techSpeed = vanillaTechSpeed;
+            }
+        }
+
+        [HarmonyPatch(typeof(GameHistoryData), nameof(GameHistoryData.DequeueTech))]
+        [HarmonyPrefix]
+        public static void DequeueTechPatch(GameHistoryData __instance)
+        {
+            RecipeProto recipeProto;
+            recipeProto = LDB.recipes.Select(533);
+            recipeProto.ItemCounts[0] = 2;
+            __instance.techSpeed = vanillaTechSpeed;
+        }
+
+        [HarmonyPatch(typeof(GameHistoryData), nameof(GameHistoryData.EnqueueTech))]
+        [HarmonyPrefix]
+        public static void EnqueueTechPatch(GameHistoryData __instance, int techId)
+        {
+            if (__instance.techQueue[0] == 0)
+            {
+                if (LDB.techs.Select(techId).IsLabTech == true)
+                {
+                    RecipeProto recipeProto;
+                    recipeProto = LDB.recipes.Select(533);
+                    recipeProto.ItemCounts[0] = 2;
+                    __instance.techSpeed = vanillaTechSpeed;
+                }
+            }
+        }
+
+        internal static void Export(BinaryWriter w)
+        {
+
+            w.Write(vanillaTechSpeed);
+            w.Write(synapticLatheTechSpeed);
+        }
+
+        internal static void Import(BinaryReader r)
+        {
+            try
+            {
+                vanillaTechSpeed = r.ReadInt32();
+                synapticLatheTechSpeed = r.ReadInt32();
+            }
+            catch (EndOfStreamException)
+            {
+                // ignored
+            }
         }
     }
 }

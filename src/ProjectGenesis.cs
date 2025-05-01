@@ -56,9 +56,9 @@ namespace ProjectGenesis
     [ModSaveSettings(LoadOrder = LoadOrder.Preload)]
     public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
-        public const string MODGUID = "org.LoShin.GenesisBook";
-        public const string MODNAME = "GenesisBook";
-        public const string VERSION = "3.0.14";
+        public const string MODGUID = "org.LoShin.Cosmogenesis";
+        public const string MODNAME = "Cosmogenesis";
+        public const string VERSION = "0.6.4";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -197,6 +197,7 @@ namespace ProjectGenesis
             QuantumStoragePatches.Export(w);
             AdvancedLaserPatches.Export(w);
             GlobalPowerSupplyPatches.Export(w);
+            ModifyUpgradeTech.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -207,6 +208,7 @@ namespace ProjectGenesis
             QuantumStoragePatches.Import(r);
             AdvancedLaserPatches.Import(r);
             GlobalPowerSupplyPatches.Import(r);
+            ModifyUpgradeTech.Import(r);
         }
 
         public void IntoOtherSave()
