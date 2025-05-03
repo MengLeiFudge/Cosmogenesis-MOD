@@ -37,6 +37,80 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             772, 783, 789, 793, 794, 795,
         };
 
+        private static readonly int[] unlockWreckFallingItemIdLevel1 =
+        {
+            1108, 1109, 1112, 1202, 1301, 5206,
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel1 =
+        {
+            1.8f, 1.6f, 1.0f, 2.0f, 2.0f, 2.5f
+        };
+        private static readonly int[] unlockWreckFallingItemIdLevel2 =
+        {
+            1103, 1105, 1111, 1131, 1203, 1401,
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel2 =
+        {
+            1.56f, 1.8f, 1.4f, 2.0f, 1.2f, 1.3f
+        };
+
+        private static readonly int[] unlockWreckFallingItemIdLevel3 =
+        {
+            1106, 1115, 1123, 1204, 1404, 1407,
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel3 =
+        {
+            2.2f, 1.0f, 1.0f, 0.8f, 1.4f, 1.0f
+        };
+        private static readonly int[] unlockWreckFallingItemIdLevel4 =
+        {
+            1107, 1113, 1119, 1124, 1205, 1405, 5201
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel4 =
+        {
+            1.1f, 1.2f, 1.4f, 0.8f, 0.5f, 0.6f, 2.5f
+        };
+        private static readonly int[] unlockWreckFallingItemIdLevel5 =
+        {
+            1118, 1126, 1303, 5203, 6222, 7804,
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel5 =
+        {
+            0.8f, 0.55f, 0.75f, 1.5f, 1.2f, 0.7f,
+        };
+        private static readonly int[] unlockWreckFallingItemIdLevel6 =
+        {
+            1125, 1127, 1206, 1402, 5202, 6201,
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel6 =
+        {
+            0.4f, 0.4f, 0.4f, 0.25f, 1.5f, 0.6f,
+        };
+        private static readonly int[] unlockWreckFallingItemIdLevel7 =
+        {
+            1014, 1210, 1304, 1406, 5204, 6243,
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel7 =
+        {
+            2f, 0.3f, 0.4f, 0.3f, 1.4f, 0.4f,
+        };
+        private static readonly int[] unlockWreckFallingItemIdLevel8 =
+        {
+            1016, 1209, 5205, 6271, 7805,
+        };
+        private static readonly float[] unlockWreckFallingItemDropCountLevel8 =
+        {
+            2f, 0.4f, 1.5f, 0.3f, 0.3f,
+        };
+
+        private static int WreckFallingLevel = 0;
+
+        private static int UAVHPAndfiringRateUpgradeLevel = 0;
+
+        private static bool isUnlockRecipesHandcraft = false;
+        
+        private static bool isUnlockCrackingRay = false;
+
         private static int vanillaTechSpeed = 1;
         private static int synapticLatheTechSpeed = 1;
 
@@ -777,12 +851,11 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             UpdateTechSpeed(_techId);
         }
 
-
-        static void CombatDroneMotify(int techId)
+        static void UAVHPAndfiringRateUpgrade(int level)
         {
             ItemProto itemProto;
             RecipeProto recipeProto;
-            if (techId == 5601)
+            if (level == 1)
             {
                 recipeProto = LDB.recipes.Select(147);
                 recipeProto.Items[2] = 1303;
@@ -800,9 +873,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 itemProto.Name = "精准无人机A型";
                 itemProto.Description = "I精准无人机A型";
                 itemProto.RefreshTranslation();
-
             }
-            else if (techId == 5602)
+            else if (level == 2)
             {
                 recipeProto = LDB.recipes.Select(147);
                 recipeProto.Items[0] = 1107;
@@ -818,7 +890,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 itemProto.Description = "I精准无人机B型";
                 itemProto.RefreshTranslation();
             }
-            else if (techId == 5603)
+            else if (level == 3)
             {
                 recipeProto = LDB.recipes.Select(147);
                 recipeProto.Items[0] = 6225;
@@ -837,7 +909,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 itemProto.Description = "I精准无人机C型";
                 itemProto.RefreshTranslation();
             }
-            else if (techId == 5604)
+            else if (level == 4)
             {
                 recipeProto = LDB.recipes.Select(147);
                 recipeProto.Type = ERecipeType.Assemble;
@@ -856,7 +928,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 itemProto.Description = "I精准无人机D型";
                 itemProto.RefreshTranslation();
             }
-            else if (techId == 5605)
+            else if (level == 5)
             {
                 recipeProto = LDB.recipes.Select(148);
                 recipeProto.Items[3] = 1118;
@@ -877,157 +949,173 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
-        static void WreckFalling(int techId)
+        static void CombatDroneMotify(int techId)
+        {
+            if (techId == 5601)
+            {
+                UAVHPAndfiringRateUpgrade(1);
+                UAVHPAndfiringRateUpgradeLevel = 1;
+            }
+            else if (techId == 5602)
+            {
+                UAVHPAndfiringRateUpgrade(2);
+                UAVHPAndfiringRateUpgradeLevel = 2;
+            }
+            else if (techId == 5603)
+            {
+                UAVHPAndfiringRateUpgrade(3);
+                UAVHPAndfiringRateUpgradeLevel = 3;
+            }
+            else if (techId == 5604)
+            {
+                UAVHPAndfiringRateUpgrade(4);
+                UAVHPAndfiringRateUpgradeLevel = 4;
+            }
+            else if (techId == 5605)
+            {
+                UAVHPAndfiringRateUpgrade(5);
+                UAVHPAndfiringRateUpgradeLevel = 5;
+            }
+        }
+
+        static void UnlockWreckFalling(int unlockLevel)
         {
             ItemProto itemProto;
+            switch (unlockLevel)
+            {
+                case 1:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel1.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel1[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel1[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+                case 2:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel2.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel2[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel2[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+                case 3:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel3.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel3[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel3[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+                case 4:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel4.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel4[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel4[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+                case 5:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel5.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel5[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel5[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+                case 6:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel6.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel6[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel6[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+                case 7:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel7.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel7[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel7[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+                case 8:
+                    for (int i = 0; i < unlockWreckFallingItemIdLevel8.Length; i++)
+                    {
+                        itemProto = LDB.items.Select(unlockWreckFallingItemIdLevel8[i]);
+                        itemProto.EnemyDropCount = unlockWreckFallingItemDropCountLevel8[i];
+                    }
+                    ItemProto.InitEnemyDropTables();
+                    break;
+            }
+        }
+
+        static void WreckFalling(int techId)
+        {
             if (techId == 5301)
             {
                 // 解锁3级的黑雾掉落
-                itemProto = LDB.items.Select(1108);
-                itemProto.EnemyDropCount = 1.8f;
-                itemProto = LDB.items.Select(1109);
-                itemProto.EnemyDropCount = 1.6f;
-                itemProto = LDB.items.Select(1112);
-                itemProto.EnemyDropCount = 1.0f;
-                itemProto = LDB.items.Select(1202);
-                itemProto.EnemyDropCount = 2.0f;
-                itemProto = LDB.items.Select(1301);
-                itemProto.EnemyDropCount = 2.0f;
-                itemProto = LDB.items.Select(5206);
-                itemProto.EnemyDropCount = 2.5f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(1);
+                WreckFallingLevel = 1;
             }
             else if (techId == 5302)
             {
                 // 解锁6级的黑雾掉落
-                itemProto = LDB.items.Select(1103);
-                itemProto.EnemyDropCount = 1.56f;
-                itemProto = LDB.items.Select(1105);
-                itemProto.EnemyDropCount = 1.8f;
-                itemProto = LDB.items.Select(1111);
-                itemProto.EnemyDropCount = 1.4f;
-                itemProto = LDB.items.Select(1131);
-                itemProto.EnemyDropCount = 2.0f;
-                itemProto = LDB.items.Select(1203);
-                itemProto.EnemyDropCount = 1.2f;
-                itemProto = LDB.items.Select(1401);
-                itemProto.EnemyDropCount = 1.3f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(2);
+                WreckFallingLevel = 2;
             } else if (techId == 5303)
             {
                 // 解锁9级的黑雾掉落
-                itemProto = LDB.items.Select(1106);
-                itemProto.EnemyDropCount = 2.2f;
-                itemProto = LDB.items.Select(1115);
-                itemProto.EnemyDropCount = 1.0f;
-                itemProto = LDB.items.Select(1123);
-                itemProto.EnemyDropCount = 1.0f;
-                itemProto = LDB.items.Select(1204);
-                itemProto.EnemyDropCount = 0.8f;
-                itemProto = LDB.items.Select(1404);
-                itemProto.EnemyDropCount = 1.4f;
-                itemProto = LDB.items.Select(1407);
-                itemProto.EnemyDropCount = 1.0f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(3);
+                WreckFallingLevel = 3;
             } else if (techId == 5304)
             {
                 // 解锁12级的黑雾掉落
-                itemProto = LDB.items.Select(1107);
-                itemProto.EnemyDropCount = 1.1f;
-                itemProto = LDB.items.Select(1113);
-                itemProto.EnemyDropCount = 1.2f;
-                itemProto = LDB.items.Select(1119);
-                itemProto.EnemyDropCount = 1.4f;
-                itemProto = LDB.items.Select(1124);
-                itemProto.EnemyDropCount = 0.8f;
-                itemProto = LDB.items.Select(1205);
-                itemProto.EnemyDropCount = 0.5f;
-                itemProto = LDB.items.Select(1405);
-                itemProto.EnemyDropCount = 0.6f;
-                itemProto = LDB.items.Select(5201);
-                itemProto.EnemyDropCount = 2.5f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(4);
+                WreckFallingLevel = 4;
             } else if (techId == 5305)
             {
                 // 解锁15级的黑雾掉落
-                itemProto = LDB.items.Select(1118);
-                itemProto.EnemyDropCount = 0.8f;
-                itemProto = LDB.items.Select(1118);
-                itemProto.EnemyDropCount = 0.8f;
-                itemProto = LDB.items.Select(1126);
-                itemProto.EnemyDropCount = 0.55f;
-                itemProto = LDB.items.Select(1303);
-                itemProto.EnemyDropCount = 0.75f;
-                itemProto = LDB.items.Select(5203);
-                itemProto.EnemyDropCount = 1.5f;
-                itemProto = LDB.items.Select(6222);
-                itemProto.EnemyDropCount = 1.2f;
-                itemProto = LDB.items.Select(7804);
-                itemProto.EnemyDropCount = 0.7f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(5);
+                WreckFallingLevel = 5;
             } else if (techId == 5306) {
                 // 解锁18级的黑雾掉落
-                itemProto = LDB.items.Select(1125);
-                itemProto.EnemyDropCount = 0.4f;
-                itemProto = LDB.items.Select(1127);
-                itemProto.EnemyDropCount = 0.4f;
-                itemProto = LDB.items.Select(1206);
-                itemProto.EnemyDropCount = 0.4f;
-                itemProto = LDB.items.Select(1402);
-                itemProto.EnemyDropCount = 0.25f;
-                itemProto = LDB.items.Select(5202);
-                itemProto.EnemyDropCount = 1.5f;
-                itemProto = LDB.items.Select(6201);
-                itemProto.EnemyDropCount = 0.6f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(6);
+                WreckFallingLevel = 6;
             } else if (techId == 5307)
             {
                 // 解锁21级的黑雾掉落
-                itemProto = LDB.items.Select(1014);
-                itemProto.EnemyDropCount = 2f;
-                itemProto = LDB.items.Select(1210);
-                itemProto.EnemyDropCount = 0.3f;
-                itemProto = LDB.items.Select(1304);
-                itemProto.EnemyDropCount = 0.4f;
-                itemProto = LDB.items.Select(1406);
-                itemProto.EnemyDropCount = 0.3f;
-                itemProto = LDB.items.Select(5204);
-                itemProto.EnemyDropCount = 1.4f;
-                itemProto = LDB.items.Select(6243);
-                itemProto.EnemyDropCount = 0.4f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(7);
+                WreckFallingLevel = 7;
             } else if (techId == 5308)
             {
                 // 解锁24级的黑雾掉落
-                itemProto = LDB.items.Select(1016);
-                itemProto.EnemyDropCount = 2.0f;
-                itemProto = LDB.items.Select(1209);
-                itemProto.EnemyDropCount = 0.4f;
-                itemProto = LDB.items.Select(5205);
-                itemProto.EnemyDropCount = 1.5f;
-                itemProto = LDB.items.Select(6271);
-                itemProto.EnemyDropCount = 0.3f;
-                itemProto = LDB.items.Select(7805);
-                itemProto.EnemyDropCount = 0.3f;
-                ItemProto.InitEnemyDropTables();
+                UnlockWreckFalling(8);
+                WreckFallingLevel = 8;
             }
+        }
+
+        static void UnlockCrackingRayTech()
+        {
+            ItemProto itemProto;
+            TechProto techProto;
+            itemProto = LDB.items.Select(6216);
+            itemProto.Name = "裂解射线发生器";
+            itemProto.Description = "I裂解射线发生器";
+            itemProto.RefreshTranslation();
+
+            techProto = LDB.techs.Select(1945);
+            techProto.Name = "终末螺旋";
+            techProto.Desc = "T终末螺旋";
+            techProto.RefreshTranslation();
         }
 
         static void CrackingRayTechAndItemModify(int techId)
         {
-            ItemProto itemProto;
-            TechProto techProto;
             if (techId == 1945)
             {
-                itemProto = LDB.items.Select(6216);
-                itemProto.Name = "裂解射线发生器";
-                itemProto.Description = "I裂解射线发生器";
-                itemProto.RefreshTranslation();
-
-                techProto = LDB.techs.Select(1945);
-                techProto.Name = "终末螺旋";
-                techProto.Desc = "T终末螺旋";
-                techProto.RefreshTranslation();
+                UnlockCrackingRayTech();
+                isUnlockCrackingRay = true;
             }
         }
 
@@ -1041,6 +1129,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     recipeProto = LDB.recipes.Select(unlockHandcraftRecipes[i]);
                     recipeProto.Handcraft = true;
                 }
+                isUnlockRecipesHandcraft = true;
             }
         }
 
@@ -1097,10 +1186,12 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                         recipeProto = LDB.recipes.Select(533);
                         if (recipeProto.ItemCounts[0] == 2)
                         {
+                            synapticLatheTechSpeed = 1;
                             vanillaTechSpeed = __instance.mecha.gameData.history.techSpeed;
                         }
                         recipeProto.ItemCounts[0] = recipeProto.ItemCounts[0] * 2;
-                        __instance.mecha.gameData.history.techSpeed += synapticLatheTechSpeed * 2;
+                        synapticLatheTechSpeed = synapticLatheTechSpeed * 2;
+                        __instance.mecha.gameData.history.techSpeed = vanillaTechSpeed + synapticLatheTechSpeed;
                         __result = 0;
                         return false;
                     }
@@ -1108,6 +1199,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     {
                         recipeProto = LDB.recipes.Select(533);
                         recipeProto.ItemCounts[0] = 2;
+                        synapticLatheTechSpeed = 1;
                         __instance.mecha.gameData.history.techSpeed = vanillaTechSpeed;
                         __result = 0;
                         return false;
@@ -1117,10 +1209,12 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     recipeProto = LDB.recipes.Select(533);
                     if (recipeProto.ItemCounts[0] == 2)
                     {
+                        synapticLatheTechSpeed = 1;
                         vanillaTechSpeed = __instance.mecha.gameData.history.techSpeed;
                     }
                     recipeProto.ItemCounts[0] = recipeProto.ItemCounts[0] * 2;
-                    __instance.mecha.gameData.history.techSpeed += synapticLatheTechSpeed * 2;
+                    synapticLatheTechSpeed = synapticLatheTechSpeed * 2;
+                    __instance.mecha.gameData.history.techSpeed = vanillaTechSpeed + synapticLatheTechSpeed;
                     __result = 0;
                     return false;
                 }
@@ -1136,6 +1230,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 RecipeProto recipeProto;
                 recipeProto = LDB.recipes.Select(533);
                 recipeProto.ItemCounts[0] = 2;
+                synapticLatheTechSpeed = 1;
                 __instance.techSpeed = vanillaTechSpeed;
             }
         }
@@ -1147,6 +1242,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             RecipeProto recipeProto;
             recipeProto = LDB.recipes.Select(533);
             recipeProto.ItemCounts[0] = 2;
+            synapticLatheTechSpeed = 1;
             __instance.techSpeed = vanillaTechSpeed;
         }
 
@@ -1161,6 +1257,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     RecipeProto recipeProto;
                     recipeProto = LDB.recipes.Select(533);
                     recipeProto.ItemCounts[0] = 2;
+                    synapticLatheTechSpeed = 1;
                     __instance.techSpeed = vanillaTechSpeed;
                 }
             }
@@ -1168,7 +1265,10 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
         internal static void Export(BinaryWriter w)
         {
-
+            w.Write(WreckFallingLevel);
+            w.Write(isUnlockCrackingRay);
+            w.Write(isUnlockRecipesHandcraft);
+            w.Write(UAVHPAndfiringRateUpgradeLevel);
             w.Write(vanillaTechSpeed);
             w.Write(synapticLatheTechSpeed);
         }
@@ -1177,6 +1277,30 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         {
             try
             {
+                WreckFallingLevel = r.ReadInt32();
+                for (int i = 1; i <= WreckFallingLevel; i++)
+                {
+                    UnlockWreckFalling(i);
+                }
+
+                isUnlockCrackingRay = r.ReadBoolean();
+                if (isUnlockCrackingRay)
+                {
+                    UnlockCrackingRayTech();
+                }
+
+                isUnlockRecipesHandcraft = r.ReadBoolean();
+                if (isUnlockRecipesHandcraft)
+                {
+                    UnlockRecipesHandcraft(1945);
+                }
+
+                UAVHPAndfiringRateUpgradeLevel = r.ReadInt32();
+                for (int i = 1; i <= UAVHPAndfiringRateUpgradeLevel; i++)
+                {
+                    UAVHPAndfiringRateUpgrade(i);
+                }
+
                 vanillaTechSpeed = r.ReadInt32();
                 synapticLatheTechSpeed = r.ReadInt32();
             }

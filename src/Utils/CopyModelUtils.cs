@@ -20,7 +20,7 @@ namespace ProjectGenesis.Utils
             CopyModelProto(49, ProtoID.M天穹装配厂, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
             CopyModelProto(49, ProtoID.M物质裂解塔, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             CopyModelProto(49, ProtoID.M巨型化学反应釜, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
-            CopyModelProto(49, ProtoID.M精密结构组装厂, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
+            CopyModelProto(49, ProtoID.M深空物流港, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
             CopyModelProto(56, ProtoID.M人造恒星MK2);
             CopyModelProto(119, ProtoID.M大抽水机, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             CopyModelProto(46, ProtoID.M同位素温差发电机, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
@@ -93,13 +93,13 @@ namespace ProjectGenesis.Utils
 
             newMats.Add(collectEffectMat);
 
-            //ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M大气采集器,
-            //    "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M深空物流港,
+                "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
 
-            //registerModel.HpMax = 300000;
-            //registerModel.RuinId = 384;
-            //registerModel.RuinType = ERuinType.Normal;
-            //registerModel.RuinCount = 1;
+            registerModel.HpMax = 300000;
+            registerModel.RuinId = 384;
+            registerModel.RuinType = ERuinType.Normal;
+            registerModel.RuinCount = 1;
         }
 
         private static void CopyModelProto(int oriId, int id, Color? color = null)

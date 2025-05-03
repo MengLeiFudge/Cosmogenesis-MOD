@@ -6534,6 +6534,50 @@
         "PropertyItemCounts": []
     },
     {
+        "ID": 1958,
+        "Name": "深空物流港",
+        "IconPath": "Icons/Tech/1813",
+        "Desc": "T深空物流港",
+        "Conclusion": "T深空物流港",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            72.0,
+            28.0
+        ],
+        "PreTechs": [
+            1605
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6279,
+            6004,
+            6005
+        ],
+        "ItemPoints": [
+            10,
+            10,
+            10
+        ],
+        "HashNeeded": 720000,
+        "UnlockRecipes": [
+            133
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
         "ID": 1959,
         "Name": "T星环巨构",
         "IconPath": "Assets/texpack/反物质飞弹",

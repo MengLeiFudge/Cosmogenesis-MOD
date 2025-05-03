@@ -51,7 +51,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 new ThemeData(new[] { 0, 1, 2, 5, 14, 15 }, new[] { 2, 2, 3, 0, 6, 22 }, new[] { 0.2f, 0.2f, 0.3f, 0, 0.3f, 1.0f }, new[] { 0.6f, 0.6f, 0.6f, 0, 0.3f, 1.0f },
                     new[] { 0, 1, }, new[]
                 {
-                    0.0f, 1.0f, 1.0f, 0.3f,
+                    0.0f, 0.5f, 0.8f, 0.3f,
                     0.0f, 0.8f, 0.6f, 0.7f,
                 }, new[] { 17, 18, }, new[]
                 {
@@ -62,8 +62,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 10, // 冰原冻土
                 new ThemeData(new[] { 0, 1, 4, 5, 14 }, new[] { 7, 6, 4, 0, 4 }, new[] { 1f, 0.5f, 0.6f, 0, 0.3f }, new[] { 1f, 0.5f, 1f, 0, 0.3f },
-                    Array.Empty<int>(), Array.Empty<float>(), new[] { 17, 18 }, new[]
+                    Array.Empty<int>(), Array.Empty<float>(), new[] { 9, 17, 18 }, new[]
                 {
+                    0.0f, 0.2f, 0.3f, 0.1f, //
                     0.0f, 0.6f, 0.75f, 0.2f, //
                     0.0f, 0.6f, 0.83f, 0.2f, //
                 })
@@ -85,7 +86,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 new ThemeData(new[] { 0, 3, 5, 14, 15 }, new[] { 7, 7, 0, 3, 12 }, new[] { 0.4f, 0.4f, 0, 0.7f, 1.0f }, new[] { 0.8f, 1f, 0, 0.7f, 0.9f },
                     new[] { 0 }, new[]
                 {
-                    0.0f, 0.7f, 0.6f, 0.6f,
+                    0.0f, 0.8f, 0.6f, 0.6f,
                 },  new[] { 17, 18, 19 }, new[]
                 {
                     0.0f, 0.1f, 0.6f, 0.2f, //
@@ -98,7 +99,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 new ThemeData(new[] { 2, 5, 14, 15 }, new[] { 10, 0, 6, 18 }, new[] { 0.6f, 0, 0.5f, 1.0f }, new[] { 0.6f, 0, 0.3f, 1.0f },
                     Array.Empty<int>(), Array.Empty<float>(), new[] { 9, 17, 18}, new[]
                 {
-                    0.0f, 1.0f, 0.6f, 0.6f, //
+                    0.0f, 1.0f, 0.6f, 0.4f, //
                     0.0f, 1.0f, 1.0f, 0.2f, //
                     0.0f, 1.0f, 0.8f, 0.4f, //
                 })
@@ -162,7 +163,10 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 20, // 猩红冰湖
                 new ThemeData(new[] { 0, 1, 3, 14 }, new[] { 11, 5, 8, 2 }, new[] { 1f, 0.8f, 0.3f, 0.2f }, new[] { 1f, 1f, 1f, 0.2f },
-                    Array.Empty<int>(), Array.Empty<float>(), new[] { 17, 18, 19 }, new[]
+                    new[] { 1 }, new[]
+                {
+                    0.0f, 0.0f, 0.0f, 0.0f,
+                },  new[] { 17, 18, 19 }, new[]
                 {
                     0.0f, 0.5f, 0.8f, 0.3f, //
                     0.0f, 0.7f, 0.8f, 0.4f, //
@@ -193,7 +197,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 new ThemeData(new[] { 1, 5, 14, }, new[] { 6, 0, 2, }, new[] { 0.4f, 0, 0.3f, }, new[] { 0.8f, 0, 0.3f, },
                     new[] { 1 }, new[]
                 {
-                    0.0f, 0.2f, 0.5f, 0.6f,
+                    0.0f, 0.0f, 0.0f, 0.0f,
                 },  new[] { 17, 18, 19 }, new[]
                 {
                     0.0f, 0.2f, 0.75f, 0.1f, //

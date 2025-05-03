@@ -1606,8 +1606,8 @@
     },
     {
         "Name": "R突触凝炼机",
-        "ZHCN": "每执行一次该配方，会使手动研究速度加60*2^（n-1）哈希每秒，同时会使该配方下次执行消耗的神经芯片数量<color=\"#FD965ECC\">翻倍</color>。当科技研究<color=\"#FD965ECC\">完成</color>或<color=\"#FD965ECC\">切换</color>时，<color=\"#FD965ECC\">翻倍与加速均清零</color>。",
-        "ENUS": "Each execution of this recipe will increase the manual research speed by 60 * 2 ^ (n-1) hashes per second, and also <color=\"#FD965ECC\">double</color> the number of neural chips consumed in the next execution of the recipe. When technology research is <color=\"#FD965ECC\">completed</color> or <color=\"#FD965ECC\">switched</color>, <color=\"#FD965ECC\">both doubling and acceleration are reset to zero.</color>"
+        "ZHCN": "如果当前研究科技为<color=\"#FD965ECC\">非研究站科技</color>，会使手动研究速度增加120哈希每秒，此后每执行一次该配方，会使增加的研究速度<color=\"#FD965ECC\">翻倍</color>，同时也会使该配方下次执行消耗的神经芯片数量<color=\"#FD965ECC\">翻倍</color>。当科技研究<color=\"#FD965ECC\">完成</color>或<color=\"#FD965ECC\">切换</color>时，<color=\"#FD965ECC\">翻倍与加速均清零</color>。",
+        "ENUS": "If the current research technology is <color=\"#FD965ECC\">non Lab technology</color>, it will increase the manual research speed by 120 hashes per second. After that, every time the formula is executed, the increased research speed will <color=\"#FD965ECC\">double</color>, and the number of neural chips consumed in the next execution of the formula will also <color=\"#FD965ECC\">double</color>. When technology research is <color=\"#FD965ECC\">completed</color> or <color=\"#FD965ECC\">switched</color>, <color=\"#FD965ECC\">both doubling and acceleration are reset to zero.</color>"
     },
     {
         "Name": "手动研究加速",

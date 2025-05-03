@@ -747,7 +747,7 @@
         "ID": 29,
         "Name": "光量子比特",
         "Description": "R光量子比特",
-        "IconPath": "Icons/ItemRecipe/casimir-crystal-lv2",
+        "IconPath": "", // Icons/ItemRecipe/casimir-crystal-lv2
         "Type": 10,
         "GridIndex": 1407,
         "Time": 240,
@@ -1848,18 +1848,20 @@
         "GridIndex": 1809,
         "Time": 240,
         "Input": [
+            1107,
             1123,
             1404
         ],
         "InCounts": [
             1,
-            1
+            4,
+            2
         ],
         "Output": [
             1501
         ],
         "OutCounts": [
-            2
+            1
         ],
         "Explicit": false,
         "Handcraft": false,
@@ -1876,11 +1878,13 @@
         "Input": [
             1108,
             1303,
+            1203,
             1205
         ],
         "InCounts": [
             20,
-            5,
+            2,
+            2,
             10
         ],
         "Output": [
@@ -1902,8 +1906,8 @@
         "GridIndex": 2110,
         "Time": 480,
         "Input": [
-            1103,
-            1105,
+            1108,
+            1119,
             1404,
             1303,
             1205
@@ -1912,7 +1916,7 @@
             20,
             20,
             10,
-            5,
+            10,
             20
         ],
         "Output": [
@@ -2191,18 +2195,16 @@
         "IconPath": "",
         "Type": 9,
         "GridIndex": 2507,
-        "Time": 900,
+        "Time": 1800,
         "Input": [
             1125,
-            2304,
-            2305,
+            1205,
             1303
         ],
         "InCounts": [
-            50,
-            20,
-            10,
-            30
+            15,
+            15,
+            10
         ],
         "Output": [
             2312
@@ -2974,7 +2976,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 9,
-        "GridIndex": 2213,
+        "GridIndex": 2212,
         "Time": 1800,
         "Input": [
             2104,
@@ -3610,26 +3612,30 @@
     },
     {
         "ID": 133,
-        "Name": "燃烧单元",
+        "Name": "深空物流港",
         "Description": "",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
+        "Type": 9,
+        "GridIndex": 2213,
         "Time": 180,
         "Input": [
-            6256
+            1125,
+            7805,
+            2206
         ],
         "InCounts": [
-            6
+            30,
+            10,
+            10
         ],
         "Output": [
-            1128
+            6267
         ],
         "OutCounts": [
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
