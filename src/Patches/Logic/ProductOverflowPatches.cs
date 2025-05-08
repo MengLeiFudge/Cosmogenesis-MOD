@@ -67,15 +67,15 @@ namespace ProjectGenesis.Patches.Logic
 
                     switch (component.recipeId)
                     {
-                        case ProtoID.R等离子精炼:
-                            b = true;
+                        //case ProtoID.R等离子精炼:
+                        //    b = true;
 
-                            break;
+                        //    break;
                     }
 
                     return b && CalcMaxProduct(ref component, productRegister, 19);
 
-                case 1: return CalcMaxProduct(ref component, productRegister, 19);
+                //case 1: return CalcMaxProduct(ref component, productRegister, 19);
 
                 default: return false;
             }
@@ -92,19 +92,19 @@ namespace ProjectGenesis.Patches.Logic
 
                     switch (component.recipeId)
                     {
-                        case ProtoID.R盐水电解:
-                        case ProtoID.R海水淡化:
-                        case ProtoID.R高效石墨烯:
-                        case ProtoID.R水电解:
-                        case ProtoID.R二氧化硫还原:
-                            b = true;
+                        //case ProtoID.R盐水电解:
+                        //case ProtoID.R海水淡化:
+                        //case ProtoID.R高效石墨烯:
+                        //case ProtoID.R水电解:
+                        //case ProtoID.R二氧化硫还原:
+                        //    b = true;
 
-                            break;
+                        //    break;
                     }
 
                     return b && CalcMaxProduct(ref component, productRegister, 19);
 
-                case 1: return CalcMaxProduct(ref component, productRegister, 19);
+                //case 1: return CalcMaxProduct(ref component, productRegister, 19);
 
                 default: return false;
             }
@@ -121,15 +121,15 @@ namespace ProjectGenesis.Patches.Logic
 
                     switch (component.recipeId)
                     {
-                        case ProtoID.R放射性矿物处理:
-                            b = true;
+                        //case ProtoID.R放射性矿物处理:
+                        //    b = true;
 
-                            break;
+                        //    break;
                     }
 
                     return b && CalcMaxProduct(ref component, productRegister, 19);
 
-                case 1: return CalcMaxProduct(ref component, productRegister, 19);
+                //case 1: return CalcMaxProduct(ref component, productRegister, 19);
 
                 default: return false;
             }

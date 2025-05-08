@@ -102,8 +102,8 @@ namespace ProjectGenesis
             ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true,
                 "Show message when GenesisBook is loaded.\n首次加载时的提示信息");
 
-            ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
-                "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
+            //ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
+            //    "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
 
             QToolsHotkey = Config.Bind("config", "QToolsHotkey", KeyboardShortcut.Deserialize("BackQuote"),
                 "Shortcut to open QTools window");
@@ -374,7 +374,7 @@ namespace ProjectGenesis
             LDBToolCacheEntry.Value = currentLDBToolCache;
             //HideTechModeEntry.Value = currentHideTechMode;
             ShowMessageBoxEntry.Value = currentShowMessageBox;
-            ProductOverflowEntry.Value = currentProductOverflow;
+            //ProductOverflowEntry.Value = currentProductOverflow;
             logger.LogInfo("SettingChanged");
             configFile.Save();
         }
