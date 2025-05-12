@@ -1947,10 +1947,12 @@
             63
         ],
         "UnlockFunctions": [
+            37,
             37
         ],
         "UnlockValues": [
-            2203
+            2203,
+            2205
         ],
         "Published": true,
         "Level": 0,
@@ -1968,7 +1970,7 @@
         "ID": 1412,
         "Name": "T火力发电",
         "IconPath": "Icons/Tech/1412",
-        "Desc": "火力发电描述",
+        "Desc": "T火力发电描述",
         "Conclusion": "火力发电结果",
         "IsHiddenTech": false,
         "PreItem": null,
@@ -3059,7 +3061,7 @@
             16.0
         ],
         "PreTechs": [
-            1601
+            1607
         ],
         "PreTechsImplicit": [
             1701
@@ -3294,16 +3296,12 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": false,
+        "IsLabTech": true,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
-        "PropertyOverrideItems": [
-            6001
-        ],
-        "PropertyItemCounts": [
-            20
-        ]
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
     },
     {
         "ID": 1608,

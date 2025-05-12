@@ -14,10 +14,10 @@ namespace ProjectGenesis.Patches.Logic
 
         private static void Init()
         {
-            var gameObject = GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group");
-            GameObject fastStartObj =
-                Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/sandbox-mode/"),
-                    gameObject.transform, false);
+            //var gameObject = GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group");
+            //GameObject fastStartObj =
+            //    Object.Instantiate(GameObject.Find("UI Root/Overlay Canvas/Galaxy Select/setting-group/sandbox-mode/"),
+            //        gameObject.transform, false);
 
             //for (var i = 5; i < gameObject.transform.childCount; i++)
             //{
@@ -29,16 +29,16 @@ namespace ProjectGenesis.Patches.Logic
             //    transform1.localPosition = localPosition;
             //}
 
-            fastStartObj.name = "fast-start-mode";
+            //fastStartObj.name = "fast-start-mode";
             //fastStartObj.transform.localPosition = new Vector3(0, -244, 0);
             //Object.DestroyImmediate(fastStartObj.GetComponent<Localizer>());
             //UIButton button = fastStartObj.GetComponentInChildren<UIButton>();
             //button.tips.tipTitle = "快速开局".TranslateFromJson();
             //button.tips.tipText = "快速开局描述".TranslateFromJson();
             //fastStartObj.GetComponent<Text>().text = "快速开局".TranslateFromJson();
-            _fastStartToggle = fastStartObj.GetComponentInChildren<UIToggle>();
-            _fastStartToggle.isOn = false;
-            _fastStartToggle.toggle.onValueChanged.RemoveAllListeners();
+            //_fastStartToggle = fastStartObj.GetComponentInChildren<UIToggle>();
+            //_fastStartToggle.isOn = false;
+            //_fastStartToggle.toggle.onValueChanged.RemoveAllListeners();
             //_fastStartToggle.toggle.onValueChanged.AddListener(OnToggleValueChanged);
         }
 
@@ -55,9 +55,9 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(UIGalaxySelect), nameof(UIGalaxySelect._OnOpen))]
         public static void UIGalaxySelect_OnOpen()
         {
-            if (!_fastStartToggle) Init();
+            //if (!_fastStartToggle) Init();
 
-            _fastStartToggle.isOn = false;
+            //_fastStartToggle.isOn = false;
         }
 
         [HarmonyPatch(typeof(GameData), nameof(GameData.SetForNewGame))]

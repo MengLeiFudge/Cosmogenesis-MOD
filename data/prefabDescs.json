@@ -77,7 +77,13 @@
     },
     {
         "ModelID": 55,
-        "genEnergyPerTick": 18000
+        "genEnergyPerTick": 18000,
+        "allowBuildInWater": true,
+        "needBuildInWaterTech": true,
+        "waterTypes": [
+            1000,
+            1114
+        ]
     },
     {
         "ModelID": 56,

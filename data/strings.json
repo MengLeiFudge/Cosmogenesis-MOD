@@ -406,8 +406,8 @@
     },
     {
         "Name": "I火力发电厂",
-        "ZHCN": "使用燃料（例如煤）作为原料，通过电化学反应把燃料的化学能转换成电能，输出的能量与所消耗燃料发热量有一定的转化率。",
-        "ENUS": "A facility that converting the chemical energy of a fuel into electrical energy through an electrochemical reaction using a fuel (e.g., coal) as raw materials.."
+        "ZHCN": "使用燃料（例如煤）作为原料，在碳化硅内衬的燃烧室中进行完全燃烧反应，把水转化为蒸汽后由蒸汽轮机转换成电能，作为原始的多级能量转化发电手段，80%能量转化率已经是工程师们的极限。",
+        "ENUS": "Using fuel (such as coal) as raw material, complete combustion reaction is carried out in a combustion chamber lined with silicon carbide, converting water into steam and then converting it into electrical energy by a steam turbine. As the original multi-stage energy conversion power generation method, an 80% energy conversion rate is already the limit of engineers."
     },
     {
         "Name": "重油",
@@ -1935,6 +1935,11 @@
         "ENUS": "Fuel Cell Power"
     },
     {
+        "Name": "T火力发电描述",
+        "ZHCN": "尽管COSMO已经不再使用化学燃烧发电，但是为了各位伊卡洛斯在执行戴森球计划中初期电力需求，工程师们还是把火力蒸汽发电轮机从历史中翻了出来，并以如今的水平进行重新设计优化，将能量转化效率提高至80%。",
+        "ENUS": "Although COSMO no longer uses chemical combustion for power generation, in order to meet the initial electricity needs of Icarus during the execution of the Dyson sphere plan, engineers have turned over the thermal steam turbine from history and redesigned and optimized it at its current level, increasing the energy conversion efficiency to 80%."
+    },
+    {
         "Name": "火力发电结果",
         "ZHCN": "你现在可以使用火力发电厂了，它是一种需要消耗可燃物产生电能的发电设施，有能量转化率。",
         "ENUS": "The Fuel Cell Power Plant is now available, a power generation facility that partially converts the heat energy of combustible fuels to electricity."
@@ -2550,9 +2555,9 @@
         "ENUS": "High purity uranium-235 can be used as nuclear fuel or for the production of nuclear weapons."
     },
     {
-        "Name": "I含钚核燃料",
-        "ZHCN": "钚矿提炼产物，已经可以支撑链式反应。",
-        "ENUS": "The product of refining plutonium ore, which can support the chain reaction."
+        "Name": "电磁弹射井",
+        "ZHCN": "电磁弹射井",
+        "ENUS": "Electromagnetic Catapult Well"
     },
     {
         "Name": "物流立交",

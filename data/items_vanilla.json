@@ -6745,7 +6745,7 @@
   },
   {
     "ID": 2312,
-    "Name": "垂直发射井",
+    "Name": "电磁弹射井",
     "Description": "I垂直发射井",
     "IconPath": "Icons/ItemRecipe/vertical-launching-silo",
     "GridIndex": 2507,

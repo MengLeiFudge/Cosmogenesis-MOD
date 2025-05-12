@@ -361,6 +361,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     case 2101:
                         techProto.Items = new int[] { 6001 };
                         techProto.ItemPoints = new int[] { techProto.ItemPoints[0] };
+                        techProto.IsLabTech = true;
                         break;
                     case 2102:
                         break;
