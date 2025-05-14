@@ -135,7 +135,8 @@ namespace ProjectGenesis.Utils
                            M聚爆加农炮MK2 = 815,
                            M高频激光塔MK2 = 816,
                            M核子单元 = 817,
-                           M反物质炮弹 = 818;
+                           M反物质炮弹 = 818,
+                           M深空货舰 = 819;   
 
         internal const int T戴森球计划 = 1,
                            T电磁学 = 1001,

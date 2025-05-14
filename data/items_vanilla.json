@@ -7880,8 +7880,8 @@
   },
   {
     "ID": 5002,
-    "Name": "星际物流运输船",
-    "Description": "I星际物流运输船",
+    "Name": "太空运输船",
+    "Description": "I太空运输船",
     "IconPath": "Icons/ItemRecipe/logistic-vessel",
     "GridIndex": 1210,
     "StackSize": 5,

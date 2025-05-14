@@ -486,8 +486,8 @@
     },
     {
         "Name": "I同位素温差发电机",
-        "ZHCN": "将钚238的衰变热利用塞贝克效应直接转换成电能的一种致密能源，抗干扰性强。",
-        "ENUS": "A dense energy source that directly converts the decay heat of plutonium-238 into electrical energy using the Seebeck effect, with strong anti-interference ability."
+        "ZHCN": "俗称“核电池”，将钚238的衰变热利用塞贝克效应转换成电能，尽管功率不高，但制作完成就不再需要添加燃料，使用年限长达半衰期89年，性能稳定、无需维护的特点使其在发电和输电困难的偏远地区发挥着重要的作用。\n<color=\"#FD965ECC\">此建筑无条件永久发电</color>",
+        "ENUS": "Commonly known as\" nuclear battery \",By utilizing the Seebeck effect to convert the decay heat of plutonium-238 into electrical energy, although the power is not high, it no longer requires the addition of fuel after production, and has a half-life of 89 years. Its stable performance and maintenance free characteristics make it play an important role in remote areas where power generation and transmission are difficult.\n<color=\"#FD965ECC\">This building has unconditional permanent power generation</color>"
     },
     {
         "Name": "铀矿",
@@ -1020,14 +1020,24 @@
         "ENUS": "Artificial Photonix"
     },
     {
-        "Name": "反物质约束单元",
-        "ZHCN": "反物质约束单元",
-        "ENUS": "Antimatter Restraint Unit"
+        "Name": "I人造恒星MK2",
+        "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
+        "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
     },
     {
-        "Name": "氦闪约束器",
-        "ZHCN": "氦闪约束器",
-        "ENUS": "Helium Flash Restrainer"
+        "Name": "深空物流港",
+        "ZHCN": "深空物流港",
+        "ENUS": "Deep Space Logistics Port"
+    },
+    {
+        "Name": "T深空物流港",
+        "ZHCN": "物流速度和距离决定一个文明的上限，面对跨星系的深空运输，我们需要更加强大的深空货舰，和维护货舰的专业物流港。",
+        "ENUS": "The speed and distance of logistics determine the upper limit of a civilization. In the face of cross galaxy deep space transportation, we need more powerful deep space cargo ships and professional logistics ports to maintain cargo ships."
+    },
+    {
+        "Name": "I深空物流港",
+        "ZHCN": "一座巨型物流港，包含数个集装起重机、专业的曲率引擎检修设备，以及跨星系量子通讯调度塔台。只有它才能撑起一个跨星系文明的物流需求。",
+        "ENUS": "A giant logistics port, including several container cranes, professional curvature engine maintenance equipment, and a cross galaxy quantum communication dispatch tower. Only it can sustain the logistics needs of a cross galaxy civilization."
     },
     {
         "Name": "生态穹顶",
@@ -1058,11 +1068,6 @@
         "Name": "R石料破碎",
         "ZHCN": "将石料破碎为沙土，以供基建使用。",
         "ENUS": "Crush the stone into sand for use in infrastructure construction."
-    },
-    {
-        "Name": "I人造恒星MK2",
-        "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
-        "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
     },
     {
         "Name": "忠诚僚机计划",
@@ -1690,14 +1695,14 @@
         "ENUS": "light oil and heavy oil can be obtained by refining crude oil with plasma."
     },
     {
-        "Name": "催化重整",
-        "ZHCN": "催化重整",
-        "ENUS": "Catalytic Reforming"
+        "Name": "深空货舰",
+        "ZHCN": "深空货舰",
+        "ENUS": "Deep Space Cargo Ship"
     },
     {
-        "Name": "R催化重整",
-        "ZHCN": "经过漫长的重整工序，可以将丙烯合成为苯。效率较低，却是历史上推动化石燃料资源封存的重要技术。",
-        "ENUS": "After a lengthy reforming process, propylene can be synthesized into benzene. Less efficient, but an important technology that has historically driven the sequestration of fossil fuel resources."
+        "Name": "I深空货舰",
+        "ZHCN": "更大的货仓，更坚固的船体，更强大的推进器，组成了深空曲速货舰，它是专门为跨星系运输而生的专业远洋货舰，装备的曲率引擎只要消耗翘曲器，就能以令太空运输船望尘莫及的速度通过星系之间遥远的荒芜地带，保证物流系统的即时性。",
+        "ENUS": "A larger cargo warehouse, a more sturdy hull, and a more powerful propulsion system make up the Deep Space Warplane Cargo Ship. It is a specialized ocean freight ship designed for cross galaxy transportation, equipped with a curvature engine that can travel through distant barren areas between galaxies at a speed far beyond the reach of space transport ships, ensuring the immediacy of the logistics system."
     },
     {
         "Name": "铀235提纯",
@@ -2631,14 +2636,14 @@
         "ENUS": "It is used to collect resources from gas giants. It use radioisotope thermoelectric generator to power the collector to work in orbit."
     },
     {
-        "Name": "二氧化碳",
-        "ZHCN": "二氧化碳",
-        "ENUS": "Carbon Dioxide"
+        "Name": "太空运输船",
+        "ZHCN": "太空运输船",
+        "ENUS": "Space Transport Ship"
     },
     {
-        "Name": "I二氧化碳",
-        "ZHCN": "无色无味的气体，分布广泛。",
-        "ENUS": "Colorless and odorless gas, widely distributed."
+        "Name": "I太空运输船",
+        "ZHCN": "轻量坚韧的钛合金船身，成熟可靠的离子推进器，以及除了引擎就是货仓的大容量设计，构成了串联起星球之间物流系统的运输船。",
+        "ENUS": "The lightweight and tough titanium alloy hull, mature and reliable ion thrusters, and large capacity design of both the engine and the cargo warehouse form a transport ship that connects the logistics systems between planets."
     },
     {
         "Name": "二氧化硫",

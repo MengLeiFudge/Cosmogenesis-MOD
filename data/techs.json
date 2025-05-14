@@ -4196,9 +4196,11 @@
             1411
         ],
         "Items": [
-            6001
+            6001,
+            6002
         ],
         "ItemPoints": [
+            10,
             10
         ],
         "HashNeeded": 108000,
@@ -5945,8 +5947,10 @@
         "IconPath": "Assets/texpack/虚拟技术革新",
         "Desc": "T突触凝炼机",
         "Conclusion": "T突触凝炼机",
-        "IsHiddenTech": false,
-        "PreItem": null,
+        "IsHiddenTech": true,
+        "PreItem": [
+            6245
+        ],
         "Position": [
             84.0,
             -44.0
@@ -6559,7 +6563,8 @@
         ],
         "HashNeeded": 720000,
         "UnlockRecipes": [
-            133
+            133,
+            524
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],

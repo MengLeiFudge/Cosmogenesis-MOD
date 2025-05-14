@@ -33,6 +33,7 @@ namespace ProjectGenesis.Utils
             CopyModelProto(490, ProtoID.M核子单元);
             CopyModelProto(488, ProtoID.M反物质炮弹);
             CopyModelProto(46, ProtoID.M蓄电器, Color.HSVToRGB(0.0833f, 0.8f, 1.0f));
+            CopyModelProto(48, ProtoID.M深空货舰);
 
             AddAtmosphericCollectStation();
             ChangeAccumulatorColor();
