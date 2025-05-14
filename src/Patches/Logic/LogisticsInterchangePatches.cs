@@ -61,6 +61,76 @@ namespace ProjectGenesis.Patches.Logic
 
             
         }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BuildTool_Path), "CheckBuildConditions")]
+        public static void CheckBuildConditionsPatch(BuildTool_Path __instance, ref bool __result)
+        {
+            GameHistoryData history = __instance.actionBuild.history;
+            int count = __instance.buildPreviews.Count;
+            int num = count - 1;
+            for (int i = 0; i < count; i++)
+            {
+                BuildPreview buildPreview = __instance.buildPreviews[i];
+                if (buildPreview.condition == EBuildCondition.OutOfVerticalConstructionHeight)
+                {
+                    if (history.buildMaxHeight + 0.5f <= 64f)
+                    {
+                        buildPreview.condition = EBuildCondition.Ok;
+                        __result = true;
+                        __instance.actionBuild.model.cursorState = 0;
+                        __instance.actionBuild.model.cursorText = BuildPreview.GetConditionText(EBuildCondition.Ok);
+                        float num36 = __instance.altitude;
+                        float num37 = __instance.altitude;
+                        float num38 = __instance.tilt;
+                        float num39 = __instance.tilt;
+                        if (count > 0)
+                        {
+                            num36 = (__instance.buildPreviews[0].lpos.magnitude - __instance.planet.realRadius - 0.2f) / 1.33333325f;
+                            num37 = (__instance.buildPreviews[count - 1].lpos.magnitude - __instance.planet.realRadius - 0.2f) / 1.33333325f;
+                            num36 = Mathf.Round(num36 * 100f) / 100f;
+                            num37 = Mathf.Round(num37 * 100f) / 100f;
+                            if ((double)num36 < 0.041)
+                            {
+                                num36 = 0f;
+                            }
+
+                            if ((double)num37 < 0.041)
+                            {
+                                num37 = 0f;
+                            }
+
+                            num38 = __instance.buildPreviews[0].tilt;
+                            num39 = __instance.buildPreviews[count - 1].tilt;
+                        }
+
+                        if (num36 > 0f || num37 > 0f || num38 != 0f || num39 != 0f || Mathf.Abs(__instance.maxSlope) > 1E-06f)
+                        {
+                            __instance.actionBuild.model.cursorText += "<size=12>";
+                            if (num36 > 0f || num37 > 0f)
+                            {
+                                string arg = ((num36 != num37) ? $"{num36:0.##}\u2006～\u2006{num37:0.##}" : $"{num36:0.##}");
+                                __instance.actionBuild.model.cursorText += string.Format("传送带高度提示".Translate(), arg);
+                            }
+
+                            if (num38 != 0f || num39 != 0f)
+                            {
+                                string arg2 = ((num38 != num39) ? $"{0f - num38:+0.#;-0.#;0}\u2006～\u2006{0f - num39:+0.#;-0.#;0}" : $"{0f - num38:+0.#;-0.#;0}°");
+                                __instance.actionBuild.model.cursorText += string.Format("传送带倾斜提示".Translate(), arg2);
+                            }
+
+                            if (Mathf.Abs(__instance.maxSlope) > 0.01f)
+                            {
+                                string arg3 = ((!(Mathf.Abs(__instance.maxSlope) < 500f)) ? "几乎垂直".Translate() : $"{__instance.maxSlope:0.##}");
+                                __instance.actionBuild.model.cursorText += string.Format("传送带坡度提示".Translate(), arg3);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
         internal static void StationPrefabDescPostAdd810()
         {
             PrefabDesc megaPumper = LDB.models.Select(ProtoID.M物流运输站).prefabDesc;
