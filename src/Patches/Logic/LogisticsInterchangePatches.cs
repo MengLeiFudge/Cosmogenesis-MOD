@@ -62,6 +62,7 @@ namespace ProjectGenesis.Patches.Logic
             
         }
 
+        // 解除传送带的高度受科技限制，为了适配小塔刚解锁时17层接口就可以用
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BuildTool_Path), "CheckBuildConditions")]
         public static void CheckBuildConditionsPatch(BuildTool_Path __instance, ref bool __result)

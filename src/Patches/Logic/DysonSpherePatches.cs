@@ -74,19 +74,16 @@ namespace ProjectGenesis.Patches
             return matcher.InstructionEnumeration();
         }
 
+        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.RequiresCurrent_Gamma))]
+        [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.MaxOutputCurrent_Gamma))]
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Gamma_Req))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> EnergyCap_Gamma_Req_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var matcher = new CodeMatcher(instructions);
-            for (int i = 0; i < 5; i++)
-            {
-                matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 1f));
-                matcher.Advance(1);
-            }
-            // 射线接收站，发电模式功率拉齐光子模式8倍
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 1f));
-            matcher.SetOperandAndAdvance(8f);
+            // 射线接收站，光子模式功率拉齐发电模式1倍
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 8f));
+            matcher.SetOperandAndAdvance(1f);
             return matcher.InstructionEnumeration();
         }
 
