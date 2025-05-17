@@ -616,7 +616,11 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
         internal static void ModifySpacecraftSpeedUpgradeTechs()
         {
-            TechProto techProto = LDB.techs.Select(3406);
+            TechProto techProto = LDB.techs.Select(3404);
+            techProto.UnlockFunctions = new int[] { 15, 34, 16 };
+            techProto.UnlockValues = new double[] { 0.3, 0.15, 0.5 };
+
+            techProto = LDB.techs.Select(3406);
             techProto.Items = new int[] { 6279, 6004, 6005 };
             techProto.ItemPoints = new int[] { techProto.ItemPoints[0], techProto.ItemPoints[0], techProto.ItemPoints[0] };
         }
@@ -686,6 +690,9 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             techProto.LevelCoef2 = techProto.LevelCoef2 / 10;
             techProto.Desc = "T爆破武器伤害无限";
             techProto.RefreshTranslation();
+
+            techProto = LDB.techs.Select(5201);
+            techProto.PreTechsImplicit = new[] { 1807, };
         }
 
         internal static void ModifyWreckageRecoveryUpgradeTechs()

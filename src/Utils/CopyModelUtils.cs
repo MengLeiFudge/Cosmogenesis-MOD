@@ -82,17 +82,17 @@ namespace ProjectGenesis.Utils
                 }
             }
 
-            oriModel = LDB.models.Select(ProtoID.M射线接收站); // ray receiver
-            var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
+            //oriModel = LDB.models.Select(ProtoID.M射线接收站); // ray receiver
+            //var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
 
-            collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
-            collectEffectMat.SetColor("_PolarColor", new Color32(234, 255, 253, 170));
-            collectEffectMat.SetVector("_Aurora", new Vector4(75f, 1f, 20f, 0.1f));
-            collectEffectMat.SetVector("_Beam", new Vector4(12f, 78f, 24f, 1f));
-            collectEffectMat.SetVector("_Particle", new Vector4(2f, 30f, 5f, 0.8f));
-            collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
+            //collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
+            //collectEffectMat.SetColor("_PolarColor", new Color32(234, 255, 253, 170));
+            //collectEffectMat.SetVector("_Aurora", new Vector4(75f, 1f, 20f, 0.1f));
+            //collectEffectMat.SetVector("_Beam", new Vector4(12f, 78f, 24f, 1f));
+            //collectEffectMat.SetVector("_Particle", new Vector4(2f, 30f, 5f, 0.8f));
+            //collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
 
-            newMats.Add(collectEffectMat);
+            //newMats.Add(collectEffectMat);
 
             ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M深空物流港,
                 "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());

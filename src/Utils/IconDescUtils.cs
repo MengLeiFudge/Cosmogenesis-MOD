@@ -19,10 +19,10 @@ namespace ProjectGenesis.Utils
             { 6251, new NoIconFluidIconDesc(new Color32(255, 165, 0, 255)) }, // 岩浆
             { 7018, new NoIconFluidIconDesc(new Color32(97, 132, 186, 255)) },  // Ocean
             { 7006, new NoIconFluidIconDesc(new Color32(218, 56, 70, 255)) },   // 苯
-            { 7009, new NoIconFluidIconDesc(new Color32(167, 255, 39, 255)) },  // 丙烯
+            { 6212, new NoIconFluidIconDesc(new Color32(167, 255, 39, 255)) },  // 丙烯
             { 6206, new NoIconFluidIconDesc(new Color32(191, 227, 255, 255)) }, // CO2
             { 6205, new NoIconFluidIconDesc(new Color32(255, 128, 52, 255)) },  // SO2
-            { 6212, new NoIconFluidIconDesc(new Color32(188, 182, 5, 255)) },   // JP10
+            { 7009, new NoIconFluidIconDesc(new Color32(188, 182, 5, 255)) },   // JP10
             { 7014, new NoIconFluidIconDesc(new Color32(104, 187, 154, 255)) }, // HCl
             { 7015, new NoIconFluidIconDesc(new Color32(42, 97, 32, 255)) },    // FeCl3
             { 7002, new NoIconFluidIconDesc(new Color32(195, 198, 234, 255)) }, // NH3

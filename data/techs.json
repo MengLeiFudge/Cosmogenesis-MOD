@@ -547,6 +547,7 @@
         "HashNeeded": 72000,
         "UnlockRecipes": [
             22,
+            24,
             702,
             712,
             703,
@@ -2710,7 +2711,7 @@
             1501
         ],
         "PreTechsImplicit": [
-            1403
+            1121
         ],
         "Items": [
             6001
@@ -3179,7 +3180,7 @@
     },
     {
         "ID": 1605,
-        "Name": "T太空物流港",
+        "Name": "太空物流港",
         "IconPath": "Icons/Tech/1605",
         "Desc": "星际物流系统描述",
         "Conclusion": "星际物流系统结果",
@@ -4808,11 +4809,19 @@
         "UnlockRecipes": [],
         "UnlockFunctions": [
             10,
-            18
+            18,
+            15,
+            16,
+            17,
+            19
         ],
         "UnlockValues": [
             9,
-            400
+            400,
+            0.5,
+            1.0,
+            0,
+            1000
         ],
         "Published": true,
         "Level": 0,
@@ -5728,8 +5737,7 @@
         ],
         "HashNeeded": 72000,
         "UnlockRecipes": [
-            23,
-            24
+            23
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],

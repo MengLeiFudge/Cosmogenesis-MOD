@@ -5267,11 +5267,11 @@
   },
   {
     "ID": 2104,
-    "Name": "星际物流运输站",
-    "Description": "I星际物流运输站",
+    "Name": "太空物流港",
+    "Description": "I太空物流港",
     "IconPath": "Icons/ItemRecipe/interstellar-logistic-station",
     "GridIndex": 2211,
-    "StackSize": 10,
+    "StackSize": 1,
     "Type": 5,
     "PreTechOverride": 0,
     "DescFields": [
@@ -6959,7 +6959,7 @@
     "Description": "I大型采矿机",
     "IconPath": "Icons/ItemRecipe/mining-drill-mk2",
     "GridIndex": 2413,
-    "StackSize": 30,
+    "StackSize": 10,
     "Type": 6,
     "PreTechOverride": 0,
     "DescFields": [

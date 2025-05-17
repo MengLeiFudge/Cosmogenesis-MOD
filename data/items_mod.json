@@ -2289,7 +2289,7 @@
         "Description": "I深空物流港",
         "IconPath": "Assets/texpack/行星采集器",
         "GridIndex": 2213,
-        "StackSize": 10,
+        "StackSize": 1,
         "Type": 5,
         "PreTechOverride": 0,
         "DescFields": [

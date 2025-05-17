@@ -1007,7 +1007,7 @@
     {
         "Name": "曲率引擎",
         "ZHCN": "曲率引擎",
-        "ENUS": "Curvature engine"
+        "ENUS": "Curvature Engine"
     },
     {
         "Name": "I曲率引擎",
@@ -2571,8 +2571,8 @@
     },
     {
         "Name": "I物流立交",
-        "ZHCN": "地表物流网络的节点，物品在上下两层出入口进行分发和集成运输，在高度发达的工业星球，四通八达的高层的物流传送带将在高空组成新一层“人造地面”。",
-        "ENUS": "The nodes of the surface logistics network, where goods are distributed and integrated for transportation at the upper and lower entrances and exits, will form a new layer of \"artificial ground\" in the highly developed industrial planet, with high-level logistics conveyor belts extending in all directions."
+        "ZHCN": "地表物流网络的节点，物品在上下两层出入口进行分发和集成运输，在高度发达的工业星球，四通八达的高层的物流传送带将在高空组成新一层“人造地面”。\n<color=\"#FD965ECC\">传送带抬升至17层可对接上层接口</color>",
+        "ENUS": "The nodes of the surface logistics network, where goods are distributed and integrated for transportation at the upper and lower entrances and exits, will form a new layer of \"artificial ground\" in the highly developed industrial planet, with high-level logistics conveyor belts extending in all directions.\n<color=\"#FD965ECC\">The belt can be lifted to the 17th floor to dock with the upper interface</color>"
     },
     {
         "Name": "行星物流系统描述",
@@ -3161,7 +3161,7 @@
         "ENUS": "The negative entropy singularity inside the furnace can efficiently reduce entropy in the excited state, reducing impurities in the ore to elemental form. When processing the ore, it can spontaneously maintain the excited state without the need for energy. On the contrary, it cannot spontaneously maintain the excited state during standby and requires continuous input of energy.\n<color=\"#FD965ECC\">Standby power consumption is greater than operating power consumption</color>"
     },
     {
-        "Name": "I星际物流运输站",
+        "Name": "I太空物流港",
         "ZHCN": "巨大的太空电梯，实现了行星之间更便捷的物资运输，可以将星球工厂连结成一个庞大的工业帝国。\n<color=\"#FD965ECC\">“于上天入地之处，取寰宇无穷之物。”</color>",
         "ENUS": "Giant space elevators make it easier to transport materials between planets. They can connect planet factories to a massive industrial empire.\n<color=\"#FD965ECC\">\"From heaven to the earth, take infinite things in the worlds.\"</color>"
     }
