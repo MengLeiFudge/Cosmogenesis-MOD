@@ -5737,7 +5737,9 @@
         ],
         "HashNeeded": 72000,
         "UnlockRecipes": [
-            23
+            23,
+            534,
+            535
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6650,6 +6652,50 @@
         ],
         "HashNeeded": 180000,
         "UnlockRecipes": [],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1961,
+        "Name": "闪速炼钢",
+        "IconPath": "Icons/Tech/1411",
+        "Desc": "R闪速炼钢",
+        "Conclusion": "R闪速炼钢",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            68.0,
+            -4.0
+        ],
+        "PreTechs": [
+            1521
+        ],
+        "PreTechsImplicit": [
+            1417
+        ],
+        "Items": [
+            6279,
+            6004
+        ],
+        "ItemPoints": [
+            10,
+            10
+        ],
+        "HashNeeded": 108000,
+        "UnlockRecipes": [
+            531
+        ],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,

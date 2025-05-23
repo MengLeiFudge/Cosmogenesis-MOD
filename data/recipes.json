@@ -1511,7 +1511,7 @@
     },
     {
         "ID": 57,
-        "Name": "秘银",
+        "Name": "零素装甲",
         "Description": "",
         "IconPath": "",
         "Type": 10,
@@ -1524,7 +1524,7 @@
         ],
         "InCounts": [
             2,
-            2,
+            1,
             12
         ],
         "Output": [
@@ -2583,7 +2583,7 @@
         "InCounts": [
             5,
             4,
-            2,
+            1,
             2
         ],
         "Output": [
@@ -2785,7 +2785,7 @@
     {
         "ID": 104,
         "Name": "奇异物质",
-        "Description": "",
+        "Description": "I奇异物质",
         "IconPath": "",
         "Type": 5,
         "GridIndex": 1312,
@@ -2808,7 +2808,7 @@
             1,
             1
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": true
     },
@@ -3597,7 +3597,7 @@
         "Name": "护盾发生器",
         "Description": "",
         "IconPath": "",
-        "Type": 10,
+        "Type": 4,
         "GridIndex": 5211,
         "Time": 600,
         "Input": [
@@ -4805,7 +4805,7 @@
     {
         "ID": 416,
         "Name": "蓄电器mk2",
-        "Description": "",
+        "Description": "I蓄电器mk2",
         "IconPath": "",
         "Type": 4,
         "GridIndex": 2503,
@@ -4826,7 +4826,7 @@
         "OutCounts": [
             1
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -5353,7 +5353,7 @@
         "Input": [
             1125,
             7805,
-            1803,
+            1802,
             1406,
             6227,
             6263
@@ -5362,7 +5362,7 @@
             10,
             1,
             2,
-            4,
+            2,
             1,
             4
         ],
@@ -5378,25 +5378,27 @@
     },
     {
         "ID": 531,
-        "Name": "铁矿粉",
-        "Description": "",
+        "Name": "闪速炼钢",
+        "Description": "R闪速炼钢",
         "IconPath": "",
         "Type": 11,
-        "GridIndex": 0,
-        "Time": 60,
+        "GridIndex": 3301,
+        "Time": 30,
         "Input": [
-            1001
+            1001,
+            1120
         ],
         "InCounts": [
-            1
+            3,
+            3
         ],
         "Output": [
-            6280
+            1103
         ],
         "OutCounts": [
-            2
+            1
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -5450,49 +5452,55 @@
     },
     {
         "ID": 534,
-        "Name": "钛矿粉",
-        "Description": "",
+        "Name": "高级原油处理",
+        "Description": "R高级原油处理",
         "IconPath": "",
-        "Type": 11,
-        "GridIndex": 0,
-        "Time": 60,
+        "Type": 3,
+        "GridIndex": 4303,
+        "Time": 120,
         "Input": [
-            1004
+            1007,
+            1000
         ],
         "InCounts": [
-            1
-        ],
-        "Output": [
-            6255
-        ],
-        "OutCounts": [
+            2,
             2
         ],
-        "Explicit": false,
+        "Output": [
+            7009,
+            1114,
+            1116
+        ],
+        "OutCounts": [
+            4,
+            1,
+            2
+        ],
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
     {
         "ID": 535,
-        "Name": "石粉",
-        "Description": "",
+        "Name": "煅烧石油焦",
+        "Description": "R煅烧石油焦",
         "IconPath": "",
-        "Type": 11,
-        "GridIndex": 0,
-        "Time": 60,
+        "Type": 3,
+        "GridIndex": 4403,
+        "Time": 120,
         "Input": [
-            1005
+            1114
         ],
         "InCounts": [
-            1
-        ],
-        "Output": [
-            6251
-        ],
-        "OutCounts": [
             2
         ],
-        "Explicit": false,
+        "Output": [
+            1109
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },

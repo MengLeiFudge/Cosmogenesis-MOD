@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using CommonAPI;
 using GalacticScale;
 using HarmonyLib;
+using Newtonsoft.Json.Linq;
 using ProjectGenesis.Utils;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -30,25 +31,25 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         private static readonly Color32[] VeinColors =
         {
             new Color(0.538f, 0.538f, 0.538f), // Default
-            new Color(0.288f, 0.587f, 0.858f), // 铁
+            new Color(0.288f, 0.587f, 0.858f), // 铁 1
             new Color(1.000f, 0.490f, 0.307f), // 铜
             new Color(0.214f, 0.745f, 0.531f), // 硅
             new Color(1.000f, 1.000f, 1.000f), // 钛
             new Color(0.483f, 0.461f, 0.444f), // 石
             new Color(0.113f, 0.130f, 0.140f), // 煤
             new Color(0.000f, 0.000f, 0.000f), // 油
-            new Color(1.000f, 1.000f, 1.000f), // 可燃冰
-            new Color(0.489f, 0.601f, 0.745f), // 金伯利
-            new Color(0.066f, 0.290f, 0.160f), // 莫桑石
-            new Color(0.538f, 0.613f, 0.078f), // 有机
-            new Color(0.575f, 0.270f, 0.830f), // 光栅
-            new Color(0.571f, 0.708f, 0.647f), // 刺笋
-            new Color(0.349f, 0.222f, 0.247f), // 单极
-            new Color(0.113f, 0.130f, 0.140f), // 石墨
-            new Color(0.538f, 0.538f, 0.538f), // 深层岩浆
-            new Color(0.685f, 0.792f, 0.000f), // 放射
-            new Color(0.965f, 0.867f, 0.352f), // 黄铁
-            new Color(0.000f, 0.000f, 0.000f), // 冰
+            new Color(1.000f, 1.000f, 1.000f), // 可燃冰 8
+            new Color(0.489f, 0.601f, 0.745f), // 金伯利 9
+            new Color(0.066f, 0.290f, 0.160f), // 莫桑石 10
+            new Color(0.538f, 0.613f, 0.078f), // 有机 11
+            new Color(0.575f, 0.270f, 0.830f), // 光栅 12
+            new Color(0.571f, 0.708f, 0.647f), // 刺笋 13
+            new Color(0.349f, 0.222f, 0.247f), // 单极 14
+            new Color(0.113f, 0.130f, 0.140f), // 石墨 15
+            new Color(0.538f, 0.538f, 0.538f), // 深层岩浆 16
+            new Color(0.685f, 0.792f, 0.000f), // 放射 17
+            new Color(0.965f, 0.867f, 0.352f), // 黄铁 18
+            new Color(0.000f, 0.000f, 0.000f), // 冰 19
         };
 
         internal static void ModifyVeinData()
@@ -161,6 +162,21 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         }
 
 
+        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm7), nameof(PlanetAlgorithm7.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
+        [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_ResizeVeinList_Transpiler(
+            IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
+            matcher.SetOperandAndAdvance(20);
+
+            return matcher.InstructionEnumeration();
+        }
 
         /*
         [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
@@ -192,21 +208,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             matcher.MatchForward(false,
                 new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(PlanetData), nameof(PlanetData.waterItemId))));
             matcher.Advance(1).SetOpcodeAndAdvance(OpCodes.Br);
-
-            return matcher.InstructionEnumeration();
-        }
-        [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
-        [HarmonyPatch(typeof(PlanetAlgorithm7), nameof(PlanetAlgorithm7.GenerateVeins))]
-        [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
-        [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
-        [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_ResizeVeinList_Transpiler(
-            IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_S, (sbyte)15));
-            matcher.SetOperandAndAdvance(19);
 
             return matcher.InstructionEnumeration();
         }
@@ -555,482 +556,720 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         }
 
 
+        public static void AddBirthGalaxyRareVein(PlanetAlgorithm algorithm, ref int[] array, ref float[] array2, ref float[] array3)
+        {
+            //star id是1，star index是0
+            if (algorithm.planet.star.id == 1)
+            {
+                if (algorithm.planet.index == 3)
+                {
+                    array[8] = 7;
+                    array2[8] = 0.4f;
+                    array3[8] = 0.8f;
+
+                    array[17] = 4;
+                    array2[17] = 0.2f;
+                    array3[17] = 0.5f;
+
+                    array[18] = 3;
+                    array2[18] = 0.2f;
+                    array3[18] = 0.5f;
+
+                    array[19] = 12;
+                    array2[19] = 1.0f;
+                    array3[19] = 1.0f;
+                }
+                if (algorithm.planet.index == 0)
+                {
+                    array[17] = 4;
+                    array2[17] = 0.3f;
+                    array3[17] = 0.7f;
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(PlanetAlgorithm), nameof(PlanetAlgorithm.GenerateVeins))]
-        [HarmonyPatch(typeof(PlanetAlgorithm7), nameof(PlanetAlgorithm7.GenerateVeins))]
+        //[HarmonyPatch(typeof(PlanetAlgorithm7), nameof(PlanetAlgorithm7.GenerateVeins))]  PlanetAlgorithm7的OIL特判只有7处，其他都是8处
         [HarmonyPatch(typeof(PlanetAlgorithm11), nameof(PlanetAlgorithm11.GenerateVeins))]
         [HarmonyPatch(typeof(PlanetAlgorithm12), nameof(PlanetAlgorithm12.GenerateVeins))]
         [HarmonyPatch(typeof(PlanetAlgorithm13), nameof(PlanetAlgorithm13.GenerateVeins))]
-        [HarmonyPrefix]
-        public static bool PlanetAlgorithm_GenerateVeins_Prefix(PlanetAlgorithm __instance)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm_GenerateVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            lock (__instance.planet)
-            {
-                ThemeProto themeProto = LDB.themes.Select(__instance.planet.theme);
-                if (themeProto == null)
-                {
-                    return true;
-                }
+            var matcher = new CodeMatcher(instructions);
 
-                DotNet35Random dotNet35Random = new DotNet35Random(__instance.planet.seed);
-                dotNet35Random.Next();
-                dotNet35Random.Next();
-                dotNet35Random.Next();
-                dotNet35Random.Next();
-                int birthSeed = dotNet35Random.Next();
-                DotNet35Random dotNet35Random2 = new DotNet35Random(dotNet35Random.Next());
-                PlanetRawData data = __instance.planet.data;
-                float num = 2.1f / __instance.planet.radius;
-                VeinProto[] veinProtos = PlanetModelingManager.veinProtos;
-                int[] veinModelIndexs = PlanetModelingManager.veinModelIndexs;
-                int[] veinModelCounts = PlanetModelingManager.veinModelCounts;
-                int[] veinProducts = PlanetModelingManager.veinProducts;
-                int[] array = new int[veinProtos.Length];
-                float[] array2 = new float[veinProtos.Length];
-                float[] array3 = new float[veinProtos.Length];
-                if (themeProto.VeinSpot != null)
-                {
-                    Array.Copy(themeProto.VeinSpot, 0, array, 1, Math.Min(themeProto.VeinSpot.Length, array.Length - 1));
-                }
+            //matcher.MatchForward(false, new CodeMatch(OpCodes.Stelem_R4), new CodeMatch(OpCodes.Ldc_I4_0));
+            //matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
+            //    new CodeInstruction(OpCodes.Ldloca_S, 11),
+            //    new CodeInstruction(OpCodes.Ldloca_S, 12),
+            //    new CodeInstruction(OpCodes.Ldloca_S, 13),
+            //   new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(AddBirthGalaxyRareVein))));
 
-                if (themeProto.VeinCount != null)
-                {
-                    Array.Copy(themeProto.VeinCount, 0, array2, 1, Math.Min(themeProto.VeinCount.Length, array2.Length - 1));
-                }
 
-                if (themeProto.VeinOpacity != null)
-                {
-                    Array.Copy(themeProto.VeinOpacity, 0, array3, 1, Math.Min(themeProto.VeinOpacity.Length, array3.Length - 1));
-                }
 
-                float p = 1f;
-                ESpectrType spectr = __instance.planet.star.spectr;
-                switch (__instance.planet.star.type)
-                {
-                    case EStarType.MainSeqStar:
-                        switch (spectr)
-                        {
-                            case ESpectrType.M:
-                                p = 2.5f;
-                                break;
-                            case ESpectrType.K:
-                                p = 1f;
-                                break;
-                            case ESpectrType.G:
-                                p = 0.7f;
-                                break;
-                            case ESpectrType.F:
-                                p = 0.6f;
-                                break;
-                            case ESpectrType.A:
-                                p = 1f;
-                                break;
-                            case ESpectrType.B:
-                                p = 0.4f;
-                                break;
-                            case ESpectrType.O:
-                                p = 1.6f;
-                                break;
-                        }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            object index = matcher.Operand;
+            object jumpTo = matcher.Advance(2).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
 
-                        break;
-                    case EStarType.GiantStar:
-                        p = 2.5f;
-                        break;
-                    case EStarType.WhiteDwarf:
-                        {
-                            p = 3.5f;
-                            array[9]++;
-                            array[9]++;
-                            for (int j = 1; j < 12; j++)
-                            {
-                                if (dotNet35Random.NextDouble() >= 0.44999998807907104)
-                                {
-                                    break;
-                                }
 
-                                array[9]++;
-                            }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
 
-                            array2[9] = 0.7f;
-                            array3[9] = 1f;
-                            array[10]++;
-                            array[10]++;
-                            for (int k = 1; k < 12; k++)
-                            {
-                                if (dotNet35Random.NextDouble() >= 0.44999998807907104)
-                                {
-                                    break;
-                                }
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ceq));
+            matcher
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Brfalse_S, jumpTo));
 
-                                array[10]++;
-                            }
 
-                            array2[10] = 0.7f;
-                            array3[10] = 1f;
-                            array[12]++;
-                            for (int l = 1; l < 12; l++)
-                            {
-                                if (dotNet35Random.NextDouble() >= 0.5)
-                                {
-                                    break;
-                                }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
 
-                                array[12]++;
-                            }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
 
-                            array2[12] = 0.7f;
-                            array3[12] = 0.3f;
-                            break;
-                        }
-                    case EStarType.NeutronStar:
-                        {
-                            p = 4.5f;
-                            array[14]++;
-                            for (int m = 1; m < 12; m++)
-                            {
-                                if (dotNet35Random.NextDouble() >= 0.64999997615814209)
-                                {
-                                    break;
-                                }
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ceq));
+            matcher
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Brfalse_S, jumpTo));
 
-                                array[14]++;
-                            }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
 
-                            array2[14] = 0.7f;
-                            array3[14] = 0.3f;
-                            break;
-                        }
-                    case EStarType.BlackHole:
-                        {
-                            p = 5f;
-                            array[14]++;
-                            for (int i = 1; i < 12; i++)
-                            {
-                                if (dotNet35Random.NextDouble() >= 0.64999997615814209)
-                                {
-                                    break;
-                                }
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ceq));
+            matcher
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Brfalse_S, jumpTo));
 
-                                array[14]++;
-                            }
 
-                            array2[14] = 0.7f;
-                            array3[14] = 0.3f;
-                            break;
-                        }
-                }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
 
-                for (int n = 0; n < themeProto.RareVeins.Length; n++)
-                {
-                    int num2 = themeProto.RareVeins[n];
-                    float num3 = ((__instance.planet.star.index == 0) ? themeProto.RareSettings[n * 4] : themeProto.RareSettings[n * 4 + 1]);
-                    float num4 = themeProto.RareSettings[n * 4 + 2];
-                    float num5 = themeProto.RareSettings[n * 4 + 3];
-                    float num6 = num5;
-                    num3 = 1f - Mathf.Pow(1f - num3, p);
-                    num5 = 1f - Mathf.Pow(1f - num5, p);
-                    num6 = 1f - Mathf.Pow(1f - num6, p);
-                    if (!(dotNet35Random.NextDouble() < (double)num3))
-                    {
-                        continue;
-                    }
 
-                    array[num2]++;
-                    array2[num2] = num5;
-                    array3[num2] = num5;
-                    for (int num7 = 1; num7 < 12; num7++)
-                    {
-                        if (dotNet35Random.NextDouble() >= (double)num4)
-                        {
-                            break;
-                        }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(3).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
 
-                        array[num2]++;
-                    }
-                }
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(3).Operand;
 
-                //star id是1，star index是0
-                if (__instance.planet.star.id == 1)
-                {
-                    if (__instance.planet.index == 3)
-                    {
-                        array[8] = 7;
-                        array2[8] = 0.4f;
-                        array3[8] = 0.8f;
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ceq));
+            matcher
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Brfalse_S, jumpTo));
 
-                        array[17] = 4;
-                        array2[17] = 0.2f;
-                        array3[17] = 0.5f;
-
-                        array[18] = 3;
-                        array2[18] = 0.2f;
-                        array3[18] = 0.5f;
-
-                        array[19] = 12;
-                        array2[19] = 1.0f;
-                        array3[19] = 1.0f;
-                    }
-                    if (__instance.planet.index == 0)
-                    {
-                        array[17] = 4;
-                        array2[17] = 0.3f;
-                        array3[17] = 0.7f;
-                    }
-                }
-
-                bool flag = __instance.planet.galaxy.birthPlanetId == __instance.planet.id;
-                if (flag)
-                {
-                    __instance.planet.GenBirthPoints(data, birthSeed);
-                }
-
-                float num8 = __instance.planet.star.resourceCoef;
-                bool isInfiniteResource = GameMain.data.gameDesc.isInfiniteResource;
-                bool isRareResource = GameMain.data.gameDesc.isRareResource;
-                if (flag)
-                {
-                    num8 *= 2f / 3f;
-                }
-                else if (isRareResource)
-                {
-                    if (num8 > 1f)
-                    {
-                        num8 = Mathf.Pow(num8, 0.8f);
-                    }
-
-                    num8 *= 0.7f;
-                }
-
-                float num9 = 1f;
-                num9 *= 1.1f;
-                Array.Clear(__instance.veinVectors, 0, __instance.veinVectors.Length);
-                Array.Clear(__instance.veinVectorTypes, 0, __instance.veinVectorTypes.Length);
-                __instance.veinVectorCount = 0;
-                Vector3 birthPoint;
-                if (flag)
-                {
-                    birthPoint = __instance.planet.birthPoint;
-                    birthPoint.Normalize();
-                    birthPoint *= 0.75f;
-                }
-                else
-                {
-                    birthPoint.x = (float)dotNet35Random2.NextDouble() * 2f - 1f;
-                    birthPoint.y = (float)dotNet35Random2.NextDouble() - 0.5f;
-                    birthPoint.z = (float)dotNet35Random2.NextDouble() * 2f - 1f;
-                    birthPoint.Normalize();
-                    birthPoint *= (float)(dotNet35Random2.NextDouble() * 0.4 + 0.2);
-                }
-
-                __instance.planet.veinBiasVector = birthPoint;
-                if (flag)
-                {
-                    __instance.veinVectorTypes[0] = EVeinType.Iron;
-                    __instance.veinVectors[0] = __instance.planet.birthResourcePoint0;
-                    __instance.veinVectorTypes[1] = EVeinType.Copper;
-                    __instance.veinVectors[1] = __instance.planet.birthResourcePoint1;
-                    __instance.veinVectorCount = 2;
-                }
-
-                for (int num10 = 1; num10 < 20; num10++)
-                {
-                    if (__instance.veinVectorCount >= __instance.veinVectors.Length)
-                    {
-                        break;
-                    }
-
-                    EVeinType eVeinType = (EVeinType)num10;
-                    int num11 = array[num10];
-                    if (num11 > 1)
-                    {
-                        num11 += dotNet35Random2.Next(-1, 2);
-                    }
-
-                    for (int num12 = 0; num12 < num11; num12++)
-                    {
-                        int num13 = 0;
-                        Vector3 zero = Vector3.zero;
-                        bool flag2 = false;
-                        while (num13++ < 200)
-                        {
-                            zero.x = (float)dotNet35Random2.NextDouble() * 2f - 1f;
-                            zero.y = (float)dotNet35Random2.NextDouble() * 2f - 1f;
-                            zero.z = (float)dotNet35Random2.NextDouble() * 2f - 1f;
-                            if (eVeinType != EVeinType.Oil || eVeinType != EVeinType.Ice || eVeinType != EVeinType.DeepMagma)
-                            {
-                                zero += birthPoint;
-                            }
-
-                            zero.Normalize();
-                            float num14 = data.QueryHeight(zero);
-                            if (num14 < __instance.planet.radius || ((eVeinType == EVeinType.Oil || eVeinType == EVeinType.Ice || eVeinType == EVeinType.DeepMagma) && num14 < __instance.planet.radius + 0.5f))
-                            {
-                                continue;
-                            }
-
-                            bool flag3 = false;
-                            float num15 = ((eVeinType == EVeinType.Oil || eVeinType == EVeinType.Ice || eVeinType == EVeinType.DeepMagma) ? 100f : 196f);
-                            for (int num16 = 0; num16 < __instance.veinVectorCount; num16++)
-                            {
-                                if ((__instance.veinVectors[num16] - zero).sqrMagnitude < num * num * num15)
-                                {
-                                    flag3 = true;
-                                    break;
-                                }
-                            }
-
-                            if (!flag3)
-                            {
-                                flag2 = true;
-                                break;
-                            }
-                        }
-
-                        if (flag2)
-                        {
-                            __instance.veinVectors[__instance.veinVectorCount] = zero;
-                            __instance.veinVectorTypes[__instance.veinVectorCount] = eVeinType;
-                            __instance.veinVectorCount++;
-                            if (__instance.veinVectorCount == __instance.veinVectors.Length)
-                            {
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                data.veinCursor = 1;
-                __instance.tmp_vecs.Clear();
-                VeinData vein = default(VeinData);
-                for (int num17 = 0; num17 < __instance.veinVectorCount; num17++)
-                {
-                    __instance.tmp_vecs.Clear();
-                    Vector3 normalized = __instance.veinVectors[num17].normalized;
-                    EVeinType eVeinType2 = __instance.veinVectorTypes[num17];
-                    int num18 = (int)eVeinType2;
-                    Quaternion quaternion = Quaternion.FromToRotation(Vector3.up, normalized);
-                    Vector3 vector = quaternion * Vector3.right;
-                    Vector3 vector2 = quaternion * Vector3.forward;
-                    __instance.tmp_vecs.Add(Vector2.zero);
-                    int num19 = Mathf.RoundToInt(array2[num18] * (float)dotNet35Random2.Next(20, 25));
-                    if (eVeinType2 == EVeinType.Oil || eVeinType2 == EVeinType.Ice || eVeinType2 == EVeinType.DeepMagma)
-                    {
-                        num19 = 1;
-                    }
-
-                    float num20 = array3[num18];
-                    if (flag && num17 < 2)
-                    {
-                        num19 = 6;
-                        num20 = 0.2f;
-                    }
-
-                    int num21 = 0;
-                    while (num21++ < 20)
-                    {
-                        int count = __instance.tmp_vecs.Count;
-                        for (int num22 = 0; num22 < count; num22++)
-                        {
-                            if (__instance.tmp_vecs.Count >= num19)
-                            {
-                                break;
-                            }
-
-                            if (__instance.tmp_vecs[num22].sqrMagnitude > 36f)
-                            {
-                                continue;
-                            }
-
-                            double num23 = dotNet35Random2.NextDouble() * Math.PI * 2.0;
-                            Vector2 vector3 = new Vector2((float)Math.Cos(num23), (float)Math.Sin(num23));
-                            vector3 += __instance.tmp_vecs[num22] * 0.2f;
-                            vector3.Normalize();
-                            Vector2 vector4 = __instance.tmp_vecs[num22] + vector3;
-                            bool flag4 = false;
-                            for (int num24 = 0; num24 < __instance.tmp_vecs.Count; num24++)
-                            {
-                                if ((__instance.tmp_vecs[num24] - vector4).sqrMagnitude < 0.85f)
-                                {
-                                    flag4 = true;
-                                    break;
-                                }
-                            }
-
-                            if (!flag4)
-                            {
-                                __instance.tmp_vecs.Add(vector4);
-                            }
-                        }
-
-                        if (__instance.tmp_vecs.Count >= num19)
-                        {
-                            break;
-                        }
-                    }
-
-                    float num25 = num8;
-                    if (eVeinType2 == EVeinType.Oil || eVeinType2 == EVeinType.Ice || eVeinType2 == EVeinType.DeepMagma)
-                    {
-                        num25 = Mathf.Pow(num8, 0.5f);
-                    }
-
-                    int num26 = Mathf.RoundToInt(num20 * 100000f * num25);
-                    if (num26 < 20)
-                    {
-                        num26 = 20;
-                    }
-
-                    int num27 = ((num26 < 16000) ? Mathf.FloorToInt((float)num26 * 0.9375f) : 15000);
-                    int minValue = num26 - num27;
-                    int maxValue = num26 + num27 + 1;
-                    for (int num28 = 0; num28 < __instance.tmp_vecs.Count; num28++)
-                    {
-                        Vector3 vector5 = (__instance.tmp_vecs[num28].x * vector + __instance.tmp_vecs[num28].y * vector2) * num;
-                        vein.type = eVeinType2;
-                        vein.groupIndex = (short)(num17 + 1);
-                        vein.modelIndex = (short)dotNet35Random2.Next(veinModelIndexs[num18], veinModelIndexs[num18] + veinModelCounts[num18]);
-                        vein.amount = Mathf.RoundToInt((float)dotNet35Random2.Next(minValue, maxValue) * num9);
-                        if (eVeinType2 != EVeinType.Oil || eVeinType2 != EVeinType.Ice || eVeinType2 != EVeinType.DeepMagma)
-                        {
-                            vein.amount = Mathf.RoundToInt((float)vein.amount * DSPGame.GameDesc.resourceMultiplier);
-                        }
-                        else
-                        {
-                            vein.amount = Mathf.RoundToInt((float)vein.amount * DSPGame.GameDesc.oilAmountMultiplier);
-                        }
-
-                        if (vein.amount < 1)
-                        {
-                            vein.amount = 1;
-                        }
-
-                        if (isInfiniteResource && (vein.type != EVeinType.Oil || vein.type != EVeinType.Ice || vein.type != EVeinType.DeepMagma))
-                        {
-                            vein.amount = 1000000000;
-                        }
-
-                        vein.productId = veinProducts[num18];
-                        vein.pos = normalized + vector5;
-                        if (vein.type == EVeinType.Oil || vein.type == EVeinType.Ice || vein.type == EVeinType.DeepMagma)
-                        {
-                            vein.pos = __instance.planet.aux.RawSnap(vein.pos);
-                        }
-
-                        vein.minerCount = 0;
-                        float num29 = data.QueryHeight(vein.pos);
-                        data.EraseVegetableAtPoint(vein.pos);
-                        vein.pos = vein.pos.normalized * num29;
-                        if (__instance.planet.waterItemId == 0 || !(num29 < __instance.planet.radius))
-                        {
-                            data.AddVeinData(vein);
-                        }
-                    }
-                }
-
-                __instance.tmp_vecs.Clear();
-                return false;
-            }
+            return matcher.InstructionEnumeration();
         }
+
+        [HarmonyPatch(typeof(PlanetAlgorithm7), nameof(PlanetAlgorithm7.GenerateVeins))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> PlanetAlgorithm7_GenerateVeins_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            object index = matcher.Operand;
+            object jumpTo = matcher.Advance(2).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
+
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ceq));
+            matcher
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Brfalse_S, jumpTo));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
+
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ceq));
+            matcher
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Brfalse_S, jumpTo));
+
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(2).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
+
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(3).Operand;
+            matcher.Advance(1);
+            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19)).InsertAndAdvance(new CodeInstruction(OpCodes.Beq_S, jumpTo));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))), new CodeMatch(OpCodes.Ldc_I4_7));
+            index = matcher.Operand;
+            jumpTo = matcher.Advance(3).Operand;
+
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ceq));
+            matcher
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)16))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(VeinData), nameof(VeinData.type))))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_S, (sbyte)19))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Or))
+               .InsertAndAdvance(new CodeInstruction(OpCodes.Brfalse_S, jumpTo));
+
+            return matcher.InstructionEnumeration();
+        }
+
+
+
+        //[HarmonyPrefix]
+        //public static bool PlanetAlgorithm_GenerateVeins_Prefix(PlanetAlgorithm __instance)
+        //{
+        //    lock (__instance.planet)
+        //    {
+        //        ThemeProto themeProto = LDB.themes.Select(__instance.planet.theme);
+        //        if (themeProto == null)
+        //        {
+        //            return true;
+        //        }
+
+        //        DotNet35Random dotNet35Random = new DotNet35Random(__instance.planet.seed);
+        //        dotNet35Random.Next();
+        //        dotNet35Random.Next();
+        //        dotNet35Random.Next();
+        //        dotNet35Random.Next();
+        //        int birthSeed = dotNet35Random.Next();
+        //        DotNet35Random dotNet35Random2 = new DotNet35Random(dotNet35Random.Next());
+        //        PlanetRawData data = __instance.planet.data;
+        //        float num = 2.1f / __instance.planet.radius;
+        //        VeinProto[] veinProtos = PlanetModelingManager.veinProtos;
+        //        int[] veinModelIndexs = PlanetModelingManager.veinModelIndexs;
+        //        int[] veinModelCounts = PlanetModelingManager.veinModelCounts;
+        //        int[] veinProducts = PlanetModelingManager.veinProducts;
+        //        int[] array = new int[veinProtos.Length];
+        //        float[] array2 = new float[veinProtos.Length];
+        //        float[] array3 = new float[veinProtos.Length];
+        //        if (themeProto.VeinSpot != null)
+        //        {
+        //            Array.Copy(themeProto.VeinSpot, 0, array, 1, Math.Min(themeProto.VeinSpot.Length, array.Length - 1));
+        //        }
+
+        //        if (themeProto.VeinCount != null)
+        //        {
+        //            Array.Copy(themeProto.VeinCount, 0, array2, 1, Math.Min(themeProto.VeinCount.Length, array2.Length - 1));
+        //        }
+
+        //        if (themeProto.VeinOpacity != null)
+        //        {
+        //            Array.Copy(themeProto.VeinOpacity, 0, array3, 1, Math.Min(themeProto.VeinOpacity.Length, array3.Length - 1));
+        //        }
+
+        //        float p = 1f;
+        //        ESpectrType spectr = __instance.planet.star.spectr;
+        //        switch (__instance.planet.star.type)
+        //        {
+        //            case EStarType.MainSeqStar:
+        //                switch (spectr)
+        //                {
+        //                    case ESpectrType.M:
+        //                        p = 2.5f;
+        //                        break;
+        //                    case ESpectrType.K:
+        //                        p = 1f;
+        //                        break;
+        //                    case ESpectrType.G:
+        //                        p = 0.7f;
+        //                        break;
+        //                    case ESpectrType.F:
+        //                        p = 0.6f;
+        //                        break;
+        //                    case ESpectrType.A:
+        //                        p = 1f;
+        //                        break;
+        //                    case ESpectrType.B:
+        //                        p = 0.4f;
+        //                        break;
+        //                    case ESpectrType.O:
+        //                        p = 1.6f;
+        //                        break;
+        //                }
+
+        //                break;
+        //            case EStarType.GiantStar:
+        //                p = 2.5f;
+        //                break;
+        //            case EStarType.WhiteDwarf:
+        //                {
+        //                    p = 3.5f;
+        //                    array[9]++;
+        //                    array[9]++;
+        //                    for (int j = 1; j < 12; j++)
+        //                    {
+        //                        if (dotNet35Random.NextDouble() >= 0.44999998807907104)
+        //                        {
+        //                            break;
+        //                        }
+
+        //                        array[9]++;
+        //                    }
+
+        //                    array2[9] = 0.7f;
+        //                    array3[9] = 1f;
+        //                    array[10]++;
+        //                    array[10]++;
+        //                    for (int k = 1; k < 12; k++)
+        //                    {
+        //                        if (dotNet35Random.NextDouble() >= 0.44999998807907104)
+        //                        {
+        //                            break;
+        //                        }
+
+        //                        array[10]++;
+        //                    }
+
+        //                    array2[10] = 0.7f;
+        //                    array3[10] = 1f;
+        //                    array[12]++;
+        //                    for (int l = 1; l < 12; l++)
+        //                    {
+        //                        if (dotNet35Random.NextDouble() >= 0.5)
+        //                        {
+        //                            break;
+        //                        }
+
+        //                        array[12]++;
+        //                    }
+
+        //                    array2[12] = 0.7f;
+        //                    array3[12] = 0.3f;
+        //                    break;
+        //                }
+        //            case EStarType.NeutronStar:
+        //                {
+        //                    p = 4.5f;
+        //                    array[14]++;
+        //                    for (int m = 1; m < 12; m++)
+        //                    {
+        //                        if (dotNet35Random.NextDouble() >= 0.64999997615814209)
+        //                        {
+        //                            break;
+        //                        }
+
+        //                        array[14]++;
+        //                    }
+
+        //                    array2[14] = 0.7f;
+        //                    array3[14] = 0.3f;
+        //                    break;
+        //                }
+        //            case EStarType.BlackHole:
+        //                {
+        //                    p = 5f;
+        //                    array[14]++;
+        //                    for (int i = 1; i < 12; i++)
+        //                    {
+        //                        if (dotNet35Random.NextDouble() >= 0.64999997615814209)
+        //                        {
+        //                            break;
+        //                        }
+
+        //                        array[14]++;
+        //                    }
+
+        //                    array2[14] = 0.7f;
+        //                    array3[14] = 0.3f;
+        //                    break;
+        //                }
+        //        }
+        //        //star id是1，star index是0
+        //        if (__instance.planet.star.id == 1)
+        //        {
+        //            if (__instance.planet.index == 3)
+        //            {
+        //                array[8] = 7;
+        //                array2[8] = 0.4f;
+        //                array3[8] = 0.8f;
+
+        //                array[17] = 4;
+        //                array2[17] = 0.2f;
+        //                array3[17] = 0.5f;
+
+        //                array[18] = 3;
+        //                array2[18] = 0.2f;
+        //                array3[18] = 0.5f;
+
+        //                array[19] = 12;
+        //                array2[19] = 1.0f;
+        //                array3[19] = 1.0f;
+        //            }
+        //            if (__instance.planet.index == 0)
+        //            {
+        //                array[17] = 4;
+        //                array2[17] = 0.3f;
+        //                array3[17] = 0.7f;
+        //            }
+        //        }
+
+        //        for (int n = 0; n < themeProto.RareVeins.Length; n++)
+        //        {
+        //            int num2 = themeProto.RareVeins[n];
+        //            float num3 = ((__instance.planet.star.index == 0) ? themeProto.RareSettings[n * 4] : themeProto.RareSettings[n * 4 + 1]);
+        //            float num4 = themeProto.RareSettings[n * 4 + 2];
+        //            float num5 = themeProto.RareSettings[n * 4 + 3];
+        //            float num6 = num5;
+        //            num3 = 1f - Mathf.Pow(1f - num3, p);
+        //            num5 = 1f - Mathf.Pow(1f - num5, p);
+        //            num6 = 1f - Mathf.Pow(1f - num6, p);
+        //            if (!(dotNet35Random.NextDouble() < (double)num3))
+        //            {
+        //                continue;
+        //            }
+
+        //            array[num2]++;
+        //            array2[num2] = num5;
+        //            array3[num2] = num5;
+        //            for (int num7 = 1; num7 < 12; num7++)
+        //            {
+        //                if (dotNet35Random.NextDouble() >= (double)num4)
+        //                {
+        //                    break;
+        //                }
+
+        //                array[num2]++;
+        //            }
+        //        }
+
+
+        //        bool flag = __instance.planet.galaxy.birthPlanetId == __instance.planet.id;
+        //        if (flag)
+        //        {
+        //            __instance.planet.GenBirthPoints(data, birthSeed);
+        //        }
+
+        //        float num8 = __instance.planet.star.resourceCoef;
+        //        bool isInfiniteResource = GameMain.data.gameDesc.isInfiniteResource;
+        //        bool isRareResource = GameMain.data.gameDesc.isRareResource;
+        //        if (flag)
+        //        {
+        //            num8 *= 2f / 3f;
+        //        }
+        //        else if (isRareResource)
+        //        {
+        //            if (num8 > 1f)
+        //            {
+        //                num8 = Mathf.Pow(num8, 0.8f);
+        //            }
+
+        //            num8 *= 0.7f;
+        //        }
+
+        //        float num9 = 1f;
+        //        num9 *= 1.1f;
+        //        Array.Clear(__instance.veinVectors, 0, __instance.veinVectors.Length);
+        //        Array.Clear(__instance.veinVectorTypes, 0, __instance.veinVectorTypes.Length);
+        //        __instance.veinVectorCount = 0;
+        //        Vector3 birthPoint;
+        //        if (flag)
+        //        {
+        //            birthPoint = __instance.planet.birthPoint;
+        //            birthPoint.Normalize();
+        //            birthPoint *= 0.75f;
+        //        }
+        //        else
+        //        {
+        //            birthPoint.x = (float)dotNet35Random2.NextDouble() * 2f - 1f;
+        //            birthPoint.y = (float)dotNet35Random2.NextDouble() - 0.5f;
+        //            birthPoint.z = (float)dotNet35Random2.NextDouble() * 2f - 1f;
+        //            birthPoint.Normalize();
+        //            birthPoint *= (float)(dotNet35Random2.NextDouble() * 0.4 + 0.2);
+        //        }
+
+        //        __instance.planet.veinBiasVector = birthPoint;
+        //        if (flag)
+        //        {
+        //            __instance.veinVectorTypes[0] = EVeinType.Iron;
+        //            __instance.veinVectors[0] = __instance.planet.birthResourcePoint0;
+        //            __instance.veinVectorTypes[1] = EVeinType.Copper;
+        //            __instance.veinVectors[1] = __instance.planet.birthResourcePoint1;
+        //            __instance.veinVectorCount = 2;
+        //        }
+
+        //        for (int num10 = 1; num10 < 20; num10++)
+        //        {
+        //            if (__instance.veinVectorCount >= __instance.veinVectors.Length)
+        //            {
+        //                break;
+        //            }
+
+        //            EVeinType eVeinType = (EVeinType)num10;
+        //            int num11 = array[num10];
+        //            if (num11 > 1)
+        //            {
+        //                num11 += dotNet35Random2.Next(-1, 2);
+        //            }
+
+        //            for (int num12 = 0; num12 < num11; num12++)
+        //            {
+        //                int num13 = 0;
+        //                Vector3 zero = Vector3.zero;
+        //                bool flag2 = false;
+        //                while (num13++ < 200)
+        //                {
+        //                    zero.x = (float)dotNet35Random2.NextDouble() * 2f - 1f;
+        //                    zero.y = (float)dotNet35Random2.NextDouble() * 2f - 1f;
+        //                    zero.z = (float)dotNet35Random2.NextDouble() * 2f - 1f;
+        //                    if (eVeinType != EVeinType.Oil && eVeinType != EVeinType.Ice && eVeinType != EVeinType.DeepMagma)
+        //                    {
+        //                        zero += birthPoint;
+        //                    }
+
+        //                    zero.Normalize();
+        //                    float num14 = data.QueryHeight(zero);
+        //                    if (num14 < __instance.planet.radius || ((eVeinType == EVeinType.Oil || eVeinType == EVeinType.Ice || eVeinType == EVeinType.DeepMagma) && num14 < __instance.planet.radius + 0.5f))
+        //                    {
+        //                        continue;
+        //                    }
+
+        //                    bool flag3 = false;
+        //                    float num15 = ((eVeinType == EVeinType.Oil || eVeinType == EVeinType.Ice || eVeinType == EVeinType.DeepMagma) ? 100f : 196f);
+        //                    for (int num16 = 0; num16 < __instance.veinVectorCount; num16++)
+        //                    {
+        //                        if ((__instance.veinVectors[num16] - zero).sqrMagnitude < num * num * num15)
+        //                        {
+        //                            flag3 = true;
+        //                            break;
+        //                        }
+        //                    }
+
+        //                    if (!flag3)
+        //                    {
+        //                        flag2 = true;
+        //                        break;
+        //                    }
+        //                }
+
+        //                if (flag2)
+        //                {
+        //                    __instance.veinVectors[__instance.veinVectorCount] = zero;
+        //                    __instance.veinVectorTypes[__instance.veinVectorCount] = eVeinType;
+        //                    __instance.veinVectorCount++;
+        //                    if (__instance.veinVectorCount == __instance.veinVectors.Length)
+        //                    {
+        //                        break;
+        //                    }
+        //                }
+        //            }
+        //        }
+
+        //        data.veinCursor = 1;
+        //        __instance.tmp_vecs.Clear();
+        //        VeinData vein = default(VeinData);
+        //        for (int num17 = 0; num17 < __instance.veinVectorCount; num17++)
+        //        {
+        //            __instance.tmp_vecs.Clear();
+        //            Vector3 normalized = __instance.veinVectors[num17].normalized;
+        //            EVeinType eVeinType2 = __instance.veinVectorTypes[num17];
+        //            int num18 = (int)eVeinType2;
+        //            Quaternion quaternion = Quaternion.FromToRotation(Vector3.up, normalized);
+        //            Vector3 vector = quaternion * Vector3.right;
+        //            Vector3 vector2 = quaternion * Vector3.forward;
+        //            __instance.tmp_vecs.Add(Vector2.zero);
+        //            int num19 = Mathf.RoundToInt(array2[num18] * (float)dotNet35Random2.Next(20, 25));
+        //            if (eVeinType2 == EVeinType.Oil || eVeinType2 == EVeinType.Ice || eVeinType2 == EVeinType.DeepMagma)
+        //            {
+        //                num19 = 1;
+        //            }
+
+        //            float num20 = array3[num18];
+        //            if (flag && num17 < 2)
+        //            {
+        //                num19 = 6;
+        //                num20 = 0.2f;
+        //            }
+
+        //            int num21 = 0;
+        //            while (num21++ < 20)
+        //            {
+        //                int count = __instance.tmp_vecs.Count;
+        //                for (int num22 = 0; num22 < count; num22++)
+        //                {
+        //                    if (__instance.tmp_vecs.Count >= num19)
+        //                    {
+        //                        break;
+        //                    }
+
+        //                    if (__instance.tmp_vecs[num22].sqrMagnitude > 36f)
+        //                    {
+        //                        continue;
+        //                    }
+
+        //                    double num23 = dotNet35Random2.NextDouble() * Math.PI * 2.0;
+        //                    Vector2 vector3 = new Vector2((float)Math.Cos(num23), (float)Math.Sin(num23));
+        //                    vector3 += __instance.tmp_vecs[num22] * 0.2f;
+        //                    vector3.Normalize();
+        //                    Vector2 vector4 = __instance.tmp_vecs[num22] + vector3;
+        //                    bool flag4 = false;
+        //                    for (int num24 = 0; num24 < __instance.tmp_vecs.Count; num24++)
+        //                    {
+        //                        if ((__instance.tmp_vecs[num24] - vector4).sqrMagnitude < 0.85f)
+        //                        {
+        //                            flag4 = true;
+        //                            break;
+        //                        }
+        //                    }
+
+        //                    if (!flag4)
+        //                    {
+        //                        __instance.tmp_vecs.Add(vector4);
+        //                    }
+        //                }
+
+        //                if (__instance.tmp_vecs.Count >= num19)
+        //                {
+        //                    break;
+        //                }
+        //            }
+
+        //            float num25 = num8;
+        //            if (eVeinType2 == EVeinType.Oil || eVeinType2 == EVeinType.Ice || eVeinType2 == EVeinType.DeepMagma)
+        //            {
+        //                num25 = Mathf.Pow(num8, 0.5f);
+        //            }
+
+        //            int num26 = Mathf.RoundToInt(num20 * 100000f * num25);
+        //            if (num26 < 20)
+        //            {
+        //                num26 = 20;
+        //            }
+
+        //            int num27 = ((num26 < 16000) ? Mathf.FloorToInt((float)num26 * 0.9375f) : 15000);
+        //            int minValue = num26 - num27;
+        //            int maxValue = num26 + num27 + 1;
+        //            for (int num28 = 0; num28 < __instance.tmp_vecs.Count; num28++)
+        //            {
+        //                Vector3 vector5 = (__instance.tmp_vecs[num28].x * vector + __instance.tmp_vecs[num28].y * vector2) * num;
+        //                vein.type = eVeinType2;
+        //                vein.groupIndex = (short)(num17 + 1);
+        //                vein.modelIndex = (short)dotNet35Random2.Next(veinModelIndexs[num18], veinModelIndexs[num18] + veinModelCounts[num18]);
+        //                vein.amount = Mathf.RoundToInt((float)dotNet35Random2.Next(minValue, maxValue) * num9);
+        //                if (eVeinType2 != EVeinType.Oil && eVeinType2 != EVeinType.Ice && eVeinType2 != EVeinType.DeepMagma)
+        //                {
+        //                    vein.amount = Mathf.RoundToInt((float)vein.amount * DSPGame.GameDesc.resourceMultiplier);
+        //                }
+        //                else
+        //                {
+        //                    vein.amount = Mathf.RoundToInt((float)vein.amount * DSPGame.GameDesc.oilAmountMultiplier);
+        //                }
+
+        //                if (vein.amount < 1)
+        //                {
+        //                    vein.amount = 1;
+        //                }
+
+        //                if (isInfiniteResource && (vein.type != EVeinType.Oil && vein.type != EVeinType.Ice && vein.type != EVeinType.DeepMagma))
+        //                {
+        //                    vein.amount = 1000000000;
+        //                }
+
+        //                vein.productId = veinProducts[num18];
+        //                vein.pos = normalized + vector5;
+        //                if (vein.type == EVeinType.Oil || vein.type == EVeinType.Ice || vein.type == EVeinType.DeepMagma)
+        //                {
+        //                    vein.pos = __instance.planet.aux.RawSnap(vein.pos);
+        //                }
+
+        //                vein.minerCount = 0;
+        //                float num29 = data.QueryHeight(vein.pos);
+        //                data.EraseVegetableAtPoint(vein.pos);
+        //                vein.pos = vein.pos.normalized * num29;
+        //                if (__instance.planet.waterItemId == 0 || !(num29 < __instance.planet.radius))
+        //                {
+        //                    data.AddVeinData(vein);
+        //                }
+        //            }
+        //        }
+
+        //        __instance.tmp_vecs.Clear();
+        //        return false;
+        //    }
+        //}
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIVeinDetailNode), "_OnUpdate")]

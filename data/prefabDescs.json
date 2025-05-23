@@ -343,9 +343,24 @@
     },
     {
         "ModelID": 807,
+        "isPowerGen": true,
+        //"isStation": false,
+        //"isStellarStation": false,
+        //"isPowerConsumer": false,
+        //"isPowerNode": false,
+        //"powerPoint": [ 2, 50, 2 ],
+        //"powerCoverRadius": 10,
+        //"powerConnectDistance": 20.5,
         "genEnergyPerTick": 100000000,
         "useFuelPerTick": 100000000,
-        "fuelMask": 4
+        "fuelMask": 4,
+        //"workEnergyPerTick": 10,
+        //"idleEnergyPerTick": 10,
+        "stationMaxEnergyAcc": 0,
+        "stationMaxItemCount": 0,
+        "stationMaxItemKinds": 0,
+        "stationMaxDroneCount": 0,
+        "stationMaxShipCount": 0
     },
     {
         "ModelID": 808,

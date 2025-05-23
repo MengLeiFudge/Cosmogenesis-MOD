@@ -58,7 +58,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.Cosmogenesis";
         public const string MODNAME = "Cosmogenesis";
-        public const string VERSION = "0.6.11";
+        public const string VERSION = "0.6.14";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -239,8 +239,8 @@ namespace ProjectGenesis
         {
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
-            vegeProto.MiningItem = new[] { 2303, 2001, 2011, 7609, 6219 }; // 4黄台，500黄带，300黄爪，1零素矢，2满蓄电器MK1
-            vegeProto.MiningCount = new[] { 4, 500, 300, 1, 2 };
+            vegeProto.MiningItem = new[] { 2303, 2001, 2011, 7609, 6219 }; // 4黄台，500黄带，300黄爪，1零素矢，4满蓄电器MK1
+            vegeProto.MiningCount = new[] { 4, 500, 300, 1, 4 };
             vegeProto.MiningChance = new float[] { 1, 1, 1, 1, 1 };
             vegeProto.Preload();
 

@@ -5324,7 +5324,7 @@
     "Description": "I轨道采集器",
     "IconPath": "Icons/ItemRecipe/orbital-collector",
     "GridIndex": 2212,
-    "StackSize": 10,
+    "StackSize": 1,
     "Type": 5,
     "PreTechOverride": 0,
     "DescFields": [

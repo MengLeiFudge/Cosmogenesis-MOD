@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 new ThemeData(new[] { 1, 14 }, new[] { 5, 2 }, new[] { 0.5f, 0.2f }, new[] { 0.4f, 1.0f },
                     Array.Empty<int>(), Array.Empty<float>(), new[] { 18 }, new[]
                 {
-                    1.0f, 1.0f, 1.0f, 0.4f
+                    1.0f, 1.0f, 0.6f, 0.3f
                 })
             },
             {
@@ -30,11 +30,14 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 7, // 灰烬冻土
                 new ThemeData(new[] { 1, 2, 5, 14 }, new[] { 6, 8, 0, 2 }, new[] { 0.4f, 0.5f, 0, 0.3f }, new[] { 0.6f, 0.3f, 0, 0.3f },
-                    Array.Empty<int>(), Array.Empty<float>(), new[] { 17, 18, 19 }, new[]
+                    new[] { 0 }, new[]
                 {
-                    0.0f, 0.4f, 0.8f, 0.1f,
-                    0.0f, 0.3f, 0.83f, 0.1f, //
-                    0.0f, 0.6f, 0.75f, 0.7f, //
+                    1.0f, 0.5f, 0.7f, 0.5f,
+                }, new[] { 17, 18, 19 }, new[]
+                {
+                    1.0f, 0.4f, 0.8f, 0.2f,
+                    1.0f, 0.3f, 0.83f, 0.2f, //
+                    1.0f, 0.6f, 0.75f, 0.7f, //
                 })
             },
             {
@@ -55,18 +58,21 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     0.0f, 0.8f, 0.6f, 0.7f,
                 }, new[] { 17, 18, }, new[]
                 {
-                    0.0f, 1.0f, 1.0f, 0.2f, //
+                    1.0f, 1.0f, 1.0f, 0.2f, //
                     0.0f, 0.8f, 0.5f, 0.5f, //
                 })
             },
             {
                 10, // 冰原冻土
                 new ThemeData(new[] { 0, 1, 4, 5, 14 }, new[] { 7, 6, 4, 0, 4 }, new[] { 1f, 0.5f, 0.6f, 0, 0.3f }, new[] { 1f, 0.5f, 1f, 0, 0.3f },
-                    Array.Empty<int>(), Array.Empty<float>(), new[] { 9, 17, 18 }, new[]
+                    new[] { 0 }, new[]
+                {
+                    1.0f, 1f, 0.8f, 1f,
+                }, new[] { 9, 17, 18 }, new[]
                 {
                     0.0f, 0.2f, 0.3f, 0.1f, //
-                    0.0f, 0.6f, 0.75f, 0.2f, //
-                    0.0f, 0.6f, 0.83f, 0.2f, //
+                    1.0f, 0.6f, 0.75f, 0.2f, //
+                    1.0f, 0.6f, 0.83f, 0.2f, //
                 })
             },
             {
@@ -127,7 +133,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             },
             {
                 16, // 水世界
-                new ThemeData(Array.Empty<int>(), Array.Empty<int>(), Array.Empty<float>(), Array.Empty<float>(),
+                new ThemeData(new[] { 0, 1, 2, 3, 4 }, new[] { 6, 5, 2, 3, 5 }, new[] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f }, new[] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f},
                     Array.Empty<int>(), Array.Empty<float>(), new[] { 8, }, new[]
                 {
                     0.0f, 1.0f, 0.85f, 0.8f, //
@@ -163,14 +169,15 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             {
                 20, // 猩红冰湖
                 new ThemeData(new[] { 0, 1, 3, 14 }, new[] { 11, 5, 8, 2 }, new[] { 1f, 0.8f, 0.3f, 0.2f }, new[] { 1f, 1f, 1f, 0.2f },
-                    new[] { 1 }, new[]
+                    new[] { 0, 1 }, new[]
                 {
+                    1.0f, 1f, 0.6f, 0.7f,
                     0.0f, 0.0f, 0.0f, 0.0f,
                 },  new[] { 17, 18, 19 }, new[]
                 {
-                    0.0f, 0.5f, 0.8f, 0.3f, //
-                    0.0f, 0.7f, 0.8f, 0.4f, //
-                    0.0f, 0.6f, 1.0f, 1.0f, //
+                    1.0f, 0.5f, 0.8f, 0.3f, //
+                    1.0f, 0.7f, 0.8f, 0.4f, //
+                    1.0f, 0.6f, 1.0f, 1.0f, //
                 })
             },
             {
@@ -184,7 +191,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             },
             {
                 23, // 橙晶荒漠
-                new ThemeData(new[] { 1, 2, 4, 5, 14 }, new[] { 7, 6, 4, 0, 2 }, new[] { 0.6f, 0.6f, 0.5f, 0, 0.6f }, new[] { 0.8f, 0.6f, 0.6f, 0, 0.5f },
+                new ThemeData(new[] { 0, 1, 2, 4, 5, 14 }, new[] { 3, 7, 6, 4, 0, 2 }, new[] { 0.2f, 0.6f, 0.6f, 0.5f, 0, 0.6f }, new[] { 0.4f, 0.8f, 0.6f, 0.6f, 0, 0.5f },
                     Array.Empty<int>(), Array.Empty<float>(), new[] { 17, 18, 19 }, new[]
                 {
                     0.0f, 0.8f, 0.83f, 1.0f, //
@@ -194,15 +201,16 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             },
             {
                 24, // 极寒冻土
-                new ThemeData(new[] { 1, 5, 14, }, new[] { 6, 0, 2, }, new[] { 0.4f, 0, 0.3f, }, new[] { 0.8f, 0, 0.3f, },
-                    new[] { 1 }, new[]
+                new ThemeData(new[] { 1, 4, 5, 14, }, new[] { 6, 4, 0, 2, }, new[] { 0.4f, 0.4f, 0, 0.3f, }, new[] { 0.8f, 0.4f, 0, 0.3f, },
+                    new[] { 0, 1 }, new[]
                 {
+                    1.0f, 1.0f, 0.8f, 1.0f,
                     0.0f, 0.0f, 0.0f, 0.0f,
                 },  new[] { 17, 18, 19 }, new[]
                 {
-                    0.0f, 0.2f, 0.75f, 0.1f, //
-                    0.0f, 0.1f, 0.6f, 0.1f, //
-                    0.0f, 0.8f, 1.0f, 1.0f, //
+                    1.0f, 0.2f, 0.75f, 0.2f, //
+                    1.0f, 0.1f, 0.6f, 0.2f, //
+                    1.0f, 0.8f, 1.0f, 1.0f, //
                 })
             },
             {
@@ -236,7 +244,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 VeinCount = veinCount;
                 VeinOpacity = veinOpacity;
                 VanillaRareVeins = vanillaRareVeins;
-                VanillaRareSettings = rareSettings;
+                VanillaRareSettings = vanillaRareSettings;
                 RareVeins = rareVeins;
                 RareSettings = rareSettings;
             }

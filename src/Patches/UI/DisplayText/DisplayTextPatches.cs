@@ -199,10 +199,10 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                     break;
 
-                case ProtoID.T行星协调中心:
-                    __result = "行星协调中心文字描述".TranslateFromJson();
+                //case ProtoID.T行星协调中心:
+                //    __result = "行星协调中心文字描述".TranslateFromJson();
 
-                    break;
+                //    break;
 
                 case ProtoID.T量子折跃:
                     __result = "量子折跃文字描述".TranslateFromJson();

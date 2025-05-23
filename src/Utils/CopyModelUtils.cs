@@ -20,8 +20,8 @@ namespace ProjectGenesis.Utils
             CopyModelProto(49, ProtoID.M天穹装配厂, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
             CopyModelProto(49, ProtoID.M物质裂解塔, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             CopyModelProto(49, ProtoID.M巨型化学反应釜, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
-            CopyModelProto(49, ProtoID.M深空物流港, Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
-            CopyModelProto(56, ProtoID.M人造恒星MK2);
+            CopyModelProto(50, ProtoID.M深空物流港, new Color32(60, 179, 113, 255)); // Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
+            CopyModelProto(56, ProtoID.M轨道反物质堆);
             CopyModelProto(119, ProtoID.M大抽水机, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
             CopyModelProto(46, ProtoID.M同位素温差发电机, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
             CopyModelProto(49, ProtoID.M生态穹顶, new Color(0.3216F, 0.8157F, 0.09020F));
@@ -35,7 +35,8 @@ namespace ProjectGenesis.Utils
             CopyModelProto(46, ProtoID.M蓄电器, Color.HSVToRGB(0.0833f, 0.8f, 1.0f));
             CopyModelProto(48, ProtoID.M深空货舰);
 
-            AddAtmosphericCollectStation();
+            //AddAtmosphericCollectStation();
+            //AddOrbitalAntimatterReactor();
             ChangeAccumulatorColor();
         }
 
@@ -61,7 +62,7 @@ namespace ProjectGenesis.Utils
             }
         }
 
-        private static void AddAtmosphericCollectStation()
+        private static void AddOrbitalAntimatterReactor()
         {
             ModelProto oriModel = LDB.models.Select(ProtoID.M星际物流运输站);
             PrefabDesc desc = oriModel.prefabDesc;
@@ -77,24 +78,12 @@ namespace ProjectGenesis.Utils
                     if (mat == null) continue;
 
                     var newMaterial = new Material(mat);
-                    newMaterial.SetColor("_Color", new Color32(60, 179, 113, 255));
+                    newMaterial.SetColor("_Color", new Color32(0, 68, 225, 255));
                     newMats.Add(newMaterial);
                 }
             }
 
-            //oriModel = LDB.models.Select(ProtoID.M射线接收站); // ray receiver
-            //var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
-
-            //collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
-            //collectEffectMat.SetColor("_PolarColor", new Color32(234, 255, 253, 170));
-            //collectEffectMat.SetVector("_Aurora", new Vector4(75f, 1f, 20f, 0.1f));
-            //collectEffectMat.SetVector("_Beam", new Vector4(12f, 78f, 24f, 1f));
-            //collectEffectMat.SetVector("_Particle", new Vector4(2f, 30f, 5f, 0.8f));
-            //collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
-
-            //newMats.Add(collectEffectMat);
-
-            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M深空物流港,
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M轨道反物质堆,
                 "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
 
             registerModel.HpMax = 300000;
@@ -102,6 +91,48 @@ namespace ProjectGenesis.Utils
             registerModel.RuinType = ERuinType.Normal;
             registerModel.RuinCount = 1;
         }
+
+        //private static void AddAtmosphericCollectStation()
+        //{
+        //    ModelProto oriModel = LDB.models.Select(ProtoID.M星际物流运输站);
+        //    PrefabDesc desc = oriModel.prefabDesc;
+
+        //    var newMats = new List<Material>();
+
+        //    foreach (Material[] lodMats in desc.lodMaterials)
+        //    {
+        //        if (lodMats == null) continue;
+
+        //        foreach (Material mat in lodMats)
+        //        {
+        //            if (mat == null) continue;
+
+        //            var newMaterial = new Material(mat);
+        //            newMaterial.SetColor("_Color", new Color32(60, 179, 113, 255));
+        //            newMats.Add(newMaterial);
+        //        }
+        //    }
+
+        //    //oriModel = LDB.models.Select(ProtoID.M射线接收站); // ray receiver
+        //    //var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
+
+        //    //collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
+        //    //collectEffectMat.SetColor("_PolarColor", new Color32(234, 255, 253, 170));
+        //    //collectEffectMat.SetVector("_Aurora", new Vector4(75f, 1f, 20f, 0.1f));
+        //    //collectEffectMat.SetVector("_Beam", new Vector4(12f, 78f, 24f, 1f));
+        //    //collectEffectMat.SetVector("_Particle", new Vector4(2f, 30f, 5f, 0.8f));
+        //    //collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
+
+        //    //newMats.Add(collectEffectMat);
+
+        //    ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M深空物流港,
+        //        "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
+
+        //    registerModel.HpMax = 300000;
+        //    registerModel.RuinId = 384;
+        //    registerModel.RuinType = ERuinType.Normal;
+        //    registerModel.RuinCount = 1;
+        //}
 
         private static void CopyModelProto(int oriId, int id, Color? color = null)
         {
@@ -178,9 +209,9 @@ namespace ProjectGenesis.Utils
 
         internal static void ModelPostFix()
         {
-            //ModelProto modelProto = LDB.models.Select(ProtoID.M大气采集器);
-            //modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
-            //modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
+            ModelProto modelProto = LDB.models.Select(ProtoID.M深空物流港);
+            modelProto._ruinPath = "Entities/Prefabs/Ruins/interstellar-logistic-station-ruins";
+            modelProto._wreckagePath = "Entities/Prefabs/Wreckages/interstellar-logistic-station-wreckages";
 
             PrefabDesc prefabDesc = LDB.models.Select(ProtoID.M同位素温差发电机).prefabDesc;
             ref Material[] prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
@@ -191,13 +222,13 @@ namespace ProjectGenesis.Utils
             //prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             //prefabDescLODMaterial[2].SetColor("_TintColor", new Color(1.0000f, 0.6800f, 0.2267f));
 
-            prefabDesc = LDB.models.Select(ProtoID.M人造恒星MK2).prefabDesc;
-            Texture texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
-            prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
-            prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
-            prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  // 亮部
-            prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f)); // 暗部
-            prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));   // 边缘特效
+            //prefabDesc = LDB.models.Select(ProtoID.M轨道反物质堆).prefabDesc;
+            //Texture texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
+            //prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            //prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
+            //prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  // 亮部
+            //prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f)); // 暗部
+            //prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));   // 边缘特效
 
             prefabDesc = LDB.models.Select(ProtoID.M矩阵研究站).prefabDesc;
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];

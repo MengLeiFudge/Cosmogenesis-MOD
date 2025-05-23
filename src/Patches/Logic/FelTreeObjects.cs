@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using WinAPI;
 
 namespace ProjectGenesis.Patches.Logic
 {
@@ -108,9 +109,19 @@ namespace ProjectGenesis.Patches.Logic
 
         public static void OnMine(ref PlanetFactory __instance, int id)
         {
-            //__instance.gameData.history.AddTechHash(500);
-            //__instance.gameData.history.techSpeed = 6;
-            //Debug.LogFormat("scppppppppppppppppppppppppp techSpeed {0}", __instance.gameData.history.techSpeed);
+            //if (__instance.gameData.history.TechUnlocked(2108) == false) {
+            //    if (GameMain.history.logisticShipWarpDrive == false)
+            //    {
+            //        __instance.gameData.history.UnlockTech(2108);
+            //        GameMain.mainPlayer.TryAddItemToPackage(6219, 2, 0, true);
+
+            //    } else if (__instance.gameData.history.TechUnlocked(2904) == true)
+            //    {
+            //        __instance.gameData.history.UnlockTech(2108);
+            //        GameMain.mainPlayer.TryAddItemToPackage(6219, 2, 0, true);
+            //    }
+            //}
+
             //参数合法性校验
             if (__instance.vegePool[id].id == 0) { return; }
             int ItemProtoID = 0;
@@ -118,7 +129,7 @@ namespace ProjectGenesis.Patches.Logic
             DotNet35Random DotNet35Random = new DotNet35Random();
             double Random = DotNet35Random.NextDouble();
             //校验是否为指定离散矿石类型
-            if (IsStone(__instance.vegePool[id].protoId) == false)
+            if (IsStone(__instance.vegePool[id].protoId) == false && __instance.vegePool[id].protoId != 9999)
             {
                 if (LDB.items.Select(ProtoID.I激素生长菌群) == null || LDB.items.Select(ProtoID.I高速生长菌群) == null || LDB.items.Select(6245) == null || LDB.items.Select(6252) == null)
                 {

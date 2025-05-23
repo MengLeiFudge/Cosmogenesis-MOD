@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 {
@@ -17,6 +18,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             AddCombustionPowerUpgradeTechs();
             AddDamageUpgradeTechs();
             AddWreckageRecoveryUpgradeTechs();
+            //AddTempBugFixTechs();
         }
 
         internal static TechProto AddOneUpgradeTech(int id, string name, string description, string conclusion, string iconPath)
@@ -158,6 +160,40 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         }
 
 
+        internal static void AddTempBugFixTechs()
+        {
 
+            Vector2 oldPosition = new Vector2(0, 0);
+            TechProto tech = LDB.techs.Select(2101);
+            oldPosition = tech.Position;
+
+            int id = 2108;
+            string name = "修复bug";
+            string description = "仅适用于0.6.11版本前就已经开始游戏的存档，修复深空物流港无法装填翘曲器，运输船与货舰运量初始非1200，初始速度未翻倍问题。";
+            string conclusion = "T残骸回收分析";
+            string iconPath = "Assets/texpack/回收科技";
+
+            int[] preTechs = new int[] {  };
+            int[] costItems = new[] { 6521 };
+            long costHash = 360;
+            int[] costItemsPoints = new[] { 10 };
+            int[] unlockRecipes = new int[] { };
+            Vector2 position = new Vector2(oldPosition.x - 4, oldPosition.y);
+            TechProto NewTechProto = ProtoRegistry.RegisterTech(id, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
+            NewTechProto.Level = 0;
+            NewTechProto.MaxLevel = 0;
+
+            NewTechProto.IsLabTech = false;
+
+                NewTechProto.UnlockFunctions = new int[] { 15,
+            16,
+            17,
+            19 };
+                NewTechProto.UnlockValues = new double[] { 0.5,
+            1.0,
+            0,
+            1000, };
+
+        }
     }
 }

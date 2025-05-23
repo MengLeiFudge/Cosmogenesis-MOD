@@ -198,6 +198,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             ModifyReBuildUpgradeTechs();
             ModifyCombustionPowerUpgradeTechs();
             ModifyBuilderSpeedUpgradeTechs();
+            ModifyFlySpeedUpgradeTechs();
             ModifySolarSailingLifeUpgradeTechs();
             ModifySolarSailingAdsorbSpeedUpgradeTechs();
             ModifyRayEfficiencyUpgradeTechs();
@@ -569,6 +570,45 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         {
             TechProto techProto = LDB.techs.Select(2606);
             techProto.MaxLevel = 21;
+        }
+
+        internal static void ModifyFlySpeedUpgradeTechs()
+        {
+            TechProto techProto = LDB.techs.Select(2901);
+            techProto.Items = new int[] { 1407 };
+            techProto.ItemPoints = new int[] { techProto.ItemPoints[1] / 2 };
+
+            techProto = LDB.techs.Select(2902);
+            techProto.Items = new int[] { 1405 };
+            techProto.ItemPoints = new int[] { 2 };
+            techProto.HashNeeded = 21600;
+            techProto.IsLabTech = false;
+
+            techProto = LDB.techs.Select(2903);
+            techProto.Items = new int[] { 6277 };
+            techProto.ItemPoints = new int[] { 2 };
+            techProto.HashNeeded = 45000;
+            techProto.IsLabTech = false;
+
+            techProto = LDB.techs.Select(2904);
+            techProto.Items = new int[] { 6227 };
+            techProto.ItemPoints = new int[] { 1 };
+            techProto.HashNeeded = 3600;
+            techProto.IsLabTech = false;
+
+            techProto = LDB.techs.Select(2905);
+            techProto.Items = new int[] { 6227 };
+            techProto.ItemPoints = new int[] { 1 };
+            techProto.HashNeeded = 14400;
+            techProto.IsLabTech = false;
+
+            techProto = LDB.techs.Select(2906);
+            techProto.Items = new int[] { 6227 };
+            techProto.ItemPoints = new int[] { 1 };
+            techProto.HashNeeded = -90000;
+            techProto.LevelCoef1 = 18000;
+            techProto.LevelCoef2 = 0;
+            techProto.IsLabTech = false;
         }
 
         internal static void ModifySolarSailingLifeUpgradeTechs()

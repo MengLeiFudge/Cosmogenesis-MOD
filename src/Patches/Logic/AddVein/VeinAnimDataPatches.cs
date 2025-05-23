@@ -50,8 +50,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
         public static uint VeinDataToAnimDataState(VeinData data)
         {
-            Debug.LogFormat("scpppppppppppppppp");
-            Debug.LogFormat("data.id {0},data.type {1} modelIndex {2}", data.id, data.type, data.modelIndex);
             if (data.modelIndex > 2) return (uint)data.type;
 
             Color32 color = VeinColors[(int)data.type];

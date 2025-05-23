@@ -13,19 +13,21 @@ namespace ProjectGenesis.Patches.Logic
         public static bool useRodOnly = false;
         private static readonly int[] FuelCells =
         {
-            ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, //
+            //ProtoID.I氢燃料棒,
+            ProtoID.I燃油燃料棒, //ProtoID.I四氢双环戊二烯燃料棒, //
             ProtoID.I能量碎片,
         };
 
         private static readonly int[] FuelRods =
         {
-            ProtoID.I氢燃料棒, ProtoID.I煤油燃料棒, ProtoID.I四氢双环戊二烯燃料棒, //
-            ProtoID.I铀燃料棒, ProtoID.I钚燃料棒, ProtoID.IMOX燃料棒,      //
-            ProtoID.I氘核燃料棒, ProtoID.I氦三燃料棒, ProtoID.I氘氦混合聚变燃料棒, //
+            //ProtoID.I氢燃料棒,
+            ProtoID.I燃油燃料棒, //ProtoID.I四氢双环戊二烯燃料棒, //
+            ProtoID.I铀燃料棒, //ProtoID.I钚燃料棒, ProtoID.IMOX燃料棒,      //
+            ProtoID.I氘核燃料棒, //ProtoID.I氦三燃料棒, ProtoID.I氘氦混合聚变燃料棒, //
             ProtoID.I反物质燃料棒, ProtoID.I奇异燃料棒,                    //
-            ProtoID.I满蓄电器,
+            ProtoID.I满蓄电器, 6219,
         };
-        /*
+        
         [HarmonyPatch(typeof(Mecha), nameof(Mecha.GenerateEnergy))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> SetTargetCargoBytes_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -39,16 +41,20 @@ namespace ProjectGenesis.Patches.Logic
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FuelRodPatches), nameof(GenerateEnergy_Patch))));
 
             return matcher.InstructionEnumeration();
-        }*/
+        }
 
         public static void GenerateEnergy_Patch(Mecha mecha)
         {
-            int count = GetEmptyRodCount(mecha.reactorItemId);
+            //int count = GetEmptyRodCount(mecha.reactorItemId);
+            if (mecha.reactorItemId == 6219)
+            {
+                mecha.player.TryAddItemToPackage(6218, 1, mecha.reactorItemInc, true);
+                UIItemup.Up(6218, 1);
 
-            if (count == 0) return;
-
-            mecha.player.TryAddItemToPackage(ProtoID.I空燃料棒, count, mecha.reactorItemInc, true);
-            UIItemup.Up(ProtoID.I空燃料棒, count);
+            } else
+            {
+                return;
+            }
         }
 
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.GenEnergyByFuel))]
@@ -100,7 +106,7 @@ namespace ProjectGenesis.Patches.Logic
             switch (itemId)
             {
                 case ProtoID.I氢燃料棒:
-                case ProtoID.I煤油燃料棒:
+                case ProtoID.I燃油燃料棒:
                 case ProtoID.I四氢双环戊二烯燃料棒:
                 case ProtoID.I铀燃料棒:
                 case ProtoID.I钚燃料棒:

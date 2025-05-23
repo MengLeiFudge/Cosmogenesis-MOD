@@ -709,7 +709,7 @@
         "ReactorInc": 1.0,
         "IsFluid": false,
         "Productive": true,
-        "SubID": 0,
+        "SubID": 8,
         "MiningFrom": "",
         "ProduceFrom": "",
         "Grade": 0,
@@ -2032,7 +2032,7 @@
         "Description": "I人造恒星MK2",
         "IconPath": "Assets/texpack/人造恒星MK2",
         "GridIndex": 2114,
-        "StackSize": 20,
+        "StackSize": 1,
         "Type": 6,
         "PreTechOverride": 0,
         "DescFields": [

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using ProjectGenesis.Utils;
 using UnityEngine;
 
@@ -80,7 +81,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     theme.RareSettings[value.VanillaRareVeins[i] * 4] = value.VanillaRareSettings[i * 4];
                     theme.RareSettings[value.VanillaRareVeins[i] * 4 + 1] = value.VanillaRareSettings[i * 4 + 1];
                     theme.RareSettings[value.VanillaRareVeins[i] * 4 + 2] = value.VanillaRareSettings[i * 4 + 2];
-                    theme.RareSettings[value.VanillaRareVeins[i] * 4 + 3] = value.VanillaRareSettings[i * 4 + 2];
+                    theme.RareSettings[value.VanillaRareVeins[i] * 4 + 3] = value.VanillaRareSettings[i * 4 + 3];
                 }
                 theme.RareVeins = theme.RareVeins.Concat(value.RareVeins).ToArray();
                 theme.RareSettings = theme.RareSettings.Concat(value.RareSettings).ToArray();

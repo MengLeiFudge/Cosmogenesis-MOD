@@ -225,13 +225,11 @@ namespace ProjectGenesis.Patches.Logic.CurvatureLogistics
             }
             else if (__instance.player.inhandItemId > 0 && __instance.player.inhandItemCount > 0)
             {
-                Debug.LogFormat("scpppsdadsad inhandItemId {0}", __instance.player.inhandItemId);
                 int num = 5002;
                 if (stationComponent.energyMax == 12000000000)
                 {
                     num = 6230;
                 }
-                Debug.LogFormat("scpppsdadsad num {0}", num);
                 ItemProto itemProto = LDB.items.Select(num);
                 if (__instance.player.inhandItemId != num)
                 {
@@ -432,14 +430,14 @@ namespace ProjectGenesis.Patches.Logic.CurvatureLogistics
 
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(UIControlPanelStationEntry), "OnSetTarget")]
-        public static void OnSetTargetPatch(UIControlPanelStationEntry __instance)
+        [HarmonyPatch(typeof(UIControlPanelStationEntry), "_OnUpdate")]
+        public static void _OnUpdatePatch(UIControlPanelStationEntry __instance)
         {
             if (__instance.factory.entityPool[__instance.station.entityId].protoId == 2104)
             {
-                //__instance.shipIconButton.tips.itemId = 6230;
-                //ItemProto itemProto2 = LDB.items.Select(5002);
-                //__instance.shipIconImage.sprite = itemProto2.iconSprite;
+                __instance.shipIconButton.tips.itemId = 5002;
+                ItemProto itemProto2 = LDB.items.Select(5002);
+                __instance.shipIconImage.sprite = itemProto2.iconSprite;
                 __instance.warperIconButton.gameObject.SetActive(false);
             }
             else if (__instance.factory.entityPool[__instance.station.entityId].protoId == 6267)

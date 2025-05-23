@@ -21,10 +21,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             object jump = matcher.Advance(2).Operand;
             object endlabel = matcher.Advance(1).Labels.First();
 
-            //scpeopppppppppppppppppppppppppppp index System.Int32(25) jump System.Reflection.Emit.Label endlabel System.Reflection.Emit.Label
-            //scpeopppppppppppppppppppppppppppp index System.Int32(46) addLabel System.Reflection.Emit.Label
-
-            Debug.LogFormat("scpeopppppppppppppppppppppppppppp index {0} jump {1} endlabel {2}", index, jump, endlabel);
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_S, index), new CodeInstruction(OpCodes.Ldc_I4, 15),
                 new CodeInstruction(OpCodes.Beq, endlabel), new CodeInstruction(OpCodes.Ldc_I4, 14),
                 new CodeInstruction(OpCodes.Stloc_S, index), new CodeInstruction(OpCodes.Br, jump));
@@ -35,7 +31,6 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             index = matcher.Operand;
 
             object addLabel = matcher.Clone().MatchBack(false, new CodeMatch(OpCodes.Bne_Un)).Operand;
-            Debug.LogFormat("scpeopppppppppppppppppppppppppppp index {0} addLabel {1}", index, addLabel);
 
             matcher.Advance(2).InsertAndAdvance(new CodeInstruction(OpCodes.Beq, addLabel), new CodeInstruction(OpCodes.Ldloc_S, index),
                 new CodeInstruction(OpCodes.Ldc_I4_S, VeinTypeCount));

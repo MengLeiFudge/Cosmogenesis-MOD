@@ -260,15 +260,6 @@ namespace ProjectGenesis.Patches.Logic
             //return false;
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlanetGen), "SetPlanetTheme")]
-        public static void SetPlanetThemePostPatch(ref PlanetData planet, int[] themeIds, double rand1, double rand2, double rand3, double rand4, int theme_seed)
-        {
-            if (planet.star.index == 0)
-            {
-                //Debug.LogFormat("scpeopppppppppppppppppppffffffffffff theme {0} index {1}", planet.theme, planet.index);
-            }
-
-        }
+        
     }
 }

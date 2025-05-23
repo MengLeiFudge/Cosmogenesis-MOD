@@ -561,8 +561,8 @@
     },
     {
         "Name": "I深层岩浆",
-        "ZHCN": "来自地质活跃行星的深层地幔物质，富含镓、铼，镧系等稀有金属，要利用好需要进一步的处理。",
-        "ENUS": "The deep mantle material from geologically active planets is rich in rare metals such as gallium, rhenium, and lanthanide series, which require further processing to be utilized effectively."
+        "ZHCN": "来自地质活跃行星的深层地幔物质，富含镓、铼，镧系等稀有金属，要利用好需要进一步的处理。\n<color=\"#FD965ECC\">此物品不可输入物流塔，物品筛选无该物品的格子</color>",
+        "ENUS": "The deep mantle material from geologically active planets is rich in rare metals such as gallium, rhenium, and lanthanide series, which require further processing to be utilized effectively.\n<color=\"#FD965ECC\">This item cannot be entered into the logistics tower, and there is no grid for this item in the item selection</color>"
     },
     {
         "Name": "深层岩浆处理",
@@ -571,8 +571,8 @@
     },
     {
         "Name": "R深层岩浆处理",
-        "ZHCN": "对深层岩浆进行预处理，分离出富含稀有金属物质。",
-        "ENUS": "Pre treat deep magma and separate substances rich in rare metals."
+        "ZHCN": "对深层岩浆进行预处理，分离出富含稀有金属物质的熔融金属。",
+        "ENUS": "Pre treat deep magma to separate molten metals rich in rare metal substances."
     },
     {
         "Name": "熔融金属",
@@ -581,8 +581,8 @@
     },
     {
         "Name": "I熔融金属",
-        "ZHCN": "液态熔融状流体，分离了部分杂质，富集了镓、铟、锡等稀有金属元素，是制造液态金属的重要原料，也可用于高效金属冶炼。",
-        "ENUS": "Liquid molten fluid separates some impurities and enriches rare metal elements such as gallium, indium, and tin. It is an important raw material for manufacturing liquid metals and can also be used for efficient metal smelting."
+        "ZHCN": "液态熔融状流体，分离了部分杂质，富集了镓、铟、锡等稀有金属元素，是制造液态金属的重要原料，也可用于高效金属冶炼。\n<color=\"#FD965ECC\">此物品不可输入物流塔，物品筛选无该物品的格子</color>",
+        "ENUS": "Liquid molten fluid separates some impurities and enriches rare metal elements such as gallium, indium, and tin. It is an important raw material for manufacturing liquid metals and can also be used for efficient metal smelting.\n<color=\"#FD965ECC\">This item cannot be entered into the logistics tower, and there is no grid for this item in the item selection</color>"
     },
     {
         "Name": "液态金属制造",
@@ -1022,6 +1022,21 @@
     {
         "Name": "I人造恒星MK2",
         "ZHCN": "“你只需要让正反质子束从两端静静的穿过磁场进入约束球就可以了，轻松愉快！”它简单的外形归功于理论的优雅，被人们称为“人造小太阳”。",
+        "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
+    },
+    {
+        "Name": "轨道反物质堆",
+        "ZHCN": "轨道反物质堆",
+        "ENUS": "Orbital Antimatter Reactor"
+    },
+    {
+        "Name": "T轨道反物质堆",
+        "ZHCN": "鉴于湮灭反应的危险性，湮灭反应堆不允许建在地表，只能建在同步轨道空间站，如果真的发生不可挽回的事故时，这样起码还能保持星球的完整：在增加了数颗破碎星球后，COSMO做出了如此规定。",
+        "ENUS": "Given the danger of annihilation reactions, annihilation reactors are not allowed to be built on the surface and can only be built on synchronous orbit space stations. In the event of an irreversible accident, this would at least maintain the integrity of the planet: COSMO has made such a regulation after adding several broken planets."
+    },
+    {
+        "Name": "I轨道反物质堆",
+        "ZHCN": "鉴于湮灭反应的危险性，湮灭反应堆不允许建在地表，只能建在同步轨道空间站，如果真的发生不可挽回的事故时，这样起码还能保持星球的完整。",
         "ENUS": "\"Just allow the positive and negative proton beams to pass silently through the magnetic field from both ends into the Constraint Sphere, nice and easy!\" It is simple but effective and is called the Artificial Sun."
     },
     {
@@ -1841,8 +1856,8 @@
     },
     {
         "Name": "I岩浆",
-        "ZHCN": "奔涌的岩浆溶解着来自地幔深处的物质，并带到地表，对于高级工业文明而言，这就是巨型金属矿。",
-        "ENUS": "The surging magma dissolves materials from deep within the mantle and brings them to the surface, which is known as giant metal mines for advanced industrial civilizations."
+        "ZHCN": "奔涌的岩浆溶解着来自地幔深处的物质，并带到地表，对于高级工业文明而言，这就是巨型金属矿。\n<color=\"#FD965ECC\">此物品不可输入物流塔，物品筛选无该物品的格子</color>",
+        "ENUS": "The surging magma dissolves materials from deep within the mantle and brings them to the surface, which is known as giant metal mines for advanced industrial civilizations.\n<color=\"#FD965ECC\">This item cannot be entered into the logistics tower, and there is no grid for this item in the item selection</color>"
     },
     {
         "Name": "晶圆（四代半导体）",
@@ -2646,29 +2661,29 @@
         "ENUS": "The lightweight and tough titanium alloy hull, mature and reliable ion thrusters, and large capacity design of both the engine and the cargo warehouse form a transport ship that connects the logistics systems between planets."
     },
     {
-        "Name": "二氧化硫",
-        "ZHCN": "二氧化硫",
-        "ENUS": "Sulfur Dioxide"
+        "Name": "闪速炼钢",
+        "ZHCN": "闪速炼钢",
+        "ENUS": "Flash Steelmaking"
     },
     {
-        "Name": "I二氧化硫",
-        "ZHCN": "具有强烈的刺激性气味的无色气体。",
-        "ENUS": "Colorless gas with a strong, pungent odor."
+        "Name": "R闪速炼钢",
+        "ZHCN": "通过矿砂喷嘴将粉状铁矿砂喷入高温强还原氢气的闪铁炉，造就极优还原动力学条件，数秒内完成常规数小时的还原过程，且在闪铁炉内一步炼钢，产出合格钢水。",
+        "ENUS": "Powder iron ore is sprayed into a high-temperature and strong reducing hydrogen flash furnace through a mineral sand nozzle, creating extremely optimal reduction kinetics conditions. The conventional reduction process takes several hours to complete within seconds, and qualified steel is produced in one step in the flash furnace."
     },
     {
-        "Name": "氮",
-        "ZHCN": "氮",
-        "ENUS": "Nitrogen"
+        "Name": "钢材冶炼描述",
+        "ZHCN": "利用熔炉对铁块铁块进一步冶炼，在极其严格可控的温度条件下，进一步改善材料的晶型，锻造出S136、310S、2205、D32钢等高机械性能钢材。",
+        "ENUS": "Using a furnace to further refine iron blocks, under extremely strict and controllable temperature conditions, the crystal structure of the material is further improved, forging high mechanical performance steels such as S136, 310S, 2205, D32, etc."
     },
     {
-        "Name": "I氮",
-        "ZHCN": "无色无味的气体，分布广泛。",
-        "ENUS": "Colorless and odorless gas, widely distributed."
+        "Name": "R高级原油处理",
+        "ZHCN": "更加完善的原油精炼处理，通过催化裂化，加氢精制等反应，进一步提高轻质油收率。并将处理过程中的含硫废气回收，燃烧，转化与处理，最终得到硫酸作为副产物，进一步提高原料的利用率。",
+        "ENUS": "More comprehensive crude oil refining treatment, through reactions such as catalytic cracking and hydrorefining, further improves the yield of light oil. And the sulfur-containing waste gas during the treatment process will be recovered, burned, converted, and treated to obtain sulfuric acid as a by-product, further improving the utilization rate of raw materials."
     },
     {
-        "Name": "开发者日志01",
-        "ZHCN": "开发者日志01",
-        "ENUS": "Developer Log 01"
+        "Name": "R煅烧石油焦",
+        "ZHCN": "石油炼制过程中产生的重质油进行预热煅烧，得到石油焦，并在高温中进一步石墨化，得到石墨。",
+        "ENUS": "The heavy oil produced during the petroleum refining process is preheated and calcined to obtain petroleum coke, which is further graphitized at high temperatures to obtain graphite."
     },
     {
         "Name": "I开发者日志01",
