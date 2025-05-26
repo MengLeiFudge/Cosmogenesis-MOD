@@ -6712,32 +6712,31 @@
     },
     {
         "ID": 1962,
-        "Name": "T虚数空间存储",
+        "Name": "遗物解码",
         "IconPath": "Assets/texpack/量子无距传输",
-        "Desc": "虚数空间存储描述",
-        "Conclusion": "虚数空间存储结果",
+        "Desc": "T遗物解码",
+        "Conclusion": "T遗物解码",
         "IsHiddenTech": true,
         "PreItem": [
-            5202,
-            5204
+            6234
         ],
         "Position": [
             80.0,
             -4.0
         ],
         "PreTechs": [],
-        "PreTechsImplicit": [
-            1901
-        ],
+        "PreTechsImplicit": [],
         "Items": [
-            5201
+            6234
         ],
         "ItemPoints": [
-            120
+            1
         ],
-        "HashNeeded": 240000,
+        "HashNeeded": 36000,
         "UnlockRecipes": [
-            524
+            532,
+            541,
+            542
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],

@@ -196,7 +196,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 {
                     0.0f, 0.8f, 0.83f, 1.0f, //
                     0.0f, 1.0f, 1.0f, 1.0f, //
-                    0.0f, 0.4f, 0.93f, 1.2f, //
+                    0.0f, 0.4f, 0.93f, 0.8f, //
                 })
             },
             {

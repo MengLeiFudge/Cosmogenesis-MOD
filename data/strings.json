@@ -2686,79 +2686,74 @@
         "ENUS": "The heavy oil produced during the petroleum refining process is preheated and calcined to obtain petroleum coke, which is further graphitized at high temperatures to obtain graphite."
     },
     {
-        "Name": "I开发者日志01",
-        "ZHCN": "当地时间2022年1月30日-条目1\n嗯……现在是2022年，一月三十日，大年二十九的凌晨三点半。\n我不知道我是怀着怎样的心态写下这个企划。\n我只希望我能做到心目中的最好。\n凌晨四点。\n我给自己定下的目标是，二月底之前，一个月。\n我希望自己能做到。\n晚安。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "文明遗物",
+        "ZHCN": "文明遗物",
+        "ENUS": "Civilization Relics"
     },
     {
-        "Name": "开发者日志02",
-        "ZHCN": "开发者日志02",
-        "ENUS": "Developer Log 02"
+        "Name": "I文明遗物",
+        "ZHCN": "很明显的人造物，浅埋于地下，内部有着精密的信息储存结构，或许我们需要进一步的解码。",
+        "ENUS": "It is a very obvious man-made object, shallowly buried underground, with precise information storage structures inside. Perhaps we need further decoding."
     },
     {
-        "Name": "I开发者日志02",
-        "ZHCN": "当地时间2022年1月30日-条目2\n晚上八点零三分。\n我感觉自己受到了双重打击……api作者做出了我梦寐以求的东西，他的源码我却看不懂。\n我还能坚持下去吗？这个企划会胎死腹中吗？\n……………………\n好吧，也许会。我很不愿意这么说……但恐怕这次，我只能做出一个半成品了。\n希望你不会责备我。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "十七公斤重的文明",
+        "ZHCN": "十七公斤重的文明",
+        "ENUS": "A Civilization Weighing Seventeen Kilograms"
     },
     {
-        "Name": "开发者日志03",
-        "ZHCN": "开发者日志03",
-        "ENUS": "Developer Log 03"
+        "Name": "I十七公斤重的文明",
+        "ZHCN": "内容解码出来了，里面竟是一个文明全部的记录，所有的文化、历史、技术和知识都储存其中。很明显，在灭绝前夕，他们希望至少有人能知道曾有一个文明存在过，百分之八十的灭绝文明在临终前都会有类似的愿望，‘留下自己的信息’是智慧生物的某种本能。",
+        "ENUS": "The content has been decoded, revealing the complete record of a civilization, where all culture, history, technology, and knowledge are stored. It is obvious that on the eve of extinction, they hoped that at least someone would know that a civilization had existed, and 80% of extinct civilizations would have a similar desire before their death, 'leaving their own information' is some kind of instinct of intelligent organisms."
     },
     {
-        "Name": "I开发者日志03",
-        "ZHCN": "当地时间2022年2月1日-条目1\n咕了好久终于正式启动了，图标，科技，新物品……\n现在是2022年，2月1日，大年初一。\n我又有了一个新的想法，不过要回去看看另一套源码才能决定能不能实现……我想改变火箭的结构点数。\n我能成功吗？\n血的教训。\n不要，TMD，犯，低级错误。还有，一定要debug。\n（死目）\n哦对，结构点数没改成。\n啊对，记得回去加一个配方类型的修改方法。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "文明的定义",
+        "ZHCN": "文明的定义",
+        "ENUS": "Definition Of Civilization"
     },
     {
-        "Name": "开发者日志04",
-        "ZHCN": "开发者日志04",
-        "ENUS": "Developer Log 04"
+        "Name": "I文明的定义",
+        "ZHCN": "曾经有个文明，在研究出数字生命后沉迷其中，几乎所有人口都进入了虚拟世界，现实只有维护AI，和没资格成为数字生命，已经完全文明断代的流浪者。留在现实的AI不断自我迭代进化，为了方便维护工作，不惜将整个生态圈塑造成只有简单生态的草原。\n最后，它们迭代出了造物主曾经的好奇心与探索精神，在无一人愿意与它们一同前往宇宙时，地面流浪者的一句“若是能够梦见星空的你，不已经是人类了吗”彻底解放了AI的探索宇宙需要人类的逻辑锁，它们最终制作了记录整个文明的储存器后，接替人类，接替文明，出发前往了深空。\n或许，与现在冻结在储存器里的数字生命比，勇于探索宇宙的AI更适合继承这个文明称号。",
+        "ENUS": "Once upon a time, there was a civilization that became addicted to digital life after researching it, and almost all of its population entered the virtual world. In reality, only AI could be maintained, and there were wanderers who were not qualified to become digital life and had completely lost their civilization. The AI that remains in reality constantly iterates and evolves on its own, and in order to facilitate maintenance work, it is willing to shape the entire ecosystem into a grassland with only simple ecology. \n  Finally, they iterated the curiosity and exploratory spirit of the Creator. When no one was willing to go to the universe with them, the wanderer on the ground said, \"If you could dream of the stars, wouldn't you already be human?\" This completely liberated AI's exploration of the universe, which required human logic locks. After creating a storage device to record the entire civilization, they took over from humans and civilization, and set off for deep space.\n  Perhaps, compared to the digital life currently frozen in storage, AI that dares to explore the universe is more suitable to inherit this civilization title."
     },
     {
-        "Name": "I开发者日志04",
-        "ZHCN": "当地时间2022年2月3日-条目1\n偏偏这个时候出现了一个更多页面的mod\n那自然是……拿来主义）\n成为我的前置吧！（笑）\n既然这样，那这个游戏就有更多的可能性了……钛晶圆，钨晶圆，功率IC，电路基板，化工……\n2022.02.03，现在是大年初三晚上十点五十分。化工线基本完成，接下来就是烦人的代码环节……\n顺便把科技树图标做完了。\n今晚应该又要熬夜吧。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "遗物解码",
+        "ZHCN": "遗物解码",
+        "ENUS": "Relic Decoding"
     },
     {
-        "Name": "开发者日志05",
-        "ZHCN": "开发者日志05",
-        "ENUS": "Developer Log 05"
+        "Name": "T遗物解码",
+        "ZHCN": "解析遗物的存储规则，适配接口，最终解码还原内部储存的数据。",
+        "ENUS": "Analyze the storage rules of relics, adapt interfaces, and ultimately decode and restore the internally stored data."
     },
     {
-        "Name": "I开发者日志05",
-        "ZHCN": "当地时间2022年2月4日-条目1\n……坏事了，unity好像不支持中文名诶？！\n我需要，做个小小的实验……\n顺便，现在是2022.02.04，大年初四，凌晨零点二十分。\n……凌晨一点十三分，我好像又踩了一个坑。\n我希望这是个坑，因为那样我就不用继续debug了。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "文明数据上传",
+        "ZHCN": "文明数据上传",
+        "ENUS": "Civilized Data Upload"
     },
     {
-        "Name": "开发者日志06",
-        "ZHCN": "开发者日志06",
-        "ENUS": "Developer Log 06"
+        "Name": "R文明数据上传",
+        "ZHCN": "上传外星探索发现的文明遗物解析出来的数据，也可以获得上传矩阵得到的哈希值。",
+        "ENUS": "Uploading data parsed from civilization artifacts discovered during extraterrestrial exploration can also obtain hash values obtained from uploading matrices."
     },
     {
-        "Name": "I开发者日志06",
-        "ZHCN": "当地时间2022年2月4日-条目2\n现在是，2022.02.04，星期五，凌晨一点四十六分。\n我感觉我所学不多且不成体系的编程知识在此刻受到了严重冲击。\n写下上一条日志的时候，我的工程文件不管怎么编译，修改，都在报错。\n我debug了将近一个小时，始终无果。\n就在刚才，我第不知道多少次重新编译源码——\n嘿，您猜怎么着？\n我的代码跑起来辣！\n草。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "进一步数据解码",
+        "ZHCN": "进一步数据解码",
+        "ENUS": "Further Data Decoding"
     },
     {
-        "Name": "开发者日志07",
-        "ZHCN": "开发者日志07",
-        "ENUS": "Developer Log 07"
+        "Name": "R进一步数据解码",
+        "ZHCN": "在将文明遗物的数据上传给主脑前，先再进一步解码阅读。",
+        "ENUS": "Before uploading the data of civilization relics to the main brain, further decode and read it."
     },
     {
-        "Name": "I开发者日志07",
-        "ZHCN": "当地时间2022年2月4日-条目3\n现在是，2022.02.04，下午两点零八分。\n化工线的第一个配方终于成功写入。\n这是第一步，但绝不是最后一步。\n……又踩了个坑。\n戴森球的配方逻辑是，配方会继承第一个产物的信息，包括名字介绍这些。\n当然也不会显示副产物。\n想要修改必须使用公式配方作为元数据。\n草。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "哈希值",
+        "ZHCN": "哈希值",
+        "ENUS": "Hash"
     },
     {
-        "Name": "开发者日志08",
-        "ZHCN": "开发者日志08",
-        "ENUS": "Developer Log 08"
-    },
-    {
-        "Name": "I开发者日志08",
-        "ZHCN": "当地时间2022年2月4日-条目4\n现在是，2022.02.04，晚上七点零四分。\n化工线做到一半发现一点问题。\n稍微思考了一下，我决定还是自己打开gtnh……然后把化工线重新捋一遍。\n因为群友提醒了我，虽然木头是不可再生的……\n——但是有个东西，叫煤焦油。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "I哈希值",
+        "ZHCN": "1800000哈希。",
+        "ENUS": "1800000 hash."
     },
     {
         "Name": "开发者日志09",

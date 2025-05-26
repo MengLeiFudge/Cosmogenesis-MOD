@@ -5404,27 +5404,27 @@
     },
     {
         "ID": 532,
-        "Name": "铜矿粉",
-        "Description": "",
+        "Name": "文明数据上传",
+        "Description": "R文明数据上传",
         "IconPath": "",
-        "Type": 11,
-        "GridIndex": 0,
-        "Time": 60,
+        "Type": 0,
+        "GridIndex": 1701,
+        "Time": 600,
         "Input": [
-            1002
+            6234
         ],
         "InCounts": [
             1
         ],
         "Output": [
-            6280
+            6255
         ],
         "OutCounts": [
-            2
+            1
         ],
-        "Explicit": false,
-        "Handcraft": false,
-        "NonProductive": false
+        "Explicit": true,
+        "Handcraft": true,
+        "NonProductive": true
     },
     {
         "ID": 533,
@@ -5610,59 +5610,51 @@
     },
     {
         "ID": 541,
-        "Name": "质能储存（高效）",
-        "Description": "R质能储存（高效）",
-        "IconPath": "Assets/texpack/高效反物质",
-        "Type": 5,
-        "GridIndex": 0,
-        "Time": 60,
-        "Input": [
-            1208
-        ],
-        "InCounts": [
-            2
-        ],
-        "Output": [
-            1122
-        ],
-        "OutCounts": [
-            2
-        ],
-        "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": true
-    },
-    {
-        "ID": 542,
-        "Name": "物质裂解塔",
-        "Description": "",
+        "Name": "进一步数据解码",
+        "Description": "R进一步数据解码",
         "IconPath": "",
-        "Type": 10,
-        "GridIndex": 0,
-        "Time": 10800,
+        "Type": 0,
+        "GridIndex": 1702,
+        "Time": 600,
         "Input": [
-            6502,
-            1107,
-            6208,
-            2315,
-            7805
+            6234
         ],
         "InCounts": [
-            60,
-            180,
-            240,
-            6,
-            4
+            1
         ],
         "Output": [
-            6258
+            6241
         ],
         "OutCounts": [
             1
         ],
-        "Explicit": false,
-        "Handcraft": false,
-        "NonProductive": false
+        "Explicit": true,
+        "Handcraft": true,
+        "NonProductive": true
+    },
+    {
+        "ID": 542,
+        "Name": "文明数据上传",
+        "Description": "R文明数据上传",
+        "IconPath": "",
+        "Type": 0,
+        "GridIndex": 1703,
+        "Time": 600,
+        "Input": [
+            6241
+        ],
+        "InCounts": [
+            1
+        ],
+        "Output": [
+            6255
+        ],
+        "OutCounts": [
+            4
+        ],
+        "Explicit": true,
+        "Handcraft": true,
+        "NonProductive": true
     },
     {
         "ID": 544,
@@ -5763,7 +5755,7 @@
             1
         ],
         "Output": [
-            6234
+            6235
         ],
         "OutCounts": [
             1

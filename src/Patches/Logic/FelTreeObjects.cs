@@ -212,6 +212,15 @@ namespace ProjectGenesis.Patches.Logic
                             ItemCount = 1;
                         }
                     }
+                    else if (__instance.planet.theme == 15 || __instance.planet.theme == 22)
+                    {
+                        if (Random > 0.00001 && Random <= 0.4001)
+                        {
+                            ItemProtoID = 6234;
+                            ItemCount = 1;
+                        }
+                    }
+
                 }
                 if (ItemProtoID < 1)
                 {

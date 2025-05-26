@@ -829,13 +829,13 @@
         "BombType": 0,
         "CraftType": 0,
         "DropRate": 0.0,
-        "EnemyDropLevel": 5,
+        "EnemyDropLevel": 0,
         "EnemyDropRange": [
-            0.975,
-            0.005
+            0,
+            0
         ],
         "EnemyDropCount": 0, // 1.2,
-        "EnemyDropMask": 2147483647,
+        "EnemyDropMask": 0,
         "EnemyDropMaskRatio": 0.0
     },
     {
@@ -1181,17 +1181,15 @@
     },
     {
         "ID": 6234,
-        "Name": "氦",
-        "Description": "I氦",
+        "Name": "文明遗物",
+        "Description": "I文明遗物",
         "IconPath": "Assets/texpack/氦_新",
         "GridIndex": 0,
         "StackSize": 20,
         "Type": 1,
         "PreTechOverride": 0,
         "DescFields": [
-            0,
-            1,
-            40
+            0
         ],
         "FuelType": 0,
         "HeatValue": 0,
@@ -1199,7 +1197,7 @@
         "IsFluid": true,
         "Productive": true,
         "SubID": 0,
-        "MiningFrom": "气态巨星轨道",
+        "MiningFrom": "草原",
         "ProduceFrom": "",
         "Grade": 0,
         "Upgrades": [],
@@ -1213,7 +1211,7 @@
         "Potential": 0,
         "BuildIndex": 0,
         "BuildMode": 0,
-        "UnlockKey": 0,
+        "UnlockKey": -2,
         "MechaMaterialID": 0,
         "AmmoType": 0,
         "BombType": 0,
@@ -1230,11 +1228,11 @@
     },
     {
         "ID": 6235,
-        "Name": "氦三",
-        "Description": "I氦三",
+        "Name": "十七公斤重的文明",
+        "Description": "I十七公斤重的文明",
         "IconPath": "Assets/texpack/氦三_新",
         "GridIndex": 0,
-        "StackSize": 100,
+        "StackSize": 20,
         "Type": 2,
         "PreTechOverride": 0,
         "DescFields": [
@@ -1278,23 +1276,19 @@
     },
     {
         "ID": 6241,
-        "Name": "增殖燃料棒",
-        "Description": "I增殖燃料棒",
-        "IconPath": "Assets/texpack/钚燃料棒",
+        "Name": "文明的定义",
+        "Description": "I文明的定义",
+        "IconPath": "Assets/texpack/氦三_新",
         "GridIndex": 0,
-        "StackSize": 30,
-        "Type": 4,
+        "StackSize": 20,
+        "Type": 2,
         "PreTechOverride": 0,
         "DescFields": [
-            2,
-            3,
-            31,
-            1,
             40
         ],
-        "FuelType": 2,
-        "HeatValue": 2000000000,
-        "ReactorInc": 2.0,
+        "FuelType": 0,
+        "HeatValue": 0,
+        "ReactorInc": 0.0,
         "IsFluid": false,
         "Productive": true,
         "SubID": 0,
@@ -1718,23 +1712,19 @@
     },
     {
         "ID": 6255,
-        "Name": "钛矿粉",
-        "Description": "I钛矿粉",
-        "IconPath": "Assets/texpack/钛矿粉",
+        "Name": "哈希值",
+        "Description": "I哈希值",
+        "IconPath": "Icons/Tech/3904",
         "GridIndex": 0,
         "StackSize": 100,
         "Type": 2,
         "PreTechOverride": 0,
         "DescFields": [
-            2,
-            3,
-            1,
-            31,
             40
         ],
-        "FuelType": 1,
-        "HeatValue": 4000000,
-        "ReactorInc": -0.4,
+        "FuelType": 0,
+        "HeatValue": 0,
+        "ReactorInc": 0.0,
         "IsFluid": false,
         "Productive": true,
         "SubID": 0,
@@ -2472,13 +2462,13 @@
         "BombType": 0,
         "CraftType": 0,
         "DropRate": 0.0,
-        "EnemyDropLevel": 0,
+        "EnemyDropLevel": 5,
         "EnemyDropRange": [
-            0.0,
-            0.0
+            0.975,
+            0.005
         ],
-        "EnemyDropCount": 0.0,
-        "EnemyDropMask": 0,
+        "EnemyDropCount": 0.0, // 1.2,
+        "EnemyDropMask": 2147483647,
         "EnemyDropMaskRatio": 0.0
     },
     {

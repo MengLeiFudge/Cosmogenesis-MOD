@@ -36,7 +36,7 @@
     },
     {
         "ModelID": 45,
-        "maxAcuEnergy": 1800000000,//540000000
+        "maxAcuEnergy": 1800000000, //540000000
         "maxExcEnergy": 1800000000,
         "exchangeEnergyPerTick": 10000000
     },
@@ -347,7 +347,7 @@
         //"isStation": false,
         //"isStellarStation": false,
         //"isPowerConsumer": false,
-        //"isPowerNode": false,
+        //"isPowerNode": true,
         //"powerPoint": [ 2, 50, 2 ],
         //"powerCoverRadius": 10,
         //"powerConnectDistance": 20.5,

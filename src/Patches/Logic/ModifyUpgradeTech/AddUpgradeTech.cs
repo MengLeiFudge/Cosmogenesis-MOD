@@ -52,8 +52,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
             int[] preTechs = new[] { id - 1 };
             int[] costItems = new[] { 6279, 6004, 6005, };
-            long costHash = 5400000;
-            int[] costItemsPoints = new[] { tech.ItemPoints[0], tech.ItemPoints[0], tech.ItemPoints[0], };
+            long costHash = 144000;
+            int[] costItemsPoints = new[] { 10, 8, 6 };
             int[] unlockRecipes = new int[] { };
             Vector2 position = new Vector2(oldPosition.x + 4, oldPosition.y);
             TechProto NewTechProto = ProtoRegistry.RegisterTech(id, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
@@ -64,8 +64,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
             preTechs = new[] { id };
             costItems = new[] { 6006, };
-            costHash = 7200000;
-            costItemsPoints = new[] { tech.ItemPoints[0] };
+            costHash = 180000;
+            costItemsPoints = new[] { 8 };
             unlockRecipes = new int[] { };
             position = new Vector2(oldPosition.x + 8, oldPosition.y);
             NewTechProto = ProtoRegistry.RegisterTech(id + 1, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
@@ -76,8 +76,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
             preTechs = new[] { id + 1 };
             costItems = new[] { 6006, };
-            costHash = 9000000;
-            costItemsPoints = new[] { tech.ItemPoints[0] };
+            costHash = 225000;
+            costItemsPoints = new[] { 8 };
             unlockRecipes = new int[] { };
             position = new Vector2(oldPosition.x + 12, oldPosition.y);
             NewTechProto = ProtoRegistry.RegisterTech(id + 2, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);

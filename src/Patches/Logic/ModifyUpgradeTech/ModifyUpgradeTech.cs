@@ -72,7 +72,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         };
         private static readonly int[] unlockWreckFallingItemIdLevel5 =
         {
-            1118, 1126, 1303, 5203, 6222, 7804,
+            1118, 1126, 1303, 5203, 6277, 7804,
         };
         private static readonly float[] unlockWreckFallingItemDropCountLevel5 =
         {
@@ -113,6 +113,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
         private static int vanillaTechSpeed = 1;
         private static int synapticLatheTechSpeed = 1;
+
+        private static bool isItemGetHashUnlock = false;
 
 
         internal static void ModifyUpgradeTeches()
@@ -750,31 +752,38 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 {
                     case 5301:
                         techProto.Items = new int[] { 6001 };
-                        techProto.ItemPoints = new int[] { techProto.ItemPoints[0] };
+                        techProto.ItemPoints = new int[] { 10 };
+                        techProto.HashNeeded = 18000;
                         techProto.UnlockFunctions = new int[] { 101 };
                         techProto.UnlockValues = new double[] { 3 };
                         break;
                     case 5302:
                         techProto.Items = new int[] { 6001, 6002 };
-                        techProto.ItemPoints = new int[] { techProto.ItemPoints[0], techProto.ItemPoints[0] };
+                        techProto.ItemPoints = new int[] { 10, 10 };
+                        techProto.HashNeeded = 36000;
                         techProto.UnlockFunctions = new int[] { 101 };
                         techProto.UnlockValues = new double[] { 6 };
                         break;
                     case 5303:
                         techProto.Items = new int[] { 6003 };
-                        techProto.ItemPoints = new int[] { techProto.ItemPoints[0] };
+                        techProto.ItemPoints = new int[] { 10 };
+                        techProto.HashNeeded = 54000;
                         techProto.UnlockFunctions = new int[] { 101 };
                         techProto.UnlockValues = new double[] { 9 };
                         break;
                     case 5304:
                         techProto.Items = new int[] { 6003, 6278 };
-                        techProto.ItemPoints = new int[] { techProto.ItemPoints[0], techProto.ItemPoints[0] };
+                        techProto.ItemPoints = new int[] { 10, 10 };
+                        techProto.HashNeeded = 72000;
                         techProto.UnlockFunctions = new int[] { 101 };
                         techProto.UnlockValues = new double[] { 12 };
                         break;
                     case 5305:
                         techProto.Items = new int[] { 6279, 6004 };
-                        techProto.ItemPoints = new int[] { techProto.ItemPoints[0], techProto.ItemPoints[0] };
+                        techProto.ItemPoints = new int[] { 10, 8 };
+                        techProto.HashNeeded = 108000;
+                        techProto.LevelCoef1 = 0;
+                        techProto.LevelCoef2 = 0;
                         techProto.UnlockFunctions = new int[] { 101 };
                         techProto.UnlockValues = new double[] { 15 };
                         break;
@@ -897,6 +906,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             CrackingRayTechAndItemModify(_techId);
             UnlockRecipesHandcraft(_techId);
             UpdateTechSpeed(_techId);
+            ItemGetHash(_techId);
         }
 
         static void UAVHPAndfiringRateUpgrade(int level)
@@ -1266,6 +1276,10 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     __result = 0;
                     return false;
                 }
+            } else if (itemId == 6255 && count > 0)
+            {
+                __instance.mecha.gameData.history.AddTechHash(count * 1800000);
+                return false;
             }
             return true;
         }
@@ -1311,6 +1325,18 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void ItemGetHash(int techId)
+        {
+            if (techId == 1962)
+            {
+                ItemProto itemProto = LDB.items.Select(6234);
+                itemProto.Name = "十七公斤重的文明";
+                itemProto.Description = "I十七公斤重的文明";
+                itemProto.RefreshTranslation();
+                isItemGetHashUnlock = true;
+            }
+        }
+
         internal static void Export(BinaryWriter w)
         {
             w.Write(WreckFallingLevel);
@@ -1319,6 +1345,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             w.Write(UAVHPAndfiringRateUpgradeLevel);
             w.Write(vanillaTechSpeed);
             w.Write(synapticLatheTechSpeed);
+            w.Write(isItemGetHashUnlock);
         }
 
         internal static void Import(BinaryReader r)
@@ -1351,6 +1378,16 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
                 vanillaTechSpeed = r.ReadInt32();
                 synapticLatheTechSpeed = r.ReadInt32();
+
+                isItemGetHashUnlock = r.ReadBoolean();
+                if (isUnlockRecipesHandcraft)
+                {
+                    ItemProto itemProto = LDB.items.Select(6234);
+                    itemProto.Name = "十七公斤重的文明";
+                    itemProto.Description = "I十七公斤重的文明";
+                    itemProto.RefreshTranslation();
+                }
+
             }
             catch (EndOfStreamException)
             {
