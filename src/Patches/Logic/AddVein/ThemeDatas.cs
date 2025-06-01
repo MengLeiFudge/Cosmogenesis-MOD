@@ -13,7 +13,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 new ThemeData(new[] { 1, 14 }, new[] { 5, 2 }, new[] { 0.5f, 0.2f }, new[] { 0.4f, 1.0f },
                     Array.Empty<int>(), Array.Empty<float>(), new[] { 18 }, new[]
                 {
-                    1.0f, 1.0f, 0.6f, 0.3f
+                    1.0f, 1.0f, 0.67f, 0.3f
                 })
             },
             {

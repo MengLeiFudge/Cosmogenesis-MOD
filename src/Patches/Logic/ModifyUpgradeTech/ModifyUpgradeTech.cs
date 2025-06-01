@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             54, 57, 70, 71, 72, 73, 80, 81, 99, 100, 101, 105, 109, 115, 116, 119,
             124, 128, 132, 135, 140, 141, 142, 143, 145, 146, 153, 154, 155, 156, 157, 159,
             402, 403, 408, 416, 418, 424, 425, 519, 523, 802, 709, 710, 716, 751, 752, 754, 771,
-            772, 783, 789, 793, 794, 795,
+            772, 783, 785, 789, 793, 794, 795,
         };
 
         private static readonly int[] unlockWreckFallingItemIdLevel1 =
@@ -115,6 +115,9 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         private static int synapticLatheTechSpeed = 1;
 
         private static bool isItemGetHashUnlock = false;
+
+        private static int[] WhichFleetUpgradeChoose = { 0, 0, 0 };
+        private static bool isCraftUnitAttackRangeUpgrade = false;
 
 
         internal static void ModifyUpgradeTeches()
@@ -214,6 +217,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             ModifyGroundFormationExpansionUpgradeTechs();
             ModifySpaceFormationExpansionUpgradeTechs();
             ModifyPlanetFieldUpgradeTechs();
+            ModifyFleetUpgradeTechs();
 
             AddUpgradeTechs();
 
@@ -799,6 +803,82 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
         }
 
+        internal static void ModifyFleetUpgradeTechs()
+        {
+            TechProto techProto;
+            for (int i = 5401; i <= 5405; i++)
+            {
+                techProto = LDB.techs.Select(i);
+                switch (i)
+                {
+                    case 5401:
+                        techProto.Name = "太空舰队结构优化";
+                        techProto.Desc = "T太空舰队结构优化";
+                        techProto.IconPath = "Icons/Tech/5601";
+                        techProto.RefreshTranslation();
+                        techProto.Items = new int[] { 6279, 6004 };
+                        techProto.ItemPoints = new int[] { 10, 10 };
+                        techProto.HashNeeded = 216000;
+                        techProto.UnlockFunctions = new int[] { 73, 72 };
+                        techProto.UnlockValues = new double[] { 0.25, 0.3 };
+                        techProto.PreTechsImplicit = new[] { 1822, };
+                        techProto.IsHiddenTech = false;
+                        break;
+                    case 5402:
+                        techProto.Name = "太空舰队结构优化";
+                        techProto.Desc = "T太空舰队结构优化";
+                        techProto.IconPath = "Icons/Tech/5602";
+                        techProto.RefreshTranslation();
+                        techProto.Items = new int[] { 6279, 6004 };
+                        techProto.ItemPoints = new int[] { 10, 10 };
+                        techProto.HashNeeded = 288000;
+                        techProto.UnlockFunctions = new int[] { 73, 72 };
+                        techProto.UnlockValues = new double[] { 0.3, 0.3 };
+                        break;
+                    case 5403:
+                        techProto.Name = "太空舰队结构优化";
+                        techProto.Desc = "T太空舰队结构优化";
+                        techProto.IconPath = "Icons/Tech/5603";
+                        techProto.RefreshTranslation();
+                        techProto.Items = new int[] { 6279, 6004, 6005 };
+                        techProto.ItemPoints = new int[] { 10, 10, 10 };
+                        techProto.HashNeeded = 360000;
+                        techProto.UnlockFunctions = new int[] { 73, 72 };
+                        techProto.UnlockValues = new double[] { 0.35, 0.4 };
+                        break;
+                    case 5404:
+                        techProto.Name = "太空舰队火力升级";
+                        techProto.Desc = "T太空舰队火力升级";
+                        techProto.IconPath = "Icons/Tech/5301";
+                        techProto.RefreshTranslation();
+                        techProto.Items = new int[] { 6279, 6004 };
+                        techProto.ItemPoints = new int[] { 10, 10 };
+                        techProto.HashNeeded = 216000;
+                        techProto.Level = 1;
+                        techProto.MaxLevel = 1;
+                        techProto.UnlockFunctions = new int[] { 71, 72 };
+                        techProto.UnlockValues = new double[] { 0.4, 0.3 };
+                        techProto.PreTechs = new int[] {  };
+                        techProto.PreTechsImplicit = new[] { 1822 }; //1822,
+                        techProto.IsHiddenTech = false;
+                        break;
+                    case 5405:
+                        techProto.Name = "太空舰队火力升级";
+                        techProto.Desc = "T太空舰队火力升级";
+                        techProto.IconPath = "Icons/Tech/5302";
+                        techProto.RefreshTranslation();
+                        techProto.Items = new int[] { 6279, 6004 };
+                        techProto.ItemPoints = new int[] { 10, 10 };
+                        techProto.HashNeeded = 288000;
+                        techProto.UnlockFunctions = new int[] { 71, 72 };
+                        techProto.UnlockValues = new double[] { 0.6, 0.3 };
+                        techProto.Level = 2;
+                        techProto.MaxLevel = 2;
+                        break;
+                }
+            }
+        }
+
         internal static void ModifyUAVHPAndfiringRateUpgradeTechs()
         {
             TechProto techProto;
@@ -907,6 +987,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             UnlockRecipesHandcraft(_techId);
             UpdateTechSpeed(_techId);
             ItemGetHash(_techId);
+            CraftUnitAttackRangeUpgrade(_techId);
         }
 
         static void UAVHPAndfiringRateUpgrade(int level)
@@ -1224,6 +1305,14 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                         __result = text;
                         return false;
                     }
+                    else if (__instance.UnlockFunctions[0] == 103 && __instance.UnlockFunctions[1] == 72)
+                    {
+                        text = text + "驱逐舰射程增加至".Translate() + __instance.UnlockValues[0] + "，护卫舰射程增加至".Translate() + __instance.UnlockValues[0] * 0.4;
+                        text += "\r\n";
+                        text += string.Format("太空战斗机攻速升级".Translate(), __instance.UnlockValues[1]);
+                        __result = text;
+                        return false;
+                    }
                 }
             }
             return true;
@@ -1337,6 +1426,73 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void SetUnclockValuesIneffective(int techId)
+        {
+            TechProto techProto;
+            techProto = LDB.techs.Select(techId);
+            techProto.UnlockValues = new double[] { 0, 0 };
+            techProto.RefreshTranslation();
+        }
+
+        static void CraftUnitAttackRangeUpgrade(int techId)
+        {
+            switch (techId)
+            {
+                case 5401:
+                    if (WhichFleetUpgradeChoose[0] == 0)
+                    {
+                        SetUnclockValuesIneffective(5404);
+                        WhichFleetUpgradeChoose[0] = 5404;
+                    }
+                    break;
+                case 5402:
+                    if (WhichFleetUpgradeChoose[1] == 0)
+                    {
+                        SetUnclockValuesIneffective(5405);
+                        WhichFleetUpgradeChoose[1] = 5405;
+                    }
+                    break;
+                case 5403:
+                    if (WhichFleetUpgradeChoose[2] == 0)
+                    {
+                        SetUnclockValuesIneffective(5406);
+                        WhichFleetUpgradeChoose[2] = 5406;
+                    }
+                    break;
+                case 5404:
+                    if (WhichFleetUpgradeChoose[0] == 0)
+                    {
+                        SetUnclockValuesIneffective(5401);
+                        WhichFleetUpgradeChoose[0] = 5401;
+                    }
+                    break;
+                case 5405:
+                    if (WhichFleetUpgradeChoose[1] == 0)
+                    {
+                        SetUnclockValuesIneffective(5402);
+                        WhichFleetUpgradeChoose[1] = 5402;
+                    }
+                    break;
+                case 5406:
+                    if (WhichFleetUpgradeChoose[2] == 0)
+                    {
+                        SetUnclockValuesIneffective(5403);
+                        WhichFleetUpgradeChoose[2] = 5403;
+                        ModelProto modelProto;
+                        modelProto = LDB.models.Select(451); // 护卫
+                        modelProto.prefabDesc.craftUnitAttackRange0 = 4000f;
+                        modelProto.prefabDesc.craftUnitSensorRange = 4500f;
+                        modelProto = LDB.models.Select(452); // 驱逐
+                        modelProto.prefabDesc.craftUnitAttackRange0 = 10000f;
+                        modelProto.prefabDesc.craftUnitAttackRange1 = 10000f;
+                        modelProto.prefabDesc.craftUnitSensorRange = 12000f;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
         internal static void Export(BinaryWriter w)
         {
             w.Write(WreckFallingLevel);
@@ -1346,6 +1502,10 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             w.Write(vanillaTechSpeed);
             w.Write(synapticLatheTechSpeed);
             w.Write(isItemGetHashUnlock);
+            for (int i = 0; i < 3; i++)
+            {
+                w.Write(WhichFleetUpgradeChoose[i]);
+            }
         }
 
         internal static void Import(BinaryReader r)
@@ -1388,6 +1548,26 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     itemProto.RefreshTranslation();
                 }
 
+                for (int i = 0; i < 3; i++)
+                {
+                    WhichFleetUpgradeChoose[i] = r.ReadInt32();
+                    if (WhichFleetUpgradeChoose[i] != 0)
+                    {
+                        TechProto techProto = LDB.techs.Select(WhichFleetUpgradeChoose[i]);
+                        techProto.UnlockValues = new double[] { 0, 0 };
+                        if (i == 2 && WhichFleetUpgradeChoose[i] == 5403)
+                        {
+                            ModelProto modelProto;
+                            modelProto = LDB.models.Select(451); // 护卫
+                            modelProto.prefabDesc.craftUnitAttackRange0 = 4000f;
+                            modelProto.prefabDesc.craftUnitSensorRange = 4500f;
+                            modelProto = LDB.models.Select(452); // 驱逐
+                            modelProto.prefabDesc.craftUnitAttackRange0 = 10000f;
+                            modelProto.prefabDesc.craftUnitAttackRange1 = 10000f;
+                            modelProto.prefabDesc.craftUnitSensorRange = 12000f;
+                        }
+                    }
+                }
             }
             catch (EndOfStreamException)
             {

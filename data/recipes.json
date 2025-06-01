@@ -1128,16 +1128,16 @@
         "Input": [
             1118,
             1205,
-            7705,
             1126,
-            1303
+            1303,
+            1401
         ],
         "InCounts": [
             20,
             10,
-            10,
             8,
-            10
+            8,
+            15
         ],
         "Output": [
             2210
@@ -1160,14 +1160,12 @@
         "Input": [
             1122,
             1120,
-            1206,
-            1107
+            1206
         ],
         "InCounts": [
             6,
             6,
-            1,
-            2
+            1
         ],
         "Output": [
             1803
@@ -2060,16 +2058,18 @@
         "IconPath": "",
         "Type": 4,
         "GridIndex": 2505,
-        "Time": 360,
+        "Time": 900,
         "Input": [
             1107,
             1108,
             1303,
-            2202
+            2202,
+            1126
         ],
         "InCounts": [
             40,
             40,
+            4,
             4,
             4
         ],
@@ -3483,15 +3483,15 @@
         "Input": [
             1108,
             1303,
-            1119,
+            6243,
             1401,
             1125
         ],
         "InCounts": [
-            15,
+            20,
             6,
             10,
-            8,
+            15,
             4
         ],
         "Output": [
@@ -3631,16 +3631,16 @@
         "GridIndex": 2213,
         "Time": 180,
         "Input": [
-            1125,
+            2104,
             7805,
-            2206,
-            2014
+            2014,
+            1127
         ],
         "InCounts": [
-            30,
+            1,
             10,
             10,
-            10
+            5
         ],
         "Output": [
             6267
@@ -3870,12 +3870,12 @@
         "Time": 120,
         "Input": [
             1123,
-            1202,
+            1107,
             1121
         ],
         "InCounts": [
             1,
-            2,
+            1,
             10
         ],
         "Output": [
@@ -3897,13 +3897,13 @@
         "GridIndex": 5704,
         "Time": 360,
         "Input": [
-            1120,
+            1206,
             1122,
-            1403
+            1607
         ],
         "InCounts": [
-            12,
-            12,
+            2,
+            8,
             1
         ],
         "Output": [
@@ -3989,7 +3989,7 @@
             100
         ],
         "Output": [
-            1611
+            7707
         ],
         "OutCounts": [
             1
@@ -4130,17 +4130,17 @@
         "Time": 720,
         "Input": [
             6271,
-            1303,
+            7805,
             1406,
-            6243,
-            7615,
+            3003,
+            3004,
             6263
         ],
         "InCounts": [
             12,
-            8,
+            2,
             4,
-            8,
+            6,
             1,
             12
         ],
@@ -4314,12 +4314,12 @@
             1125,
             1303,
             1401,
-            1206
+            6243
         ],
         "InCounts": [
             8,
             4,
-            15,
+            10,
             6
         ],
         "Output": [
@@ -5376,286 +5376,7 @@
         "Handcraft": false,
         "NonProductive": false
     },
-    {
-        "ID": 531,
-        "Name": "闪速炼钢",
-        "Description": "R闪速炼钢",
-        "IconPath": "",
-        "Type": 11,
-        "GridIndex": 3301,
-        "Time": 30,
-        "Input": [
-            1001,
-            1120
-        ],
-        "InCounts": [
-            3,
-            3
-        ],
-        "Output": [
-            1103
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 532,
-        "Name": "文明数据上传",
-        "Description": "R文明数据上传",
-        "IconPath": "",
-        "Type": 0,
-        "GridIndex": 1701,
-        "Time": 600,
-        "Input": [
-            6234
-        ],
-        "InCounts": [
-            1
-        ],
-        "Output": [
-            6255
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": true,
-        "NonProductive": true
-    },
-    {
-        "ID": 533,
-        "Name": "突触凝炼机",
-        "Description": "R突触凝炼机",
-        "IconPath": "",
-        "Type": 0,
-        "GridIndex": 4812,
-        "Time": 1,
-        "Input": [
-            6253
-        ],
-        "InCounts": [
-            2
-        ],
-        "Output": [
-            6254
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": true,
-        "NonProductive": false
-    },
-    {
-        "ID": 534,
-        "Name": "高级原油处理",
-        "Description": "R高级原油处理",
-        "IconPath": "",
-        "Type": 3,
-        "GridIndex": 4303,
-        "Time": 120,
-        "Input": [
-            1007,
-            1000
-        ],
-        "InCounts": [
-            2,
-            2
-        ],
-        "Output": [
-            7009,
-            1114,
-            1116
-        ],
-        "OutCounts": [
-            4,
-            1,
-            2
-        ],
-        "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 535,
-        "Name": "煅烧石油焦",
-        "Description": "R煅烧石油焦",
-        "IconPath": "",
-        "Type": 3,
-        "GridIndex": 4403,
-        "Time": 120,
-        "Input": [
-            1114
-        ],
-        "InCounts": [
-            2
-        ],
-        "Output": [
-            1109
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 536,
-        "Name": "碳粉",
-        "Description": "",
-        "IconPath": "",
-        "Type": 4,
-        "GridIndex": 1105,
-        "Time": 60,
-        "Input": [
-            1109
-        ],
-        "InCounts": [
-            1
-        ],
-        "Output": [
-            6256
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": false,
-        "Handcraft": true,
-        "NonProductive": false
-    },
-    {
-        "ID": 537,
-        "Name": "黄铁矿炼铁",
-        "Description": "R黄铁矿炼铁",
-        "IconPath": "",
-        "Type": 1,
-        "GridIndex": 3202,
-        "Time": 60,
-        "Input": [
-            6207
-        ],
-        "InCounts": [
-            1
-        ],
-        "Output": [
-            1101
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": true,
-        "NonProductive": false
-    },
-    {
-        "ID": 539,
-        "Name": "信息矩阵",
-        "Description": "",
-        "IconPath": "",
-        "Type": 15,
-        "GridIndex": 1804,
-        "Time": 480,
-        "Input": [
-            1303,
-            7804
-        ],
-        "InCounts": [
-            1,
-            1
-        ],
-        "Output": [
-            6278
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": false,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 540,
-        "Name": "电磁矩阵",
-        "Description": "",
-        "IconPath": "",
-        "Type": 15,
-        "GridIndex": 1805,
-        "Time": 600,
-        "Input": [
-            6001,
-            6002,
-            6003,
-            6278
-        ],
-        "InCounts": [
-            1,
-            1,
-            1,
-            1
-        ],
-        "Output": [
-            6279
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": false,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 541,
-        "Name": "进一步数据解码",
-        "Description": "R进一步数据解码",
-        "IconPath": "",
-        "Type": 0,
-        "GridIndex": 1702,
-        "Time": 600,
-        "Input": [
-            6234
-        ],
-        "InCounts": [
-            1
-        ],
-        "Output": [
-            6241
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": true,
-        "NonProductive": true
-    },
-    {
-        "ID": 542,
-        "Name": "文明数据上传",
-        "Description": "R文明数据上传",
-        "IconPath": "",
-        "Type": 0,
-        "GridIndex": 1703,
-        "Time": 600,
-        "Input": [
-            6241
-        ],
-        "InCounts": [
-            1
-        ],
-        "Output": [
-            6255
-        ],
-        "OutCounts": [
-            4
-        ],
-        "Explicit": true,
-        "Handcraft": true,
-        "NonProductive": true
-    },
+    // 531 532 533 534 535 536 537 539 540 541 542 547 548 549 569巨构mod配方
     {
         "ID": 544,
         "Name": "奇点矩阵",
@@ -5715,84 +5436,6 @@
         "NonProductive": false
     },
     {
-        "ID": 547,
-        "Name": "低级能量碎片合成",
-        "Description": "R低级能量碎片合成",
-        "IconPath": "Assets/texpack/能量碎片制作",
-        "Type": 12,
-        "GridIndex": 0,
-        "Time": 60,
-        "Input": [
-            6251
-        ],
-        "InCounts": [
-            4
-        ],
-        "Output": [
-            5206
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 548,
-        "Name": "二氧化硫还原",
-        "Description": "R二氧化硫还原",
-        "IconPath": "Assets/texpack/二氧化硫还原",
-        "Type": 2,
-        "GridIndex": 0,
-        "Time": 120,
-        "Input": [
-            6205,
-            1109
-        ],
-        "InCounts": [
-            1,
-            1
-        ],
-        "Output": [
-            6235
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 549,
-        "Name": "有机晶体活化",
-        "Description": "R有机晶体活化",
-        "IconPath": "Assets/texpack/高效黑塑料",
-        "Type": 16,
-        "GridIndex": 0,
-        "Time": 360,
-        "Input": [
-            1117,
-            6222,
-            5206
-        ],
-        "InCounts": [
-            2,
-            2,
-            4
-        ],
-        "Output": [
-            7709
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
         "ID": 550,
         "Name": "有机晶体",
         "Description": "R有机晶体（原始）",
@@ -5819,34 +5462,6 @@
             4
         ],
         "Explicit": true,
-        "Handcraft": false,
-        "NonProductive": false
-    },
-    {
-        "ID": 569,
-        "Name": "光学计算机",
-        "Description": "",
-        "IconPath": "",
-        "Type": 10,
-        "GridIndex": 0,
-        "Time": 1800,
-        "Input": [
-            7707,
-            7804,
-            7803
-        ],
-        "InCounts": [
-            25,
-            10,
-            10
-        ],
-        "Output": [
-            7806
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": false,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -5882,20 +5497,22 @@
     },
     {
         "ID": 625,
-        "Name": "低级能量碎片合成",
-        "Description": "R低级能量碎片合成",
-        "IconPath": "Assets/texpack/能量碎片制作",
-        "Type": 12,
-        "GridIndex": 0,
-        "Time": 60,
+        "Name": "闪速炼钢",
+        "Description": "R闪速炼钢",
+        "IconPath": "",
+        "Type": 11,
+        "GridIndex": 3301,
+        "Time": 30,
         "Input": [
-            6251
+            1001,
+            1120
         ],
         "InCounts": [
-            4
+            3,
+            3
         ],
         "Output": [
-            5206
+            1103
         ],
         "OutCounts": [
             1
@@ -5906,58 +5523,50 @@
     },
     {
         "ID": 641,
-        "Name": "基础机械组件",
-        "Description": "",
+        "Name": "文明数据上传",
+        "Description": "R文明数据上传",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
-        "Time": 120,
+        "Type": 0,
+        "GridIndex": 1701,
+        "Time": 600,
         "Input": [
-            1101,
-            6203,
-            1301
+            6234
         ],
         "InCounts": [
-            2,
-            2,
             1
         ],
         "Output": [
-            6501
+            6255
         ],
         "OutCounts": [
             1
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": true,
-        "NonProductive": false
+        "NonProductive": true
     },
     {
         "ID": 642,
-        "Name": "先进机械组件",
-        "Description": "",
+        "Name": "突触凝炼机",
+        "Description": "R突触凝炼机",
         "IconPath": "",
-        "Type": 9,
-        "GridIndex": 0,
-        "Time": 240,
+        "Type": 0,
+        "GridIndex": 4812,
+        "Time": 1,
         "Input": [
-            6501,
-            1106,
-            1303
+            6253
         ],
         "InCounts": [
-            1,
-            2,
-            1
+            2
         ],
         "Output": [
-            6502
+            6254
         ],
         "OutCounts": [
             1
         ],
-        "Explicit": false,
-        "Handcraft": false,
+        "Explicit": true,
+        "Handcraft": true,
         "NonProductive": false
     },
     {
@@ -5989,29 +5598,33 @@
         "NonProductive": false
     },
     {
-        "ID": 644,
-        "Name": "空燃料棒",
-        "Description": "",
+        "ID": 701,
+        "Name": "高级原油处理",
+        "Description": "R高级原油处理",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
+        "Type": 3,
+        "GridIndex": 4303,
         "Time": 120,
         "Input": [
-            6203,
-            1110
+            1007,
+            1000
         ],
         "InCounts": [
-            1,
-            1
+            2,
+            2
         ],
         "Output": [
-            6509
+            7009,
+            1114,
+            1116
         ],
         "OutCounts": [
-            1
+            4,
+            1,
+            2
         ],
-        "Explicit": false,
-        "Handcraft": true,
+        "Explicit": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -6670,26 +6283,24 @@
     },
     {
         "ID": 785,
-        "Name": "反物质湮灭单元",
+        "Name": "重力鱼雷",
         "Description": "",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 0,
-        "Time": 180,
+        "GridIndex": 5605,
+        "Time": 360,
         "Input": [
-            7610,
-            1122,
-            1120,
-            1403
+            1127,
+            1303,
+            6277
         ],
         "InCounts": [
-            1,
-            6,
-            6,
-            1
+            2,
+            2,
+            2
         ],
         "Output": [
-            7611
+            1611
         ],
         "OutCounts": [
             1
@@ -6700,29 +6311,25 @@
     },
     {
         "ID": 787,
-        "Name": "反物质炮弹",
-        "Description": "",
+        "Name": "煅烧石油焦",
+        "Description": "R煅烧石油焦",
         "IconPath": "",
-        "Type": 10,
-        "GridIndex": 0,
-        "Time": 480,
+        "Type": 3,
+        "GridIndex": 4403,
+        "Time": 120,
         "Input": [
-            7612,
-            6271,
-            7611
+            1114
         ],
         "InCounts": [
-            1,
-            1,
             2
         ],
         "Output": [
-            7613
+            1109
         ],
         "OutCounts": [
             1
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -6756,60 +6363,50 @@
     },
     {
         "ID": 791,
-        "Name": "聚爆加农炮MK2",
+        "Name": "碳粉",
         "Description": "",
         "IconPath": "",
-        "Type": 9,
-        "GridIndex": 0,
-        "Time": 720,
+        "Type": 4,
+        "GridIndex": 1105,
+        "Time": 60,
         "Input": [
-            6502,
-            1107,
-            1303,
-            1205
+            1109
         ],
         "InCounts": [
-            2,
-            8,
-            4,
-            2
+            1
         ],
         "Output": [
-            7617
+            6256
         ],
         "OutCounts": [
             1
         ],
         "Explicit": false,
-        "Handcraft": false,
+        "Handcraft": true,
         "NonProductive": false
     },
     {
         "ID": 792,
-        "Name": "高频激光塔MK2",
-        "Description": "",
+        "Name": "黄铁矿炼铁",
+        "Description": "R黄铁矿炼铁",
         "IconPath": "",
-        "Type": 9,
-        "GridIndex": 0,
-        "Time": 480,
+        "Type": 1,
+        "GridIndex": 3202,
+        "Time": 60,
         "Input": [
-            6502,
-            1107,
-            1206
+            6207
         ],
         "InCounts": [
-            2,
-            4,
-            2
+            1
         ],
         "Output": [
-            7618
+            1101
         ],
         "OutCounts": [
             1
         ],
-        "Explicit": false,
-        "Handcraft": false,
+        "Explicit": true,
+        "Handcraft": true,
         "NonProductive": false
     },
     {
@@ -6973,5 +6570,109 @@
         "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
+    },
+    {
+        "ID": 803,
+        "Name": "信息矩阵",
+        "Description": "",
+        "IconPath": "",
+        "Type": 15,
+        "GridIndex": 1804,
+        "Time": 480,
+        "Input": [
+            1303,
+            7804
+        ],
+        "InCounts": [
+            1,
+            1
+        ],
+        "Output": [
+            6278
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 804,
+        "Name": "电磁矩阵",
+        "Description": "",
+        "IconPath": "",
+        "Type": 15,
+        "GridIndex": 1805,
+        "Time": 600,
+        "Input": [
+            6001,
+            6002,
+            6003,
+            6278
+        ],
+        "InCounts": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "Output": [
+            6279
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 805,
+        "Name": "进一步数据解码",
+        "Description": "R进一步数据解码",
+        "IconPath": "",
+        "Type": 0,
+        "GridIndex": 1702,
+        "Time": 600,
+        "Input": [
+            6234
+        ],
+        "InCounts": [
+            1
+        ],
+        "Output": [
+            6241
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": true,
+        "Handcraft": true,
+        "NonProductive": true
+    },
+    {
+        "ID": 806,
+        "Name": "文明数据上传",
+        "Description": "R文明数据上传",
+        "IconPath": "",
+        "Type": 0,
+        "GridIndex": 1703,
+        "Time": 600,
+        "Input": [
+            6241
+        ],
+        "InCounts": [
+            1
+        ],
+        "Output": [
+            6255
+        ],
+        "OutCounts": [
+            4
+        ],
+        "Explicit": true,
+        "Handcraft": true,
+        "NonProductive": true
     }
 ]

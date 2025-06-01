@@ -2,6 +2,7 @@
 using BepInEx.Bootstrap;
 using HarmonyLib;
 using ProjectGenesis.Utils;
+using UnityEngine;
 using xiaoye97;
 
 // ReSharper disable InconsistentNaming
@@ -103,6 +104,9 @@ namespace ProjectGenesis.Compatibility
             itemProto.recipes = null;
             itemProto.FindRecipes();
             itemProto.isRaw = true;
+
+            TechProto techProto = LDB.techs.Select(1918);
+            techProto.Position = new Vector2(80, 8);
 
             _finished = true;
         }

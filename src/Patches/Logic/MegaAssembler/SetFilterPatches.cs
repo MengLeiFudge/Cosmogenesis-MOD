@@ -100,7 +100,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             entityData.stationId = 0;
 
-            if (slot >= 0 && slot < 12) return GetSlots(factory.planetId, entityId)[slot].storageIdx;
+            if (slot >= 0 && slot < 16) return GetSlots(factory.planetId, entityId)[slot].storageIdx;
 
             Assert.CannotBeReached();
 

@@ -280,14 +280,24 @@
         "ENUS": "Neutron Star System Planet"
     },
     {
-        "Name": "硝酸海洋",
-        "ZHCN": "硝酸海洋",
-        "ENUS": "Nitric Acid Ocean"
+        "Name": "氘核轨道弹",
+        "ZHCN": "氘核轨道弹",
+        "ENUS": "Deuteron Orbital Shell"
     },
     {
-        "Name": "淡水海洋",
-        "ZHCN": "淡水海洋",
-        "ENUS": "Freshwater Ocean"
+        "Name": "I氘核轨道弹",
+        "ZHCN": "使用钛合金封装的氘原子芯核，在电浆武器里用激光气化氘原子为等离子体后，注入回旋粒子加速器中，将等离子体发射出去，对太空目标能造成有效杀伤。",
+        "ENUS": "The deuterium atomic core encapsulated in titanium alloy is vaporized into plasma by laser in plasma weapons, and then injected into a cyclotron particle accelerator to emit the plasma, which can effectively kill space targets."
+    },
+    {
+        "Name": "反物质轨道弹",
+        "ZHCN": "反物质轨道弹",
+        "ENUS": "Antimatter Orbital Shell"
+    },
+    {
+        "Name": "I反物质轨道弹",
+        "ZHCN": "用粒子容器束缚反氢原子，注入回旋粒子加速器中，将反氢原子发射出去，最终在目标处以湮灭反应重创目标。一度被空间管理联盟列为违禁品。",
+        "ENUS": "Binding anti hydrogen atoms with particle containers, injecting them into a cyclotron particle accelerator, emitting anti hydrogen atoms, and ultimately annihilating and severely damaging the target at its location. Once listed as a prohibited item by the COSMO."
     },
     {
         "Name": "裂变重水堆",
@@ -295,14 +305,19 @@
         "ENUS": "Fission Power Station"
     },
     {
-        "Name": "行星大气",
-        "ZHCN": "行星大气",
-        "ENUS": "Planet Atmosphere"
+        "Name": "近防电浆炮",
+        "ZHCN": "近防电浆炮",
+        "ENUS": "Close Range Plasma Cannon"
+    },
+    {
+        "Name": "I近防电浆炮",
+        "ZHCN": "由战舰的近防炮改造而来，发射以磁场约束的等离子霰流，在近距离上破坏力远超其他级别的炮台。以近防为目的的设计让它可以遭受大量攻击而正常运转。尽管行星内大气磁场与重力的扰动作用导致射程比太空更短，但当地面防线告急时，它依然是最可靠的近防武器。",
+        "ENUS": "Adapted from the close range guns of warships, it fires plasma plumes constrained by magnetic fields, causing far greater destructive power at close range than other levels of turrets. The design aimed at close range defense allows it to withstand a large number of attacks and operate normally. Although the disturbance caused by the atmospheric magnetic field and gravity within the planet results in a shorter range than in space, it remains the most reliable close range weapon when ground defenses are in crisis."
     },
     {
         "Name": "量子折跃文字描述",
-        "ZHCN": "使用大量的能量激活负熵奇点，短暂进入虚数空间以实现超远程折跃。",
-        "ENUS": "Use a large amount of energy to activate a negative entropy singularity and briefly enter void space for a hyper-remote folding leap."
+        "ZHCN": "使用反物质燃料棒和翘曲器激活跃迁引擎原型机，撕裂现实空间以实现跨星系瞬时跃迁。",
+        "ENUS": "Activate the prototype of the warp engine using antimatter fuel rods and warping devices, Tearing apart real space to achieve instantaneous transitions across galaxies."
     },
     {
         "Name": "巨型建筑工程学文字描述",
@@ -391,8 +406,8 @@
     },
     {
         "Name": "只能放入燃料棒",
-        "ZHCN": "只能放入燃料棒",
-        "ENUS": "Fuel Rods only"
+        "ZHCN": "只能放入燃料棒或蓄电器",
+        "ENUS": "Fuel Rods or Accumulator only"
     },
     {
         "Name": "I钢筋混凝土",
@@ -1046,13 +1061,13 @@
     },
     {
         "Name": "T深空物流港",
-        "ZHCN": "物流速度和距离决定一个文明的上限，面对跨星系的深空运输，我们需要更加强大的深空货舰，和维护货舰的专业物流港。",
-        "ENUS": "The speed and distance of logistics determine the upper limit of a civilization. In the face of cross galaxy deep space transportation, we need more powerful deep space cargo ships and professional logistics ports to maintain cargo ships."
+        "ZHCN": "物流速度和距离决定一个文明的上限，面对跨星系的深空运输，我们需要能够曲速航行的深空货舰，和能够维护货舰，跨星系量子通讯调度的深空物流港。",
+        "ENUS": "The speed and distance of logistics determine the upper limit of a civilization. In the face of cross galaxy deep space transportation, we need deep space cargo ships that can navigate at warp speed, and deep space logistics ports that can maintain cargo ships and schedule cross galaxy quantum communication."
     },
     {
         "Name": "I深空物流港",
-        "ZHCN": "一座巨型物流港，包含数个集装起重机、专业的曲率引擎检修设备，以及跨星系量子通讯调度塔台。只有它才能撑起一个跨星系文明的物流需求。",
-        "ENUS": "A giant logistics port, including several container cranes, professional curvature engine maintenance equipment, and a cross galaxy quantum communication dispatch tower. Only it can sustain the logistics needs of a cross galaxy civilization."
+        "ZHCN": "一座巨型物流港，包含数个集装起重机、由奇异物质组成的重力井，作为通知飞船退出曲率航行的重力灯塔，以及跨星系量子通讯调度塔台。只有它才能撑起一个跨星系文明的物流需求。",
+        "ENUS": "A giant logistics port consisting of several container cranes, a gravity well composed of exotic matter, serving as a gravity lighthouse for notifying spacecraft to exit curvature navigation, and a cross galaxy quantum communication dispatch tower. Only it can sustain the logistics needs of a cross galaxy civilization."
     },
     {
         "Name": "生态穹顶",
@@ -1980,14 +1995,24 @@
         "ENUS": "Incremental Production"
     },
     {
-        "Name": "T量子折跃",
-        "ZHCN": "量子折跃",
-        "ENUS": "Quantum Navigation"
+        "Name": "T跃迁航行理论",
+        "ZHCN": "跃迁航行理论",
+        "ENUS": "Warp Navigation Theory"
     },
     {
-        "Name": "T量子折跃描述",
-        "ZHCN": "消耗1个<color=\"#FD965ECC\">负熵奇点</color>和 12GJ 能量短暂进入虚数空间，并将机甲传送至<color=\"#FD965ECC\">星图模式</color>下选择的任意星球，但请小心星轨间的干扰。\r\n<color=\"#FD965ECC\">警告：</color>该科技的相关技术已被COSMO技术伦理委员会禁用，<color=\"#FD965ECC\">请手动研究。</color>",
-        "ENUS": "Consumes 1 <color=\"#FD965ECC\">Negentropy Singularity</color> and 12GJ mecha energy to open up a rift to imaginary space and teleport the mecha to any planet selected in <color=\"#FD965ECC\">Star Map Mode</color>, but be careful of the interference between the orbits.\r\n<color=\"#FD965ECC\">Warning:</color> This technology has been prohibited by the COSMO Technology Ethics Committee. <color=\"#FD965ECC\">Please initiate such research manually.</color>"
+        "Name": "T跃迁航行理论描述",
+        "ZHCN": "通过在现实空间中撕开一个空洞，或许能使伊卡洛斯实现星系间瞬时跃迁。人们还不太能真正理解舰船跃迁时穿过的空间本质。",
+        "ENUS": "By tearing open a void in real space, Icarus may be able to achieve instantaneous intergalactic transitions. People still don't really understand the essence of space that ships pass through when jumping."
+    },
+    {
+        "Name": "跃迁引擎",
+        "ZHCN": "跃迁引擎",
+        "ENUS": "Warp Engine"
+    },
+    {
+        "Name": "T跃迁引擎",
+        "ZHCN": "将反物质堆，量子计算机，曲率引擎组成跃迁引擎原型机，沉入次级维度，在虚数空间跟随伊卡洛斯，赋予伊卡洛斯跃迁能力。这个还处于原型阶段的技术样机每次启动都要消耗<color=\"#FD965ECC\">1个反物质燃料棒</color>和<color=\"#FD965ECC\">10个翘曲器</color>。",
+        "ENUS": "Construct a prototype of a transition engine consisting of an antimatter stack, quantum computer, and curvature engine, sink into the secondary dimension, and follow Icarus in imaginary space, endowing Icarus with the ability to transition.This technology prototype, which is still in the prototype stage, consumes <color=\"#FD965ECC\">1 anti material fuel rod</color> and <color=\"#FD965ECC\">10 warping devices</color> every time it is started."
     },
     {
         "Name": "人造恒星描述",
@@ -2171,8 +2196,8 @@
     },
     {
         "Name": "T曲率引擎",
-        "ZHCN": "星系之间的距离动辄以光年计，成熟的曲率引擎是星系航行的基础。",
-        "ENUS": "The distance between galaxies is often measured in light years, and a mature curvature engine is the basis for galaxy navigation."
+        "ZHCN": "曲率引擎通过扭曲前后空间的曲率，使前方的空间收缩而后方的空间扩张，飞船在中间乘着“曲速泡”前进，由空间带着飞船前进，以此达到超光速航行。星系之间的距离动辄以光年计，成熟的曲率引擎是星系航行的基础。",
+        "ENUS": "The curvature engine distorts the curvature of the front and rear spaces, causing the space in front to contract and the space behind to expand. The spacecraft travels forward in the middle on a \"warp bubble\", carried by space, achieving superluminal travel.The distance between galaxies is often measured in light years, and a mature curvature engine is the basis for galaxy navigation."
     },
     {
         "Name": "T磁单极子构成",
@@ -2756,34 +2781,39 @@
         "ENUS": "1800000 hash."
     },
     {
-        "Name": "开发者日志09",
-        "ZHCN": "开发者日志09",
-        "ENUS": "Developer Log 09"
+        "Name": "驱逐舰射程增加至",
+        "ZHCN": "驱逐舰射程增加至",
+        "ENUS": "Destroyer range increased to "
     },
     {
-        "Name": "I开发者日志09",
-        "ZHCN": "当地时间2022年2月5日-条目1\n现在是，2022.02.05，上午十点三十九分。\n做完彻底完成了化工线，只剩两个最终产物了，顺便把电路基板和IC晶片的配方做了一下。\n距离物品系统实装又近了一步。\n现在是，2022.02.05，下午五点五十六分。\n又踩了个坑。\n戴森球的配方上限是825……怪。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "，护卫舰射程增加至",
+        "ZHCN": "，护卫舰射程增加至",
+        "ENUS": ", escort range increased to "
     },
     {
-        "Name": "开发者日志10",
-        "ZHCN": "开发者日志10",
-        "ENUS": "Developer Log 10"
+        "Name": "此科技不可研究",
+        "ZHCN": "此科技不可研究",
+        "ENUS": "This technology cannot be researched"
     },
     {
-        "Name": "I开发者日志10",
-        "ZHCN": "当地时间2022年2月6日-条目1\n现在是，2022.02.06，凌晨零点五十七分。\n现实里遇到一些胃疼的事，开发进度可能会延缓一点。\n顺便给化工线加了点新东西。\n物品已经彻底完成，接下来就是覆写配方和科技树。\n这将是一个漫长的过程。\n现在是，2022.02.06，凌晨两点零三分。\n有一小部分配方出现了莫名其妙的数组越界现象，但是我找不到问题在哪。\n似乎并没有影响到游戏。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "太空舰队结构优化",
+        "ZHCN": "太空舰队结构优化",
+        "ENUS": "Optimization of Space Fleet Structure"
     },
     {
-        "Name": "开发者日志11",
-        "ZHCN": "开发者日志11",
-        "ENUS": "Developer Log 11"
+        "Name": "T太空舰队结构优化",
+        "ZHCN": "对太空战舰的内部构造进行生存方面的优化，通过多重气密舱，复合泄压门，损管流程再设计等手段，提升舰船的生存能力。\n<color=\"#FD965ECC\"> 警告：此升级与火力升级冲突，该科技研究完成后火力升级将无效</color>",
+        "ENUS": "Optimize the internal structure of space warships in terms of survival, and enhance the ship's survival capability through multiple airtight compartments, composite pressure relief doors, and redesign of damage management processes.\n<color=\"#FD965ECC\">Warning: This upgrade conflicts with firepower upgrade, and firepower upgrade will be ineffective after the completion of this technology research</color>"
     },
     {
-        "Name": "I开发者日志11",
-        "ZHCN": "当地时间2022年2月6日-条目2\n……凌晨两点二十三分。\n它莫名其妙被我修好了。\n程序，很奇妙罢）\n凌晨两点二十九分。\n我找到制造逻辑了，芜湖~\n是makes。\n现在是，2022.02.06，下午两点二十⑨分。\n我突然有个想法。\n我不能添加新矿物，但是原版有几个没啥大用的旧矿物……\n嘿嘿嘿。",
-        "ENUS": "Waiting for a translation..."
+        "Name": "太空舰队火力升级",
+        "ZHCN": "太空舰队火力升级",
+        "ENUS": "Space Fleet Firepower Upgrade"
+    },
+    {
+        "Name": "T太空舰队火力升级",
+        "ZHCN": "对太空战舰的内部构造进行火力方面的优化，通过增设冷却匝道，放大等离子炉，提升磁场约束强度等手段，提升舰船的火力。\n<color=\"#FD965ECC\"> 警告：此升级与结构优化冲突，该科技研究完成后结构优化将无效</color>",
+        "ENUS": "Optimize the internal structure of space warships in terms of firepower by adding cooling ramps, amplifying plasma furnaces, and enhancing magnetic field constraints to increase the ship's firepower.\n<color=\"#FD965ECC\">Warning: This upgrade conflicts with structural optimization, and structural optimization will be ineffective after the completion of this technology research</color>"
     },
     {
         "Name": "武器系统描述",
@@ -3056,24 +3086,24 @@
         "ENUS": "You have unlocked the Apocalypse Fusion Missile, which is the ultimate means in the surface firepower sequence."
     },
     {
-        "Name": "T黑雾协调中心",
-        "ZHCN": "行星协调中心：黑雾数据库",
-        "ENUS": "Planetary Coordination Center: Dark Fog Database"
+        "Name": "重力鱼雷",
+        "ZHCN": "重力鱼雷",
+        "ENUS": "Gravity Torpedo"
     },
     {
-        "Name": "黑雾协调中心描述",
-        "ZHCN": "正在将日志上传至COSMO……\n辅助策略单元运行中……\n授权代码验证通过，隐藏数据库已解锁……\n数据同步至行星协调中心……",
-        "ENUS": "Logs are being uploaded to COSMO ......\nAuxiliary Policy Unit is running ......\nAuthorization Code Verification Passed, Hidden Database Unlocked ......\nData Synchronization to Planetary Coordination Center ......"
+        "Name": "T重力鱼雷",
+        "ZHCN": "或许核武器威力在地表已经足够可怕，但以星海为舞台时，核武器纯粹的能量释放在无介质的太空中有很多能量被浪费，威力不够集中。要应对太空的威胁，伊卡洛斯需要专业的对天武器：重力鱼雷，利用奇异物质本身具有的引力负压特性，让周围空间发生翘曲，不仅进一步提升导弹速度，在命中时爆发的引力场会无视装甲厚度对内部造成强大破坏，是专业的反太空舰船武器。",
+        "ENUS": "Perhaps the power of nuclear weapons on the surface is already terrifying enough, but when using the starry sky as a stage, the pure energy released by nuclear weapons in the media free space wastes a lot of energy, and the power is not concentrated enough. To deal with the threat of space, Icarus needs professional anti space weapons: gravity torpedoes, which use the gravitational negative pressure characteristics of strange matter itself to warp the surrounding space. This not only further increases the missile's speed, but also causes strong damage to the interior due to the gravitational field that erupts when hit, ignoring the thickness of the armor. It is a professional anti space ship weapon."
     },
     {
-        "Name": "黑雾协调中心结果",
-        "ZHCN": "通过对数据库中黑雾资料的分析、处理，可以为行星协调中心建立新的行为模型。利用这个模型能够对黑雾行为进行一定的预测及干扰。",
-        "ENUS": "By analyzing and processing the information of Dark Fog in the database, it is possible to create a new behavioral model for the Planetary Coordination Center. Using this model it is possible to make certain predictions and interferences with the behavior of the black fog."
+        "Name": "I重力鱼雷",
+        "ZHCN": "专门的反太空战舰的武器，装备的奇异物质在精细控制下不仅在飞行阶段在前方制造负压为鱼雷持续提速，在命中时还能爆发强大的重力场，撕裂敌方舰船的结构，由于重力对万物生效，重力场的撕裂效应能无视装甲，直接作用于内部结构，是专业的反舰武器。",
+        "ENUS": "A specialized weapon for anti space warships, equipped with strange substances that, under precise control, not only create negative pressure in the front during flight to continuously accelerate torpedoes, but also unleash a powerful gravity field when hit, tearing apart the structure of enemy ships. Due to gravity's effect on everything, the tearing effect of the gravity field can ignore armor and directly affect the internal structure, making it a professional anti-ship weapon."
     },
     {
-        "Name": "黑雾协调中心文字描述",
-        "ZHCN": "为行星协调中心解锁新的功能",
-        "ENUS": "Unlocking new features for the Planetary Coordination Center"
+        "Name": "跃迁航行理论描述",
+        "ZHCN": "跃迁引擎升级",
+        "ENUS": "Warp Engine Upgrade"
     },
     {
         "Name": "T护盾载波调制",

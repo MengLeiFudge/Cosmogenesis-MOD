@@ -18,6 +18,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             AddCombustionPowerUpgradeTechs();
             AddDamageUpgradeTechs();
             AddWreckageRecoveryUpgradeTechs();
+            AddFleetUpgradeTechs();
+            AddWarpEngineTechs();
             //AddTempBugFixTechs();
         }
 
@@ -157,6 +159,57 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             string conclusion = "T残骸回收分析";
             string iconPath = "Assets/texpack/回收科技";
             AddWreckageRecoveryUpgradeTech(id, name, description, conclusion, iconPath);
+        }
+
+        internal static void AddFleetUpgradeTechs()
+        {
+            int id = 5406;
+            string name = "太空舰队火力升级";
+            string description = "T太空舰队火力升级";
+            string conclusion = "T太空舰队火力升级";
+            string iconPath = "Icons/Tech/5303";
+
+            Vector2 oldPosition = new Vector2(0, 0);
+            TechProto tech = LDB.techs.Select(id - 1);
+            oldPosition = tech.Position;
+
+            int[] preTechs = new[] { id - 1 };
+            int[] costItems = new[] { 6279, 6004, 6005, };
+            long costHash = 360000;
+            int[] costItemsPoints = new int[] { 10, 10, 10 };
+            int[] unlockRecipes = new int[] { };
+            Vector2 position = new Vector2(oldPosition.x + 4, oldPosition.y);
+            TechProto NewTechProto = ProtoRegistry.RegisterTech(id, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
+            NewTechProto.Level = 3;
+            NewTechProto.MaxLevel = 3;
+            NewTechProto.UnlockFunctions = new int[] { 103, 72 };
+            NewTechProto.UnlockValues = new double[] { 10000, 0.4 };
+        }
+
+        internal static void AddWarpEngineTechs()
+        {
+            int id = 2907;
+            string name = "跃迁引擎";
+            string description = "T跃迁引擎";
+            string conclusion = "T跃迁引擎";
+            string iconPath = "Assets/texpack/虫洞航行";
+
+            Vector2 oldPosition = new Vector2(0, 0);
+            TechProto tech = LDB.techs.Select(2906);
+            oldPosition = tech.Position;
+
+            int[] preTechs = new int[] {  };
+            int[] costItems = new[] { 6261, 6227, 7805, };
+            long costHash = 3600;
+            int[] costItemsPoints = new int[] { 1, 12, 24 };
+            int[] unlockRecipes = new int[] { };
+            Vector2 position = new Vector2(oldPosition.x + 4, oldPosition.y);
+            TechProto NewTechProto = ProtoRegistry.RegisterTech(id, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
+            NewTechProto.PreTechsImplicit = new int[] { 1152 };
+            NewTechProto.Level = 0;
+            NewTechProto.MaxLevel = 0;
+            NewTechProto.UnlockFunctions = new int[] {  };
+            NewTechProto.UnlockValues = new double[] {  };
         }
 
 

@@ -58,7 +58,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.Cosmogenesis";
         public const string MODNAME = "Cosmogenesis";
-        public const string VERSION = "0.6.14";
+        public const string VERSION = "0.7.0";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -229,6 +229,7 @@ namespace ProjectGenesis
             LDB.items.OnAfterDeserialize();
             ModifyPlanetThemeDataVanilla();
             StationPrefabDescPostAdd();
+            //StationPrefabDescPostAdd810();
             AddCopiedModelProto();
             AddEffectEmitterProto();
             ImportJson(TableID);
@@ -278,11 +279,6 @@ namespace ProjectGenesis
             StationPrefabDescPostAdd810();
             OurSideHPAdjust();
             ModelPostFix();
-
-            PrefabDesc megaPumper = LDB.models.Select(810).prefabDesc;
-            Debug.LogFormat("生态穹顶portPoses.Length {0} scppppppppppppppppppppppppp", megaPumper.portPoses.Length);
-            Debug.LogFormat("portPoses 【0】position x{0} y{1} z{2} ", megaPumper.portPoses[0].position.x, megaPumper.portPoses[0].position.y, megaPumper.portPoses[0].position.z);
-            Debug.LogFormat("portPoses 【1】position {0}", megaPumper.portPoses[1].position);
 
             ProtoPreload();
 

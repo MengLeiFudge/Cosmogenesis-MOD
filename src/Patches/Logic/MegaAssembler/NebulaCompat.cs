@@ -19,7 +19,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 if (Slotdata.TryGetValue(id, out SlotData[] slotDatas)) { slotDatas[slotId] = slotData; }
                 else
                 {
-                    slotDatas = new SlotData[12];
+                    slotDatas = new SlotData[16];
                     slotDatas[slotId] = slotData;
                     Slotdata[id] = slotDatas;
                 }
@@ -30,7 +30,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
         {
             (int planetId, int entityId) id = (planetId, entityId);
 
-            if (!Slotdata.ContainsKey(id) || Slotdata[id] == null) Slotdata[id] = new SlotData[12];
+            if (!Slotdata.ContainsKey(id) || Slotdata[id] == null) Slotdata[id] = new SlotData[16];
 
             return Slotdata[id];
         }
@@ -41,7 +41,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
 
             if (!Slotdata.ContainsKey(id)) return;
 
-            Slotdata[id] = new SlotData[12];
+            Slotdata[id] = new SlotData[16];
             SyncSlotsData.Sync(planetId, entityId, Slotdata[id]);
         }
 

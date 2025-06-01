@@ -37,9 +37,13 @@ namespace ProjectGenesis.Patches.Logic.BattleRelated
             modelProto.prefabDesc.craftUnitMaxMovementSpeed = 15f;
             
             modelProto = LDB.models.Select(451); // 护卫
-            modelProto.HpMax = 250000;
+            modelProto.HpMax = 450000;
+            modelProto.prefabDesc.craftUnitAttackDamage0 = 12500;
             modelProto = LDB.models.Select(452); // 驱逐
-            modelProto.HpMax = 1500000;
+            modelProto.HpMax = 1600000;
+            modelProto.prefabDesc.craftUnitAttackDamage0 = 15000;
+            modelProto.prefabDesc.craftUnitAttackDamage1 = 150000;
+            modelProto.prefabDesc.craftUnitAttackRange0 = 3800f;
 
             modelProto = LDB.models.Select(482); // 地面电浆
             modelProto.HpMax = 120000;
@@ -49,6 +53,38 @@ namespace ProjectGenesis.Patches.Logic.BattleRelated
 
         internal static void ModifyEnemyHpUpgrade()
         {
+         //273 displayName 中枢核心
+         //274 displayName 日蚀要塞装配港
+         //275 displayName 巨鲸装配港
+         //276 displayName 枪骑装配港
+         //277 displayName 光能接收站
+         //278 displayName 等离子发生塔
+         //279 displayName 相位激光塔
+         //280 displayName 种子节点
+         //281 displayName 水平连接桥
+         //282 displayName 纵向通道
+         //283 displayName 日蚀要塞
+         //284 displayName 巨鲸
+         //285 displayName 枪骑
+         //286 displayName 高速拦截机
+         //287 displayName 小型炸弹机
+         //288 displayName 中继站
+         //289 displayName 工蚁
+         //290 displayName 重型运输船
+         //291 displayName 火种
+         //292 displayName 行星基地
+         //293 displayName 强袭者营地
+         //294 displayName 游骑兵营地
+         //295 displayName 守卫者营地
+         //296 displayName 高能激光塔
+         //297 displayName 等离子哨戒塔
+         //298 displayName 等离子护盾
+         //299 displayName 导轨
+         //300 displayName 强袭者
+         //301 displayName 游骑兵
+         //302 displayName 守卫者
+         //303 displayName 运输车
+
             ModelProto model = LDB.models.Select(ProtoID.M导轨);
             model.HpMax *= 3;
             model.HpUpgrade *= 3;
@@ -69,6 +105,14 @@ namespace ProjectGenesis.Patches.Logic.BattleRelated
             modelProto.prefabDesc.unitMarchMovementSpeed = 5;
             modelProto.prefabDesc.unitAttackDamageInc0 = 1500;
             modelProto.prefabDesc.unitAttackRange0 = 20;
+
+            modelProto = LDB.models.Select(284);
+            modelProto.HpMax = 750000;
+            modelProto.HpUpgrade = 30000;
+
+            modelProto = LDB.models.Select(285);
+            modelProto.HpMax = 450000;
+            modelProto.HpUpgrade = 25000;
 
             modelProto = LDB.models.Select(ProtoID.M高能激光塔);
             modelProto.prefabDesc.dfTurretAttackDamage = 26000;

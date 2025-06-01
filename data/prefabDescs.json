@@ -183,12 +183,12 @@
     },
     {
         "ModelID": 74,
-        "siloChargeFrame": 120,
-        "siloColdFrame": 60
+        "siloChargeFrame": 150,
+        "siloColdFrame": 120
     },
     {
         "ModelID": 117,
-        "stationCollectSpeed": 10,
+        "stationCollectSpeed": 20,
         "workEnergyPerTick": 0
     },
     {
@@ -245,11 +245,15 @@
     },
     {
         "ModelID": 408,
+        "idleEnergyPerTick": 35000,
+        "workEnergyPerTick": 75000,
         "turretSpaceAttackRange": 10500
     },
     {
         "ModelID": 434,
-        "AmmoBlastRadius1": 50
+        "AmmoBlastRadius1": 5,
+        "AmmoMoveAcc": 30,
+        "AmmoTurnAcc": 30
     },
     {
         "ModelID": 455,
@@ -423,8 +427,8 @@
     {
         "ModelID": 813,
         "AmmoBlastRadius1": 115,
-        "AmmoMoveAcc": 30,
-        "AmmoTurnAcc": 30
+        "AmmoMoveAcc": 10,
+        "AmmoTurnAcc": 10
     },
     {
         "ModelID": 814,
@@ -465,6 +469,8 @@
     },
     {
         "ModelID": 818,
-        "AmmoBlastRadius1": 17
+        "AmmoBlastRadius1": 50,
+        "AmmoMoveAcc": 10,
+        "AmmoTurnAcc": 10
     }
 ]

@@ -43,13 +43,13 @@ namespace ProjectGenesis.Patches.Logic
         }
 
         public static bool IsFastTravelTechUnlocked(bool sandboxToolsEnabled) =>
-            sandboxToolsEnabled || GameMain.history.TechUnlocked(ProtoID.T量子折跃);
+            sandboxToolsEnabled || GameMain.history.TechUnlocked(2907);
 
         public static bool IsFastTravelEnabled(bool sandboxToolsEnabled)
         {
             if (sandboxToolsEnabled) return true;
 
-            if (!GameMain.history.TechUnlocked(ProtoID.T量子折跃))
+            if (!GameMain.history.TechUnlocked(2907))
             {
                 UIRealtimeTip.Popup("未解锁量子折跃".TranslateFromJson());
 
@@ -60,40 +60,76 @@ namespace ProjectGenesis.Patches.Logic
 
             Mecha mecha = player.mecha;
 
-            var energyWant = 12000000000;
+            //var energyWant = 12000000000;
 
-            mecha.QueryEnergy(energyWant, out double energyGet, out _);
+            //mecha.QueryEnergy(energyWant, out double energyGet, out _);
 
-            if (energyGet < energyWant)
+            //if (energyGet < energyWant)
+            //{
+            //    UIRealtimeTip.Popup("折跃能量不足".TranslateFromJson());
+
+            //    return false;
+            //}
+
+            if (player.package.GetItemCount(ProtoID.I反物质燃料棒) < 1)
             {
-                UIRealtimeTip.Popup("折跃能量不足".TranslateFromJson());
+                UIRealtimeTip.Popup("反物质燃料棒不足".TranslateFromJson());
 
                 return false;
             }
 
-            if (!UseNegentropySingularity(player))
+            if (player.package.GetItemCount(1210) < 10)
             {
-                UIRealtimeTip.Popup("负熵奇点不足".TranslateFromJson());
+                UIRealtimeTip.Popup("翘曲器不足".TranslateFromJson());
+                return false;
+            }
+
+            if (!UseAntimatterFuelRod(player))
+            {
+                UIRealtimeTip.Popup("反物质燃料棒不足".TranslateFromJson());
 
                 return false;
             }
 
-            mecha.coreEnergy -= energyGet;
-            mecha.MarkEnergyChange(9, -energyWant);
+            if (!UseWarper(player))
+            {
+                UIRealtimeTip.Popup("翘曲器不足".TranslateFromJson());
+
+                return false;
+            }
+
+            //mecha.coreEnergy -= energyGet;
+            //mecha.MarkEnergyChange(9, -energyWant);
 
             return true;
         }
 
-        private static bool UseNegentropySingularity(Player player)
+        private static bool UseAntimatterFuelRod(Player player)
         {
-            int itemId = ProtoID.I负熵奇点;
+            int itemId = ProtoID.I反物质燃料棒;
             var itemCount = 1;
+            
+            player.TakeItemFromPlayer(ref itemId, ref itemCount, out _, true, null);
+
+            if (itemId != ProtoID.I反物质燃料棒) return false;
+
+            if (itemCount != 1) return false;
+
+            player.mecha.AddConsumptionStat(itemId, itemCount, player.nearestFactory);
+
+            return true;
+        }
+
+        private static bool UseWarper(Player player)
+        {
+            int itemId = 1210;
+            var itemCount = 10;
 
             player.TakeItemFromPlayer(ref itemId, ref itemCount, out _, true, null);
 
-            if (itemId != ProtoID.I负熵奇点) return false;
+            if (itemId != 1210) return false;
 
-            if (itemCount != 1) return false;
+            if (itemCount != 10) return false;
 
             player.mecha.AddConsumptionStat(itemId, itemCount, player.nearestFactory);
 

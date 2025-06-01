@@ -23,7 +23,7 @@
             501,
             6,
             17,
-            536,
+            791,
             404,
             429
         ],
@@ -372,7 +372,7 @@
         ],
         "HashNeeded": 144000,
         "UnlockRecipes": [
-            540
+            804
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -1100,9 +1100,11 @@
         "PreItem": null,
         "Position": [
             80.0,
-            24.0
+            -36.0
         ],
-        "PreTechs": [],
+        "PreTechs": [
+            1145
+        ],
         "PreTechsImplicit": [],
         "Items": [
             6006
@@ -1110,7 +1112,7 @@
         "ItemPoints": [
             10
         ],
-        "HashNeeded": 2880000,
+        "HashNeeded": 720000,
         "UnlockRecipes": [
             110
         ],
@@ -1138,7 +1140,7 @@
         "PreItem": null,
         "Position": [
             76.0,
-            -32.0
+            -36.0
         ],
         "PreTechs": [
             1506
@@ -1220,32 +1222,27 @@
     },
     {
         "ID": 1152,
-        "Name": "T量子折跃",
+        "Name": "T跃迁航行理论",
         "IconPath": "Assets/texpack/虫洞航行",
-        "Desc": "T量子折跃描述",
-        "Conclusion": "T量子折跃描述",
-        "IsHiddenTech": true,
-        "PreItem": [
-            5204,
-            5205
-        ],
+        "Desc": "T跃迁航行理论描述",
+        "Conclusion": "T跃迁航行理论描述s",
+        "IsHiddenTech": false,
+        "PreItem": [],
         "Position": [
-            80.0,
-            -8.0
+            84.0,
+            -36.0
         ],
-        "PreTechs": [],
-        "PreTechsImplicit": [
-            1962,
-            1904,
-            1704
+        "PreTechs": [
+            1144
         ],
+        "PreTechsImplicit": [],
         "Items": [
-            5201
+            6006
         ],
         "ItemPoints": [
-            120
+            10
         ],
-        "HashNeeded": 240000,
+        "HashNeeded": 540000,
         "UnlockRecipes": [],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -1680,7 +1677,7 @@
         ],
         "HashNeeded": 360000,
         "UnlockRecipes": [
-            539
+            803
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -1724,7 +1721,7 @@
         "UnlockRecipes": [
             56,
             50,
-            537
+            792
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -4436,7 +4433,7 @@
     },
     {
         "ID": 1818,
-        "Name": "T反物质胶囊",
+        "Name": "反物质轨道弹",
         "IconPath": "Icons/Tech/1818",
         "Desc": "反物质胶囊描述",
         "Conclusion": "反物质胶囊结果",
@@ -4954,7 +4951,6 @@
         "PreTechs": [],
         "PreTechsImplicit": [
             1902,
-            1962,
             1417
         ],
         "Items": [
@@ -5153,6 +5149,7 @@
         "PropertyOverrideItems": [],
         "PropertyItemCounts": []
     },
+    // 1918为巨构mod恒星炮科技
     {
         "ID": 1919,
         "Name": "T铀燃料处理",
@@ -5738,8 +5735,8 @@
         "HashNeeded": 72000,
         "UnlockRecipes": [
             23,
-            534,
-            535
+            701,
+            787
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -5978,7 +5975,51 @@
         "HashNeeded": 720000,
         "UnlockRecipes": [
             522,
-            533
+            642
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1939,
+        "Name": "重力鱼雷",
+        "IconPath": "Icons/Tech/1817",
+        "Desc": "T重力鱼雷",
+        "Conclusion": "T重力鱼雷",
+        "IsHiddenTech": false,
+        "PreItem": null,
+        "Position": [
+            72.0,
+            -72.0
+        ],
+        "PreTechs": [
+            1916
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6279,
+            6004,
+            6005
+        ],
+        "ItemPoints": [
+            8,
+            8,
+            10
+        ],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [
+            785
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6315,10 +6356,12 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            80.0,
-            20.0
+            88.0,
+            -36.0
         ],
-        "PreTechs": [],
+        "PreTechs": [
+            1152
+        ],
         "PreTechsImplicit": [],
         "Items": [
             6006
@@ -6694,7 +6737,7 @@
         ],
         "HashNeeded": 108000,
         "UnlockRecipes": [
-            531
+            625
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6734,9 +6777,9 @@
         ],
         "HashNeeded": 36000,
         "UnlockRecipes": [
-            532,
-            541,
-            542
+            641,
+            805,
+            806
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],

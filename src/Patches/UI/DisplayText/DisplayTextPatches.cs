@@ -204,13 +204,13 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                 //    break;
 
-                case ProtoID.T量子折跃:
+                case 2907:
                     __result = "量子折跃文字描述".TranslateFromJson();
 
                     break;
 
-                case ProtoID.T黑雾协调中心:
-                    __result = "黑雾协调中心文字描述".TranslateFromJson();
+                case ProtoID.T跃迁航行理论:
+                    __result = "跃迁航行理论描述".TranslateFromJson();
 
                     break;
 
