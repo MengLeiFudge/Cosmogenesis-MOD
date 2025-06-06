@@ -58,7 +58,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.Cosmogenesis";
         public const string MODNAME = "Cosmogenesis";
-        public const string VERSION = "0.7.0";
+        public const string VERSION = "0.7.4";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;

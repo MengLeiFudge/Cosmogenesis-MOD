@@ -1,4 +1,6 @@
-﻿using ProjectGenesis.Utils;
+﻿using HarmonyLib;
+using System.Reflection.Emit;
+using ProjectGenesis.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -117,6 +119,77 @@ namespace ProjectGenesis.Patches.Logic.BattleRelated
             modelProto = LDB.models.Select(ProtoID.M高能激光塔);
             modelProto.prefabDesc.dfTurretAttackDamage = 26000;
             modelProto.prefabDesc.dfTurretAttackDamageInc = 3000;
+        }
+
+        [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.CalculateDamageIncoming))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> SkillSystem_CalculateDamageIncoming_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_2), new CodeMatch(OpCodes.Div));
+
+            // 太空黑雾护甲，每级0.5提升到每级2
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_2))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Mul));
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Div));
+
+            // 地面黑雾护甲，每级0.2提升到每级1
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Mul));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.DamageGroundObjectByLocalCaster))]
+        [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.DamageGroundObjectByRemoteCaster))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> SkillSystem_DamageGroundObjectByCaster_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_5), new CodeMatch(OpCodes.Div));
+
+            // 地面黑雾护甲，每级0.2提升到每级1
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Mul));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(SkillSystem), nameof(SkillSystem.DamageObject))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> SkillSystem_DamageObject_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4_2), new CodeMatch(OpCodes.Div));
+
+            // 太空黑雾护甲，每级0.5提升到每级2
+            matcher.SetInstructionAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_2))
+               .SetInstructionAndAdvance(new CodeInstruction(OpCodes.Mul));
+
+            return matcher.InstructionEnumeration();
+        }
+
+        [HarmonyPatch(typeof(UIEnemyBriefInfo), nameof(UIEnemyBriefInfo._OnUpdate))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UIEnemyBriefInfo__OnUpdate_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var matcher = new CodeMatcher(instructions);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 0.2f), new CodeMatch(OpCodes.Stloc_S));
+
+            // 地面黑雾护甲，每级0.2提升到每级1
+            matcher.SetOperandAndAdvance(1f);
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_R4, 0.5f), new CodeMatch(OpCodes.Stloc_S));
+
+            // 太空黑雾护甲，每级0.5提升到每级2
+            matcher.SetOperandAndAdvance(2f);
+
+            return matcher.InstructionEnumeration();
         }
     }
 }

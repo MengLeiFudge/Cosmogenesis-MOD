@@ -150,6 +150,11 @@
         "ENUS": "Due to the still active volcanic activity, the Gobi planet has an extremely dense carbon dioxide atmosphere. The uncontrolled greenhouse effect leads to extremely high surface temperatures, with minimal temperature differences between day and night, and low wind speeds near the surface. This allows it to preserve some geological features left over from ancient times. \r\nThe active volcanic activity also proves that the core of this planet is still hot, which can extract deep magma rich in rare metals and develop into a production base for high-end metal products."
     },
     {
+        "Name": "冰原冻土介绍",
+        "ZHCN": "　　一颗主要由冰和岩石组成的星球。富含甲烷，由于其表面零下一百七十多度的低温，甲烷变得如地球的水一般，会循环气化与冷凝，形成天气，与大片的甲烷湖泊。\r\n　　这类星球的生态系统由于缺乏恒星的辐照，通常不会有太大的体量。但是，当它作为某颗气巨星的卫星时，存在生命的冰原冻土星球很可能会演化出某种长达数公里的海藻，并通过切割气巨星的磁场获得能量，摄入氢气，排出甲烷，从而作为第一营养级支撑起一个繁盛的地下生态系统。",
+        "ENUS": "A planet primarily composed of ice and rocks. Rich in methane, due to its surface temperature of over minus 170 degrees Celsius, methane becomes like water on Earth and undergoes cyclic gasification and condensation, forming weather and large methane lakes. \r\nThe ecosystems of such planets usually do not have a large size due to the lack of stellar radiation. However, when it serves as a satellite of a gas giant, the ice and permafrost planet where life exists is likely to evolve some kind of seaweed that can grow for several kilometers, and obtain energy by cutting the magnetic field of the gas giant, ingesting hydrogen gas and excreting methane, thus supporting a thriving underground ecosystem as the first trophic level."
+    },
+    {
         "Name": "黑海岩滩",
         "ZHCN": "黑海岩滩",
         "ENUS": "Black Sea Beach"
@@ -313,6 +318,16 @@
         "Name": "I近防电浆炮",
         "ZHCN": "由战舰的近防炮改造而来，发射以磁场约束的等离子霰流，在近距离上破坏力远超其他级别的炮台。以近防为目的的设计让它可以遭受大量攻击而正常运转。尽管行星内大气磁场与重力的扰动作用导致射程比太空更短，但当地面防线告急时，它依然是最可靠的近防武器。",
         "ENUS": "Adapted from the close range guns of warships, it fires plasma plumes constrained by magnetic fields, causing far greater destructive power at close range than other levels of turrets. The design aimed at close range defense allows it to withstand a large number of attacks and operate normally. Although the disturbance caused by the atmospheric magnetic field and gravity within the planet results in a shorter range than in space, it remains the most reliable close range weapon when ground defenses are in crisis."
+    },
+    {
+        "Name": "重型电浆炮",
+        "ZHCN": "重型电浆炮",
+        "ENUS": "Heavy Plasma Cannon"
+    },
+    {
+        "Name": "I重型电浆炮",
+        "ZHCN": "重型的反轨道电浆炮，使用专门的等离子轨道弹，将弹芯原子抽取后等离子化，再用强磁场约束并发射出去，形成一道聚集的能量束，在没有大气干扰的太空中有不俗的射程和极佳的破坏力，它亦是COSMO太空舰队的制式主炮。",
+        "ENUS": "The heavy-duty anti orbital plasma cannon uses specialized plasma railshells to extract atoms from the core, ionize them, and then confine and launch them with a strong magnetic field to form a concentrated energy beam. It has a decent range and excellent destructive power in space without atmospheric interference, and is also the standard main gun of the COSMO space fleet."
     },
     {
         "Name": "量子折跃文字描述",
@@ -731,8 +746,8 @@
     },
     {
         "Name": "I金属氢",
-        "ZHCN": "将氢压缩成液态，固态后继续压缩，直至电子在超高压下逸散而出，形成金属般的导电性，然后使用石墨烯制造纳米笼包裹以及金属钛吸附，维持其常压下存在。",
-        "ENUS": "Compressing hydrogen into a liquid state and then continuing to compress it in a solid state until electrons escape under ultra-high pressure, forming a metallic conductivity. Then, graphene is used to create nanocages and metal titanium adsorption to maintain its atmospheric pressure."
+        "ZHCN": "将氢压缩成液态，固态后继续压缩，直至电子在超高压下逸散而出，形成金属般的导电性，然后使用石墨烯制造纳米笼包裹以及金属钛吸附，维持其常压下存在，便形成了有金属性质的临界固体氢：金属氢。",
+        "ENUS": "Compressing hydrogen into a liquid state and then continuing to compress it in a solid state until electrons escape under ultra-high pressure, forming a metallic conductivity. Then, graphene is used to create nanocages and metal titanium adsorption to maintain its existence at normal pressure, forming a critical solid hydrogen with metallic properties: metallic hydrogen."
     },
     {
         "Name": "磁流体",
@@ -1431,8 +1446,8 @@
     },
     {
         "Name": "I裂解射线发生器",
-        "ZHCN": "通过对样本进行逆向工程，得到的残缺版的碳基裂解射线发生器，射程很短，激发一次后就会损毁，或许可以用于工业生产用途，将碳基有机质快速裂解为烷烃原油。",
-        "ENUS": "The incomplete version of the carbon based cracking radiation generator obtained by reverse engineering the sample has a short range and will be damaged after one excitation. It may be used for industrial production to rapidly crack carbon based organic matter into hydrocarbon crude oil."
+        "ZHCN": "通过对样本进行逆向工程，得到的残缺版的碳基裂解射线发生器，射程很短，激发一次后就会损毁，或许可以用于工业生产用途，将碳基有机质快速裂解为烷烃质。",
+        "ENUS": "The incomplete version of the carbon based cracking radiation generator obtained by reverse engineering the sample has a short range and will be damaged after one excitation. It may be used for industrial production to rapidly crack carbon based organic matter into alkane."
     },
     {
         "Name": "量子化工厂",
@@ -1720,9 +1735,14 @@
         "ENUS": "If only collect antimatter, a more aggressive magnetic field structure to speed up the antimatter output."
     },
     {
-        "Name": "R等离子精炼",
-        "ZHCN": "利用等离子体精炼原油，可以获得轻油和重油。",
-        "ENUS": "light oil and heavy oil can be obtained by refining crude oil with plasma."
+        "Name": "原油处理",
+        "ZHCN": "原油处理",
+        "ENUS": "Crude Oil Processing"
+    },
+    {
+        "Name": "R原油处理",
+        "ZHCN": "注入淡水形成乳化液，通过电场和破乳剂使水滴聚沉，分离出含盐水，再通过高温分馏精炼原油，使其分为轻油和重油。",
+        "ENUS": "Inject fresh water to form an emulsion, use an electric field and demulsifier to cause water droplets to coalesce and precipitate, separate saltwater, and then refine crude oil through high-temperature distillation to separate it into light oil and heavy oil."
     },
     {
         "Name": "深空货舰",
@@ -2636,13 +2656,18 @@
     },
     {
         "Name": "I驱逐舰",
-        "ZHCN": "太空驱逐舰，使用致密强相互作用力材料做装甲。体型更大、得以塞下庞大的主炮，这套名为“小和炮”的复杂火炮系统能将聚变弹的爆炸能量约束并发射。指挥驱逐舰需要消耗 4 个指挥点数，因此在一个太空编队中最多只能同时指挥三艘驱逐舰。",
-        "ENUS": "Space destroyers use dense and strong interaction materials for armor. With a larger size and the ability to accommodate a massive main gun, this complex artillery system called the \"Xiaohe Cannon\" can constrain and launch the explosive energy of fusion bombs. Commanding a destroyer requires 4 command points, so a maximum of three destroyers can be commanded simultaneously in a space formation."
+        "ZHCN": "标准型无人驱逐舰，是COSMO太空部队的主力战舰，全舰使用零素装甲一体成型，可以免疫击碎原子能级以下的任何攻击。除了常规舰炮之外，还拥有贯穿舰身的巨型船轴主炮，这门巨炮由独立的反应堆供电，高强度磁场将狂暴的等离子团约束并发射出去，能对目标造成高额破坏。",
+        "ENUS": "The standard type unmanned destroyer is the main warship of the COSMO Space Force. The entire ship is equipped with zero element armor and can withstand any attack below the atomic level. In addition to conventional naval guns, it also has a giant ship shaft main gun that runs through the ship's hull. This giant gun is powered by an independent reactor, and a high-intensity magnetic field restrains and fires the violent plasma mass, causing significant damage to the target."
+    },
+    {
+        "Name": "I护卫舰",
+        "ZHCN": "护卫舰，是COSMO太空舰队序列中最小，最快的一批舰船之一，可以辅助伊卡洛斯进行太空作战，廉价的无人标准型护卫舰可以靠数量压制对手。",
+        "ENUS": "The frigate is one of the smallest and fastest ships in the COSMO space fleet sequence, capable of assisting Icarus in space operations. The low-cost unmanned standard frigate can suppress opponents by quantity."
     },
     {
         "Name": "R碳基裂解",
-        "ZHCN": "将碳基生物质用绿色的裂解射线扫过，将其裂解为烷烃，即：原油，或许有人说植物的命也是命，使用这种专门针对生命的武器是种不正当的罪行。\r\n\r\n而我们称之为高效。",
-        "ENUS": "Scanning carbon based biomass with green pyrolysis radiation to break it down into alkanes, namely crude oil. Perhaps some people say that the life of plants is also life, and using this weapon specifically targeting life is an illegitimate crime.\r\n\r\nAnd we call it efficiency."
+        "ZHCN": "将碳基生物质用绿色的裂解射线扫过，将其裂解为长链烷烃,环烷烃,芳香烃等复杂烃类化合物，即：重油，或许有人说植物的命也是命，使用这种专门针对生命的武器是种不正当的罪行。\r\n\r\n而我们称之为高效。",
+        "ENUS": "Scanning carbon based biomass with green pyrolysis radiation to break it down into complex hydrocarbon compounds such as long-chain alkanes, cycloalkanes, and aromatic hydrocarbons, namely heavy oil. Perhaps some people say that the life of plants is also life, and using this weapon specifically targeting life is an illegitimate crime.\r\n\r\nAnd we call it efficiency."
     },
     {
         "Name": "太空损管包",

@@ -7449,8 +7449,8 @@
     },
   {
     "ID": 3004,
-    "Name": "磁化电浆炮",
-    "Description": "I磁化电浆炮",
+    "Name": "重型电浆炮",
+    "Description": "I重型电浆炮",
     "IconPath": "Icons/ItemRecipe/turret-plasma",
     "GridIndex": 5206,
     "StackSize": 50,
@@ -8142,7 +8142,7 @@
   {
     "ID": 5111,
     "Name": "太空战斗机-A型",
-    "Description": "I太空战斗机-A型",
+    "Description": "I护卫舰",
     "IconPath": "Icons/ItemRecipe/warship-plasma",
     "GridIndex": 5104,
     "StackSize": 30,

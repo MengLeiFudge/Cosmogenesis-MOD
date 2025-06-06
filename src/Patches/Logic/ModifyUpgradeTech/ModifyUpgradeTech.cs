@@ -1330,7 +1330,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 {
                     if (LDB.techs.Select(__instance.mecha.gameData.history.currentTech).IsLabTech == false)
                     {
-                        recipeProto = LDB.recipes.Select(533);
+                        recipeProto = LDB.recipes.Select(642);
                         if (recipeProto.ItemCounts[0] == 2)
                         {
                             synapticLatheTechSpeed = 1;
@@ -1344,7 +1344,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     }
                     else
                     {
-                        recipeProto = LDB.recipes.Select(533);
+                        recipeProto = LDB.recipes.Select(642);
                         recipeProto.ItemCounts[0] = 2;
                         synapticLatheTechSpeed = 1;
                         __instance.mecha.gameData.history.techSpeed = vanillaTechSpeed;
@@ -1353,7 +1353,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     }
                 } else
                 {
-                    recipeProto = LDB.recipes.Select(533);
+                    recipeProto = LDB.recipes.Select(642);
                     if (recipeProto.ItemCounts[0] == 2)
                     {
                         synapticLatheTechSpeed = 1;
@@ -1379,7 +1379,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         {
             if (index == 0) { 
                 RecipeProto recipeProto;
-                recipeProto = LDB.recipes.Select(533);
+                recipeProto = LDB.recipes.Select(642);
                 recipeProto.ItemCounts[0] = 2;
                 synapticLatheTechSpeed = 1;
                 __instance.techSpeed = vanillaTechSpeed;
@@ -1391,7 +1391,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         public static void DequeueTechPatch(GameHistoryData __instance)
         {
             RecipeProto recipeProto;
-            recipeProto = LDB.recipes.Select(533);
+            recipeProto = LDB.recipes.Select(642);
             recipeProto.ItemCounts[0] = 2;
             synapticLatheTechSpeed = 1;
             __instance.techSpeed = vanillaTechSpeed;
@@ -1406,7 +1406,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 if (LDB.techs.Select(techId).IsLabTech == true)
                 {
                     RecipeProto recipeProto;
-                    recipeProto = LDB.recipes.Select(533);
+                    recipeProto = LDB.recipes.Select(642);
                     recipeProto.ItemCounts[0] = 2;
                     synapticLatheTechSpeed = 1;
                     __instance.techSpeed = vanillaTechSpeed;

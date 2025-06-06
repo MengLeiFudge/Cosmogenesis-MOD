@@ -31,7 +31,8 @@
         "needBuildInWaterTech": false,
         "waterTypes": [
             1000,
-            1114
+            1007,
+            6205
         ]
     },
     {
@@ -68,7 +69,8 @@
         "genEnergyPerTick": 7000,
         "waterTypes": [
             1000,
-            1114
+            1007,
+            6205
         ]
     },
     {
@@ -83,7 +85,8 @@
         "needBuildInWaterTech": true,
         "waterTypes": [
             1000,
-            1114
+            1007,
+            6205
         ]
     },
     {
@@ -98,13 +101,13 @@
     },
     {
         "ModelID": 60,
-        "minerPeriod": 360000,
         "allowBuildInWater": true,
         "waterTypes": [
             1000,
             1116,
             1007,
-            6251
+            6251,
+            6205
         ]
     },
     {
@@ -379,10 +382,7 @@
         "needBuildInWaterTech": false,
         "waterTypes": [
             1000,
-            1116,
-            7014,
-            7017,
-            7018
+            1116
         ]
     },
     {

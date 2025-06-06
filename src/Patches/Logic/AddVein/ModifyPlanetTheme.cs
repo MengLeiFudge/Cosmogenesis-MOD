@@ -22,9 +22,19 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
                 switch (theme.ID)
                 {
+                    case 8:
+                        theme.BriefIntroduction = "海洋丛林介绍";
+                        break;
 
                     case 9:
                         theme.WaterItemId = ProtoID.I岩浆;
+                        break;
+
+                    case 10:
+                        theme.BriefIntroduction = "冰原冻土介绍";
+                        theme.WaterItemId = 6205; // 甲烷
+                        theme.WaterHeight = -0.5f;
+                        theme.Distribute = EThemeDistribute.Interstellar;
                         break;
 
                     case 17:
@@ -40,6 +50,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
 
                     case 19:
                         theme.Wind = 8;
+                        break;
+                    case 25:
+                        theme.BriefIntroduction = "潘多拉沼泽介绍";
                         break;
                 }
             }
