@@ -75,6 +75,30 @@
     },
     {
         "ID": 4,
+        "Name": "碳粉",
+        "Description": "",
+        "IconPath": "",
+        "Type": 4,
+        "GridIndex": 1105,
+        "Time": 60,
+        "Input": [
+            1109
+        ],
+        "InCounts": [
+            1
+        ],
+        "Output": [
+            6256
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": true,
+        "NonProductive": false
+    },
+    {
+        "ID": 5,
         "Name": "钢筋混凝土",
         "Description": "",
         "IconPath": "",
@@ -99,34 +123,6 @@
         ],
         "Explicit": false,
         "Handcraft": true,
-        "NonProductive": false
-    },
-    {
-        "ID": 5,
-        "Name": "湮灭弹药箱",
-        "Description": "",
-        "IconPath": "",
-        "Type": 10,
-        "GridIndex": 0,
-        "Time": 360,
-        "Input": [
-            7609,
-            7611,
-            5205
-        ],
-        "InCounts": [
-            1,
-            1,
-            1
-        ],
-        "Output": [
-            7616
-        ],
-        "OutCounts": [
-            1
-        ],
-        "Explicit": false,
-        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -569,14 +565,12 @@
             1108,
             1110,
             1109,
-            1301,
-            1113
+            1301
         ],
         "InCounts": [
             8,
             8,
             8,
-            2,
             2
         ],
         "Output": [
@@ -800,7 +794,7 @@
     {
         "ID": 31,
         "Name": "石墨烯",
-        "Description": "",
+        "Description": "I石墨烯",
         "IconPath": "",
         "Type": 2,
         "GridIndex": 4101,
@@ -819,7 +813,7 @@
         "OutCounts": [
             2
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -1304,13 +1298,11 @@
         "Input": [
             1103,
             1104,
-            1203,
-            6256
+            1203
         ],
         "InCounts": [
             4,
             3,
-            2,
             2
         ],
         "Output": [
@@ -2845,7 +2837,7 @@
     {
         "ID": 106,
         "Name": "重水分馏",
-        "Description": "",
+        "Description": "R重水分馏",
         "IconPath": "",
         "Type": 8,
         "GridIndex": 4106,
@@ -2869,7 +2861,7 @@
     {
         "ID": 107,
         "Name": "重氢分馏",
-        "Description": "",
+        "Description": "R重氢分馏",
         "IconPath": "",
         "Type": 8,
         "GridIndex": 4105,
@@ -2906,7 +2898,7 @@
         "InCounts": [
             1,
             1,
-            4
+            2
         ],
         "Output": [
             1143
@@ -4233,7 +4225,7 @@
         "InCounts": [
             1,
             2,
-            20,
+            4,
             30
         ],
         "Output": [
@@ -4546,17 +4538,17 @@
     },
     {
         "ID": 406,
-        "Name": "深层岩浆处理",
-        "Description": "R深层岩浆处理",
+        "Name": "深层熔岩处理",
+        "Description": "R深层熔岩处理",
         "IconPath": "",
         "Type": 1,
         "GridIndex": 3108,
-        "Time": 240,
+        "Time": 120,
         "Input": [
             6202
         ],
         "InCounts": [
-            4
+            2
         ],
         "Output": [
             6251,
@@ -4577,21 +4569,21 @@
         "IconPath": "",
         "Type": 1,
         "GridIndex": 3208,
-        "Time": 60,
+        "Time": 120,
         "Input": [
             6203,
             1116
         ],
         "InCounts": [
-            2,
-            1
+            4,
+            2
         ],
         "Output": [
             6201,
             6204
         ],
         "OutCounts": [
-            2,
+            4,
             1
         ],
         "Explicit": true,
@@ -4612,8 +4604,8 @@
             1113
         ],
         "InCounts": [
-            4,
-            6,
+            1,
+            5,
             1
         ],
         "Output": [
@@ -4643,7 +4635,7 @@
         "InCounts": [
             2,
             12,
-            6,
+            18,
             1
         ],
         "Output": [
@@ -4839,7 +4831,7 @@
         "IconPath": "",
         "Type": 2,
         "GridIndex": 4512,
-        "Time": 180,
+        "Time": 60,
         "Input": [
             1011
         ],
@@ -4949,22 +4941,22 @@
         "IconPath": "",
         "Type": 1,
         "GridIndex": 3408,
-        "Time": 120,
+        "Time": 60,
         "Input": [
             6204
         ],
         "InCounts": [
-            3
+            1
         ],
         "Output": [
             6203
         ],
         "OutCounts": [
-            3
+            1
         ],
         "Explicit": false,
         "Handcraft": false,
-        "NonProductive": false
+        "NonProductive": true
     },
     {
         "ID": 422,
@@ -5431,7 +5423,7 @@
         ],
         "OutCounts": [
             1,
-            4
+            2
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -5439,29 +5431,29 @@
     },
     {
         "ID": 624,
-        "Name": "有机晶体",
-        "Description": "R有机晶体（原始）",
-        "IconPath": "Icons/ItemRecipe/crystal-rubber-lv0",
+        "Name": "高级有机合金",
+        "Description": "R高级有机合金",
+        "IconPath": "",
         "Type": 14,
-        "GridIndex": 0,
+        "GridIndex": 4713,
         "Time": 240,
         "Input": [
+            6212,
             1030,
             1031,
-            1000
+            1106
         ],
         "InCounts": [
-            12,
-            18,
-            10
+            3,
+            48,
+            72,
+            12
         ],
         "Output": [
-            1117,
-            6206
+            1118
         ],
         "OutCounts": [
-            1,
-            4
+            2
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -5673,12 +5665,12 @@
     },
     {
         "ID": 710,
-        "Name": "石墨烯（石墨重组）",
-        "Description": "R石墨烯（石墨重组）",
+        "Name": "石墨烯（碳解离）",
+        "Description": "R石墨烯（碳解离）",
         "IconPath": "",
-        "Type": 12,
+        "Type": 10,
         "GridIndex": 1502,
-        "Time": 720,
+        "Time": 360,
         "Input": [
             1109
         ],
@@ -5702,7 +5694,7 @@
         "IconPath": "Assets/texpack/焦油循环",
         "Type": 2,
         "GridIndex": 4204,
-        "Time": 60,
+        "Time": 6,
         "Input": [
             1006,
             1000
@@ -5724,7 +5716,7 @@
     {
         "ID": 714,
         "Name": "钛晶石",
-        "Description": "",
+        "Description": "I钛晶石",
         "IconPath": "",
         "Type": 1,
         "GridIndex": 3305,
@@ -5745,7 +5737,7 @@
         "OutCounts": [
             2
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     },
@@ -5784,7 +5776,7 @@
         "IconPath": "",
         "Type": 14,
         "GridIndex": 4412,
-        "Time": 720,
+        "Time": 180,
         "Input": [
             1031,
             1000
@@ -5799,7 +5791,7 @@
         ],
         "OutCounts": [
             4,
-            2
+            1
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -5812,7 +5804,7 @@
         "IconPath": "",
         "Type": 14,
         "GridIndex": 4411,
-        "Time": 180,
+        "Time": 60,
         "Input": [
             1030,
             1000
@@ -5827,7 +5819,7 @@
         ],
         "OutCounts": [
             1,
-            2
+            1
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -5960,10 +5952,12 @@
         "Input": [
             5206,
             7805,
-            1402
+            1402,
+            5203
         ],
         "InCounts": [
             4,
+            1,
             1,
             1
         ],
@@ -5971,11 +5965,11 @@
             5203
         ],
         "OutCounts": [
-            1
+            2
         ],
         "Explicit": false,
         "Handcraft": false,
-        "NonProductive": false
+        "NonProductive": true
     },
     {
         "ID": 773,
@@ -6053,7 +6047,7 @@
             6212
         ],
         "OutCounts": [
-            3
+            7
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -6206,7 +6200,7 @@
         "GridIndex": 5303,
         "Time": 180,
         "Input": [
-            1603,
+            7607,
             6225
         ],
         "InCounts": [
@@ -6314,7 +6308,7 @@
         "GridIndex": 5604,
         "Time": 120,
         "Input": [
-            1611,
+            7707,
             1802,
             1205
         ],
@@ -6335,20 +6329,20 @@
     },
     {
         "ID": 791,
-        "Name": "碳粉",
+        "Name": "占位",
         "Description": "",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 1105,
+        "GridIndex": 0,
         "Time": 60,
         "Input": [
-            1109
+            7616
         ],
         "InCounts": [
             1
         ],
         "Output": [
-            6256
+            7617
         ],
         "OutCounts": [
             1
@@ -6439,7 +6433,7 @@
     },
     {
         "ID": 795,
-        "Name": "量子计算机",
+        "Name": "量子计算机550MAGI",
         "Description": "",
         "IconPath": "",
         "Type": 10,
@@ -6472,22 +6466,22 @@
         "IconPath": "",
         "Type": 14,
         "GridIndex": 4611,
-        "Time": 180,
+        "Time": 240,
         "Input": [
             6212,
             1030,
             1031
         ],
         "InCounts": [
-            1,
-            8,
-            12
+            3,
+            48,
+            72
         ],
         "Output": [
             7708
         ],
         "OutCounts": [
-            1
+            4
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -6500,7 +6494,7 @@
         "IconPath": "",
         "Type": 14,
         "GridIndex": 4612,
-        "Time": 720,
+        "Time": 180,
         "Input": [
             6212,
             1031
@@ -6513,7 +6507,7 @@
             6205
         ],
         "OutCounts": [
-            8
+            12
         ],
         "Explicit": true,
         "Handcraft": false,

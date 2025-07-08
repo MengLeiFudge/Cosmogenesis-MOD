@@ -46,7 +46,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             new Color(0.571f, 0.708f, 0.647f), // 刺笋 13
             new Color(0.349f, 0.222f, 0.247f), // 单极 14
             new Color(0.113f, 0.130f, 0.140f), // 石墨 15
-            new Color(0.538f, 0.538f, 0.538f), // 深层岩浆 16
+            new Color(0.538f, 0.538f, 0.538f), // 深层熔岩 16
             new Color(0.685f, 0.792f, 0.000f), // 放射 17
             new Color(0.965f, 0.867f, 0.352f), // 黄铁 18
             new Color(0.000f, 0.000f, 0.000f), // 冰 19
@@ -56,7 +56,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         {
             AddVeinProtos(
                 NewVein(15, "石墨矿脉", "I石墨矿", "Assets/texpack/钨矿脉", ProtoID.I石墨矿, 34, 1, 60),
-                NewVein(16, "深层岩浆", "I深层岩浆", "Icons/Vein/oil-vein", ProtoID.I深层岩浆, 0, 6, 60),
+                NewVein(16, "深层熔岩", "I深层熔岩", "Icons/Vein/oil-vein", ProtoID.I深层熔岩, 0, 6, 60),
                 NewVein(17, "铀矿脉", "I铀矿", "Assets/texpack/放射晶体矿脉_新新", ProtoID.I放射性矿物, 35, 2, 90),
                 NewVein(18, "黄铁矿脉", "I黄铁矿", "Assets/texpack/硫矿脉_新", ProtoID.I黄铁矿, 36, 1, 90),
                 NewVein(19, "地下冰层", "I地下冰层", "Icons/Vein/oil-vein", ProtoID.I水, 0, 6, 60));
@@ -871,7 +871,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         [HarmonyPatch(typeof(UIResAmountEntry), "SetInfo")]
         public static void SetInfoPatch(ref UIResAmountEntry __instance, string label, ref string strBuilderFormat)
         {
-            if (label.Equals("深层岩浆") || label.Equals("水"))
+            if (label.Equals("深层熔岩") || label.Equals("水"))
             {
                 strBuilderFormat = "         /s";
             }

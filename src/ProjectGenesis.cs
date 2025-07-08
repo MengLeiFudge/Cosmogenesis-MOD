@@ -24,7 +24,6 @@ using ProjectGenesis.Patches.Logic.BattleRelated;
 using ProjectGenesis.Patches.Logic.ModifyUpgradeTech;
 using ProjectGenesis.Patches.UI;
 using ProjectGenesis.Patches.UI.PlanetFocus;
-using ProjectGenesis.Patches.UI.QTools;
 using ProjectGenesis.Utils;
 using static ProjectGenesis.Utils.JsonDataUtils;
 using static ProjectGenesis.Utils.CopyModelUtils;
@@ -58,15 +57,16 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.Cosmogenesis";
         public const string MODNAME = "Cosmogenesis";
-        public const string VERSION = "0.7.4";
+        public const string VERSION = "0.7.9";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
 
+        public static bool MoreMegaStructureCompatibility = false;
+
         internal static ManualLogSource logger;
         internal static ConfigFile configFile;
         internal static UIPlanetFocusWindow PlanetFocusWindow;
-        internal static UIQToolsWindow QToolsWindow;
 
         internal static int[] TableID;
 
@@ -185,8 +185,6 @@ namespace ProjectGenesis
         private void Update()
         {
             if (VFInput.inputing) return;
-
-            if (QToolsWindow) QToolsWindow._OnUpdate();
         }
 
         public void Export(BinaryWriter w)
@@ -329,6 +327,8 @@ namespace ProjectGenesis
             material.itemId = ProtoID.I钨块;
             material.density = 19.35f;
             material.durability = 4.35f;
+
+            MoreMegaStructureCompatibilityTech();
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }

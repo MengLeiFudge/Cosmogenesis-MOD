@@ -28,7 +28,7 @@ namespace ProjectGenesis.Utils
             { 7002, new NoIconFluidIconDesc(new Color32(195, 198, 234, 255)) }, // NH3
             { 7017, new NoIconFluidIconDesc(new Color32(157, 56, 157, 255)) },  // HNO3
 
-            { 6202, new FluidIconDesc(new Color32(210, 184, 147, 255)) }, // 深层岩浆
+            { 6202, new FluidIconDesc(new Color32(210, 184, 147, 255)) }, // 深层熔岩
             { 6207, new OreIconDesc(new Color32(230, 239, 137, 255)) }, // S
             { 6222, new OreIconDesc(new Color32(106, 175, 78, 255)) },  // Rads
             { 6225, new OreIconDesc(new Color32(130, 235, 139, 255)) }, // U

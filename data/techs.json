@@ -1251,7 +1251,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": false,
+        "IsLabTech": true,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -1941,7 +1941,7 @@
         ],
         "HashNeeded": 43200,
         "UnlockRecipes": [
-            4,
+            5,
             63
         ],
         "UnlockFunctions": [
@@ -2566,25 +2566,27 @@
         "ID": 1508,
         "Name": "T任务完成",
         "IconPath": "Icons/Tech/1508",
-        "Desc": "任务完成描述",
+        "Desc": "真任务完成",
         "Conclusion": "任务完成结果",
-        "IsHiddenTech": false,
-        "PreItem": null,
+        "IsHiddenTech": true,
+        "PreItem": [
+            6228
+        ],
         "Position": [
-            80.0,
+            92.0,
             0.0
         ],
         "PreTechs": [
-            1507
+            1960
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6006
+            6228
         ],
         "ItemPoints": [
-            4
+            1
         ],
-        "HashNeeded": 3600000,
+        "HashNeeded": 3600,
         "UnlockRecipes": [],
         "UnlockFunctions": [
             99
@@ -2597,7 +2599,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": true,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -3523,10 +3525,10 @@
     },
     {
         "ID": 1706,
-        "Name": "深层岩浆处理",
+        "Name": "深层熔岩处理",
         "IconPath": "Icons/Tech/1705",
-        "Desc": "T深层岩浆处理描述",
-        "Conclusion": "T深层岩浆处理描述",
+        "Desc": "T深层熔岩处理描述",
+        "Conclusion": "T深层熔岩处理描述",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
@@ -3743,17 +3745,19 @@
     },
     {
         "ID": 1802,
-        "Name": "TX3掘墓人聚变弹",
-        "IconPath": "Icons/Tech/1803",
-        "Desc": "X3掘墓人聚变弹描述",
-        "Conclusion": "X3掘墓人聚变弹结果",
+        "Name": "T任务完成",
+        "IconPath": "Icons/Tech/1508",
+        "Desc": "T任务完成描述假",
+        "Conclusion": "任务完成结果",
         "IsHiddenTech": false,
-        "PreItem": [],
+        "PreItem": null,
         "Position": [
-            76.0,
-            16.0
+            80.0,
+            0.0
         ],
-        "PreTechs": [],
+        "PreTechs": [
+            1507
+        ],
         "PreTechsImplicit": [],
         "Items": [
             6006
@@ -3761,10 +3765,8 @@
         "ItemPoints": [
             10
         ],
-        "HashNeeded": 72000,
-        "UnlockRecipes": [
-
-        ],
+        "HashNeeded": 5760000,
+        "UnlockRecipes": [],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
@@ -4915,7 +4917,6 @@
             772,
             771,
             709,
-            710,
             802
         ],
         "UnlockFunctions": [],
@@ -5854,7 +5855,7 @@
             1,
             100
         ],
-        "HashNeeded": 36000,
+        "HashNeeded": 7200,
         "UnlockRecipes": [
             409
         ],
@@ -5914,26 +5915,34 @@
     },
     {
         "ID": 1937,
-        "Name": "T星环护盾",
+        "Name": "碳元素解离",
         "IconPath": "Assets/texpack/护盾载波调制",
-        "Desc": "T护盾载波调制描述",
-        "Conclusion": "T护盾载波调制描述",
+        "Desc": "T碳元素解离",
+        "Conclusion": "T碳元素解离",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            64.0,
-            24.0
+            72.0,
+            20.0
         ],
         "PreTechs": [],
-        "PreTechsImplicit": [],
+        "PreTechsImplicit": [
+            1203
+        ],
         "Items": [
-            6280
+            6279,
+            6004,
+            6005
         ],
         "ItemPoints": [
-            10
+            6,
+            10,
+            4
         ],
-        "HashNeeded": 720000,
-        "UnlockRecipes": [],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [
+            710
+        ],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
@@ -5984,7 +5993,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": true,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -6141,20 +6150,19 @@
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6279,
-            6004
+            6212
         ],
         "ItemPoints": [
-            10,
-            10
+            1
         ],
-        "HashNeeded": 288000,
+        "HashNeeded": 36000,
         "UnlockRecipes": [
             775,
             779,
             780,
             800,
-            801
+            801,
+            624
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6431,25 +6439,29 @@
     },
     {
         "ID": 1952,
-        "Name": "TX4丧钟湮灭跃迁弹",
+        "Name": "穿透现实",
         "IconPath": "Assets/texpack/反物质单元",
-        "Desc": "X4丧钟湮灭跃迁弹描述",
-        "Conclusion": "X4丧钟湮灭跃迁弹结果",
-        "IsHiddenTech": false,
-        "PreItem": [],
-        "Position": [
-            80.0,
-            16.0
+        "Desc": "T穿透现实",
+        "Conclusion": "T穿透现实完成",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6228
         ],
-        "PreTechs": [],
+        "Position": [
+            84.0,
+            0.0
+        ],
+        "PreTechs": [
+            1802
+        ],
         "PreTechsImplicit": [],
         "Items": [
-            6006
+            6228
         ],
         "ItemPoints": [
-            10
+            1
         ],
-        "HashNeeded": 720000,
+        "HashNeeded": 3600,
         "UnlockRecipes": [
 
         ],
@@ -6460,7 +6472,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": true,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -6469,28 +6481,32 @@
     },
     {
         "ID": 1954,
-        "Name": "T星环对撞机",
+        "Name": "高级磁场应用",
         "IconPath": "Icons/Tech/1816",
-        "Desc": "T星环对撞机描述",
-        "Conclusion": "T星环对撞机描述",
+        "Desc": "T高级磁场应用",
+        "Conclusion": "T高级磁场应用",
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            64.0,
-            20.0
+            72.0,
+            16.0
         ],
         "PreTechs": [],
-        "PreTechsImplicit": [],
+        "PreTechsImplicit": [
+            1203
+        ],
         "Items": [
-            6004
+            6279,
+            6004,
+            6005
         ],
         "ItemPoints": [
-            10
+            10,
+            6,
+            4
         ],
-        "HashNeeded": 1080000,
-        "UnlockRecipes": [
-
-        ],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
@@ -6527,7 +6543,6 @@
             6279,
             6004,
             6005
-
         ],
         "ItemPoints": [
             10,
@@ -6673,27 +6688,29 @@
     },
     {
         "ID": 1960,
-        "Name": "T轨道空投信标",
+        "Name": "宇宙的齿轮",
         "IconPath": "Assets/texpack/黑雾协调科技",
-        "Desc": "T轨道空投信标描述",
-        "Conclusion": "轨道空投信标结果",
-        "IsHiddenTech": false,
-        "PreItem": [],
-        "Position": [
-            56.0,
-            16.0
+        "Desc": "T宇宙的齿轮",
+        "Conclusion": "T宇宙的齿轮完成",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6228
         ],
-        "PreTechs": [],
+        "Position": [
+            88.0,
+            0.0
+        ],
+        "PreTechs": [
+            1952
+        ],
         "PreTechsImplicit": [],
         "Items": [
-            6003,
-            6278
+            6228
         ],
         "ItemPoints": [
-            8,
-            6
+            1
         ],
-        "HashNeeded": 180000,
+        "HashNeeded": 3600,
         "UnlockRecipes": [],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6702,7 +6719,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": true,
+        "IsLabTech": false,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],

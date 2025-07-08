@@ -146,7 +146,7 @@
     },
     {
         "Name": "戈壁介绍",
-        "ZHCN": "　　因为至今仍在活跃的火山运动，戈壁星球拥有极端稠密的二氧化碳大气层，失控的温室效应导致极高的地表温度，昼夜温差极小，接近地表的地方风速也不高，这使得它得以保留下部分从远古遗留下的地质特征。\r\n　　活跃的火山运动也证明了这颗星球的内核依旧火热，可以开采富含稀有金属的深层岩浆，发展为高端金属产品生产基地。",
+        "ZHCN": "　　因为至今仍在活跃的火山运动，戈壁星球拥有极端稠密的二氧化碳大气层，失控的温室效应导致极高的地表温度，昼夜温差极小，接近地表的地方风速也不高，这使得它得以保留下部分从远古遗留下的地质特征。\r\n　　活跃的火山运动也证明了这颗星球的内核依旧火热，可以开采富含稀有金属的深层熔岩，发展为高端金属产品生产基地。",
         "ENUS": "Due to the still active volcanic activity, the Gobi planet has an extremely dense carbon dioxide atmosphere. The uncontrolled greenhouse effect leads to extremely high surface temperatures, with minimal temperature differences between day and night, and low wind speeds near the surface. This allows it to preserve some geological features left over from ancient times. \r\nThe active volcanic activity also proves that the core of this planet is still hot, which can extract deep magma rich in rare metals and develop into a production base for high-end metal products."
     },
     {
@@ -268,6 +268,11 @@
         "Name": "量化计算器介绍前字",
         "ZHCN": "创世之书MOD自带量化计算器，默认为 <color=\"#FD965ECC\">~</color> 键，可在量化计算器的设置UI中修改。",
         "ENUS": "GenesisBook mod comes with a calculator, which defaults to the <color=\"#FD965ECC\">~</color> key, which can be changed in the settings in calculator ui."
+    },
+    {
+        "Name": "T航天器速度提升",
+        "ZHCN": "提升物流运输机飞行速度。\n提升配送运输机飞行速度。\n提升星际物流运输船航行速度。",
+        "ENUS": "Improve the flight speed of logistics transport aircraft. \nImprove the flight speed of delivery transport aircraft. \nImprove the navigation speed of interstellar logistics transport ships."
     },
     {
         "Name": "充放电集成化",
@@ -585,23 +590,23 @@
         "ENUS": "High performance ceramic material, heat-resistant, high thermal conductivity, and high strength. It has applications in aerospace, semiconductor, nuclear energy, and chemical industries."
     },
     {
-        "Name": "深层岩浆",
-        "ZHCN": "深层岩浆",
-        "ENUS": "Deep Magma"
+        "Name": "深层熔岩",
+        "ZHCN": "深层熔岩",
+        "ENUS": "Deep Lava"
     },
     {
-        "Name": "I深层岩浆",
-        "ZHCN": "来自地质活跃行星的深层地幔物质，富含镓、铼，镧系等稀有金属，要利用好需要进一步的处理。\n<color=\"#FD965ECC\">此物品不可输入物流塔，物品筛选无该物品的格子</color>",
-        "ENUS": "The deep mantle material from geologically active planets is rich in rare metals such as gallium, rhenium, and lanthanide series, which require further processing to be utilized effectively.\n<color=\"#FD965ECC\">This item cannot be entered into the logistics tower, and there is no grid for this item in the item selection</color>"
+        "Name": "I深层熔岩",
+        "ZHCN": "来自地质活跃行星的深层地幔物质，富含镓、铼，镧系等稀有金属，要利用好需要进一步的处理。\n<color=\"#FD965ECC\">此物品不可星际运输，不可设置为星际供应</color>",
+        "ENUS": "The deep mantle material from geologically active planets is rich in rare metals such as gallium, rhenium, and lanthanide series, which require further processing to be utilized effectively.\n<color=\"#FD965ECC\">This item is not suitable for interstellar transportation and cannot be set as an interstellar supply</color>"
     },
     {
-        "Name": "深层岩浆处理",
-        "ZHCN": "深层岩浆处理",
-        "ENUS": "Deep Magma Processing"
+        "Name": "深层熔岩处理",
+        "ZHCN": "深层熔岩处理",
+        "ENUS": "Deep Lava Processing"
     },
     {
-        "Name": "R深层岩浆处理",
-        "ZHCN": "对深层岩浆进行预处理，分离出富含稀有金属物质的熔融金属。",
+        "Name": "R深层熔岩处理",
+        "ZHCN": "对深层熔岩进行预处理，分离出富含稀有金属物质的熔融金属。",
         "ENUS": "Pre treat deep magma to separate molten metals rich in rare metal substances."
     },
     {
@@ -611,8 +616,8 @@
     },
     {
         "Name": "I熔融金属",
-        "ZHCN": "液态熔融状流体，分离了部分杂质，富集了镓、铟、锡等稀有金属元素，是制造液态金属的重要原料，也可用于高效金属冶炼。\n<color=\"#FD965ECC\">此物品不可输入物流塔，物品筛选无该物品的格子</color>",
-        "ENUS": "Liquid molten fluid separates some impurities and enriches rare metal elements such as gallium, indium, and tin. It is an important raw material for manufacturing liquid metals and can also be used for efficient metal smelting.\n<color=\"#FD965ECC\">This item cannot be entered into the logistics tower, and there is no grid for this item in the item selection</color>"
+        "ZHCN": "液态熔融状流体，分离了部分杂质，富集了镓、铟、锡等稀有金属元素，是制造液态金属的重要原料，也可用于高效金属冶炼。\n<color=\"#FD965ECC\">此物品不可星际运输，不可设置为星际供应</color>",
+        "ENUS": "Liquid molten fluid separates some impurities and enriches rare metal elements such as gallium, indium, and tin. It is an important raw material for manufacturing liquid metals and can also be used for efficient metal smelting.\n<color=\"#FD965ECC\">This item is not suitable for interstellar transportation and cannot be set as an interstellar supply</color>"
     },
     {
         "Name": "液态金属制造",
@@ -788,6 +793,16 @@
         "Name": "R高级生物发酵",
         "ZHCN": "在高速生长菌群的催化下，厌氧菌几乎能榨尽发酵堆中所有的有机质，并分解为甲烷。",
         "ENUS": "Under the catalysis of rapidly growing bacterial communities, anaerobic bacteria can almost completely extract all organic matter from the fermentation pile and decompose it into methane."
+    },
+    {
+        "Name": "高级有机合金",
+        "ZHCN": "高级有机合金",
+        "ENUS": "Advanced Organic Alloy"
+    },
+    {
+        "Name": "R高级有机合金",
+        "ZHCN": "通过高速生长菌群替代宿主生物反应的特性，可以诱导它对有机质进行分解重构，直接与金属进行生化反应生成有机合金。",
+        "ENUS": "By replacing the host organism with a rapidly growing microbial community, it can be induced to decompose and reconstruct organic matter, directly reacting with metals to form organic alloys."
     },
     {
         "Name": "高速生长纤维",
@@ -1430,22 +1445,22 @@
         "ENUS": "The use of plastic wrapped fiber cores with good optical guiding media enables low loss transmission of optical signals internally. Fiber optics can transmit signals at the speed of light, and with modulation and demodulation interfaces, it is the foundation of long-distance low latency communication."
     },
     {
-        "Name": "量子计算机",
-        "ZHCN": "量子计算机",
-        "ENUS": "Quantum computer"
+        "Name": "量子计算机550MAGI",
+        "ZHCN": "量子计算机550MAGI",
+        "ENUS": "Quantum Computer 550MAGI"
     },
     {
-        "Name": "I量子计算机",
+        "Name": "I量子计算机550MAGI",
         "ZHCN": "量子芯片，光纤连接和经典电子计算机封装外接，组成了550系列经典的“自感知、自适应、自组织”的可重塑编译计算核心，在与硬件连接后，可以实时生成底层操作系统。",
         "ENUS": "Quantum chips, fiber optic connections, and classical electronic computer packaging external connections form the 550 series classic \"self sensing, adaptive, and self-organizing\" reconfigurable compilation computing core. After being connected to hardware, it can generate real-time underlying operating systems."
     },
     {
-        "Name": "裂解射线发生器",
-        "ZHCN": "裂解射线发生器",
-        "ENUS": "Cracking Ray Generator"
+        "Name": "终末螺旋",
+        "ZHCN": "终末螺旋",
+        "ENUS": "Final Spiral"
     },
     {
-        "Name": "I裂解射线发生器",
+        "Name": "I终末螺旋",
         "ZHCN": "通过对样本进行逆向工程，得到的残缺版的碳基裂解射线发生器，射程很短，激发一次后就会损毁，或许可以用于工业生产用途，将碳基有机质快速裂解为烷烃质。",
         "ENUS": "The incomplete version of the carbon based cracking radiation generator obtained by reverse engineering the sample has a short range and will be damaged after one excitation. It may be used for industrial production to rapidly crack carbon based organic matter into alkane."
     },
@@ -1480,14 +1495,14 @@
         "ENUS": "In a high-temperature electric furnace, using carbon as a reducing agent, silicate minerals undergo a reduction reaction, reducing silicon dioxide to crude silicon."
     },
     {
-        "Name": "终末螺旋",
-        "ZHCN": "终末螺旋",
-        "ENUS": "Final Spiral"
+        "Name": "绿色的午夜",
+        "ZHCN": "绿色的午夜",
+        "ENUS": "Green Midnight"
     },
     {
-        "Name": "T终末螺旋",
-        "ZHCN": "通过对样本的逆向推导，我们发现这颗星球遭受的是被COSMO列为禁用的高危科技：【碳基裂解射线】的攻击，并且是歼星能级，整颗星球被射线彻底横扫，所有碳基生命尽数灭绝，裂解而成的烷烃质汇聚成海。\n        <color=\"#FD965ECC\">“高塔直破苍穹，大地荡然无存。”</color>\n<color=\"#FD965ECC\">警告：</color>该科技的相关技术已被COSMO技术伦理委员会禁用。",
-        "ENUS": "Through reverse deduction of the sample, we found that this planet was subjected to a high-risk technology prohibited by COSMO: carbon based cracking radiation, and it was at the level of star annihilation. The entire planet was completely swept away by the radiation, and all carbon based life was wiped out. The cracked hydrocarbons converged into the sea.\n    <color=\"#FD965ECC\">\"tower breaks through the sky, and the earth disappears completely.\"</color> \n<color=\"#FD965ECC\">Warning:</color> The related technology of this technology has been banned by the COSMO Technical Ethics Committee."
+        "Name": "T绿色的午夜",
+        "ZHCN": "通过对样本的逆向推导，我们发现这颗星球遭受的是被COSMO列为禁用的高危科技：【碳基裂解射线】的攻击，并且是歼星能级，整颗星球被射线彻底横扫，所有碳基生命尽数灭绝，裂解而成的烷烃质汇聚成海。\r\n\r\n<color=\"#FD965ECC\">“高塔直破苍穹，大地荡然无存。”</color>\r\n\r\n<color=\"#FD965ECC\">警告：</color>该科技的相关技术已被COSMO技术伦理委员会禁用。",
+        "ENUS": "Through reverse deduction of the sample, we found that this planet was subjected to a high-risk technology prohibited by COSMO: carbon based cracking radiation, and it was at the level of star annihilation. The entire planet was completely swept away by the radiation, and all carbon based life was wiped out. The cracked hydrocarbons converged into the sea.\r\n\r\n<color=\"#FD965ECC\">\"tower breaks through the sky, and the earth disappears completely.\"</color> \r\n\r\n<color=\"#FD965ECC\">Warning:</color> The related technology of this technology has been banned by the COSMO Technical Ethics Committee."
     },
     {
         "Name": "碳纳米管（粒子打印）",
@@ -1530,13 +1545,13 @@
         "ENUS": "In the process of reverse studying the Dirac equation, it was found that concentrating a large amount of gamma rays can create an open string in a critical vibration state, which collapses and reassembles the magnet into a magnetic monopole."
     },
     {
-        "Name": "石墨烯（石墨重组）",
-        "ZHCN": "石墨烯（石墨重组）",
-        "ENUS": "Graphene (Graphite Recombination)"
+        "Name": "石墨烯（碳解离）",
+        "ZHCN": "石墨烯（碳解离）",
+        "ENUS": "Graphene (Carbon Dissociation)"
     },
     {
-        "Name": "R石墨烯（石墨重组）",
-        "ZHCN": "利用物质重组器在粒子尺度将石墨重组为单层，也就是石墨烯。",
+        "Name": "R石墨烯（碳解离）",
+        "ZHCN": "将粒子打印向碳粒子特化，加大解离力度，在粒子尺度将石墨解离重组为单层，也就是石墨烯。",
         "ENUS": "Using a material recombiner to recombine graphite into a single layer at the particle scale, known as graphene."
     },
     {
@@ -1765,6 +1780,26 @@
         "ENUS": "By utilizing the slight difference in atomic mass between uranium-238 and uranium-235, high-purity uranium-235 is obtained through fractional distillation."
     },
     {
+        "Name": "重氢分馏",
+        "ZHCN": "重氢分馏",
+        "ENUS": "Heavy Hydrogen Fractionation"
+    },
+    {
+        "Name": "R重氢分馏",
+        "ZHCN": "利用液态氢和液态重氢在一定温度下蒸气压之比很大的特点，从液态氢中分馏出重氢，有一定的分离效率。",
+        "ENUS": "By utilizing the high vapor pressure ratio between liquid hydrogen and liquid heavy hydrogen at a certain temperature, heavy hydrogen can be fractionated from liquid hydrogen with a certain separation efficiency."
+    },
+    {
+        "Name": "重水分馏",
+        "ZHCN": "重水分馏",
+        "ENUS": "Heavy Water Fractionation"
+    },
+    {
+        "Name": "R重水分馏",
+        "ZHCN": "利用水和重水在氢与氘原子那微弱的质量区别的特点，从水中分馏出重水，有一定的分离效率。",
+        "ENUS": "By utilizing the subtle difference in mass between hydrogen and deuterium atoms between water and heavy water, heavy water can be distilled from water with a certain separation efficiency."
+    },
+    {
         "Name": "石墨烯（CVD）",
         "ZHCN": "石墨烯（CVD）",
         "ENUS": "Graphene (CVD)"
@@ -1891,8 +1926,8 @@
     },
     {
         "Name": "I岩浆",
-        "ZHCN": "奔涌的岩浆溶解着来自地幔深处的物质，并带到地表，对于高级工业文明而言，这就是巨型金属矿。\n<color=\"#FD965ECC\">此物品不可输入物流塔，物品筛选无该物品的格子</color>",
-        "ENUS": "The surging magma dissolves materials from deep within the mantle and brings them to the surface, which is known as giant metal mines for advanced industrial civilizations.\n<color=\"#FD965ECC\">This item cannot be entered into the logistics tower, and there is no grid for this item in the item selection</color>"
+        "ZHCN": "奔涌的岩浆溶解着来自地幔深处的物质，并带到地表，对于高级工业文明而言，这就是巨型金属矿。\n<color=\"#FD965ECC\">此物品不可星际运输，不可设置为星际供应</color>",
+        "ENUS": "The surging magma dissolves materials from deep within the mantle and brings them to the surface, which is known as giant metal mines for advanced industrial civilizations.\n<color=\"#FD965ECC\">This item is not suitable for interstellar transportation and cannot be set as an interstellar supply</color>"
     },
     {
         "Name": "晶圆（四代半导体）",
@@ -2056,16 +2091,16 @@
     },
     {
         "Name": "T岩浆冶炼处理描述",
-        "ZHCN": "岩浆不仅是地热资源，还有其富含从地幔熔融渗透出来的金属元素，成熟的工业文明应该会妥善利用它。",
-        "ENUS": "Magma is not only a geothermal resource, but also rich in metallic elements that melt and infiltrate from the mantle. Mature industrial civilizations should make good use of it."
+        "ZHCN": "岩浆不仅是地热资源，还有其富含从地幔熔融渗透出来的金属元素，成熟的工业文明应该会妥善利用它。包括如何提取冶炼其中的金属，以及如何在行星内物流中防止其冷却凝固。",
+        "ENUS": "Magma is not only a geothermal resource, but also rich in metallic elements that melt and infiltrate from the mantle. Mature industrial civilizations should make good use of it.This includes how to extract and refine metals from them, as well as how to prevent them from cooling and solidifying in planetary logistics."
     },
     {
-        "Name": "T深层岩浆处理",
-        "ZHCN": "深层岩浆处理",
-        "ENUS": "Deep Magma Processing"
+        "Name": "T深层熔岩处理",
+        "ZHCN": "深层熔岩处理",
+        "ENUS": "Deep Lava Processing"
     },
     {
-        "Name": "T深层岩浆处理描述",
+        "Name": "T深层熔岩处理描述",
         "ZHCN": "地幔物质熔融着丰富的稀有金属元素，一路渗透移动到表层时已经掺杂了太多杂质，如果能直接获得深层的地幔岩浆，那就能量产工业最尖端的金属产品——液态金属。",
         "ENUS": "The mantle material melts rich rare metal elements, and when it infiltrates and moves to the surface, it is already mixed with too many impurities. If we can directly obtain deep mantle magma, we can mass produce the most advanced metal product in industry - liquid metal."
     },
@@ -2802,8 +2837,8 @@
     },
     {
         "Name": "I哈希值",
-        "ZHCN": "1800000哈希。",
-        "ENUS": "1800000 hash."
+        "ZHCN": "1.2m哈希。",
+        "ENUS": "1.2m hash."
     },
     {
         "Name": "驱逐舰射程增加至",
@@ -3146,19 +3181,19 @@
         "ENUS": "Fully covered planetary shield can serve as a planetary power grid"
     },
     {
-        "Name": "聚爆加农炮",
-        "ZHCN": "聚爆加农炮",
-        "ENUS": "Implosion Cannon"
+        "Name": "T任务完成描述假",
+        "ZHCN": "戴森球计划的主要任务已经完成，大统一理论已被推论，宇宙的真理已尽在你手，再无高峰可攀登。（安装 更多巨构 以完成正真的通关（还未完成））",
+        "ENUS": "The main task of the Dyson sphere project has been completed, the theory of great unity has been deduced, and the truth of the universe is in your hands, with no peaks to climb.(Install MoreMegaStructures to complete the real clearance (not yet completed))"
     },
     {
-        "Name": "聚爆加农炮MK2",
-        "ZHCN": "电磁加农炮",
-        "ENUS": "Electromagnetic Cannon"
+        "Name": "高级磁场应用",
+        "ZHCN": "高级磁场应用",
+        "ENUS": "Advanced Magnetic Field Applications"
     },
     {
-        "Name": "I聚爆加农炮MK2",
-        "ZHCN": "改进的质量投射器能够有效增加这门巨炮的射程，而新的高强度结构材料则可以承受更大的冲击力以抵消质量投射技术带来的巨大后坐，避免对其结构本身造成破坏，即使如此，这门巨炮每次开火仍需要更长时间进行充能。",
-        "ENUS": "The improved mass projector can effectively increase the range of this cannon, while the new high-strength structural material can withstand greater impact force to offset the huge recoil caused by mass projection technology, avoiding damage to its structure itself. Nevertheless, each firing of this cannon still requires longer charging time."
+        "Name": "T高级磁场应用",
+        "ZHCN": "磁场是很有趣的工具，绝不是仅仅用来将铁从一处地方吸引到另一个地方，以三级文明的视角，只需要对制造产线做小小的改造，便能用磁场参与初级产物的制作，以无形的磁场代替6轴加工机床，大幅提升制造速度。\n<color=\"#FD965ECC\">电动机</color>与<color=\"#FD965ECC\">电磁涡轮</color>的制造时间<color=\"#FD965ECC\">减半</color>\n<color=\"#FD965ECC\">注意：该科技与碳元素解离冲突，该科技研究完成后碳元素解离将无效</color>",
+        "ENUS": "Magnetic field is a very interesting tool, not just used to attract iron from one place to another. From the perspective of a third level civilization, only a small modification of the manufacturing production line is needed to use magnetic field to participate in the production of primary products, replacing the 6-axis machining machine with an invisible magnetic field and greatly improving the manufacturing speed.\n<color=\"#FD965ECC\">Half of the manufacturing time for electric motors and electromagnetic turbines</color>\n<color=\"#FD965ECC\">Attention: this technology conflicts with Dissociation Of Carbon Element, and after the completion of this technology research, Dissociation Of Carbon Element will be ineffective</color>"
     },
     {
         "Name": "高频激光塔",
@@ -3166,14 +3201,14 @@
         "ENUS": "Blue Laser Tower"
     },
     {
-        "Name": "高频激光塔MK2",
-        "ZHCN": "紫外激光塔",
-        "ENUS": "UV Laser Tower"
+        "Name": "碳元素解离",
+        "ZHCN": "碳元素解离",
+        "ENUS": "Dissociation Of Carbon Element"
     },
     {
-        "Name": "I高频激光塔MK2",
-        "ZHCN": "使用粒子容器替代简陋的激光发生器，能承受更高的能量负载，攻击距离也得到了大幅度提升。",
-        "ENUS": "The use of particle containers instead of rudimentary laser generators can withstand much higher energy loads, and as a result, attack ranges have been significantly increased."
+        "Name": "T碳元素解离",
+        "ZHCN": "碳元素作为广泛存在的元素，仅仅是自身在结构上不同组合方式，就有石墨，石墨烯，碳纳米管等性质完全不同的工业制品，粒子打印产线为其进行特化适配是常见操作。\n解锁<color=\"#FD965ECC\">石墨烯（碳解离）</color>配方\n<color=\"#FD965ECC\">注意：该科技与高级磁场应用冲突，该科技研究完成后高级磁场应用将无效</color>",
+        "ENUS": "Carbon, as a widely present element, can be used in industrial products with completely different properties, such as graphite, graphene, carbon nanotubes, etc., simply due to its different structural combinations. Particle printing production lines are commonly used to specialize and adapt it.\nUnlock <color=\"#FD965ECC\">graphene (carbon dissociation)</color> formula\n<color=\"#FD965ECC\">Attention: this technology conflicts with Advanced Magnetic Field Applications, and after the completion of this technology research, Advanced Magnetic Field Applications will be ineffective</color>"
     },
     {
         "Name": "熔炉 Mk.III",
@@ -3196,9 +3231,14 @@
         "ENUS": "Artificial Star"
     },
     {
-        "Name": "T虚数空间存储",
-        "ZHCN": "虚数空间存储",
-        "ENUS": "Virtual Space Storage"
+        "Name": "卷碳管时间减半",
+        "ZHCN": "碳纳米管（粒子打印） 的配方时间减半",
+        "ENUS": "Half of the formulation time for carbon nanotubes (particle printing)"
+    },
+    {
+        "Name": "电动机电磁涡轮时间减半",
+        "ZHCN": "电动机 与 电磁涡轮 的制造时间减半",
+        "ENUS": "Half of the manufacturing time for electric motors and electromagnetic turbines"
     },
     {
         "Name": "虚数空间存储描述",
@@ -3229,5 +3269,81 @@
         "Name": "I太空物流港",
         "ZHCN": "巨大的太空电梯，实现了行星之间更便捷的物资运输，可以将星球工厂连结成一个庞大的工业帝国。\n<color=\"#FD965ECC\">“于上天入地之处，取寰宇无穷之物。”</color>",
         "ENUS": "Giant space elevators make it easier to transport materials between planets. They can connect planet factories to a massive industrial empire.\n<color=\"#FD965ECC\">\"From heaven to the earth, take infinite things in the worlds.\"</color>"
+    },
+    // 巨构mod
+    {
+        "Name": "量子服务集群",
+        "ZHCN": "量子服务集群",
+        "ENUS": "Quantum Service Cluster"
+    },
+    {
+        "Name": "规划",
+        "ZHCN": "规划",
+        "ENUS": "Plan "
+    },
+    {
+        "Name": "数学率引擎",
+        "ZHCN": "数学率引擎",
+        "ENUS": "Mathematical Rate Engine"
+    },
+    {
+        "Name": "现实重构",
+        "ZHCN": "现实重构",
+        "ENUS": "Reality Reconstruction"
+    },
+    {
+        "Name": "现实扭曲指数",
+        "ZHCN": "现实扭曲指数",
+        "ENUS": "Reality Distortion Index"
+    },
+    {
+        "Name": "因为，山就在那里",
+        "ZHCN": "因为，山就在那里",
+        "ENUS": "Because, the mountain is right there"
+    },
+    {
+        "Name": "T因为，山就在那里",
+        "ZHCN": "这只是个虚无缥缈的推论，一个猜想，但是要验证这个推论需要数个星系维持的庞大物力。放眼整个星区已没有任何人配称得上敌人，大统一理论已被推论，宇宙的真理已尽在你手，为何还要攀登高峰？",
+        "ENUS": "This is just a vague inference, a conjecture, but to verify this inference, it requires massive physical forces maintained by several galaxies. Looking at the entire star region, there is no one worthy of being an enemy. The theory of great unity has been deduced, and the truth of the universe is already in your hands. Why climb the peak?"
+    },
+    {
+        "Name": "T因为，山就在那里完成",
+        "ZHCN": "停滞不前的文明注定消亡，面对科学的高峰，不要询问成本，不要询问意义，“因为，山就在那里”，这就是回答。",
+        "ENUS": "A stagnant civilization is destined to perish. When facing the peak of science, do not ask about cost or meaning, \"because the mountain is there\". This is the answer."
+    },
+    {
+        "Name": "穿透现实",
+        "ZHCN": "穿透现实",
+        "ENUS": "Penetrating Reality"
+    },
+    {
+        "Name": "T穿透现实",
+        "ZHCN": "随着大统一理论的秘密逐渐被揭开，我们确定，引力在塑造宇宙这个精密的数学率机器中起到了重要作用。就如黑洞是宇宙中最极端的天体，引力是穿透现实的最佳选择。",
+        "ENUS": "As the secrets of the grand unified theory are gradually revealed, we are certain that gravity plays an important role in shaping the precise mathematical rate machine of the universe. Just as black holes are the most extreme celestial bodies in the universe, gravity is the best choice for penetrating reality."
+    },
+    {
+        "Name": "T穿透现实完成",
+        "ZHCN": "以黑洞作为基础，引力钻头阵列为其共鸣，在响彻整个星区的回荡中，我们获得了穿透现实的能力。",
+        "ENUS": "Based on black holes and resonating with gravitational drill arrays, we have gained the ability to penetrate reality through the reverberations that echo throughout the entire star region."
+    },
+    {
+        "Name": "宇宙的齿轮",
+        "ZHCN": "宇宙的齿轮",
+        "ENUS": "The Gears Of The Universe"
+    },
+    {
+        "Name": "T宇宙的齿轮",
+        "ZHCN": "宇宙是个庞大机器，以数学，规则为齿轮构筑的，数千万亿年都在精准运行的机器。如今借由量子比特架构的强大算力，我们得以尝试通过引力钻头拨动黑洞的重力涟漪，以此来撬动这个庞大机器中的齿轮：数学率。",
+        "ENUS": "The universe is a massive machine, constructed with mathematics and rules as gears, and has been operating precisely for billions of years. Nowadays, with the powerful computing power of quantum bit architecture, we are able to attempt to manipulate the gravitational ripples of a black hole through a gravitational drill bit, thereby prying the gears in this massive machine: the mathematical rate."
+    },
+    {
+        "Name": "T宇宙的齿轮完成",
+        "ZHCN": "现实在指令的重压下屈服，从此以后，光速，不再是一个常数。",
+        "ENUS": "Reality yielded under the weight of instructions, and from then on, the speed of light was no longer a constant."
+    },
+    {
+        "Name": "真任务完成",
+        "ZHCN": "数学率引擎在真空中轰鸣作响，宣告着这片宇宙有了新的主人，一切宇宙常数，规律都如同代码一般可以随意编辑。宇宙在此编程，现实在此扭曲。\n\n<color=\"#FD965ECC\">其他人或许不能理解这种现实，但他们必将臣服。</color>",
+        "ENUS": "The mathematical rate engine roars in the vacuum, announcing that this universe has a new master, and all cosmological constants and laws can be freely edited like code. The universe is programmed here, reality is distorted here.\n\n<color=\"#FD965ECC\">Others may not understand this reality, but they will inevitably submit.</color>"
     }
 ]

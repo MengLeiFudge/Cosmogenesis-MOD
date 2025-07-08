@@ -42,6 +42,11 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                     break;
 
+                case Utils_ERecipeType.物质重组:
+                    __result = "物质重组".TranslateFromJson();
+
+                    break;
+
                 case Utils_ERecipeType.位面熔炉:
                     __result = "位面熔炉".TranslateFromJson();
 
@@ -214,8 +219,12 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                     break;
 
-                case ProtoID.T护盾载波调制:
-                    __result = "T护盾载波调制文字描述".TranslateFromJson();
+                case 1937:
+                    __result = "卷碳管时间减半".TranslateFromJson();
+                    break;
+
+                case 1954:
+                    __result = "电动机电磁涡轮时间减半".TranslateFromJson();
 
                     break;
             }

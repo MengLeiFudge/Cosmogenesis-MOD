@@ -1,5 +1,6 @@
 ﻿using CommonAPI.Systems;
 using HarmonyLib;
+using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
 using System;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         };
         private static readonly float[] unlockWreckFallingItemDropCountLevel5 =
         {
-            0.8f, 0.55f, 0.75f, 1.5f, 1.2f, 0.7f,
+            0.8f, 0.55f, 0.75f, 0.3f, 1.2f, 0.7f,
         };
         private static readonly int[] unlockWreckFallingItemIdLevel6 =
         {
@@ -117,7 +118,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         private static bool isItemGetHashUnlock = false;
 
         private static int[] WhichFleetUpgradeChoose = { 0, 0, 0 };
-        private static bool isCraftUnitAttackRangeUpgrade = false;
+
+        private static int whichTechChoose = 0;
 
 
         internal static void ModifyUpgradeTeches()
@@ -211,6 +213,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             ModifySpacecraftSpeedUpgradeTechs();
             ModifySpacecraftExpansionUpgradeTechs();
             ModifyMinerUpgradeTechs();
+            ModifyStationStackingUpgradeTechs();
             ModifyDamageUpgradeTechs();
             ModifyWreckageRecoveryUpgradeTechs();
             ModifyUAVHPAndfiringRateUpgradeTechs();
@@ -665,6 +668,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             TechProto techProto = LDB.techs.Select(3404);
             techProto.UnlockFunctions = new int[] { 15, 34, 16 };
             techProto.UnlockValues = new double[] { 0.3, 0.15, 0.5 };
+            techProto.PreTechsImplicit = new int[] { };
+            techProto.Desc = "T航天器速度提升";
 
             techProto = LDB.techs.Select(3406);
             techProto.Items = new int[] { 6279, 6004, 6005 };
@@ -690,6 +695,19 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
             techProto = LDB.techs.Select(3606);
             techProto.MaxLevel = 11;
+        }
+
+        // 出塔堆叠三个科技需求减半
+        internal static void ModifyStationStackingUpgradeTechs()
+        {
+            TechProto techProto = LDB.techs.Select(3801);
+            techProto.HashNeeded = 4800000;
+
+            techProto = LDB.techs.Select(3802);
+            techProto.HashNeeded = 14400000;
+
+            techProto = LDB.techs.Select(3803);
+            techProto.HashNeeded = 21600000;
         }
 
         internal static void ModifyDamageUpgradeTechs()
@@ -988,6 +1006,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             UpdateTechSpeed(_techId);
             ItemGetHash(_techId);
             CraftUnitAttackRangeUpgrade(_techId);
+            AorB(_techId);
         }
 
         static void UAVHPAndfiringRateUpgrade(int level)
@@ -1239,13 +1258,13 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             ItemProto itemProto;
             TechProto techProto;
             itemProto = LDB.items.Select(6216);
-            itemProto.Name = "裂解射线发生器";
-            itemProto.Description = "I裂解射线发生器";
+            itemProto.Name = "终末螺旋";
+            itemProto.Description = "I终末螺旋";
             itemProto.RefreshTranslation();
 
             techProto = LDB.techs.Select(1945);
-            techProto.Name = "终末螺旋";
-            techProto.Desc = "T终末螺旋";
+            techProto.Name = "绿色的午夜";
+            techProto.Desc = "T绿色的午夜";
             techProto.RefreshTranslation();
         }
 
@@ -1367,7 +1386,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 }
             } else if (itemId == 6255 && count > 0)
             {
-                __instance.mecha.gameData.history.AddTechHash(count * 1800000);
+                __instance.mecha.gameData.history.AddTechHash(count * 1200000);
                 return false;
             }
             return true;
@@ -1493,6 +1512,36 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void AorB(int techId)
+        {
+            RecipeProto recipeProto;
+            if (techId == 1937)
+            {
+                if (whichTechChoose == 0)
+                {
+                    whichTechChoose = 1937;
+
+                    recipeProto = LDB.recipes.Select(26); // 碳纳米管（粒子打印）
+                    recipeProto.TimeSpend = 120;
+                }
+            }
+            else if (techId == 1954) {
+                if (whichTechChoose == 0)
+                {
+                    
+                    recipeProto = LDB.recipes.Select(97); // 电动机
+                    recipeProto.TimeSpend = 60;
+
+                    recipeProto = LDB.recipes.Select(98); // 电磁涡轮
+                    recipeProto.TimeSpend = 60;
+
+                    TechProto techProto = LDB.techs.Select(1937);
+                    techProto.UnlockRecipes = new int[] { }; // 删除 石墨烯（碳解离）配方的解锁
+                    whichTechChoose = 1954;
+                }
+            }
+        }
+
         internal static void Export(BinaryWriter w)
         {
             w.Write(WreckFallingLevel);
@@ -1506,12 +1555,16 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             {
                 w.Write(WhichFleetUpgradeChoose[i]);
             }
+            w.Write(whichTechChoose);
         }
 
         internal static void Import(BinaryReader r)
         {
             try
             {
+                ItemProto itemProto;
+                TechProto techProto;
+                RecipeProto recipeProto;
                 WreckFallingLevel = r.ReadInt32();
                 for (int i = 1; i <= WreckFallingLevel; i++)
                 {
@@ -1542,7 +1595,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 isItemGetHashUnlock = r.ReadBoolean();
                 if (isUnlockRecipesHandcraft)
                 {
-                    ItemProto itemProto = LDB.items.Select(6234);
+                    itemProto = LDB.items.Select(6234);
                     itemProto.Name = "十七公斤重的文明";
                     itemProto.Description = "I十七公斤重的文明";
                     itemProto.RefreshTranslation();
@@ -1553,7 +1606,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     WhichFleetUpgradeChoose[i] = r.ReadInt32();
                     if (WhichFleetUpgradeChoose[i] != 0)
                     {
-                        TechProto techProto = LDB.techs.Select(WhichFleetUpgradeChoose[i]);
+                        techProto = LDB.techs.Select(WhichFleetUpgradeChoose[i]);
                         techProto.UnlockValues = new double[] { 0, 0 };
                         if (i == 2 && WhichFleetUpgradeChoose[i] == 5403)
                         {
@@ -1568,11 +1621,58 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                         }
                     }
                 }
+
+                whichTechChoose = r.ReadInt32();
+                if (whichTechChoose == 1937)
+                {
+                    recipeProto = LDB.recipes.Select(26); // 碳纳米管（粒子打印）
+                    recipeProto.TimeSpend = 120;
+                } else if(whichTechChoose == 1954)
+                {
+                    recipeProto = LDB.recipes.Select(97); // 电动机
+                    recipeProto.TimeSpend = 60;
+
+                    recipeProto = LDB.recipes.Select(98); // 电磁涡轮
+                    recipeProto.TimeSpend = 60;
+
+                    techProto = LDB.techs.Select(1937);
+                    techProto.UnlockRecipes = new int[] { }; // 删除 石墨烯（碳解离）配方的解锁
+                }
             }
             catch (EndOfStreamException)
             {
                 // ignored
             }
+        }
+
+
+        internal static void MoreMegaStructureCompatibilityTech()
+        {
+            if (!ProjectGenesis.MoreMegaStructureCompatibility)
+            {
+                return;
+            }
+            TechProto techProto;
+
+            techProto = LDB.techs.Select(1802);
+            techProto.Name = "因为，山就在那里";
+            techProto.Desc = "T因为，山就在那里";
+            techProto.Conclusion = "T因为，山就在那里完成";
+            techProto.UnlockRecipes = new int[] { 539 };
+            techProto.RefreshTranslation();
+
+            techProto = LDB.techs.Select(1952);
+            techProto.IsHiddenTech = false;
+            techProto.PreItem = new int[] { };
+
+            techProto = LDB.techs.Select(1960);
+            techProto.IsHiddenTech = false;
+            techProto.PreItem = new int[] { };
+
+            techProto = LDB.techs.Select(1508);
+            techProto.IsHiddenTech = false;
+            techProto.PreItem = new int[] { };
+            techProto.UnlockRecipes = new int[] {  };
         }
     }
 }
