@@ -194,43 +194,6 @@ namespace ProjectGenesis.Patches.UI.DisplayText
         }
 
         [HarmonyPostfix]
-        [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
-        public static void TechProto_UnlockFunctionText(TechProto __instance, ref string __result, StringBuilder sb)
-        {
-            switch (__instance.ID)
-            {
-                case ProtoID.T巨型建筑工程学:
-                    __result = "巨型建筑工程学文字描述".TranslateFromJson();
-
-                    break;
-
-                //case ProtoID.T行星协调中心:
-                //    __result = "行星协调中心文字描述".TranslateFromJson();
-
-                //    break;
-
-                case 2907:
-                    __result = "量子折跃文字描述".TranslateFromJson();
-
-                    break;
-
-                case ProtoID.T跃迁航行理论:
-                    __result = "跃迁航行理论描述".TranslateFromJson();
-
-                    break;
-
-                case 1937:
-                    __result = "卷碳管时间减半".TranslateFromJson();
-                    break;
-
-                case 1954:
-                    __result = "电动机电磁涡轮时间减半".TranslateFromJson();
-
-                    break;
-            }
-        }
-
-        [HarmonyPostfix]
         [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.FindRecipes))]
         public static void ItemProto_FindRecipes(ItemProto __instance) => __instance.isRaw = __instance.recipes.Count == 0;
     }

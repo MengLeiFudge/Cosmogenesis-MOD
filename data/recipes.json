@@ -717,7 +717,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 1204,
+        "GridIndex": 1205,
         "Time": 720,
         "Input": [
             1120,
@@ -981,7 +981,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 1205,
+        "GridIndex": 1206,
         "Time": 720,
         "Input": [
             1205,
@@ -2171,14 +2171,12 @@
         "Input": [
             1125,
             7805,
-            6271,
-            6263
+            6271
         ],
         "InCounts": [
             3,
             1,
-            2,
-            2
+            1
         ],
         "Output": [
             1502
@@ -2228,10 +2226,12 @@
         "Time": 480,
         "Input": [
             1802,
+            6263,
             1502,
             6277
         ],
         "InCounts": [
+            2,
             2,
             1,
             4
@@ -2949,7 +2949,7 @@
         "GridIndex": 2114,
         "Time": 3600,
         "Input": [
-            7805,
+            9486,
             1403,
             1125,
             6271,
@@ -2957,7 +2957,7 @@
             6263
         ],
         "InCounts": [
-            5,
+            2,
             10,
             50,
             10,
@@ -3213,13 +3213,13 @@
         "Input": [
             1125,
             6243,
-            7805,
+            9486,
             1404
         ],
         "InCounts": [
             10,
             10,
-            4,
+            1,
             20
         ],
         "Output": [
@@ -3626,13 +3626,13 @@
         "Time": 180,
         "Input": [
             2104,
-            7805,
+            9486,
             2014,
-            1127
+            9480
         ],
         "InCounts": [
             1,
-            10,
+            3,
             10,
             5
         ],
@@ -3752,54 +3752,60 @@
     },
     {
         "ID": 138,
-        "Name": "超合金弹箱",
+        "Name": "数学率引擎-算力架构组件",
         "Description": "",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
-        "Time": 60,
+        "Type": 10,
+        "GridIndex": 1712,
+        "Time": 720,
         "Input": [
-            7607,
-            1107
+            9486,
+            9484,
+            6271
         ],
         "InCounts": [
             1,
-            1
+            2,
+            4
         ],
         "Output": [
-            1603
+            6503
         ],
         "OutCounts": [
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
         "ID": 139,
-        "Name": "炮弹组",
+        "Name": "数学率引擎-算力架构-运载火箭",
         "Description": "",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
-        "Time": 60,
+        "Type": 9,
+        "GridIndex": 1713,
+        "Time": 720,
         "Input": [
-            1101,
-            1128
+            6503,
+            1802,
+            1406,
+            6263
         ],
         "InCounts": [
+            1,
             4,
-            2
+            4,
+            4
         ],
         "Output": [
-            1604
+            6504
         ],
         "OutCounts": [
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {
@@ -4190,13 +4196,13 @@
             2901,
             5202,
             5201,
-            7805
+            9486
         ],
         "InCounts": [
             1,
             10,
             20,
-            4
+            1
         ],
         "Output": [
             2902
@@ -5049,13 +5055,13 @@
         "Input": [
             7805,
             6243,
-            1209,
+            9480,
             1125
         ],
         "InCounts": [
             1,
             2,
-            4,
+            1,
             4
         ],
         "Output": [
@@ -5372,6 +5378,168 @@
     },
     // 531 532 533 534 535 536 537 539 540 541 542 546 547 548 549 569巨构mod配方
     {
+        "ID": 530,
+        "Name": "引力发生装置",
+        "Description": "",
+        "IconPath": "",
+        "Type": 10,
+        "GridIndex": 1212,
+        "Time": 180,
+        "Input": [
+            1107,
+            1127
+        ],
+        "InCounts": [
+            1,
+            1
+        ],
+        "Output": [
+            9480
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 531,
+        "Name": "位面约束环",
+        "Description": "",
+        "IconPath": "",
+        "Type": 10,
+        "GridIndex": 1204,
+        "Time": 180,
+        "Input": [
+            1205,
+            1304
+        ],
+        "InCounts": [
+            2,
+            1
+        ],
+        "Output": [
+            9481
+        ],
+        "OutCounts": [
+            2
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 532,
+        "Name": "引力钻头",
+        "Description": "",
+        "IconPath": "",
+        "Type": 10,
+        "GridIndex": 1511,
+        "Time": 180,
+        "Input": [
+            9480,
+            9481,
+            1209
+        ],
+        "InCounts": [
+            1,
+            1,
+            1
+        ],
+        "Output": [
+            9482
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 533,
+        "Name": "隧穿激发装置",
+        "Description": "",
+        "IconPath": "",
+        "Type": 10,
+        "GridIndex": 1106,
+        "Time": 360,
+        "Input": [
+            1206,
+            1404
+        ],
+        "InCounts": [
+            1,
+            1
+        ],
+        "Output": [
+            9483
+        ],
+        "OutCounts": [
+            6
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 534,
+        "Name": "谐振盘",
+        "Description": "",
+        "IconPath": "",
+        "Type": 10,
+        "GridIndex": 1510,
+        "Time": 240,
+        "Input": [
+            9483,
+            1113,
+            7805
+        ],
+        "InCounts": [
+            3,
+            2,
+            1
+        ],
+        "Output": [
+            9484
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 536,
+        "Name": "量子服务器群集",
+        "Description": "",
+        "IconPath": "",
+        "Type": 10,
+        "GridIndex": 1107,
+        "Time": 720,
+        "Input": [
+            7805,
+            1402,
+            9483
+        ],
+        "InCounts": [
+            3,
+            2,
+            1
+        ],
+        "Output": [
+            9486
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
         "ID": 544,
         "Name": "奇点矩阵",
         "Description": "",
@@ -5552,7 +5720,7 @@
             1
         ],
         "Output": [
-            6503
+            6507
         ],
         "OutCounts": [
             1
@@ -6329,26 +6497,32 @@
     },
     {
         "ID": 791,
-        "Name": "占位",
+        "Name": "数学率引擎-深蓝之井-运载火箭",
         "Description": "",
         "IconPath": "",
-        "Type": 4,
-        "GridIndex": 0,
-        "Time": 60,
+        "Type": 9,
+        "GridIndex": 1714,
+        "Time": 720,
         "Input": [
-            7616
+            6261,
+            1802,
+            1406,
+            6263
         ],
         "InCounts": [
-            1
+            1,
+            4,
+            4,
+            4
         ],
         "Output": [
-            7617
+            6502
         ],
         "OutCounts": [
             1
         ],
         "Explicit": false,
-        "Handcraft": true,
+        "Handcraft": false,
         "NonProductive": false
     },
     {

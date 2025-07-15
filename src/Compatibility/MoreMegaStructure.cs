@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using BepInEx.Bootstrap;
-using MoreMegaStructure;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using static ProjectGenesis.Patches.Logic.MathematicalRateEngine.UI;
 using UnityEngine;
 using xiaoye97;
 using PluginInfo = BepInEx.PluginInfo;
@@ -45,8 +44,11 @@ namespace ProjectGenesis.Compatibility
             HarmonyPatch.Patch(AccessTools.Method(assembly.GetType("MoreMegaStructure.MoreMegaStructure"), "UIValueUpdate"), null,
                 new HarmonyMethod(typeof(MoreMegaStructure), nameof(UIValueUpdate_Postfix)));
 
-            HarmonyPatch.Patch(AccessTools.Method(assembly.GetType("MoreMegaStructure.MoreMegaStructure"), "BeforeGameTickPostPatch"), null, null,
-                new HarmonyMethod(typeof(MoreMegaStructure), nameof(BeforeGameTickPostPatch_Transpiler)));
+            HarmonyPatch.Patch(AccessTools.Method(assembly.GetType("MoreMegaStructure.MoreMegaStructure"), "SetMegaStructure"), null,
+                new HarmonyMethod(typeof(MoreMegaStructure), nameof(SetMegaStructure_Postfix)));
+
+            //HarmonyPatch.Patch(AccessTools.Method(assembly.GetType("MoreMegaStructure.MoreMegaStructure"), "SiloUpdatePatch"), null,
+            //    new HarmonyMethod(typeof(MoreMegaStructure), nameof(SiloUpdatePatch_Postfix)));
 
             HarmonyPatch.Patch(AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)), null,
                 new HarmonyMethod(typeof(MoreMegaStructure), nameof(LDBToolOnPostAddDataAction))
@@ -121,8 +123,8 @@ namespace ProjectGenesis.Compatibility
             itemProto.FindRecipes();
             itemProto.isRaw = true;
 
-            itemProto = LDB.items.Select(9486); //量子服务集群
-            itemProto.Name = "量子服务集群";
+            itemProto = LDB.items.Select(9486); //量子服务器群集
+            itemProto.Name = "量子服务器群集".Translate();
             itemProto.RefreshTranslation();
 
             TechProto techProto = LDB.techs.Select(1918);
@@ -145,7 +147,7 @@ namespace ProjectGenesis.Compatibility
 
             matcher.MatchForward(false, new CodeMatch(OpCodes.Ldc_I4, 120000000));
 
-            matcher.SetOperandAndAdvance(600000000);
+            matcher.SetOperandAndAdvance(900000000);
 
             return matcher.InstructionEnumeration();
         }
@@ -164,36 +166,71 @@ namespace ProjectGenesis.Compatibility
 
         public static void RefreshUILabels_Postfix(StarData star)
         {
-            Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
-            if (targetType == null) return;
-
-            // 2. 获取字段引用
-            FieldInfo set2MatDecomButtonTextTransField = AccessTools.Field(targetType, "set2MatDecomButtonTextTrans");
-            if (set2MatDecomButtonTextTransField == null) return;
-
-            //var set2MatDecomButtonTextTrans = AccessTools.Field(TargetType, "set2MatDecomButtonTextTrans");
-            Transform set2MatDecomButtonTextTrans = (Transform)set2MatDecomButtonTextTransField.GetValue(null);
-            set2MatDecomButtonTextTrans.GetComponent<Text>().text = "规划".Translate() + "数学率引擎".Translate();
-
-            FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
-            if (StarMegaStructureTypeField == null) return;
-
-            int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
-
-            FieldInfo RightDysonTitleField = AccessTools.Field(targetType, "RightDysonTitle");
-            Text RightDysonTitle = (Text)RightDysonTitleField.GetValue(null);
-
-            FieldInfo RightMaxPowGenTextField = AccessTools.Field(targetType, "RightMaxPowGenText");
-            Text RightMaxPowGenText = (Text)RightMaxPowGenTextField.GetValue(null);
-
-            int idx = star.id - 1;
-            idx = idx < 0 ? 0 : (idx > 999 ? 999 : idx);
-            int curtype = StarMegaStructureType[idx];
-            if (curtype == 1)
+            if (star.type == EStarType.BlackHole)
             {
-                RightDysonTitle.text = "数学率引擎".Translate() + " " + star.displayName;
-                set2MatDecomButtonTextTrans.GetComponent<Text>().text = "当前".Translate() + " " + "数学率引擎".Translate();
-                RightMaxPowGenText.text = "现实重构".Translate();
+                Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
+                if (targetType == null) return;
+
+                FieldInfo RightStarPowRatioTextField = AccessTools.Field(targetType, "RightStarPowRatioText");
+                if (RightStarPowRatioTextField == null) return;
+                Text RightStarPowRatioText = (Text)RightStarPowRatioTextField.GetValue(null);
+
+                RightStarPowRatioText.text = "引力系数".Translate();
+
+                // 2. 获取字段引用
+                FieldInfo set2DysonButtonTextTransField = AccessTools.Field(targetType, "set2DysonButtonTextTrans");
+                if (set2DysonButtonTextTransField == null) return;
+
+                //var set2MatDecomButtonTextTrans = AccessTools.Field(TargetType, "set2MatDecomButtonTextTrans");
+                Transform set2DysonButtonTextTrans = (Transform)set2DysonButtonTextTransField.GetValue(null);
+                if (!GameMain.history.TechUnlocked(1802))
+                {
+                    set2DysonButtonTextTrans.GetComponent<Text>().text = "规划".Translate() + "???".Translate();
+                }
+                else if (!GameMain.history.TechUnlocked(1952))
+                {
+                    set2DysonButtonTextTrans.GetComponent<Text>().text = "规划".Translate() + "共鸣阵列".Translate();
+                }
+                else
+                {
+                    set2DysonButtonTextTrans.GetComponent<Text>().text = "规划".Translate() + "数学率引擎".Translate();
+                }
+
+                FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
+                if (StarMegaStructureTypeField == null) return;
+
+                int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
+
+                FieldInfo RightDysonTitleField = AccessTools.Field(targetType, "RightDysonTitle");
+                Text RightDysonTitle = (Text)RightDysonTitleField.GetValue(null);
+
+                FieldInfo RightMaxPowGenTextField = AccessTools.Field(targetType, "RightMaxPowGenText");
+                Text RightMaxPowGenText = (Text)RightMaxPowGenTextField.GetValue(null);
+
+                int idx = star.id - 1;
+                idx = idx < 0 ? 0 : (idx > 999 ? 999 : idx);
+                int curtype = StarMegaStructureType[idx];
+                if (curtype == 0)
+                {
+                    if (!GameMain.history.TechUnlocked(1802))
+                    {
+                        RightDysonTitle.text = "???".Translate() + " " + star.displayName;
+                        set2DysonButtonTextTrans.GetComponent<Text>().text = "当前".Translate() + " " + "???".Translate();
+                        RightMaxPowGenText.text = "???".Translate();
+                    }
+                    else if (!GameMain.history.TechUnlocked(1952))
+                    {
+                        RightDysonTitle.text = "共鸣阵列".Translate() + " " + star.displayName;
+                        set2DysonButtonTextTrans.GetComponent<Text>().text = "当前".Translate() + " " + "共鸣阵列".Translate();
+                        RightMaxPowGenText.text = "引力共鸣".Translate();
+                    }
+                    else
+                    {
+                        RightDysonTitle.text = "数学率引擎".Translate() + " " + star.displayName;
+                        set2DysonButtonTextTrans.GetComponent<Text>().text = "当前".Translate() + " " + "数学率引擎".Translate();
+                        RightMaxPowGenText.text = "现实重构".Translate();
+                    }
+                }
             }
         }
 
@@ -215,37 +252,89 @@ namespace ProjectGenesis.Compatibility
             if (RightMaxPowGenValueTextField == null) return;
             Text RightMaxPowGenValueText = (Text)RightMaxPowGenValueTextField.GetValue(null);
 
-            if (StarMegaStructureType[curDysonSphere.starData.id - 1] == 1) //如果是数学率引擎
+            if (StarMegaStructureType[curDysonSphere.starData.id - 1] == 0) //如果是数学率引擎
             {
-                long DysonEnergy = (curDysonSphere.energyGenCurrentTick - curDysonSphere.energyReqCurrentTick);
-                RightMaxPowGenValueText.text = (DysonEnergy / 20000) + "Humes";
+                if (curDysonSphere.starData.type == EStarType.BlackHole)
+                {
+                    long DysonEnergy = (curDysonSphere.energyGenCurrentTick - curDysonSphere.energyReqCurrentTick);
+                    if (!GameMain.history.TechUnlocked(1802))
+                    {
+                        RightMaxPowGenValueText.text = Capacity2Str(DysonEnergy) + " ?";
+                    }
+                    else if (!GameMain.history.TechUnlocked(1952))
+                    {
+                        RightMaxPowGenValueText.text = Capacity2Str(DysonEnergy) + " g";
+                    }
+                    else
+                    {
+                        RightMaxPowGenValueText.text = Capacity2Str(DysonEnergy / 2000) + "休谟";
+                    }
+                }
             }
         }
 
-        public static IEnumerable<CodeInstruction> BeforeGameTickPostPatch_Transpiler(IEnumerable<CodeInstruction> instructions)
+
+        public static void SetMegaStructure_Postfix(int type)
         {
-            var matcher = new CodeMatcher(instructions);
+            Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
+            if (targetType == null) return;
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_0));
-            Debug.LogFormat("scpppppppppppppp matcher.Opcode {0} {1}", matcher.Pos, matcher.Opcode);
-            matcher.Advance(1);
-            Debug.LogFormat("scpppppppppppppp1 matcher.Opcode {0} {1}", matcher.Pos, matcher.Opcode);
+            FieldInfo curStarField = AccessTools.Field(targetType, "curStar");
+            if (curStarField == null) return;
+            StarData curStar = (StarData)curStarField.GetValue(null);
 
-            matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldind_Ref))
-                .InsertAndAdvance(new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(StarData), nameof(StarData.id))))
-                .InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1)).InsertAndAdvance(new CodeInstruction(OpCodes.Sub))
-                .InsertAndAdvance(new CodeInstruction(OpCodes.Ldelem_I4)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_1))
-                .InsertAndAdvance(new CodeInstruction(OpCodes.Ceq)).InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_0))
-                .InsertAndAdvance(new CodeInstruction(OpCodes.Or)).InsertAndAdvance(new CodeInstruction(OpCodes.Stloc_0));
-            Debug.LogFormat("scpppppppppppppp2 matcher.Opcode {0} {1}", matcher.Pos, matcher.Opcode);
-
-
-
-
-
-            
-            return matcher.InstructionEnumeration();
+            if (curStar.type == EStarType.BlackHole)
+            {
+                if (type == 0)
+                { // 改成数学率引擎后删除所有太阳帆
+                    curDysonSphere.swarm.RemoveSailsByOrbit(-1);
+                }
+            }
         }
 
+
+        public static void SiloUpdatePatch_Postfix()
+        {
+            Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
+            if (targetType == null) return;
+
+            FieldInfo starIndexField = AccessTools.Field(targetType, "starIndex");
+            if (starIndexField == null) return;
+            int starIndex = (int)starIndexField.GetValue(null);
+            
+            FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
+            if (StarMegaStructureTypeField == null) return;
+            int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
+
+            FieldInfo __instanceField = AccessTools.Field(targetType, "__instance");
+            if (__instanceField == null) return;
+            SiloComponent __instance = (SiloComponent)__instanceField.GetValue(null);
+
+            if (GameMain.galaxy.stars[starIndex].type == EStarType.BlackHole)
+            {
+                if (StarMegaStructureType[starIndex] == 0)
+                {
+                    int bulletIdExpected = 1503;
+                    if (!GameMain.history.TechUnlocked(1952))
+                    {
+                        bulletIdExpected = 6228;
+                    }
+                    else if (!GameMain.history.TechUnlocked(1960))
+                    {
+                        bulletIdExpected = 6504;
+                    }
+                    else
+                    {
+                        bulletIdExpected = 6502;
+                    }
+                    if (__instance.bulletId != bulletIdExpected)
+                    {
+                        __instance.bulletCount = 0;
+                        __instance.bulletInc = 0;
+                        __instance.bulletId = bulletIdExpected;
+                    }
+                }
+            }
+        }
     }
 }

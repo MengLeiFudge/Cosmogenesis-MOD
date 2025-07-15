@@ -13,6 +13,15 @@ namespace ProjectGenesis.Utils
 {
     internal static class JsonDataUtils
     {
+        static bool IsMoreMegaStructureItem(int itemID)
+        {
+            if (itemID > 9000)
+            {
+                LDB.items.Exist(itemID);
+                return true;
+            }
+            return false;
+        }
         internal static void ImportJson(int[] tableID)
         {
             ref Dictionary<int, IconToolNew.IconDesc> itemIconDescs =
@@ -26,15 +35,17 @@ namespace ProjectGenesis.Utils
                 else { LDBTool.PreAddProto(techjson.ToProto()); }
             }
 
-        #endregion
+            #endregion
 
-        #region Mod ItemProto
+            #region Mod ItemProto
 
             foreach (ItemProtoJson itemjson in ItemModProtos())
             {
-                itemjson.GridIndex = GetTableID(itemjson.GridIndex);
-                itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
-                LDBTool.PreAddProto(itemjson.ToProto());
+                if (!ProjectGenesis.MoreMegaStructureCompatibility || !IsMoreMegaStructureItem(itemjson.ID)) {
+                    itemjson.GridIndex = GetTableID(itemjson.GridIndex);
+                    itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
+                    LDBTool.PreAddProto(itemjson.ToProto());
+                }
             }
 
         #endregion
@@ -57,10 +68,19 @@ namespace ProjectGenesis.Utils
 
             foreach (RecipeProtoJson recipeJson in RecipeProtos())
             {
-                recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
+                if (!ProjectGenesis.MoreMegaStructureCompatibility || !(recipeJson.ID >= 530 && recipeJson.ID <= 536))
+                {
+                    recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
 
-                if (LDB.recipes.Exist(recipeJson.ID)) { recipeJson.ToProto(LDB.recipes.Select(recipeJson.ID)); }
-                else { LDBTool.PreAddProto(recipeJson.ToProto()); }
+                    if (LDB.recipes.Exist(recipeJson.ID))
+                    {
+                        recipeJson.ToProto(LDB.recipes.Select(recipeJson.ID));
+                    }
+                    else
+                    {
+                        LDBTool.PreAddProto(recipeJson.ToProto());
+                    }
+                }
             }
 
         #endregion

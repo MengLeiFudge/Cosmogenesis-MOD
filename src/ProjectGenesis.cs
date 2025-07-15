@@ -34,6 +34,7 @@ using static ProjectGenesis.Patches.Logic.LogisticsInterchangePatches;
 using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
 using static ProjectGenesis.Patches.Logic.BattleRelated.HPAdjust;
 using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
+using static ProjectGenesis.Patches.Logic.MathematicalRateEngine.UI;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -57,7 +58,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.Cosmogenesis";
         public const string MODNAME = "Cosmogenesis";
-        public const string VERSION = "0.7.9";
+        public const string VERSION = "0.8.1";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -224,6 +225,7 @@ namespace ProjectGenesis
 
         private void PreAddDataAction()
         {
+            GetDysonVanillaUITexts();
             LDB.items.OnAfterDeserialize();
             ModifyPlanetThemeDataVanilla();
             StationPrefabDescPostAdd();
@@ -327,8 +329,6 @@ namespace ProjectGenesis
             material.itemId = ProtoID.I钨块;
             material.density = 19.35f;
             material.durability = 4.35f;
-
-            MoreMegaStructureCompatibilityTech();
 
             // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
         }

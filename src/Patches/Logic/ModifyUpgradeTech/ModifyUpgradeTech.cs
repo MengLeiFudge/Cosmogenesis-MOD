@@ -1,4 +1,5 @@
 ﻿using CommonAPI.Systems;
+using GalacticScale;
 using HarmonyLib;
 using ProjectGenesis.Compatibility;
 using ProjectGenesis.Utils;
@@ -994,6 +995,41 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             techProto.ItemPoints = new int[] { techProto.ItemPoints[0], techProto.ItemPoints[0], techProto.ItemPoints[0] };
         }
 
+        // 检测黑洞巨构功率，达成目标解锁通关科技
+        [HarmonyPatch(typeof(DysonSphere), nameof(DysonSphere.BeforeGameTick))]
+        [HarmonyPostfix]
+        public static void BeforeGameTickPatch(DysonSphere __instance)
+        {
+            if (__instance.starData.type == EStarType.BlackHole)
+            {
+                if (!GameMain.history.TechUnlocked(1952))
+                {
+                    if (__instance.energyGenCurrentTick > 8000000)
+                    {
+                        GameMain.history.UnlockTech(1952);
+                    }
+                }
+                else if (!GameMain.history.TechUnlocked(1960))
+                {
+                    if (__instance.energyGenCurrentTick > 40000000)
+                    {
+                        GameMain.history.UnlockTech(1960);
+                    }
+                }
+                else if (!GameMain.history.TechUnlocked(1814))
+                {
+                    if (__instance.energyGenCurrentTick > 80000000)
+                    {
+                        GameMain.history.UnlockTech(1814);
+                    }
+                }
+            }
+        }
+       
+
+
+
+        // 下面是解锁不同的科技后要做的操作
         [HarmonyPatch(typeof(GameHistoryData), nameof(GameHistoryData.NotifyTechUnlock))]
         [HarmonyPrefix]
         public static void NotifyTechUnlockPatch(GameHistoryData __instance, int _techId)
@@ -1007,6 +1043,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             ItemGetHash(_techId);
             CraftUnitAttackRangeUpgrade(_techId);
             AorB(_techId);
+            BecauseItIsThere(_techId);
         }
 
         static void UAVHPAndfiringRateUpgrade(int level)
@@ -1302,41 +1339,6 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         }
 
 
-        [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
-        [HarmonyPrefix]
-        public static bool UnlockFunctionTextPatch(TechProto __instance, StringBuilder sb, ref string __result)
-        {
-            string text = "";
-            if (__instance.UnlockFunctions.Length > 0)
-            {
-                if (__instance.UnlockFunctions[0] == 101)
-                {
-                    text = text + "黑雾".Translate() + __instance.UnlockValues[0] + "级残骸物品掉落".Translate();
-                    __result = text;
-                    return false;
-                }
-                if (__instance.UnlockFunctions.Length > 1) {
-                    if (__instance.UnlockFunctions[0] == 7 && __instance.UnlockFunctions[1] == 102)
-                    {
-                        text = text + "+" + __instance.UnlockValues[0].ToString("0%") + "手动合成速度".Translate();
-                        text += "\r\n";
-                        text = text + "解锁手搓".Translate();
-                        __result = text;
-                        return false;
-                    }
-                    else if (__instance.UnlockFunctions[0] == 103 && __instance.UnlockFunctions[1] == 72)
-                    {
-                        text = text + "驱逐舰射程增加至".Translate() + __instance.UnlockValues[0] + "，护卫舰射程增加至".Translate() + __instance.UnlockValues[0] * 0.4;
-                        text += "\r\n";
-                        text += string.Format("太空战斗机攻速升级".Translate(), __instance.UnlockValues[1]);
-                        __result = text;
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
         [HarmonyPatch(typeof(Player), nameof(Player.TryAddItemToPackage))]
         [HarmonyPrefix]
         public static bool TryAddItemToPackagePatch(ref Player __instance, int itemId, int count, ref int __result)
@@ -1392,6 +1394,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             return true;
         }
 
+        // 重置 突出凝练机 的加速和消耗翻倍
         [HarmonyPatch(typeof(GameHistoryData), nameof(GameHistoryData.RemoveTechInQueue))]
         [HarmonyPrefix]
         public static void RemoveTechInQueuePatch(GameHistoryData __instance, int index)
@@ -1405,6 +1408,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        // 重置 突出凝练机 的加速和消耗翻倍
         [HarmonyPatch(typeof(GameHistoryData), nameof(GameHistoryData.DequeueTech))]
         [HarmonyPrefix]
         public static void DequeueTechPatch(GameHistoryData __instance)
@@ -1542,6 +1546,34 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void BecauseItIsThere(int techId)
+        {
+            TechProto techProto;
+            switch(techId)
+            {
+                case 1508:
+                    techProto = LDB.techs.Select(1802);
+                    techProto.IsHiddenTech = false;
+                    break;
+                case 1802:
+                    techProto = LDB.techs.Select(techId);
+                    techProto.Name = "因为，山就在那里".Translate();
+                    techProto.RefreshTranslation();
+
+                    techProto = LDB.techs.Select(1952);
+                    techProto.IsHiddenTech = false;
+                    break;
+                case 1952:
+                    techProto = LDB.techs.Select(1960);
+                    techProto.IsHiddenTech = false;
+                    break;
+                case 1960:
+                    techProto = LDB.techs.Select(1814);
+                    techProto.IsHiddenTech = false;
+                    break;
+            }
+        }
+
         internal static void Export(BinaryWriter w)
         {
             w.Write(WreckFallingLevel);
@@ -1646,33 +1678,6 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         }
 
 
-        internal static void MoreMegaStructureCompatibilityTech()
-        {
-            if (!ProjectGenesis.MoreMegaStructureCompatibility)
-            {
-                return;
-            }
-            TechProto techProto;
-
-            techProto = LDB.techs.Select(1802);
-            techProto.Name = "因为，山就在那里";
-            techProto.Desc = "T因为，山就在那里";
-            techProto.Conclusion = "T因为，山就在那里完成";
-            techProto.UnlockRecipes = new int[] { 539 };
-            techProto.RefreshTranslation();
-
-            techProto = LDB.techs.Select(1952);
-            techProto.IsHiddenTech = false;
-            techProto.PreItem = new int[] { };
-
-            techProto = LDB.techs.Select(1960);
-            techProto.IsHiddenTech = false;
-            techProto.PreItem = new int[] { };
-
-            techProto = LDB.techs.Select(1508);
-            techProto.IsHiddenTech = false;
-            techProto.PreItem = new int[] { };
-            techProto.UnlockRecipes = new int[] {  };
-        }
+      
     }
 }

@@ -182,8 +182,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             TechProto NewTechProto = ProtoRegistry.RegisterTech(id, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
             NewTechProto.Level = 3;
             NewTechProto.MaxLevel = 3;
-            NewTechProto.UnlockFunctions = new int[] { 103, 72 };
-            NewTechProto.UnlockValues = new double[] { 10000, 0.4 };
+            NewTechProto.UnlockFunctions = new int[] { 72 };
+            NewTechProto.UnlockValues = new double[] { 0.4 };
         }
 
         internal static void AddWarpEngineTechs()

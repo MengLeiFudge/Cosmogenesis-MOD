@@ -2841,19 +2841,19 @@
         "ENUS": "1.2m hash."
     },
     {
-        "Name": "驱逐舰射程增加至",
-        "ZHCN": "驱逐舰射程增加至",
+        "Name": "驱逐舰护卫舰射程增加",
+        "ZHCN": "驱逐舰射程增加至10000m，护卫舰射程增加至4000m",
         "ENUS": "Destroyer range increased to "
     },
     {
-        "Name": "，护卫舰射程增加至",
-        "ZHCN": "，护卫舰射程增加至",
-        "ENUS": ", escort range increased to "
+        "Name": "占位物",
+        "ZHCN": "占位物",
+        "ENUS": "Occupying object"
     },
     {
-        "Name": "此科技不可研究",
-        "ZHCN": "此科技不可研究",
-        "ENUS": "This technology cannot be researched"
+        "Name": "此物不可制造无意义",
+        "ZHCN": "此物纯占位用，不可制造，没有实际意义",
+        "ENUS": "This item is purely for occupying space and cannot be manufactured, with no practical significance"
     },
     {
         "Name": "太空舰队结构优化",
@@ -3181,11 +3181,6 @@
         "ENUS": "Fully covered planetary shield can serve as a planetary power grid"
     },
     {
-        "Name": "T任务完成描述假",
-        "ZHCN": "戴森球计划的主要任务已经完成，大统一理论已被推论，宇宙的真理已尽在你手，再无高峰可攀登。（安装 更多巨构 以完成正真的通关（还未完成））",
-        "ENUS": "The main task of the Dyson sphere project has been completed, the theory of great unity has been deduced, and the truth of the universe is in your hands, with no peaks to climb.(Install MoreMegaStructures to complete the real clearance (not yet completed))"
-    },
-    {
         "Name": "高级磁场应用",
         "ZHCN": "高级磁场应用",
         "ENUS": "Advanced Magnetic Field Applications"
@@ -3272,9 +3267,115 @@
     },
     // 巨构mod
     {
-        "Name": "量子服务集群",
-        "ZHCN": "量子服务集群",
+        "Name": "引力发生装置",
+        "ZHCN": "引力发生装置",
+        "ENUS": "Gravity generator"
+    },
+    {
+        "Name": "I引力发生装置",
+        "ZHCN": "引导临界光子轰击奇异物质即可激发引力波。恒星附近能够获取大量的临界光子，从而能够使引力发生装置高效地运行。",
+        "ENUS": "Gravitational waves can be excited by directing critical photons to hit strange matter. A large number of critical photons can be obtained near the star, allowing the gravitational generator to operate efficiently."
+    },
+    {
+        "Name": "位面约束环",
+        "ZHCN": "位面约束环",
+        "ENUS": "Plane constraint ring"
+    },
+    {
+        "Name": "I位面约束环",
+        "ZHCN": "位面约束环能够协同引力透镜引导并操纵引力，也是构建科学枢纽所需的恒星级粒子加速器的必要组件。",
+        "ENUS": "Plane constraint ring can guide and manipulate gravity with graviton lens, and it is also an essential component of the stellar-scale particle accelerators which are needed to build science nexus."
+    },
+    {
+        "Name": "引力钻头",
+        "ZHCN": "引力钻头",
+        "ENUS": "Graviton drill"
+    },
+    {
+        "Name": "I引力钻头",
+        "ZHCN": "借助黑洞本身的引力，引力钻头能够将物质从黑洞中取出，这还包括吸积盘中大量的单极磁石。借助谐振盘，黑洞原质将能够被解压并在星系内输送。",
+        "ENUS": "The graviton drill can pull matter out of the black hole using the gravity of the black hole itself, which also includes the unipolar magnets in the accretion disk. With the help of the resonant disc, the matter from the black hole will be able to be decompressed and transported within the galaxy."
+    },
+    {
+        "Name": "隧穿激发装置",
+        "ZHCN": "隧穿激发装置",
+        "ENUS": "Tunneling exciter"
+    },
+    {
+        "Name": "I隧穿激发装置",
+        "ZHCN": "隧穿激发装置可以完美地掌控量子隧穿效应，常被用来强化量子芯片的处理能力和纠错能力。通过量子隧穿效应还能够轻易突破弯曲空间的能量势垒，使得在任意远的空间打开裂口成为可能。",
+        "ENUS": "Tunneling exciters can perfectly control the quantum tunneling effect, and are often used to enhance the processing and error correction capabilities of quantum chips. The quantum tunneling effect can also easily break through the energy barrier of the curved space, making it possible to open the warp crack in any space far away."
+    },
+    {
+        "Name": "谐振盘",
+        "ZHCN": "谐振盘",
+        "ENUS": "Resonant disc"
+    },
+    {
+        "Name": "I谐振盘",
+        "ZHCN": "谐振盘仅通过恒星级别的能量就可以产生跨越恒星系的空间波动能量束。如果将谐振盘组成阵列，理论上可以形成覆盖全宇宙的折跃能量场。",
+        "ENUS": "The resonant disc can generate interstellar-scale space-wave energy beams from only stellar-scale energy. If the resonant discs are formed into an array, a warp field covering the entire universe can theoretically be formed."
+    },
+    {
+        "Name": "量子服务器群集",
+        "ZHCN": "量子服务器群集",
         "ENUS": "Quantum Service Cluster"
+    },
+    {
+        "Name": "I量子服务器群集",
+        "ZHCN": "只要供给足够的能量，量子计算机的运算时钟能够无限逼近普朗克时间。通过量子比特协同，其潜在的单线程运算速率还能突破物理极限，并可以无限提升。现在，限制其计算速度的将只有能量输入水平。",
+        "ENUS": "As long as enough energy is supplied, the computing clock of a quantum computer can approach Planck time indefinitely. Through the cooperation of qubits, its potential single-threaded operation rate can also break through the physical limit and can be infinitely improved. Now, it will only be the level of energy input that will limit its computational speed."
+    },
+    // 通关
+    {
+        "Name": "数学率引擎-算力架构组件",
+        "ZHCN": "数学率引擎-算力架构组件",
+        "ENUS": "Mathematical Rate Engine - Computing Architecture Component"
+    },
+    {
+        "Name": "I数学率引擎-算力架构组件",
+        "ZHCN": "引力是穿透现实的最佳选择，而控制宇宙中最极端的引力天体：黑洞，以及引力发生装置组成的引力共鸣阵列，则需要成千上万个量子服务器群集联网组成太空巨构，使用谐振盘精细调控引力场的共鸣。",
+        "ENUS": "Gravity is the best choice for penetrating reality, and controlling the most extreme gravitational celestial bodies in the universe: black holes, as well as the gravitational resonance array composed of gravity generating devices, requires thousands of quantum server clusters to network together to form a space giant, using resonance disks to finely regulate the resonance of the gravitational field."
+    },
+    {
+        "Name": "数学率引擎-算力架构-运载火箭",
+        "ZHCN": "数学率引擎-算力架构-运载火箭",
+        "ENUS": "Mathematical Rate Engine - Computing Architecture - Launch Vehicle"
+    },
+    {
+        "Name": "I数学率引擎-算力架构-运载火箭",
+        "ZHCN": "负责运载数学率引擎节点组件的火箭，为了抵抗黑洞强大的引力，推进器更换为加力推进器。",
+        "ENUS": "The rocket responsible for carrying the mathematical rate engine node components has replaced its thrusters with booster thrusters to resist the strong gravitational pull of the black hole."
+    },
+    {
+        "Name": "数学率引擎-深蓝之井-运载火箭",
+        "ZHCN": "数学率引擎-深蓝之井-运载火箭",
+        "ENUS": "Mathematical Rate Engine - Deep Blue Well - Launch Vehicle"
+    },
+    {
+        "Name": "I数学率引擎-深蓝之井-运载火箭",
+        "ZHCN": "为了使数学率引擎全功率运转，需要建造有史以来最强大的发电站：环黑洞反物质堆发电巨构，以供应这座创生引擎。",
+        "ENUS": "In order to operate the mathematical rate engine at full power, it is necessary to build the most powerful power plant in history: the Ring Black Hole Anti Matter Reactor Power Generation Complex, to supply this generative engine."
+    },
+    {
+        "Name": "数学率引擎零阶",
+        "ZHCN": "黑洞的电磁弹射器发射 引力发生装置",
+        "ENUS": "The electromagnetic catapult of a black hole emits a gravity generating device"
+    },
+    {
+        "Name": "数学率引擎一阶",
+        "ZHCN": "黑洞的电磁弹射器发射改为 反物质燃料棒，发射井发射 数学率引擎-算力架构-运载火箭",
+        "ENUS": "The electromagnetic catapult of the black hole is replaced with antimatter fuel rods, and the mathematical rate engine - computing power architecture - carrier rocket is launched from the launch well"
+    },
+    {
+        "Name": "数学率引擎二阶",
+        "ZHCN": "黑洞的电磁弹射器发射改为 引力钻头，发射井发射 数学率引擎-深蓝之井-运载火箭",
+        "ENUS": "The electromagnetic catapult launch of the black hole is replaced by a gravity drill bit, and the launch well launches a mathematical rate engine - Deep Blue Well - carrier rocket"
+    },
+    {
+        "Name": "数学率引擎三阶",
+        "ZHCN": "使数学率引擎达到40k休谟指数以完成科技",
+        "ENUS": "Achieve a mathematical rate engine of 40k Humes to complete technology"
     },
     {
         "Name": "规划",
@@ -3282,9 +3383,24 @@
         "ENUS": "Plan "
     },
     {
+        "Name": "共鸣阵列",
+        "ZHCN": "共鸣阵列",
+        "ENUS": "Resonance Array"
+    },
+    {
         "Name": "数学率引擎",
         "ZHCN": "数学率引擎",
         "ENUS": "Mathematical Rate Engine"
+    },
+    {
+        "Name": "恒星功效系数",
+        "ZHCN": "恒星功效系数",
+        "ENUS": "Star Efficiency"
+    },
+    {
+        "Name": "最大工作效率",
+        "ZHCN": "最大工作效率",
+        "ENUS": "Capacity"
     },
     {
         "Name": "现实重构",
@@ -3292,19 +3408,29 @@
         "ENUS": "Reality Reconstruction"
     },
     {
-        "Name": "现实扭曲指数",
-        "ZHCN": "现实扭曲指数",
-        "ENUS": "Reality Distortion Index"
+        "Name": "引力共鸣",
+        "ZHCN": "引力共鸣",
+        "ENUS": "Gravitational Resonance"
+    },
+    {
+        "Name": "引力系数",
+        "ZHCN": "引力系数",
+        "ENUS": "Gravitational Coefficient"
     },
     {
         "Name": "因为，山就在那里",
         "ZHCN": "因为，山就在那里",
-        "ENUS": "Because, the mountain is right there"
+        "ENUS": "Because it is there"
+    },
+    {
+        "Name": "为何攀登高峰",
+        "ZHCN": "为何攀登高峰",
+        "ENUS": "Why climb the peak"
     },
     {
         "Name": "T因为，山就在那里",
-        "ZHCN": "这只是个虚无缥缈的推论，一个猜想，但是要验证这个推论需要数个星系维持的庞大物力。放眼整个星区已没有任何人配称得上敌人，大统一理论已被推论，宇宙的真理已尽在你手，为何还要攀登高峰？",
-        "ENUS": "This is just a vague inference, a conjecture, but to verify this inference, it requires massive physical forces maintained by several galaxies. Looking at the entire star region, there is no one worthy of being an enemy. The theory of great unity has been deduced, and the truth of the universe is already in your hands. Why climb the peak?"
+        "ZHCN": "这只是个虚无缥缈的推论，一个猜想，但是要验证这个推论需要数个星系维持的庞大物力。放眼整个星区已没有任何人配称得上敌人，大统一理论已被推论，宇宙的真理已尽在你手，为何还要攀登高峰？\r\n\r\n<color=\"#FD965ECC\">解锁黑洞巨构 共鸣阵列 的建设。</color>",
+        "ENUS": "This is just a vague inference, a conjecture, but to verify this inference, it requires massive physical forces maintained by several galaxies. Looking at the entire star region, there is no one worthy of being an enemy. The theory of great unity has been deduced, and the truth of the universe is already in your hands. Why climb the peak?\r\n\r\n<color=\"#FD965ECC\">Unlock the construction of the Megastructure Resonance Array within a Black Hole.</color>"
     },
     {
         "Name": "T因为，山就在那里完成",
@@ -3318,8 +3444,8 @@
     },
     {
         "Name": "T穿透现实",
-        "ZHCN": "随着大统一理论的秘密逐渐被揭开，我们确定，引力在塑造宇宙这个精密的数学率机器中起到了重要作用。就如黑洞是宇宙中最极端的天体，引力是穿透现实的最佳选择。",
-        "ENUS": "As the secrets of the grand unified theory are gradually revealed, we are certain that gravity plays an important role in shaping the precise mathematical rate machine of the universe. Just as black holes are the most extreme celestial bodies in the universe, gravity is the best choice for penetrating reality."
+        "ZHCN": "随着大统一理论的秘密逐渐被揭开，我们确定，引力在塑造宇宙这个精密的数学率机器中起到了重要作用。就如黑洞是宇宙中最极端的天体，引力是穿透现实的最佳选择。\r\n\r\n<color=\"#FD965ECC\">共鸣阵列达到8Mg（g=9.8m/s）解锁此科技，黑洞巨构升级为 数学率引擎。</color>",
+        "ENUS": "As the secrets of the grand unified theory are gradually revealed, we are certain that gravity plays an important role in shaping the precise mathematical rate machine of the universe. Just as black holes are the most extreme celestial bodies in the universe, gravity is the best choice for penetrating reality.\r\n\r\n<color=\"#FD965ECC\">The resonance array reaches 16.5Mg(g=9.8m/s) to unlock this technology, and the black hole structure is upgraded to a mathematical rate engine.</color>"
     },
     {
         "Name": "T穿透现实完成",
@@ -3333,13 +3459,23 @@
     },
     {
         "Name": "T宇宙的齿轮",
-        "ZHCN": "宇宙是个庞大机器，以数学，规则为齿轮构筑的，数千万亿年都在精准运行的机器。如今借由量子比特架构的强大算力，我们得以尝试通过引力钻头拨动黑洞的重力涟漪，以此来撬动这个庞大机器中的齿轮：数学率。",
-        "ENUS": "The universe is a massive machine, constructed with mathematics and rules as gears, and has been operating precisely for billions of years. Nowadays, with the powerful computing power of quantum bit architecture, we are able to attempt to manipulate the gravitational ripples of a black hole through a gravitational drill bit, thereby prying the gears in this massive machine: the mathematical rate."
+        "ZHCN": "宇宙是个庞大机器，以数学，规则为齿轮构筑的，数千万亿年都在精准运行的机器。如今借由量子比特架构的强大算力，我们得以尝试通过引力发生阵列拨动黑洞的重力涟漪，以此来撬动这个庞大机器中的齿轮：数学率。\r\n\r\n<color=\"#FD965ECC\">数学率引擎达到20k休谟指数解锁此科技</color>",
+        "ENUS": "The universe is a massive machine, constructed with mathematics and rules as gears, and has been operating precisely for billions of years. Nowadays, with the powerful computing power of quantum bit architecture, we are able to attempt to manipulate the gravitational ripples of black holes through gravitational arrays, in order to lever the gears in this massive machine: mathematical rates.\r\n\r\n<color=\"#FD965ECC\">Math rate engine reaches 20k Humes to unlock this technology</color>"
     },
     {
         "Name": "T宇宙的齿轮完成",
         "ZHCN": "现实在指令的重压下屈服，从此以后，光速，不再是一个常数。",
         "ENUS": "Reality yielded under the weight of instructions, and from then on, the speed of light was no longer a constant."
+    },
+    {
+        "Name": "宇宙创生",
+        "ZHCN": "宇宙创生",
+        "ENUS": "Cosmogenesis"
+    },
+    {
+        "Name": "T宇宙创生",
+        "ZHCN": "宇宙的本质在被我们一步步揭晓，曾经，我们发现规律，以后，我们定义规律，数学率引擎的建设已经进入最后阶段，完成它吧，让我们创造宇宙的新生。",
+        "ENUS": "The essence of the universe is being revealed step by step. Once, we discovered laws, and in the future, we define laws. The construction of the mathematical rate engine has entered its final stage. Let's complete it and create a new life for the universe."
     },
     {
         "Name": "真任务完成",

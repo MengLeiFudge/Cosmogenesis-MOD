@@ -138,7 +138,9 @@
     <Compile Include="src\Patches\Logic\InitialTechPatches.cs" />
     <Compile Include="src\Patches\Logic\InserterComponentPatches.cs" />
     <Compile Include="src\Patches\Logic\LogisticsInterchangePatches.cs" />
+    <Compile Include="src\Patches\Logic\MathematicalRateEngine\SiloAndEjector.cs" />
     <Compile Include="src\Patches\Logic\MegaAssembler\InternalFunctions.cs" />
+    <Compile Include="src\Patches\Logic\MathematicalRateEngine\UI.cs" />
     <Compile Include="src\Patches\Logic\MegaAssembler\MegaAssemblerPatches.cs" />
     <Compile Include="src\Patches\Logic\MegaAssembler\NebulaCompat.cs" />
     <Compile Include="src\Patches\Logic\MegaAssembler\PrebuildParametersPatches.cs" />
@@ -147,6 +149,7 @@
     <Compile Include="src\Patches\Logic\MegaAssembler\UISlotPickerPatches.cs" />
     <Compile Include="src\Patches\Logic\ModelLoadingPatches.cs" />
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\AddUpgradeTech.cs" />
+    <Compile Include="src\Patches\Logic\ModifyUpgradeTech\ModifyTechText.cs" />
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\ModifyUpgradeTech.cs" />
     <Compile Include="src\Patches\Logic\OverWriteBirthGalaxy.cs" />
     <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs" />
