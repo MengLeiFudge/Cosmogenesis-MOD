@@ -14,7 +14,7 @@ namespace ProjectGenesis.Patches.Logic
     {
         internal static void StationPrefabDescPostAdd()
         {
-            PrefabDesc megaPumper = LDB.models.Select(ProtoID.M物流运输站).prefabDesc;
+            PrefabDesc megaPumper = LDB.models.Select(ProtoID.M物流立交).prefabDesc;
             Pose[] newPortPoses = { new Pose(megaPumper.portPoses[0].position, megaPumper.portPoses[0].rotation),
                 new Pose(megaPumper.portPoses[1].position, megaPumper.portPoses[1].rotation),
                 new Pose(megaPumper.portPoses[2].position, megaPumper.portPoses[2].rotation),

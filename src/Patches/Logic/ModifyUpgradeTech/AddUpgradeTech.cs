@@ -19,7 +19,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             AddDamageUpgradeTechs();
             AddWreckageRecoveryUpgradeTechs();
             AddFleetUpgradeTechs();
-            AddWarpEngineTechs();
+            //AddWarpEngineTechs();
             //AddTempBugFixTechs();
         }
 

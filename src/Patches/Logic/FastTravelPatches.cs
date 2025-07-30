@@ -42,16 +42,16 @@ namespace ProjectGenesis.Patches.Logic
             return matcher.InstructionEnumeration();
         }
 
-        public static bool IsFastTravelTechUnlocked(bool sandboxToolsEnabled) =>
-            sandboxToolsEnabled || GameMain.history.TechUnlocked(2907);
+        public static bool IsFastTravelTechUnlocked(bool sandboxToolsEnabled) => 
+            sandboxToolsEnabled || GameMain.history.TechUnlocked(1934);
 
         public static bool IsFastTravelEnabled(bool sandboxToolsEnabled)
         {
             if (sandboxToolsEnabled) return true;
 
-            if (!GameMain.history.TechUnlocked(2907))
+            if (!GameMain.history.TechUnlocked(1934))
             {
-                UIRealtimeTip.Popup("未解锁量子折跃".TranslateFromJson());
+                UIRealtimeTip.Popup("未解锁坐标引擎".TranslateFromJson());
 
                 return false;
             }
@@ -60,9 +60,10 @@ namespace ProjectGenesis.Patches.Logic
 
             Mecha mecha = player.mecha;
 
-            //var energyWant = 12000000000;
+            var energyWant = 12000000000;
 
-            //mecha.QueryEnergy(energyWant, out double energyGet, out _);
+            mecha.QueryEnergy(energyWant, out double energyGet, out _);
+            energyWant = (int)energyGet;
 
             //if (energyGet < energyWant)
             //{
@@ -71,35 +72,35 @@ namespace ProjectGenesis.Patches.Logic
             //    return false;
             //}
 
-            if (player.package.GetItemCount(ProtoID.I反物质燃料棒) < 1)
-            {
-                UIRealtimeTip.Popup("反物质燃料棒不足".TranslateFromJson());
+            //if (player.package.GetItemCount(ProtoID.I反物质燃料棒) < 1)
+            //{
+            //    UIRealtimeTip.Popup("反物质燃料棒不足".TranslateFromJson());
 
-                return false;
-            }
+            //    return false;
+            //}
 
-            if (player.package.GetItemCount(1210) < 10)
-            {
-                UIRealtimeTip.Popup("翘曲器不足".TranslateFromJson());
-                return false;
-            }
+            //if (player.package.GetItemCount(1210) < 10)
+            //{
+            //    UIRealtimeTip.Popup("翘曲器不足".TranslateFromJson());
+            //    return false;
+            //}
 
-            if (!UseAntimatterFuelRod(player))
-            {
-                UIRealtimeTip.Popup("反物质燃料棒不足".TranslateFromJson());
+            //if (!UseAntimatterFuelRod(player))
+            //{
+            //    UIRealtimeTip.Popup("反物质燃料棒不足".TranslateFromJson());
 
-                return false;
-            }
+            //    return false;
+            //}
 
-            if (!UseWarper(player))
-            {
-                UIRealtimeTip.Popup("翘曲器不足".TranslateFromJson());
+            //if (!UseWarper(player))
+            //{
+            //    UIRealtimeTip.Popup("翘曲器不足".TranslateFromJson());
 
-                return false;
-            }
+            //    return false;
+            //}
 
-            //mecha.coreEnergy -= energyGet;
-            //mecha.MarkEnergyChange(9, -energyWant);
+            mecha.coreEnergy -= energyGet;
+            mecha.MarkEnergyChange(9, -energyWant);
 
             return true;
         }

@@ -122,6 +122,12 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
         private static int whichTechChoose = 0;
 
+        private static int[] NewGameCompletionTech = { 1508, 1802, 1952, 1960 };
+        private static int NewGameCompletionLevel = 0;
+
+        private static int ECMUpgradeLevel = 0;
+
+        private static int AntiMatterOutCounts = 2;
 
         internal static void ModifyUpgradeTeches()
         {
@@ -222,6 +228,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             ModifySpaceFormationExpansionUpgradeTechs();
             ModifyPlanetFieldUpgradeTechs();
             ModifyFleetUpgradeTechs();
+            ModifyECMUpgradeTechs();
 
             AddUpgradeTechs();
 
@@ -995,6 +1002,17 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             techProto.ItemPoints = new int[] { techProto.ItemPoints[0], techProto.ItemPoints[0], techProto.ItemPoints[0] };
         }
 
+        // 清空原ECM升级科技效果
+        internal static void ModifyECMUpgradeTechs()
+        {
+            TechProto techProto;
+            for (int i = 6101; i <= 6106; i++)
+            {
+                techProto = LDB.techs.Select(i);
+                techProto.UnlockFunctions = new int[] {  };
+            }
+        }
+
         // 检测黑洞巨构功率，达成目标解锁通关科技
         [HarmonyPatch(typeof(DysonSphere), nameof(DysonSphere.BeforeGameTick))]
         [HarmonyPostfix]
@@ -1007,6 +1025,20 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     if (__instance.energyGenCurrentTick > 8000000)
                     {
                         GameMain.history.UnlockTech(1952);
+                    }
+                }
+                else if (LDB.techs.Select(1934).IsHiddenTech == true)
+                {
+                    if (__instance.energyGenCurrentTick > 10000000)
+                    {
+                        LDB.techs.Select(1934).IsHiddenTech = false;
+                    }
+                }
+                else if (LDB.techs.Select(1959).IsHiddenTech == true)
+                {
+                    if (__instance.energyGenCurrentTick > 10000000)
+                    {
+                        LDB.techs.Select(1959).IsHiddenTech = false;
                     }
                 }
                 else if (!GameMain.history.TechUnlocked(1960))
@@ -1043,7 +1075,9 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             ItemGetHash(_techId);
             CraftUnitAttackRangeUpgrade(_techId);
             AorB(_techId);
-            BecauseItIsThere(_techId);
+            NewGameCompletion(_techId);
+            NewECMUpgradeTechs(_techId);
+            AntiMatterOutCountsTech(_techId);
         }
 
         static void UAVHPAndfiringRateUpgrade(int level)
@@ -1546,6 +1580,26 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void NewGameCompletion(int techId)
+        {
+            BecauseItIsThere(techId);
+            switch (techId)
+            {
+                case 1508:
+                    NewGameCompletionLevel = 1;
+                    break;
+                case 1802:
+                    NewGameCompletionLevel = 2;
+                    break;
+                case 1952:
+                    NewGameCompletionLevel = 3;
+                    break;
+                case 1960:
+                    NewGameCompletionLevel = 4;
+                    break;
+            }
+        }
+
         static void BecauseItIsThere(int techId)
         {
             TechProto techProto;
@@ -1554,6 +1608,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 case 1508:
                     techProto = LDB.techs.Select(1802);
                     techProto.IsHiddenTech = false;
+
                     break;
                 case 1802:
                     techProto = LDB.techs.Select(techId);
@@ -1574,6 +1629,53 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        // 新ECM升级科技,每级增加胶囊5点弹药量
+        static void NewECMUpgradeTechs(int techId)
+        {
+            ItemProto itemProto;
+            switch (techId)
+            {
+                case 6101:
+                case 6102:
+                case 6103:
+                case 6104:
+                case 6105:
+                case 6106:
+                    itemProto = LDB.items.Select(1612);
+                    itemProto.HpMax += 5;
+                    itemProto = LDB.items.Select(1613);
+                    itemProto.HpMax += 5;
+                    ECMUpgradeLevel++;
+                    break;
+            }
+        }
+
+        static void AntiMatterOutCountsTech(int techId)
+        {
+            if (techId == 1959)
+            {
+                DotNet35Random DotNet35Random = new DotNet35Random();
+                double Random = DotNet35Random.NextDouble();
+                RecipeProto recipeProto = LDB.recipes.Select(74);
+                if (Random > 0.00001 && Random <= 0.20001) {
+                    recipeProto.ResultCounts = new int[] { 1, 1 };
+                    AntiMatterOutCounts = 1;
+                }
+                else if (Random > 0.20001 && Random <= 0.60001) {
+                    recipeProto.ResultCounts = new int[] { 2, 2 };
+                    AntiMatterOutCounts = 2;
+                }
+                else if (Random > 0.60001 && Random <= 0.90001) {
+                    recipeProto.ResultCounts = new int[] { 3, 3 };
+                    AntiMatterOutCounts = 3;
+                }
+                else if (Random > 0.90001 && Random <= 0.99999) {
+                    recipeProto.ResultCounts = new int[] { 4, 4 };
+                    AntiMatterOutCounts = 4;
+                }
+            }
+        }
+
         internal static void Export(BinaryWriter w)
         {
             w.Write(WreckFallingLevel);
@@ -1588,6 +1690,9 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 w.Write(WhichFleetUpgradeChoose[i]);
             }
             w.Write(whichTechChoose);
+            w.Write(NewGameCompletionLevel);
+            w.Write(ECMUpgradeLevel);
+            w.Write(AntiMatterOutCounts);
         }
 
         internal static void Import(BinaryReader r)
@@ -1670,6 +1775,21 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     techProto = LDB.techs.Select(1937);
                     techProto.UnlockRecipes = new int[] { }; // 删除 石墨烯（碳解离）配方的解锁
                 }
+
+                NewGameCompletionLevel = r.ReadInt32();
+                for (int i = 1; i <= NewGameCompletionLevel; i++) {
+                    BecauseItIsThere(NewGameCompletionTech[NewGameCompletionLevel - 1]);
+                }
+
+                ECMUpgradeLevel = r.ReadInt32();
+                itemProto = LDB.items.Select(1612);
+                itemProto.HpMax += ECMUpgradeLevel * 5;
+                itemProto = LDB.items.Select(1613);
+                itemProto.HpMax += ECMUpgradeLevel * 5;
+
+                AntiMatterOutCounts = r.ReadInt32();
+                recipeProto = LDB.recipes.Select(74);
+                recipeProto.ResultCounts = new int[] { AntiMatterOutCounts, AntiMatterOutCounts };
             }
             catch (EndOfStreamException)
             {

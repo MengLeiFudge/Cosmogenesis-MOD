@@ -16,8 +16,8 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         {
             switch (__instance.ID)
             {
-                case ProtoID.T巨型建筑工程学:
-                    __result = "巨型建筑工程学文字描述".TranslateFromJson();
+                case ProtoID.T坐标引擎:
+                    __result = "坐标引擎文字描述".TranslateFromJson();
 
                     break;
 
@@ -26,13 +26,18 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
                 //    break;
 
-                case 2907:
-                    __result = "量子折跃文字描述".TranslateFromJson();
+                case 6101:
+                case 6102:
+                case 6103:
+                case 6104:
+                case 6105:
+                case 6106:
+                    __result = "电磁武器升级描述".TranslateFromJson();
 
                     break;
 
                 case ProtoID.T跃迁航行理论:
-                    __result = "跃迁航行理论描述".TranslateFromJson();
+                    __result = "跃迁航行理论文字描述".TranslateFromJson();
 
                     break;
 

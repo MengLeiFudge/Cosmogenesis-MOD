@@ -3,6 +3,8 @@ using System.Reflection;
 using CommonAPI.Systems;
 using UnityEngine;
 using xiaoye97;
+using static System.Collections.Specialized.BitVector32;
+using static VertaRecorder;
 
 // ReSharper disable CommentTypo
 // ReSharper disable LoopCanBePartlyConvertedToQuery
@@ -15,7 +17,7 @@ namespace ProjectGenesis.Utils
     {
         internal static void AddCopiedModelProto()
         {
-            CopyModelProto(121, ProtoID.M量子储液罐, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
+            CopyModelProto(50, ProtoID.M太空物流港, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
             CopyModelProto(194, ProtoID.M矿物处理厂, Color.HSVToRGB(0.2035f, 0.8326f, 0.9373f));
             CopyModelProto(49, ProtoID.M天穹装配厂, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
             CopyModelProto(49, ProtoID.M物质裂解塔, Color.HSVToRGB(0.6174f, 0.6842f, 0.9686f));
@@ -38,6 +40,13 @@ namespace ProjectGenesis.Utils
             //AddAtmosphericCollectStation();
             //AddOrbitalAntimatterReactor();
             ChangeAccumulatorColor();
+            ChangeWeiXinPowerPoint();
+        }
+
+        private static void ChangeWeiXinPowerPoint()
+        {
+            ModelProto oriModel = LDB.models.Select(68);
+            oriModel.prefabDesc.powerPoint.y += 55; // 将卫星的电点上移5米
         }
 
         private static void ChangeAccumulatorColor()
@@ -82,8 +91,98 @@ namespace ProjectGenesis.Utils
                     newMats.Add(newMaterial);
                 }
             }
+            oriModel = LDB.models.Select(ProtoID.M星际物流运输站); // ray receiver
+            //var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
 
-            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M轨道反物质堆,
+            foreach (Material[] lodMats in oriModel.prefabDesc.lodMaterials)
+            {
+                if (lodMats == null) continue;
+                Debug.LogFormat("====================================");
+                foreach (Material mat in lodMats)
+                {
+                    if (mat == null) continue;
+
+                    Debug.LogFormat("------------");
+                    Debug.LogFormat("Material Name: {0}", mat.name);
+                }
+            }
+            foreach (Mesh lodMeshe in oriModel.prefabDesc.lodMeshes)
+            {
+                if (lodMeshe == null) continue;
+                Debug.LogFormat("====================================");
+
+                Debug.LogFormat("lodMeshe Name: {0}", lodMeshe.name);
+            }
+            foreach (Mesh meshes in oriModel.prefabDesc.meshes)
+            {
+                if (meshes == null) continue;
+                Debug.LogFormat("====================================");
+
+                Debug.LogFormat("meshes Name: {0}", meshes.name);
+            }
+
+            if (oriModel.prefabDesc.mesh != null)
+            {
+                Debug.LogFormat("====================================");
+
+                Debug.LogFormat("mesh Name: {0}", oriModel.prefabDesc.mesh);
+            }
+
+//[Info   : Unity Log] ====================================
+//[Info   : Unity Log]------------
+//[Info: Unity Log] Material Name: interstellar - logistic - station
+//[Info: Unity Log]------------
+//[Info: Unity Log] Material Name: station - black
+//[Info: Unity Log] ====================================
+//[Info   : Unity Log] lodMeshe Name:
+//[Info   : Unity Log] ====================================
+//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 1
+//[Info   : Unity Log] ====================================
+//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
+//            [Info: Unity Log] ====================================
+//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
+//            [Info: Unity Log] ====================================
+//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
+//            [Info: Unity Log] ====================================
+//            [Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
+//[Info: Unity Log] ====================================
+//[Info   : Unity Log] mesh Name: interstellar - logistic - station - 1(UnityEngine.Mesh)
+//[Info: Unity Log] 666666666666666666666 ====================
+//[Info   : Unity Log]------------
+//[Info: Unity Log] Material Name: ray - receiver
+//[Info: Unity Log]------------
+//[Info: Unity Log] Material Name: ray - receiver - black
+//[Info: Unity Log]------------
+//[Info: Unity Log] Material Name: ray - receiver - effect
+//[Info: Unity Log]------------
+//[Info: Unity Log] Material Name: ray - receiver - eff
+
+
+            oriModel = LDB.models.Select(ProtoID.M射线接收站); // ray receiver
+            foreach (Material[] lodMats in oriModel.prefabDesc.lodMaterials)
+            {
+                if (lodMats == null) continue;
+                Debug.LogFormat("666666666666666666666====================");
+                foreach (Material mat in lodMats)
+                {
+                    if (mat == null) continue;
+
+                    Debug.LogFormat("------------");
+                    Debug.LogFormat("Material Name: {0}", mat.name);
+                }
+            }
+            var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
+
+            collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
+            collectEffectMat.SetColor("_PolarColor", new Color32(234, 255, 253, 170));
+            collectEffectMat.SetVector("_Aurora", new Vector4(75f, 1f, 20f, 0.1f));
+            collectEffectMat.SetVector("_Beam", new Vector4(12f, 98f, 24f, 1f));
+            collectEffectMat.SetVector("_Particle", new Vector4(2f, 50f, 5f, 0.8f));
+            collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 54f, 1f, 0.04f));
+
+            newMats.Add(collectEffectMat);
+
+            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M太空物流港,
                 "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
 
             registerModel.HpMax = 300000;

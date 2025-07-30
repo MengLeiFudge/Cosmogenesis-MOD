@@ -99,7 +99,7 @@ namespace ProjectGenesis.Utils
                            R钨矿筛选 = 773,
                            R海水淡化 = 801;
 
-        internal const int M物流运输站 = 49,
+        internal const int M物流立交 = 49,
                            M星际物流运输站 = 50,
                            M矩阵研究站 = 70,
                            M射线接收站 = 73,
@@ -118,7 +118,7 @@ namespace ProjectGenesis.Utils
                            M高频激光塔 = 373,
                            M量子化工厂 = 376,
                            M自演化研究站 = 455,
-                           M量子储液罐 = 801,
+                           M太空物流港 = 801,
                            M矿物处理厂 = 802,
                            M天穹装配厂 = 803,
                            M物质裂解塔 = 804,
@@ -148,7 +148,7 @@ namespace ProjectGenesis.Utils
                            T电磁驱动 = 1701,
                            T武器系统 = 1801,
                            T科学理论 = 1900,
-                           T巨型建筑工程学 = 1934,
+                           T坐标引擎 = 1934,
                            T行星协调中心 = 1936,
                            T护盾载波调制 = 1937,
                            T基础机械组件 = 1941,

@@ -335,11 +335,6 @@
         "ENUS": "The heavy-duty anti orbital plasma cannon uses specialized plasma railshells to extract atoms from the core, ionize them, and then confine and launch them with a strong magnetic field to form a concentrated energy beam. It has a decent range and excellent destructive power in space without atmospheric interference, and is also the standard main gun of the COSMO space fleet."
     },
     {
-        "Name": "量子折跃文字描述",
-        "ZHCN": "使用反物质燃料棒和翘曲器激活跃迁引擎原型机，撕裂现实空间以实现跨星系瞬时跃迁。",
-        "ENUS": "Activate the prototype of the warp engine using antimatter fuel rods and warping devices, Tearing apart real space to achieve instantaneous transitions across galaxies."
-    },
-    {
         "Name": "巨型建筑工程学文字描述",
         "ZHCN": "解锁巨型建筑的蓝图。",
         "ENUS": "Unlock the blueprints of the Mega Building."
@@ -2060,14 +2055,9 @@
         "ENUS": "By tearing open a void in real space, Icarus may be able to achieve instantaneous intergalactic transitions. People still don't really understand the essence of space that ships pass through when jumping."
     },
     {
-        "Name": "跃迁引擎",
-        "ZHCN": "跃迁引擎",
-        "ENUS": "Warp Engine"
-    },
-    {
-        "Name": "T跃迁引擎",
-        "ZHCN": "将反物质堆，量子计算机，曲率引擎组成跃迁引擎原型机，沉入次级维度，在虚数空间跟随伊卡洛斯，赋予伊卡洛斯跃迁能力。这个还处于原型阶段的技术样机每次启动都要消耗<color=\"#FD965ECC\">1个反物质燃料棒</color>和<color=\"#FD965ECC\">10个翘曲器</color>。",
-        "ENUS": "Construct a prototype of a transition engine consisting of an antimatter stack, quantum computer, and curvature engine, sink into the secondary dimension, and follow Icarus in imaginary space, endowing Icarus with the ability to transition.This technology prototype, which is still in the prototype stage, consumes <color=\"#FD965ECC\">1 anti material fuel rod</color> and <color=\"#FD965ECC\">10 warping devices</color> every time it is started."
+        "Name": "跃迁航行理论文字描述",
+        "ZHCN": "跃迁引擎升级",
+        "ENUS": "Warp Engine Upgrade"
     },
     {
         "Name": "人造恒星描述",
@@ -3161,24 +3151,39 @@
         "ENUS": "A specialized weapon for anti space warships, equipped with strange substances that, under precise control, not only create negative pressure in the front during flight to continuously accelerate torpedoes, but also unleash a powerful gravity field when hit, tearing apart the structure of enemy ships. Due to gravity's effect on everything, the tearing effect of the gravity field can ignore armor and directly affect the internal structure, making it a professional anti-ship weapon."
     },
     {
-        "Name": "跃迁航行理论描述",
-        "ZHCN": "跃迁引擎升级",
-        "ENUS": "Warp Engine Upgrade"
+        "Name": "电子战",
+        "ZHCN": "电子战",
+        "ENUS": "Electronic Warfare"
     },
     {
-        "Name": "T护盾载波调制",
-        "ZHCN": "护盾载波调制",
-        "ENUS": "Shield Carrier Modulation"
+        "Name": "T电子战",
+        "ZHCN": "为了帮助伊卡洛斯在与黑雾的战斗中取得制电磁权，工程师们将前军用级ECM脉冲发射器蓝图加入到戴森球计划中，它能在广域多频谱上对敌人进行电磁压制，极致简化的蓝图在计划的初级阶段即可制造，但也导致一些核心部件的使用寿命异常短暂，为此工程师们直接将这部分零件打包成“胶囊”，在使用过程中如同弹药一般直接进行热插拔替换。",
+        "ENUS": "In order to help Icarus gain electromagnetic control in the battle against Black Mist, engineers added the blueprint of the former military grade ECM pulse transmitter to the Dyson Sphere project. It can suppress enemies' electromagnetic interference in a wide area and multi spectrum. The extremely simplified blueprint can be manufactured in the early stages of the plan, but it also leads to the extremely short service life of some core components. Therefore, engineers directly packaged these parts into \"capsules\" and hot swappable them like ammunition during use."
     },
     {
-        "Name": "T护盾载波调制描述",
-        "ZHCN": "重新调整无线输电的频谱，使其可以在行星护盾上产生稳定的驻波模式，即可借助于完全覆盖的行星护盾进行无线输电。",
-        "ENUS": "By readjusting the spectrum of wireless power transmission, stable standing wave patterns can be produced on the planetary shield, thereby enabling wireless power transmission through a fully covered planetary shield."
+        "Name": "ECM脉冲发射器",
+        "ZHCN": "ECM脉冲发射器",
+        "ENUS": "ECM Pulse Transmitter"
     },
     {
-        "Name": "T护盾载波调制文字描述",
-        "ZHCN": "完全覆盖的行星护盾可作为行星电网",
-        "ENUS": "Fully covered planetary shield can serve as a planetary power grid"
+        "Name": "IECM脉冲发射器",
+        "ZHCN": "前军用级ECM脉冲发射器，能发射高强度电磁脉冲波，在多频谱上对黑雾的索敌雷达，火控雷达，无线通讯进行干扰，能显著降低黑雾单位的战斗力。需要接入集成了易损耗部件的胶囊才能运行。",
+        "ENUS": "The former military grade ECM pulse transmitter is capable of emitting high-intensity electromagnetic pulse waves, which can interfere with enemy radars, fire control radars, and wireless communications in black fog on multiple spectra, significantly reducing the combat effectiveness of black fog units. Capsules that integrate consumable components are required to operate."
+    },
+    {
+        "Name": "I电磁干扰胶囊",
+        "ZHCN": "集成了脉冲发射器需要的高频震荡线圈和电子管发射器的组件“胶囊”，通过ECM脉冲发射器专门的输入接口可以轻松实现热插拔式接入，在过热逼近使用寿命时，将报废的胶囊弹出，并立刻插入下一个胶囊接替运行。",
+        "ENUS": "The component \"capsule\" integrates the high-frequency oscillation coil required by the pulse transmitter and the electronic tube transmitter. It can be easily plugged in through the ECM pulse transmitter's dedicated input interface. When overheating approaches the service life, the scrapped capsule will be ejected and immediately inserted into the next capsule to take over operation."
+    },
+    {
+        "Name": "I电磁压制胶囊",
+        "ZHCN": "在干扰胶囊的基础上加入液氢作为冷却液以及高强度钛化玻璃，使得ECM发生器能用更高的功率进行电磁压制。",
+        "ENUS": "Adding liquid hydrogen as a coolant and high-strength titanium glass on the basis of interfering with the capsule enables the ECM generator to perform electromagnetic suppression with higher power."
+    },
+    {
+        "Name": "电磁武器升级描述",
+        "ZHCN": "使电磁胶囊弹药量+5",
+        "ENUS": "Boost the quantity of electromagnetic capsule ammunition by +5."
     },
     {
         "Name": "高级磁场应用",
@@ -3376,6 +3381,36 @@
         "Name": "数学率引擎三阶",
         "ZHCN": "使数学率引擎达到40k休谟指数以完成科技",
         "ENUS": "Achieve a mathematical rate engine of 40k Humes to complete technology"
+    },
+    {
+        "Name": "坐标引擎",
+        "ZHCN": "坐标引擎",
+        "ENUS": "Coordinate Engine"
+    },
+    {
+        "Name": "T坐标引擎",
+        "ZHCN": "通过数学率引擎对现实的修改，我们尝试以引擎为原点建立坐标系，对伊卡洛斯现实位置进行坐标修改，这项技术将颠覆所有传统航行技术，无视远近，无视障碍。\n因为技术不成熟，坐标引擎传送权限暂时只开放给伊卡洛斯，并且传送会<color=\"#FD965ECC\">清空能量</color>。",
+        "ENUS": "By modifying reality through a mathematical rate engine, we attempt to establish a coordinate system with the engine as the origin and adjust the coordinates of Icarus's real-world position. This technology will revolutionize all traditional navigation techniques, disregarding distance and obstacles.\nDue to the immaturity of the technology, the teleportation permission of the coordinate engine is temporarily only open to Icarus, and teleportation will <color=\"#FD965ECC\">clear all energy</color>."
+    },
+    {
+        "Name": "坐标引擎文字描述",
+        "ZHCN": "使用数学率引擎修改伊卡洛斯的坐标现实，以实现全星区任意行星无视距离障碍的完全“瞬移”。",
+        "ENUS": "Utilize the mathematical rate engine to alter the coordinate reality of Icarus, enabling complete \"teleportation\" across any planet in the entire star system, regardless of distance obstacles."
+    },
+    {
+        "Name": "开弦修正",
+        "ZHCN": "开弦修正",
+        "ENUS": "Open String Correction"
+    },
+    {
+        "Name": "T开弦修正",
+        "ZHCN": "通过数学率引擎对现实的修改，我们尝试对临界光子产生的开弦进行修正，我们对数学率的了解还不是很清晰，对弦论的修改可能会出现预期外的结果。",
+        "ENUS": "By modifying reality through the mathematical rate engine, we attempt to correct the open strings generated by critical photons. Our understanding of mathematical rates is not yet very clear, and modifications to string theory may yield unexpected results."
+    },
+    {
+        "Name": "开弦修正文字描述",
+        "ZHCN": "研究完成有概率使反物质产出发生变化，最大增加为正常的两倍，最小可能缩减为正常的一半",
+        "ENUS": "The research has the potential to alter the production of antimatter, with a maximum increase of twice the normal level and a minimum reduction to half the normal level"
     },
     {
         "Name": "规划",

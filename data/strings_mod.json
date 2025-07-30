@@ -395,9 +395,9 @@
     "ENUS": "Unlocks additional techs and provides additional items at the beginning"
   },
   {
-    "Name": "未解锁量子折跃",
-    "ZHCN": "你还没有解锁跃迁引擎",
-    "ENUS": "You have not unlocked Warp Engine technology"
+    "Name": "未解锁坐标引擎",
+    "ZHCN": "你还没有解锁坐标引擎",
+    "ENUS": "You haven't unlocked the coordinate engine yet"
   },
   {
     "Name": "折跃能量不足",

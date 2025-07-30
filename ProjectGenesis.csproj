@@ -118,11 +118,13 @@
     <Compile Include="src\Patches\Logic\AddVein\AddEffectEmitterProto.cs" />
     <Compile Include="src\Patches\Logic\AddVein\AddVeinPatches.cs" />
     <Compile Include="src\Patches\Logic\AddVein\ModifyPlanetTheme.cs" />
+    <Compile Include="src\Patches\Logic\AddVein\OilVeinPatch.cs" />
     <Compile Include="src\Patches\Logic\AddVein\StellarStationBanMagma.cs" />
     <Compile Include="src\Patches\Logic\AddVein\SwapShaderPatches.cs" />
     <Compile Include="src\Patches\Logic\AddVein\ThemeDatas.cs" />
     <Compile Include="src\Patches\Logic\AddVein\UIDetailPatches.cs" />
     <Compile Include="src\Patches\Logic\AddVein\VeinAnimDataPatches.cs" />
+    <Compile Include="src\Patches\Logic\BattleRelated\DisturbWavePatch.cs" />
     <Compile Include="src\Patches\Logic\BattleRelated\HPAdjust.cs" />
     <Compile Include="src\Patches\Logic\BattleRelated\InfiniteReloadAmmo.cs" />
     <Compile Include="src\Patches\Logic\BattleRelated\LocalPlasmaBanAntimatter.cs" />

@@ -2362,7 +2362,7 @@
             -28.0
         ],
         "PreTechs": [
-            //1502
+            1502
         ],
         "PreTechsImplicit": [],
         "Items": [
@@ -2577,7 +2577,7 @@
             0.0
         ],
         "PreTechs": [
-            //1507
+            1507
         ],
         "PreTechsImplicit": [],
         "Items": [
@@ -2881,7 +2881,7 @@
         ],
         "PreTechs": [],
         "PreTechsImplicit": [
-            //1705
+            1705
         ],
         "Items": [
             6279,
@@ -4012,25 +4012,22 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            48.0,
+            24.0,
             -60.0
         ],
         "PreTechs": [
             1826
         ],
-        "PreTechsImplicit": [
-            1826,
-            1101
-        ],
+        "PreTechsImplicit": [],
         "Items": [
-            6003,
-            6278
+            6001,
+            6002
         ],
         "ItemPoints": [
             10,
             10
         ],
-        "HashNeeded": 180000,
+        "HashNeeded": 144000,
         "UnlockRecipes": [
             131
         ],
@@ -4060,9 +4057,7 @@
             40.0,
             -56.0
         ],
-        "PreTechs": [
-            1824
-        ],
+        "PreTechs": [],
         "PreTechsImplicit": [
             1711
         ],
@@ -4092,22 +4087,20 @@
     },
     {
         "ID": 1810,
-        "Name": "T干扰塔",
+        "Name": "电子战",
         "IconPath": "Icons/Tech/1810",
-        "Desc": "干扰塔描述",
+        "Desc": "T电子战",
         "Conclusion": "干扰塔结果",
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            24.0,
-            -56.0
+            28.0,
+            -60.0
         ],
         "PreTechs": [
-            1801
+            1808
         ],
-        "PreTechsImplicit": [
-            1302
-        ],
+        "PreTechsImplicit": [],
         "Items": [
             6001,
             6002
@@ -4720,17 +4713,19 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            36.0,
-            -56.0
+            48.0,
+            -60.0
         ],
         "PreTechs": [
             1810
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6003
+            6003,
+            6278
         ],
         "ItemPoints": [
+            10,
             10
         ],
         "HashNeeded": 216000,
@@ -5803,25 +5798,27 @@
     },
     {
         "ID": 1934,
-        "Name": "T太空电梯",
-        "IconPath": "Icons/Tech/1604",
-        "Desc": "T太空电梯描述",
-        "Conclusion": "T太空电梯描述",
-        "IsHiddenTech": false,
-        "PreItem": null,
+        "Name": "坐标引擎",
+        "IconPath": "Assets/texpack/虫洞航行",
+        "Desc": "T坐标引擎",
+        "Conclusion": "T坐标引擎",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6228
+        ],
         "Position": [
-            36.0,
-            24.0
+            88.0,
+            -4.0
         ],
         "PreTechs": [],
         "PreTechsImplicit": [],
         "Items": [
-            6003
+            6006
         ],
         "ItemPoints": [
             10
         ],
-        "HashNeeded": 288000,
+        "HashNeeded": 2160000,
         "UnlockRecipes": [],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6657,33 +6654,33 @@
     },
     {
         "ID": 1959,
-        "Name": "T星环巨构",
+        "Name": "开弦修正",
         "IconPath": "Assets/texpack/反物质飞弹",
-        "Desc": "T星环巨构描述",
-        "Conclusion": "T星环巨构描述",
-        "IsHiddenTech": false,
-        "PreItem": [],
+        "Desc": "T开弦修正",
+        "Conclusion": "T开弦修正",
+        "IsHiddenTech": true,
+        "PreItem": [
+            6228
+        ],
         "Position": [
-            60.0,
-            16.0
+            88.0,
+            -8.0
         ],
         "PreTechs": [],
         "PreTechsImplicit": [],
         "Items": [
-            6004
+            6006
         ],
         "ItemPoints": [
             10
         ],
-        "HashNeeded": 1080000,
-        "UnlockRecipes": [
-
-        ],
+        "HashNeeded": 900000,
+        "UnlockRecipes": [],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
-        "Level": 0,
-        "MaxLevel": 0,
+        "Level": 1,
+        "MaxLevel": 10000,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
         "IsLabTech": true,

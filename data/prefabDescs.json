@@ -158,7 +158,7 @@
         "ModelID": 68,
         "idleEnergyPerTick": 12000,
         "workEnergyPerTick": 120000,
-        "powerConnectDistance": 120.5,
+        "powerConnectDistance": 180.5,
         "powerCoverRadius": 50.5
     },
     {
@@ -253,6 +253,11 @@
         "turretSpaceAttackRange": 10500
     },
     {
+        "ModelID": 422,
+        "turretMaxAttackRange": 75,
+        "turretRoundInterval": 180000
+    },
+    {
         "ModelID": 434,
         "AmmoBlastRadius1": 5,
         "AmmoMoveAcc": 30,
@@ -288,7 +293,10 @@
     },
     {
         "ModelID": 801,
-        "fluidStorageCount": 1000000
+        "workEnergyPerTick": 500000,
+        "stationMaxEnergyAcc": 6000000000,
+        "stationMaxItemCount": 20000,
+        "stationMaxDroneCount": 30
     },
     {
         "ModelID": 802,
