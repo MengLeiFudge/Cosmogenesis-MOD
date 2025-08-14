@@ -329,12 +329,12 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 else
                 {
                     entry.valueString = "未知".Translate();
-                    if (entry.refId > 7)
+                    if (entry.refId != 15)
                     {
                         entry.overrideLabel = "未知珍奇信号".Translate();
                     }
 
-                    if (entry.refId > 7)
+                    if (entry.refId != 15)
                     {
                         entry.SetObserved(_observed: false);
                     }

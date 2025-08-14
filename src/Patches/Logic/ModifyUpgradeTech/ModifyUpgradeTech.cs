@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
 using WinAPI;
@@ -204,7 +205,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             */
             ModifyAllUpgradeTechs();
 
-
+            ModifyObservedTechs();
             ModifyCoreUpgradeTechs();
             ModifyMoveUpgradeTechs();
             ModifyPackageUpgradeTechs();
@@ -251,18 +252,6 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
             */
 
-            tech = LDB.techs.Select(4102);
-            tech.Items = Items2;
-            tech.ItemPoints = Enumerable.Repeat(10, 2).ToArray();
-
-            tech = LDB.techs.Select(4103);
-            tech.Items = new[] { 6003, };
-            tech.ItemPoints = new[] { tech.ItemPoints[0], };
-
-            tech = LDB.techs.Select(ProtoID.T宇宙探索4);
-            tech.Items = new[] { 6003, 6278 };
-            tech.ItemPoints = new[] { tech.ItemPoints[0], tech.ItemPoints[1], };
-
             
 
             for (int i = 3701; i <= 3706; i++)
@@ -272,13 +261,6 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
 
             /*
-            for (int i = ProtoID.T宇宙探索1; i <= ProtoID.T宇宙探索4; i++)
-            {
-                TechProto techProto = LDB.techs.Select(i);
-                techProto.Items = new[] { 6001, };
-                techProto.ItemPoints = new[] { techProto.ItemPoints[0], };
-                techProto.PreTechsImplicit = Array.Empty<int>();
-            }
 
             // ReSharper disable once LoopCanBePartlyConvertedToQuery
             foreach (TechProto techProto in LDB.techs.dataArray)
@@ -361,6 +343,24 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     continue;
                 }
             }
+        }
+
+        internal static void ModifyObservedTechs()
+        {
+            TechProto techProto;
+            for (int i = ProtoID.T宇宙探索1; i <= ProtoID.T宇宙探索3; i++)
+            {
+                techProto = LDB.techs.Select(i);
+                techProto.Items = new[] { 6228, };
+                techProto.ItemPoints = new[] { 1, };
+                techProto.HashNeeded = 3600;
+                techProto.IsLabTech = false;
+            }
+            techProto = LDB.techs.Select(ProtoID.T宇宙探索4);
+            techProto.Items = new[] { 6280, };
+            techProto.ItemPoints = new[] { 1, };
+            techProto.HashNeeded = 360000;
+            techProto.IsLabTech = false;
         }
 
         internal static void ModifyCoreUpgradeTechs()
@@ -1798,6 +1798,28 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
         }
 
 
-      
+
+        public static void UnlockedObservedTechs(int itemId)
+        {
+            if (!GameMain.history.TechUnlocked(4101))
+            {
+                if (itemId == 3009)
+                {
+                    GameMain.history.UnlockTech(4101);
+                }
+            } else if (!GameMain.history.TechUnlocked(4102))
+            {
+                if (itemId == 6266)
+                {
+                    GameMain.history.UnlockTech(4102);
+                }
+            } else if (!GameMain.history.TechUnlocked(4103))
+            {
+                if (itemId == 6273)
+                {
+                    GameMain.history.UnlockTech(4103);
+                }
+            }
+        }
     }
 }

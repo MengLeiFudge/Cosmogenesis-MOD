@@ -111,9 +111,9 @@ namespace ProjectGenesis.Utils
 
             foreach (PrefabDescJson json in prefabDescs) { json.ToPrefabDesc(LDB.models.Select(json.ModelID).prefabDesc); }
 
-            PrefabDesc megaPumper = LDB.models.Select(ProtoID.M大抽水机).prefabDesc;
-            megaPumper.waterPoints = new[] { Vector3.zero, };
-            megaPumper.portPoses = new[] { megaPumper.portPoses[0], };
+            //PrefabDesc megaPumper = LDB.models.Select(ProtoID.M大抽水机).prefabDesc;
+            //megaPumper.waterPoints = new[] { Vector3.zero, };
+            //megaPumper.portPoses = new[] { megaPumper.portPoses[0], };
         }
     }
 }

@@ -2686,7 +2686,7 @@
     },
     {
         "Name": "I护卫舰",
-        "ZHCN": "护卫舰，是COSMO太空舰队序列中最小，最快的一批舰船之一，可以辅助伊卡洛斯进行太空作战，廉价的无人标准型护卫舰可以靠数量压制对手。",
+        "ZHCN": "护卫舰，是COSMO太空作战舰队序列中最小，最快的一批舰船之一，可以辅助伊卡洛斯进行太空作战，廉价的无人标准型护卫舰可以靠数量压制对手。",
         "ENUS": "The frigate is one of the smallest and fastest ships in the COSMO space fleet sequence, capable of assisting Icarus in space operations. The low-cost unmanned standard frigate can suppress opponents by quantity."
     },
     {
@@ -2971,16 +2971,6 @@
         "ENUS": "The Revelation strategic fusion missile, can level a city with just one launch."
     },
     {
-        "Name": "湮灭弹药箱",
-        "ZHCN": "湮灭弹箱",
-        "ENUS": "Annihilation Ammo Box"
-    },
-    {
-        "Name": "I湮灭弹药箱",
-        "ZHCN": "托马斯·维德兵工厂生产的超级弹药。一个弹箱包含30发子弹。",
-        "ENUS": "Superb ammunition produced by Thomas Vedder Arsenal. One cartridge box contains 30 rounds."
-    },
-    {
         "Name": "T钢芯弹箱",
         "ZHCN": "钢芯穿甲弹",
         "ENUS": "Steel Piercing Shell"
@@ -3089,21 +3079,6 @@
         "Name": "银弹结果",
         "ZHCN": "你解锁了零素矢，这是自带动力，自追踪，自返回的超级子弹。",
         "ENUS": "You have unlocked the High Interaction Ammunition, this is a self powered, self tracking, and self returning super bullet."
-    },
-    {
-        "Name": "T湮灭弹箱",
-        "ZHCN": "小型化湮灭反应",
-        "ENUS": "Miniaturized Annihilation Reactions"
-    },
-    {
-        "Name": "湮灭弹箱描述",
-        "ZHCN": "发现关键物品……\n发现缺失的数据库条目，申请连接主脑……\n隐藏数据库条目解锁……\n新的蓝图档案已录入……",
-        "ENUS": "Key items found ...\nMissing database entries found, request connection to mastermind ......\nHidden database entries unlocked ......\nNew blueprint files entered ......"
-    },
-    {
-        "Name": "湮灭弹箱结果",
-        "ZHCN": "你解锁了湮灭弹箱，这种弹药在历史上涉及到一场灾难，相关条目因此被封存。",
-        "ENUS": "You have unlocked the Annihilation Chest, a munition that was historically involved in a catastrophe and the related entry was sealed as a result."
     },
     {
         "Name": "T战术核导弹",
@@ -3269,6 +3244,91 @@
         "Name": "I太空物流港",
         "ZHCN": "巨大的太空电梯，实现了行星之间更便捷的物资运输，可以将星球工厂连结成一个庞大的工业帝国。\n<color=\"#FD965ECC\">“于上天入地之处，取寰宇无穷之物。”</color>",
         "ENUS": "Giant space elevators make it easier to transport materials between planets. They can connect planet factories to a massive industrial empire.\n<color=\"#FD965ECC\">\"From heaven to the earth, take infinite things in the worlds.\"</color>"
+    },
+    {
+        "Name": "超空间中继器",
+        "ZHCN": "超空间中继器",
+        "ENUS": "Hyper Relay"
+    },
+    {
+        "Name": "T超空间中继器",
+        "ZHCN": "曲率引擎和翘曲器是一项划时代的发明，它让文明得以升格为跨星系文明。但曲率引擎造价昂贵，能耗巨大也是不争的事实，在研究引力与曲速的过程中，工程师们研发出了超空间中继器，它能在星系之间以巨行星为“桥墩”，建造成一条跨星系的曲率“高速大桥”，供没有曲率引擎的飞船使用。",
+        "ENUS": "The curvature engine and warping device are groundbreaking inventions that have elevated civilizations to cross galaxy civilizations. However, it is an undeniable fact that curvature engines are expensive and consume huge amounts of energy. In the process of studying gravity and curvature, engineers have developed Hyper Relay, which can use giant planets as \"bridge piers\" between galaxies to build a cross galaxy curvature \"high-speed bridge\" for spacecraft without curvature engines."
+    },
+    {
+        "Name": "I超空间中继器",
+        "ZHCN": "这是一种大型轨道设施，它要求工作在气巨轨道，将就地抽取的氘输入聚变堆实现能源自维持。利用巨行星的引力井打通一条曲率通道，以此建设跨星系“高速公路”。\n如果<color=\"#FD965ECC\">两个星系都有超空间中继器</color>，那么这两星系之间的<color=\"#FD965ECC\">太空运输船</color>可以跨星系物流，这两星系之间太空运输船和深空货舰的跨星系物流<color=\"#FD965ECC\">不消耗翘曲器</color>，并能量消耗<color=\"#FD965ECC\">-80%</color>",
+        "ENUS": "This is a large-scale orbital facility that requires operation in a gas giant orbit, where locally extracted deuterium is fed into a fusion reactor to achieve self-sustaining energy. Using the gravitational well of a giant planet to open up a curvature channel, thus constructing a cross galaxy \"highway\". \n If <color=\"#FD965ECC\">both galaxies have Hyper Relay</color>, then <color=\"#FD965ECC\">the space transport ships</color> between these two galaxies can have cross galaxy logistics, and the cross galaxy logistics of space transport ships and deep space cargo ships between these two galaxies <color=\"#FD965ECC\">do not consume warping devices</color>, and energy consumption <color=\"#FD965ECC\">-80%</color>"
+    },
+    {
+        "Name": "勘察卫星",
+        "ZHCN": "勘察卫星",
+        "ENUS": "Survey Satellite"
+    },
+    {
+        "Name": "I勘察卫星",
+        "ZHCN": "旧时COSMO使用的勘察卫星，使用廉价可靠的回收式火箭承载，使用简单的透镜组在算法的加持下能从简单的光谱中推算出星系其他行星的矿物分布情况。",
+        "ENUS": "The survey satellites used by COSMO in the past were carried by inexpensive and reliable recovery rockets, and with the help of algorithms, simple prism sets were used to infer the mineral distribution of other planets in the galaxy from simple spectra."
+    },
+    {
+        "Name": "回收式一体化卫星火箭",
+        "ZHCN": "回收式一体化卫星火箭",
+        "ENUS": "Recyclable Integrated Satellite Rocket"
+    },
+    {
+        "Name": "T回收式一体化卫星火箭",
+        "ZHCN": "化学火箭是文明迈向星空的第一步，当然，站在巨人的肩膀上，我们没必要从原始的多级抛弃式火箭开始，工程师们为戴森球计划准备了化学燃料火箭的最终方案：可回收式一体化卫星火箭。装载了勘探卫星的一体式火箭曾是COSMO开拓队的热门工具。",
+        "ENUS": "Chemical rockets are the first step for civilization to step into the stars. Of course, as a giant standing on the shoulders, we don't need to start with primitive multi-stage disposable rockets. Engineers have prepared the final solution for the Dyson sphere project with chemical fuel rockets: a recyclable integrated satellite rocket.The integrated rocket carrying exploration satellites was once a popular tool for the COSMO exploration team."
+    },
+    {
+        "Name": "深空望远镜",
+        "ZHCN": "深空望远镜",
+        "ENUS": "Deep Space Telescope"
+    },
+    {
+        "Name": "I深空望远镜",
+        "ZHCN": "旧时COSMO使用的勘察卫星，使用廉价可靠的回收式火箭承载，使用简单的棱镜组在算法的加持下能从简单的光谱中推算出星系其他行星的矿物分布情况。",
+        "ENUS": "The Deep Space Telescopes used by COSMO in the past were carried by inexpensive and reliable recovery rockets, and with the help of algorithms, simple prism sets were used to infer the mineral distribution of other planets in the galaxy from simple spectra."
+    },
+    {
+        "Name": "T深空望远镜",
+        "ZHCN": "对太空看的越远，越能感受自己的渺小，深空观测作为深空航天的首要步骤，意义重大，只有看清方向，你才能确定你在正确的航线上。",
+        "ENUS": "The farther you look into space, the more you can feel your own insignificance. Deep space observation, as the primary step in deep space exploration, is of great significance. Only by seeing the direction clearly can you be sure that you are on the correct path."
+    },
+    {
+        "Name": "勘探船",
+        "ZHCN": "勘探船",
+        "ENUS": "Exploration Ship"
+    },
+    {
+        "Name": "I勘探船",
+        "ZHCN": "COSMO现役的无人探测船，会自动探测沿途的星系的信息，造价低廉，使用广泛，拥有众多改型，通过加装额外的装甲和火力，便是COSMO最通用的护卫舰。",
+        "ENUS": "The unmanned exploration ships currently in service at COSMO automatically detect information about galaxies along the way. They are low-cost, widely used, and have numerous modifications. By adding additional armor and firepower, they are the most versatile frigates of COSMO."
+    },
+    {
+        "Name": "T勘探船",
+        "ZHCN": "对深空的探索，仅仅靠固定不动的望远镜卫星是不够的，想要真正的获取星区的情报，拥有机动能力的探测船必不可少，工程师们为此准备了COSMO现役的无人探测船蓝图。",
+        "ENUS": "For the exploration of deep space, it is not enough to rely solely on fixed telescopes and satellites. To truly obtain intelligence on the star region, a mobile exploration ship is essential. Engineers have prepared a blueprint for COSMO's current unmanned exploration ship for this purpose."
+    },
+    {
+        "Name": "宇宙探索1解锁",
+        "ZHCN": "建造 战场分析基站 以解锁该科技",
+        "ENUS": "Building battlefield analysis base station to unlock this technology"
+    },
+    {
+        "Name": "宇宙探索2解锁",
+        "ZHCN": "建造 勘察卫星 以解锁该科技",
+        "ENUS": "Building survey satellite to unlock this technology"
+    },
+    {
+        "Name": "宇宙探索3解锁",
+        "ZHCN": "建造 深空望远镜 以解锁该科技",
+        "ENUS": "Building Deep Space Telescope to unlock this technology"
+    },
+    {
+        "Name": "宇宙探索4解锁",
+        "ZHCN": "派遣 100个勘探船 以解锁该科技",
+        "ENUS": "Consume 100 exploration ships to unlock this technology"
     },
     // 巨构mod
     {

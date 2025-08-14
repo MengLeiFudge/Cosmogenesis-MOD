@@ -59,7 +59,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 }, new[] { 17, 18, }, new[]
                 {
                     1.0f, 1.0f, 1.0f, 0.2f, //
-                    0.0f, 0.8f, 0.5f, 0.5f, //
+                    1.0f, 0.8f, 0.5f, 0.5f, //
                 })
             },
             {

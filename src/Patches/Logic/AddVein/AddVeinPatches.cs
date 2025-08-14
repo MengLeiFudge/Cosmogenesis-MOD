@@ -555,7 +555,7 @@ namespace ProjectGenesis.Patches.Logic.AddVein
             }
         }
 
-
+        // 母星系星球矿物储量定制
         public static void AddBirthGalaxyRareVein(PlanetAlgorithm algorithm, ref int[] array, ref float[] array2, ref float[] array3)
         {
             //star id是1，star index是0
@@ -567,12 +567,16 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                     array2[8] = 0.4f;
                     array3[8] = 0.8f;
 
+                    array[15] = 5;
+                    array2[15] = 0.2f;
+                    array3[15] = 0.5f;
+
                     array[17] = 4;
                     array2[17] = 0.2f;
                     array3[17] = 0.5f;
 
-                    array[18] = 3;
-                    array2[18] = 0.2f;
+                    array[18] = 5;
+                    array2[18] = 0.3f;
                     array3[18] = 0.5f;
 
                     array[19] = 12;
@@ -581,9 +585,9 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                 }
                 if (algorithm.planet.index == 0)
                 {
-                    array[17] = 4;
-                    array2[17] = 0.3f;
-                    array3[17] = 0.7f;
+                    array[17] = 5;
+                    array2[17] = 0.35f;
+                    array3[17] = 0.5f;
                 }
             }
         }
@@ -598,12 +602,25 @@ namespace ProjectGenesis.Patches.Logic.AddVein
         {
             var matcher = new CodeMatcher(instructions);
 
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Stelem_R4), new CodeMatch(OpCodes.Ldc_I4_0));
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Newarr));
+
+            object V_11 = matcher.Advance(1).Operand; // 变量索引
+            object V_12 = matcher.Advance(5).Operand; // 变量索引
+            object V_13 = matcher.Advance(4).Operand; // 变量索引
+
+            matcher.MatchForward(false, new CodeMatch(OpCodes.Stloc_S), new CodeMatch(OpCodes.Ldc_I4_0));
             matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldloca_S, 11),
-                new CodeInstruction(OpCodes.Ldloca_S, 12),
-                new CodeInstruction(OpCodes.Ldloca_S, 13),
-               new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(AddBirthGalaxyRareVein))));
+                new CodeInstruction(OpCodes.Ldloca_S, V_11),
+                new CodeInstruction(OpCodes.Ldloca_S, V_12),
+                new CodeInstruction(OpCodes.Ldloca_S, V_13),
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AddVeinPatches), nameof(AddBirthGalaxyRareVein),
+                new System.Type[] {
+                    typeof(PlanetAlgorithm),
+                    typeof(int[]).MakeByRefType(),    // ref int[]
+                    typeof(float[]).MakeByRefType(),  // ref float[]
+                    typeof(float[]).MakeByRefType()   // ref float[])));
+                }
+            )));
 
 
 

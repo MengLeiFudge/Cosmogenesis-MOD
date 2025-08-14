@@ -1100,7 +1100,7 @@
         "PreItem": null,
         "Position": [
             80.0,
-            -36.0
+            -32.0
         ],
         "PreTechs": [
             1145
@@ -1140,7 +1140,7 @@
         "PreItem": null,
         "Position": [
             76.0,
-            -36.0
+            -32.0
         ],
         "PreTechs": [
             1506
@@ -1222,28 +1222,30 @@
     },
     {
         "ID": 1152,
-        "Name": "T跃迁航行理论",
+        "Name": "回收式一体化卫星火箭",
         "IconPath": "Assets/texpack/虫洞航行",
-        "Desc": "T跃迁航行理论描述",
-        "Conclusion": "T跃迁航行理论描述s",
+        "Desc": "T回收式一体化卫星火箭",
+        "Conclusion": "T回收式一体化卫星火箭",
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            84.0,
-            -36.0
+            24.0,
+            28.0
         ],
-        "PreTechs": [
-            1144
-        ],
+        "PreTechs": [],
         "PreTechsImplicit": [],
         "Items": [
-            6006
+            6001,
+            6002
         ],
         "ItemPoints": [
+            10,
             10
         ],
-        "HashNeeded": 540000,
-        "UnlockRecipes": [],
+        "HashNeeded": 216000,
+        "UnlockRecipes": [
+            643
+        ],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
@@ -3666,22 +3668,20 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            48.0,
-            8.0
+            36.0,
+            28.0
         ],
         "PreTechs": [
-            1711
+            1152
         ],
         "PreTechsImplicit": [
             1123,
             1711
         ],
         "Items": [
-            6003,
-            6278
+            6003
         ],
         "ItemPoints": [
-            10,
             10
         ],
         "HashNeeded": 288000,
@@ -4625,7 +4625,7 @@
             -52.0
         ],
         "PreTechs": [
-            1820
+            1953
         ],
         "PreTechsImplicit": [],
         "Items": [
@@ -4993,7 +4993,7 @@
         ],
         "Position": [
             80.0,
-            -32.0
+            -28.0
         ],
         "PreTechs": [],
         "PreTechsImplicit": [
@@ -6359,18 +6359,18 @@
     },
     {
         "ID": 1949,
-        "Name": "T星门",
+        "Name": "超空间中继器",
         "IconPath": "Assets/texpack/主机科技",
-        "Desc": "T星门描述",
-        "Conclusion": "T星门描述",
+        "Desc": "T超空间中继器",
+        "Conclusion": "T超空间中继器",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            88.0,
+            84.0,
             -36.0
         ],
         "PreTechs": [
-            1152
+            1505
         ],
         "PreTechsImplicit": [],
         "Items": [
@@ -6380,7 +6380,9 @@
             10
         ],
         "HashNeeded": 576000,
-        "UnlockRecipes": [],
+        "UnlockRecipes": [
+            809
+        ],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
@@ -6484,6 +6486,46 @@
         "PropertyItemCounts": []
     },
     {
+        "ID": 1953,
+        "Name": "勘探船",
+        "IconPath": "Assets/texpack/反物质单元",
+        "Desc": "T勘探船",
+        "Conclusion": "T勘探船",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            48.0,
+            -52.0
+        ],
+        "PreTechs": [],
+        "PreTechsImplicit": [],
+        "Items": [
+            6003,
+            6278
+        ],
+        "ItemPoints": [
+            10,
+            10
+        ],
+        "HashNeeded": 180000,
+        "UnlockRecipes": [
+            808
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
         "ID": 1954,
         "Name": "高级磁场应用",
         "IconPath": "Icons/Tech/1816",
@@ -6511,6 +6553,46 @@
         ],
         "HashNeeded": 288000,
         "UnlockRecipes": [],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1955,
+        "Name": "深空望远镜",
+        "IconPath": "Icons/Tech/1816",
+        "Desc": "T深空望远镜",
+        "Conclusion": "T深空望远镜",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            36.0,
+            32.0
+        ],
+        "PreTechs": [
+            1152
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6003
+        ],
+        "ItemPoints": [
+            10
+        ],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [
+            807
+        ],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
@@ -6577,8 +6659,10 @@
         "IconPath": "Icons/Tech/1813",
         "Desc": "T星环电网描述",
         "Conclusion": "T星环电网描述",
-        "IsHiddenTech": false,
-        "PreItem": [],
+        "IsHiddenTech": true,
+        "PreItem": [
+            6228
+        ],
         "Position": [
             64.0,
             16.0
@@ -6744,9 +6828,7 @@
             68.0,
             -4.0
         ],
-        "PreTechs": [
-            1521
-        ],
+        "PreTechs": [],
         "PreTechsImplicit": [
             1417
         ],

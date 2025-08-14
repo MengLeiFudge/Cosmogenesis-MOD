@@ -1934,22 +1934,20 @@
         "Name": "卫星配电站",
         "Description": "",
         "IconPath": "",
-        "Type": 10,
+        "Type": 4,
         "GridIndex": 2103,
-        "Time": 300,
+        "Time": 360,
         "Input": [
             2202,
             1205,
             1118,
-            1405,
-            6217
+            6266
         ],
         "InCounts": [
             1,
             10,
             2,
-            1,
-            2
+            1
         ],
         "Output": [
             2212
@@ -2511,14 +2509,12 @@
         "Input": [
             1106,
             1303,
-            1405,
-            6217
+            1405
         ],
         "InCounts": [
             12,
             1,
-            2,
-            1
+            2
         ],
         "Output": [
             5001
@@ -3628,13 +3624,15 @@
             2104,
             9486,
             2014,
-            9480
+            9480,
+            6273
         ],
         "InCounts": [
             1,
             3,
             10,
-            5
+            5,
+            1
         ],
         "Output": [
             6267
@@ -4097,16 +4095,14 @@
         "GridIndex": 5104,
         "Time": 360,
         "Input": [
+            6280,
             1125,
-            6277,
-            1303,
             6243,
             6263
         ],
         "InCounts": [
+            1,
             8,
-            2,
-            4,
             5,
             4
         ],
@@ -5558,7 +5554,7 @@
             1
         ],
         "Output": [
-            6280
+            6508
         ],
         "OutCounts": [
             1
@@ -5703,30 +5699,32 @@
     },
     {
         "ID": 643,
-        "Name": "尖端机械组件",
+        "Name": "勘察卫星",
         "Description": "",
         "IconPath": "",
-        "Type": 10,
-        "GridIndex": 0,
+        "Type": 4,
+        "GridIndex": 2601,
         "Time": 360,
         "Input": [
-            6502,
-            7705,
-            1305
+            1405,
+            6217,
+            1301,
+            1110
         ],
         "InCounts": [
             1,
             2,
-            1
+            6,
+            6
         ],
         "Output": [
-            6507
+            6266
         ],
         "OutCounts": [
             1
         ],
         "Explicit": false,
-        "Handcraft": false,
+        "Handcraft": true,
         "NonProductive": false
     },
     {
@@ -6814,5 +6812,97 @@
         "Explicit": true,
         "Handcraft": true,
         "NonProductive": true
+    },
+    {
+        "ID": 807,
+        "Name": "深空望远镜",
+        "Description": "",
+        "IconPath": "",
+        "Type": 4,
+        "GridIndex": 2602,
+        "Time": 360,
+        "Input": [
+            6266,
+            1111,
+            1123,
+            1303
+        ],
+        "InCounts": [
+            1,
+            4,
+            4,
+            3
+        ],
+        "Output": [
+            6273
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 808,
+        "Name": "勘探船",
+        "Description": "",
+        "IconPath": "",
+        "Type": 9,
+        "GridIndex": 1113,
+        "Time": 360,
+        "Input": [
+            6277,
+            1303,
+            1107
+        ],
+        "InCounts": [
+            2,
+            3,
+            4
+        ],
+        "Output": [
+            6280
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 809,
+        "Name": "超空间中继器",
+        "Description": "",
+        "IconPath": "",
+        "Type": 9,
+        "GridIndex": 2603,
+        "Time": 10800,
+        "Input": [
+            1125,
+            9484,
+            6227,
+            1210,
+            2210,
+            9486
+        ],
+        "InCounts": [
+            360,
+            240,
+            60,
+            100,
+            10,
+            40
+        ],
+        "Output": [
+            6281
+        ],
+        "OutCounts": [
+            1
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
     }
 ]

@@ -5296,7 +5296,7 @@
     "IsEntity": true,
     "CanBuild": true,
     "BuildInGas": false,
-    "ModelIndex": 801,
+    "ModelIndex": 50,
     "ModelCount": 1,
     "HpMax": 8000,
     "Ability": 0,

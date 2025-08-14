@@ -35,6 +35,7 @@ using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
 using static ProjectGenesis.Patches.Logic.BattleRelated.HPAdjust;
 using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 using static ProjectGenesis.Patches.Logic.MathematicalRateEngine.UI;
+using static ProjectGenesis.Patches.Logic.SatellitePowerDistributionPatch;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -58,7 +59,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.Cosmogenesis";
         public const string MODNAME = "Cosmogenesis";
-        public const string VERSION = "0.8.1";
+        public const string VERSION = "0.8.4";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -197,6 +198,7 @@ namespace ProjectGenesis
             AdvancedLaserPatches.Export(w);
             GlobalPowerSupplyPatches.Export(w);
             ModifyUpgradeTech.Export(w);
+            StarGate.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -208,6 +210,7 @@ namespace ProjectGenesis
             AdvancedLaserPatches.Import(r);
             GlobalPowerSupplyPatches.Import(r);
             ModifyUpgradeTech.Import(r);
+            StarGate.Import(r);
         }
 
         public void IntoOtherSave()
@@ -287,6 +290,8 @@ namespace ProjectGenesis
             SetChemicalRecipeFcol();
             SetEffectEmitterProto();
 
+            ChangeWeiXinPowerPoint();
+
             VFEffectEmitter.Init();
 
             ItemProto.InitFuelNeeds();
@@ -311,7 +316,7 @@ namespace ProjectGenesis
 
             ItemProto.stationCollectorId = ProtoID.I轨道采集器;
 
-            ItemPostFix();
+            //ItemPostFix();
 
             StorageComponent.staticLoaded = false;
             StorageComponent.LoadStatic();

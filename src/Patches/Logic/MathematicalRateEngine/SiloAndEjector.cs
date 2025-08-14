@@ -33,6 +33,26 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
 
             if (GameMain.galaxy.stars[starIndex].type == EStarType.BlackHole)
             {
+                if (ProjectGenesis.MoreMegaStructureCompatibility)
+                {
+                    Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
+                    if (targetType == null) return;
+
+                    FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
+                    if (StarMegaStructureTypeField == null) return;
+                    int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
+
+                    if (StarMegaStructureType[starIndex] != 0)
+                    {
+                        if (__instance.bulletId == 6228 || __instance.bulletId == 6504 || __instance.bulletId == 6502)
+                        {
+                            __instance.bulletCount = 0;
+                            __instance.bulletInc = 0;
+                            __instance.bulletId = 1503;
+                        }
+                        return;
+                    }
+                }
                 if (!GameMain.history.TechUnlocked(1952))
                 {
                     bulletIdExpected = 6228;
@@ -45,65 +65,9 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
                 {
                     bulletIdExpected = 6502;
                 }
-
-                //if (__instance.bulletId != bulletIdExpected)
-                //{
-                    //if (ProjectGenesis.MoreMegaStructureCompatibility)
-                    //{
-                    //    Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
-                    //    if (targetType == null) return;
-
-                    //    FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
-                    //    if (StarMegaStructureTypeField == null) return;
-                    //    int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
-
-                    //    int megaType = StarMegaStructureType[starIndex];
-                    //    switch (megaType)
-                    //    {
-                    //        case 1:
-                    //            bulletIdExpected = 9488;
-                    //            break;
-
-                    //        case 2:
-                    //            bulletIdExpected = 9489;
-                    //            break;
-
-                    //        case 3:
-                    //            bulletIdExpected = 9490;
-                    //            break;
-
-                    //        case 4:
-                    //            bulletIdExpected = 9491;
-                    //            break;
-
-                    //        case 5:
-                    //            bulletIdExpected = 9492;
-                    //            break;
-
-                    //        case 6:
-                    //            bulletIdExpected = 9510;
-                    //            break;
-                    //    }
-                    //}
-                //}
             }
-            bool knownId = false; // 此处是为了适配深空来敌mod，有其他的火箭需要借用游戏本体的silo发射，因此只有已知的id会进行转化，位置的id交由深空来敌mod进行处理
-            switch (__instance.bulletId)
-            {
-                case 1503:
-                case 9488:
-                case 9489:
-                case 9490:
-                case 9491:
-                case 9492:
-                case 9510:
-                case 6228:
-                case 6504:
-                case 6502:
-                    knownId = true;
-                    break;
-            }
-            if (__instance.bulletId != bulletIdExpected && knownId)
+            
+            if (__instance.bulletId != bulletIdExpected)
             {
                 __instance.bulletCount = 0;
                 __instance.bulletInc = 0;
@@ -133,6 +97,38 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
             int bulletIdExpected = 1501;
             if (GameMain.galaxy.stars[starIndex].type == EStarType.BlackHole)
             {
+                if (ProjectGenesis.MoreMegaStructureCompatibility)
+                {
+                    Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
+                    if (targetType == null) return;
+
+                    FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
+                    if (StarMegaStructureTypeField == null) return;
+                    int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
+
+                    if (StarMegaStructureType[starIndex] != 0)
+                    {
+                        if (StarMegaStructureType[starIndex] == 2)
+                        {
+                            if (__instance.bulletId != 6006)
+                            {
+                                __instance.bulletCount = 0;
+                                __instance.bulletInc = 0;
+                                __instance.bulletId = 6006;
+                            }
+                        }
+                        else
+                        {
+                            if (__instance.bulletId != 1501)
+                            {
+                                __instance.bulletCount = 0;
+                                __instance.bulletInc = 0;
+                                __instance.bulletId = 1501;
+                            }
+                        }
+                        return;
+                    }
+                }
                 if (!GameMain.history.TechUnlocked(1802))
                 {
                     bulletIdExpected = 6228;
@@ -149,37 +145,13 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
                 {
                     bulletIdExpected = 9482;
                 }
-                //if (__instance.bulletId != bulletIdExpected)
-                //{
-                    //if (ProjectGenesis.MoreMegaStructureCompatibility)
-                    //{
-                    //    Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
-                    //    if (targetType == null) return;
-
-                    //    FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
-                    //    if (StarMegaStructureTypeField == null) return;
-                    //    int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
-
-                    //    if (StarMegaStructureType[starIndex] != 0)
-                    //    {
-                    //        if (StarMegaStructureType[starIndex] == 2)
-                    //        {
-                    //            bulletIdExpected = 6006;
-                    //        }
-                    //        else
-                    //        {
-                    //            bulletIdExpected = 1501;
-                    //        }
-                    //    }
-                    //}
-                }
-                if (__instance.bulletId != bulletIdExpected)
-                {
-                    __instance.bulletCount = 0;
-                    __instance.bulletInc = 0;
-                    __instance.bulletId = bulletIdExpected;
-                }
-            //}
+            }
+            if (__instance.bulletId != bulletIdExpected)
+            {
+                __instance.bulletCount = 0;
+                __instance.bulletInc = 0;
+                __instance.bulletId = bulletIdExpected;
+            }
             
         }
     }

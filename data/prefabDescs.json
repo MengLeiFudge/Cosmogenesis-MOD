@@ -101,6 +101,7 @@
     },
     {
         "ModelID": 60,
+        "minerPeriod": 600000,
         "allowBuildInWater": true,
         "waterTypes": [
             1000,
@@ -158,7 +159,7 @@
         "ModelID": 68,
         "idleEnergyPerTick": 12000,
         "workEnergyPerTick": 120000,
-        "powerConnectDistance": 180.5,
+        "powerConnectDistance": 160.5,
         "powerCoverRadius": 50.5
     },
     {
@@ -291,6 +292,7 @@
         "ModelID": 491,
         "AmmoBlastRadius1": 19
     },
+    // 废弃
     {
         "ModelID": 801,
         "workEnergyPerTick": 500000,
@@ -300,9 +302,10 @@
     },
     {
         "ModelID": 802,
-        "assemblerRecipeType": 11,
-        "idleEnergyPerTick": 400,
-        "workEnergyPerTick": 12000
+        "isStation": false,
+        "isStellarStation": false,
+        "stationMaxItemKinds": 0,
+        "stationMaxItemCount": 0
     },
     {
         "ModelID": 803,
@@ -319,16 +322,10 @@
     },
     {
         "ModelID": 804,
-        "isAssembler": true,
-        "isStation": false,
-        "assemblerRecipeType": 19,
-        "idleEnergyPerTick": 75000,
-        "workEnergyPerTick": 375000,
-        "assemblerSpeed": 300000,
-        "stationMaxEnergyAcc": 0,
-        "stationMaxItemCount": 0,
-        "stationMaxItemKinds": 0,
-        "stationMaxDroneCount": 0
+        "idleEnergyPerTick": 12000,
+        "workEnergyPerTick": 120000,
+        "powerConnectDistance": 50,
+        "powerCoverRadius": 0
     },
     {
         "ModelID": 805,
@@ -379,19 +376,10 @@
     },
     {
         "ModelID": 808,
-        "isFractionator": false,
-        "assemblerRecipeType": 0,
-        "idleEnergyPerTick": 50000,
-        "workEnergyPerTick": 500000,
-        "minerPeriod": 36000,
-        "minerType": 1,
-        "minimapType": 2,
-        "allowBuildInWater": true,
-        "needBuildInWaterTech": false,
-        "waterTypes": [
-            1000,
-            1116
-        ]
+        "idleEnergyPerTick": 12000,
+        "workEnergyPerTick": 120000,
+        "powerConnectDistance": 50,
+        "powerCoverRadius": 0
     },
     {
         "ModelID": 809,

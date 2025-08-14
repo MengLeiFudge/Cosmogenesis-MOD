@@ -36,10 +36,10 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
                     break;
 
-                case ProtoID.T跃迁航行理论:
-                    __result = "跃迁航行理论文字描述".TranslateFromJson();
+                //case ProtoID.T跃迁航行理论:
+                //    __result = "跃迁航行理论文字描述".TranslateFromJson();
 
-                    break;
+                //    break;
 
                 case 1802:
                     __result = "数学率引擎零阶".TranslateFromJson();
@@ -80,6 +80,22 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
                     break;
 
+                case ProtoID.T宇宙探索1:
+                    __result += "\r\n" + "宇宙探索1解锁".TranslateFromJson();
+
+                    break;
+                case ProtoID.T宇宙探索2:
+                    __result += "\r\n" + "宇宙探索2解锁".TranslateFromJson();
+
+                    break;
+                case ProtoID.T宇宙探索3:
+                    __result += "\r\n" + "宇宙探索3解锁".TranslateFromJson();
+
+                    break;
+                case ProtoID.T宇宙探索4:
+                    __result += "\r\n" + "宇宙探索4解锁".TranslateFromJson();
+
+                    break;
 
             }
 
