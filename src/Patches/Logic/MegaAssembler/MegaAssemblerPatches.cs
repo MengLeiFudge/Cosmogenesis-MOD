@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectGenesis.Utils;
+using static ProjectGenesis.Patches.Logic.OrbitalRing.OrbitalAssembler;
 
 // ReSharper disable InconsistentNaming
 
@@ -100,6 +101,13 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
             float power)
         {
             PlanetFactory factory = factorySystem.factory;
+
+            int buildIngItemId = factory.entityPool[__instance.entityId].protoId;
+
+            if (buildIngItemId == 6257 || buildIngItemId == 6501 || buildIngItemId == 6265)
+            {
+                OrbitalAssemblerInternalUpdate(ref __instance, factory.planetId);
+            }
 
             bool b = power >= 0.1f;
 

@@ -1,14 +1,9 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using ProjectGenesis.Utils;
 using UnityEngine;
-using UnityEngine.Profiling;
 using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 using static ProjectGenesis.Patches.Logic.StarGate;
+using static UIPlayerDeliveryPanel;
 
 namespace ProjectGenesis.Patches.Logic.Build
 {
@@ -24,7 +19,10 @@ namespace ProjectGenesis.Patches.Logic.Build
                 PrebuildData prebuildData = __instance.prebuildPool[prebuildId];
                 if (prebuildData.id == prebuildId)
                 {
-                    UnlockedObservedTechs(prebuildData.protoId);
+                    Debug.LogFormat("==============--------------===========");
+                    Debug.LogFormat("prebuildData.pos.x {0}, prebuildData.pos.y {1}, prebuildData.pos.z {2}", prebuildData.pos.x, prebuildData.pos.y, prebuildData.pos.z);
+                    Debug.LogFormat("prebuildData.pos2.x {0}, prebuildData.pos2.y {1}, prebuildData.pos2.z {2}", prebuildData.pos2.x, prebuildData.pos2.y, prebuildData.pos2.z);
+                    AddUniverseObserveBuilding(prebuildData.protoId);
                     RecordStarGate(prebuildData.protoId, __instance.planetId);
                 }
             }
@@ -43,9 +41,8 @@ namespace ProjectGenesis.Patches.Logic.Build
             int num = -objId;
             if (objId > 0)
             {
-                Debug.LogFormat("==============--------------===========");
-                Debug.LogFormat("protoId {0}", protoId);
                 DismantleStarGate(protoId, __instance.planetId);
+                DelUniverseObserveBuilding(protoId);
             }
         }
     }

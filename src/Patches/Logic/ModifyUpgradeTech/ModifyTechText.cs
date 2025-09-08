@@ -70,6 +70,11 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
                     break;
 
+                case 1951:
+                    __result = "\r\n" + "星环解锁".TranslateFromJson();
+
+                    break;
+
                 case 1954:
                     __result = "电动机电磁涡轮时间减半".TranslateFromJson();
 

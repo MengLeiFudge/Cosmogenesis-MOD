@@ -36,6 +36,8 @@ using static ProjectGenesis.Patches.Logic.BattleRelated.HPAdjust;
 using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 using static ProjectGenesis.Patches.Logic.MathematicalRateEngine.UI;
 using static ProjectGenesis.Patches.Logic.SatellitePowerDistributionPatch;
+using static ProjectGenesis.Patches.Logic.OrbitalRing.OrbitalStationManager;
+using ProjectGenesis.Patches.Logic.OrbitalRing;
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -59,7 +61,7 @@ namespace ProjectGenesis
     {
         public const string MODGUID = "org.LoShin.Cosmogenesis";
         public const string MODNAME = "Cosmogenesis";
-        public const string VERSION = "0.8.4";
+        public const string VERSION = "0.8.5";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -199,6 +201,7 @@ namespace ProjectGenesis
             GlobalPowerSupplyPatches.Export(w);
             ModifyUpgradeTech.Export(w);
             StarGate.Export(w);
+            OrbitalStationManager.Export(w);
         }
 
         public void Import(BinaryReader r)
@@ -211,6 +214,7 @@ namespace ProjectGenesis
             GlobalPowerSupplyPatches.Import(r);
             ModifyUpgradeTech.Import(r);
             StarGate.Import(r);
+            OrbitalStationManager.Import(r);
         }
 
         public void IntoOtherSave()
@@ -228,6 +232,7 @@ namespace ProjectGenesis
 
         private void PreAddDataAction()
         {
+            OrbitalStationManager.Instance.InitializeMarkerAngles();
             GetDysonVanillaUITexts();
             LDB.items.OnAfterDeserialize();
             ModifyPlanetThemeDataVanilla();
@@ -310,13 +315,11 @@ namespace ProjectGenesis
             RecipeProto.InitFractionatorNeeds();
             RaycastLogic.LoadStatic();
 
-            ref int[] turretNeed = ref ItemProto.turretNeeds[(int)EAmmoType.Bullet];
-            turretNeed[1] = ProtoID.I钢芯弹箱;
-            turretNeed[2] = ProtoID.I超合金弹箱;
+            
 
             ItemProto.stationCollectorId = ProtoID.I轨道采集器;
 
-            //ItemPostFix();
+            ItemPostFix();
 
             StorageComponent.staticLoaded = false;
             StorageComponent.LoadStatic();

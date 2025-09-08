@@ -35,11 +35,17 @@ namespace ProjectGenesis.Patches.Logic
         public static void ChangeWeiXinPowerPoint()
         {
             ModelProto oriModel = LDB.models.Select(68);
-            oriModel.prefabDesc.powerPoint.y += 55; // 将卫星的电点上移5米
+            oriModel.prefabDesc.powerPoint.y += 55; // 将卫星的电点上移55
             oriModel = LDB.models.Select(ProtoID.M勘察卫星);
-            oriModel.prefabDesc.powerPoint.y += 55; // 将卫星的电点上移5米
-            oriModel = LDB.models.Select(ProtoID.M深空望远镜);
-            oriModel.prefabDesc.powerPoint.y += 55; // 将卫星的电点上移5米
+            oriModel.prefabDesc.powerPoint.y += 55; // 将卫星的电点上移55
+
+            oriModel = LDB.models.Select(ProtoID.M超空间中继器);
+            oriModel.prefabDesc.powerPoint = new UnityEngine.Vector3
+            {
+                x = 0,
+                y = 0,
+                z = 0
+            };
         }
     }
 }

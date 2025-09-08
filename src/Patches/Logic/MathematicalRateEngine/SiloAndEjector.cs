@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
 {
@@ -35,24 +36,28 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
             {
                 if (ProjectGenesis.MoreMegaStructureCompatibility)
                 {
-                    Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
-                    if (targetType == null) return;
-
-                    FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
-                    if (StarMegaStructureTypeField == null) return;
-                    int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
-
-                    if (StarMegaStructureType[starIndex] != 0)
+                    try
                     {
-                        if (__instance.bulletId == 6228 || __instance.bulletId == 6504 || __instance.bulletId == 6502)
+                        // 使用反射动态获取类型
+                        var mmType = Type.GetType("MoreMegaStructure.MoreMegaStructure, MoreMegaStructure");
+                        var starMegaType = mmType?.GetField("StarMegaStructureType")?.GetValue(null) as int[];
+
+                        if (starMegaType?[starIndex] != 0)
                         {
-                            __instance.bulletCount = 0;
-                            __instance.bulletInc = 0;
-                            __instance.bulletId = 1503;
+                            if (__instance.bulletId == 6228 || __instance.bulletId == 6504 || __instance.bulletId == 6502)
+                            {
+                                __instance.bulletCount = 0;
+                                __instance.bulletInc = 0;
+                                __instance.bulletId = 1503;
+                            }
+                            return;
                         }
-                        return;
                     }
-                }
+                    catch (Exception ex)
+                    {
+                    // ignored
+                    }
+            }
                 if (!GameMain.history.TechUnlocked(1952))
                 {
                     bulletIdExpected = 6228;
@@ -65,15 +70,14 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
                 {
                     bulletIdExpected = 6502;
                 }
+
+                if (__instance.bulletId != bulletIdExpected)
+                {
+                    __instance.bulletCount = 0;
+                    __instance.bulletInc = 0;
+                    __instance.bulletId = bulletIdExpected;
+                }
             }
-            
-            if (__instance.bulletId != bulletIdExpected)
-            {
-                __instance.bulletCount = 0;
-                __instance.bulletInc = 0;
-                __instance.bulletId = bulletIdExpected;
-            }
-            
         }
 
         /// <summary>
@@ -99,34 +103,29 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
             {
                 if (ProjectGenesis.MoreMegaStructureCompatibility)
                 {
-                    Type targetType = AccessTools.TypeByName("MoreMegaStructure.MoreMegaStructure");
-                    if (targetType == null) return;
-
-                    FieldInfo StarMegaStructureTypeField = AccessTools.Field(targetType, "StarMegaStructureType");
-                    if (StarMegaStructureTypeField == null) return;
-                    int[] StarMegaStructureType = (int[])StarMegaStructureTypeField.GetValue(null);
-
-                    if (StarMegaStructureType[starIndex] != 0)
+                    try
                     {
-                        if (StarMegaStructureType[starIndex] == 2)
+                        // 使用反射动态获取类型
+                        var mmType = Type.GetType("MoreMegaStructure.MoreMegaStructure, MoreMegaStructure");
+                        var starMegaType = mmType?.GetField("StarMegaStructureType")?.GetValue(null) as int[];
+
+                        if (starMegaType?[starIndex] != 0)
                         {
-                            if (__instance.bulletId != 6006)
+                            int targetBulletId = (starMegaType?[starIndex] == 2) ? 6006 : 1501;
+                            if (__instance.bulletId != targetBulletId)
                             {
                                 __instance.bulletCount = 0;
                                 __instance.bulletInc = 0;
-                                __instance.bulletId = 6006;
+                                __instance.bulletId = targetBulletId;
+
                             }
+                            return;
                         }
-                        else
-                        {
-                            if (__instance.bulletId != 1501)
-                            {
-                                __instance.bulletCount = 0;
-                                __instance.bulletInc = 0;
-                                __instance.bulletId = 1501;
-                            }
-                        }
-                        return;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        // ignored
                     }
                 }
                 if (!GameMain.history.TechUnlocked(1802))
@@ -145,14 +144,14 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
                 {
                     bulletIdExpected = 9482;
                 }
-            }
-            if (__instance.bulletId != bulletIdExpected)
-            {
-                __instance.bulletCount = 0;
-                __instance.bulletInc = 0;
-                __instance.bulletId = bulletIdExpected;
-            }
             
+                if (__instance.bulletId != bulletIdExpected)
+                {
+                    __instance.bulletCount = 0;
+                    __instance.bulletInc = 0;
+                    __instance.bulletId = bulletIdExpected;
+                }
+            }
         }
     }
 }

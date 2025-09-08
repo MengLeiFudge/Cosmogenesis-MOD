@@ -366,6 +366,7 @@ namespace ProjectGenesis.Patches.Logic.CurvatureLogistics
                 {
                     __instance.warperIconButton.gameObject.SetActive(value: false);
                 }
+                //__instance.droneIconButton.gameObject.SetActive(value: false);
             }
         }
 

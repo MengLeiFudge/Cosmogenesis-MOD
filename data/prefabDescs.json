@@ -39,7 +39,8 @@
         "ModelID": 45,
         "maxAcuEnergy": 1800000000, //540000000
         "maxExcEnergy": 1800000000,
-        "exchangeEnergyPerTick": 10000000
+        "exchangeEnergyPerTick": 15000000,
+        "powerCoverRadius": 0.0
     },
     {
         "ModelID": 46,
@@ -60,7 +61,7 @@
         "workEnergyPerTick": 500000,
         "stationMaxEnergyAcc": 6000000000,
         "stationMaxItemCount": 20000,
-        "stationMaxDroneCount": 30
+        "stationMaxDroneCount": 0
     },
     {
         "ModelID": 53,
@@ -221,6 +222,10 @@
         "enemyGenMatter": 360
     },
     {
+        "ModelID": 371,
+        "dispenserMaxCourierCount": 20
+    },
+    {
         "ModelID": 373,
         "turretDamageScale": 3,
         "turretMaxAttackRange": 35
@@ -272,7 +277,7 @@
     {
         "ModelID": 456,
         "idleEnergyPerTick": 8000,
-        "workEnergyPerTick": 240000,
+        "workEnergyPerTick": 48000,
         "assemblerSpeed": 30000,
         "assemblerRecipeType": 12
     },
@@ -292,20 +297,34 @@
         "ModelID": 491,
         "AmmoBlastRadius1": 19
     },
-    // 废弃
     {
         "ModelID": 801,
-        "workEnergyPerTick": 500000,
-        "stationMaxEnergyAcc": 6000000000,
-        "stationMaxItemCount": 20000,
-        "stationMaxDroneCount": 30
+        "isAssembler": true,
+        "isStation": false,
+        "assemblerRecipeType": 1,
+        "idleEnergyPerTick": 20000,
+        "workEnergyPerTick": 200000,
+        "assemblerSpeed": 80000,
+        "stationMaxEnergyAcc": 0,
+        "stationMaxItemCount": 0,
+        "stationMaxItemKinds": 0,
+        "stationMaxDroneCount": 0
     },
     {
         "ModelID": 802,
-        "isStation": false,
-        "isStellarStation": false,
+        "isStation": true,
+        "isStellarStation": true,
+        "isCollectStation": false,
+        "stationCollectSpeed": 0,
         "stationMaxItemKinds": 0,
-        "stationMaxItemCount": 0
+        "stationMaxItemCount": 0,
+        "stationMaxDroneCount": 0,
+        "stationMaxShipCount": 0,
+        "stationMaxEnergyAcc": 1000,
+        "isPowerConsumer": true,
+        "isPowerNode": true,
+        "workEnergyPerTick": 1000,
+        "idleEnergyPerTick": 1000
     },
     {
         "ModelID": 803,
@@ -322,30 +341,30 @@
     },
     {
         "ModelID": 804,
-        "idleEnergyPerTick": 12000,
-        "workEnergyPerTick": 120000,
-        "powerConnectDistance": 50,
-        "powerCoverRadius": 0
+        "isStation": false
     },
     {
         "ModelID": 805,
-        "isAssembler": true,
-        "isStation": false,
-        "assemblerRecipeType": 17,
-        "idleEnergyPerTick": 75000,
-        "workEnergyPerTick": 375000,
-        "assemblerSpeed": 300000,
-        "stationMaxEnergyAcc": 0,
-        "stationMaxItemCount": 0,
-        "stationMaxItemKinds": 0,
-        "stationMaxDroneCount": 0
+        //"workEnergyPerTick": 50000,
+        //"stationMaxEnergyAcc": 90000000,
+        "stationMaxItemCount": 20000,
+        "stationMaxItemKinds": 5,
+        "stationMaxDroneCount": 30,
+        //"isStellar": true,
+        "allowBuildInWater": true,
+        "needBuildInWaterTech": false,
+        "waterTypes": [
+            1000,
+            1007,
+            6205
+        ]
     },
     {
         "ModelID": 806,
         //"workEnergyPerTick": 50000,
         //"stationMaxEnergyAcc": 12000000000,
         "stationMaxItemCount": 20000,
-        "stationMaxDroneCount": 30
+        "stationMaxDroneCount": 0
         //"stationMaxItemKinds": 6
         //"isCollectStation": true,
         //"isPowerConsumer": false,
@@ -376,9 +395,9 @@
     },
     {
         "ModelID": 808,
-        "idleEnergyPerTick": 12000,
-        "workEnergyPerTick": 120000,
-        "powerConnectDistance": 50,
+        "idleEnergyPerTick": 400,
+        "workEnergyPerTick": 400,
+        "powerConnectDistance": 160.5,
         "powerCoverRadius": 0
     },
     {
@@ -405,8 +424,8 @@
         "isAssembler": true,
         "isStation": false,
         "assemblerRecipeType": 5,
-        "idleEnergyPerTick": 150000,
-        "workEnergyPerTick": 750000,
+        "idleEnergyPerTick": 1200000,
+        "workEnergyPerTick": 12000000,
         "assemblerSpeed": 300000,
         "stationMaxEnergyAcc": 0,
         "stationMaxItemCount": 0,
@@ -428,10 +447,7 @@
     },
     {
         "ModelID": 814,
-        "storageCol": 10,
-        "storageRow": 8,
-        "isStorage": true,
-        "multiLevel": false
+        "isStation": false
     },
     {
         "ModelID": 815,
@@ -468,5 +484,35 @@
         "AmmoBlastRadius1": 50,
         "AmmoMoveAcc": 10,
         "AmmoTurnAcc": 10
+    },
+    // 819是深空货舰
+    {
+        "ModelID": 820,
+        "isStation": false
+    },
+    {
+        "ModelID": 821,
+        "fuelMask": 0,
+        "useFuelPerTick": 0,
+        //"powerCoverRadius": 10.5,
+        //"windForcedPower": true,
+        "genEnergyPerTick": 1000
+    },
+    {
+        "ModelID": 822,
+        "idleEnergyPerTick": 12000,
+        "workEnergyPerTick": 200000,
+        "ejectorChargeFrame": 10,
+        "ejectorColdFrame": 5
+    },
+    {
+        "ModelID": 823,
+        "isStellarStation": true,
+        "workEnergyPerTick": 50000,
+        "stationMaxEnergyAcc": 90000000,
+        "stationMaxItemCount": 10000,
+        "stationMaxItemKinds": 5,
+        "stationMaxDroneCount": 30,
+        "stationMaxShipCount": 0
     }
 ]

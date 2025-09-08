@@ -31,6 +31,7 @@ namespace ProjectGenesis
         public static void Patch(AssemblyDefinition assembly)
         {
             TypeDefinition veinType = assembly.GetTypeByName("EVeinType");
+            TypeDefinition ammoType = assembly.GetTypeByName("EAmmoType");
             FieldDefinition max = veinType.Fields.FirstOrDefault(i => i.HasDefault && (byte)i.Constant == 15);
 
             if (max != null) veinType.Fields.Remove(max);
@@ -43,6 +44,8 @@ namespace ProjectGenesis
             veinType.AddEnumField("Radioactive", 17, fieldAttributes);
             veinType.AddEnumField("IronPyrite", 18, fieldAttributes);
             veinType.AddEnumField("Ice", 19, fieldAttributes);
+
+            ammoType.AddEnumField("LocalPlasma", 7, fieldAttributes);
 
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint2");
             assembly.AddTypeField("PlanetData", "birthResourcePoint0", "birthResourcePoint3");

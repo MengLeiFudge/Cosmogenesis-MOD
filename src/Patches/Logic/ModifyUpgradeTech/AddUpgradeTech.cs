@@ -19,6 +19,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             AddDamageUpgradeTechs();
             AddWreckageRecoveryUpgradeTechs();
             AddFleetUpgradeTechs();
+            Add2choose1Techs();
             //AddWarpEngineTechs();
             //AddTempBugFixTechs();
         }
@@ -184,6 +185,30 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             NewTechProto.MaxLevel = 3;
             NewTechProto.UnlockFunctions = new int[] { 72 };
             NewTechProto.UnlockValues = new double[] { 0.4 };
+        }
+
+        internal static void Add2choose1Techs()
+        {
+            int id = 5407;
+            string name = "二选一科技";
+            string description = "T二选一科技";
+            string conclusion = "T二选一科技";
+            string iconPath = "Icons/Tech/5303";
+
+            Vector2 oldPosition = new Vector2(0, 0);
+            TechProto tech = LDB.techs.Select(5401);
+            oldPosition = tech.Position;
+
+            int[] preTechs = new int[] { };
+            int[] costItems = new[] { 1101 };
+            long costHash = 3600;
+            int[] costItemsPoints = new int[] { 1 };
+            int[] unlockRecipes = new int[] { };
+            Vector2 position = new Vector2(oldPosition.x - 4, oldPosition.y);
+            TechProto NewTechProto = ProtoRegistry.RegisterTech(id, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
+            NewTechProto.Level = 0;
+            NewTechProto.MaxLevel = 0;
+            NewTechProto.IsLabTech = false;
         }
 
         internal static void AddWarpEngineTechs()

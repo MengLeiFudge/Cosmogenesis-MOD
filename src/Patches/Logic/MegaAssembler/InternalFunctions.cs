@@ -71,7 +71,7 @@ namespace ProjectGenesis.Patches.Logic.MegaAssembler
                 case Utils.ERecipeType.所有化工:
                     return type == Utils.ERecipeType.Chemical || type == Utils.ERecipeType.Refine || type == Utils.ERecipeType.高分子化工;
 
-                case Utils.ERecipeType.位面熔炉: return type == Utils.ERecipeType.Smelt || type == Utils.ERecipeType.位面熔炉;
+                case Utils.ERecipeType.等离子熔炼: return type == Utils.ERecipeType.Smelt || type == Utils.ERecipeType.等离子熔炼;
 
                 case Utils.ERecipeType.粒子打印: return type == Utils.ERecipeType.Assemble || type == Utils.ERecipeType.粒子打印;
 

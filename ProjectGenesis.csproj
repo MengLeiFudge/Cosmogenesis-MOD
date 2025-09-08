@@ -132,6 +132,7 @@
     <Compile Include="src\Patches\Logic\CurvatureLogistics\CurvatureLogistics.cs" />
     <Compile Include="src\Patches\Logic\DisableLDBToolCachePatches.cs" />
     <Compile Include="src\Patches\Logic\DysonSpherePatches.cs" />
+    <Compile Include="src\Patches\Logic\EjectorPatches.cs" />
     <Compile Include="src\Patches\Logic\FastStartOptionPatches.cs" />
     <Compile Include="src\Patches\Logic\FastTravelPatches.cs" />
     <Compile Include="src\Patches\Logic\FelTreeObjects.cs" />
@@ -154,6 +155,13 @@
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\AddUpgradeTech.cs" />
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\ModifyTechText.cs" />
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\ModifyUpgradeTech.cs" />
+    <Compile Include="src\Patches\Logic\ModifyUpgradeTech\UniverseObserveTech.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalAssembler.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalPowerGen.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalStationManager.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalSpaceStation.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalTurret.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\UI.cs" />
     <Compile Include="src\Patches\Logic\OverWriteBirthGalaxy.cs" />
     <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs" />
     <Compile Include="src\Patches\Logic\PlanetFocus\DronePatches.cs" />

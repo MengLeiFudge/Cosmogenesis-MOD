@@ -617,16 +617,13 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            48.0,
+            52.0,
             -4.0
         ],
         "PreTechs": [
-            1414
+            1417
         ],
-        "PreTechsImplicit": [
-            1931,
-            1932
-        ],
+        "PreTechsImplicit": [],
         "Items": [
             6003,
             6278
@@ -1092,10 +1089,10 @@
     },
     {
         "ID": 1144,
-        "Name": "T人造恒星MK2",
+        "Name": "同步轨道正反物质湮灭堆",
         "IconPath": "Icons/Tech/1144",
-        "Desc": "T人造恒星MK2描述",
-        "Conclusion": "T人造恒星MK2结果",
+        "Desc": "T同步轨道正反物质湮灭堆",
+        "Conclusion": "T同步轨道正反物质湮灭堆结果",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
@@ -1114,7 +1111,8 @@
         ],
         "HashNeeded": 720000,
         "UnlockRecipes": [
-            110
+            110,
+            814
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -1262,10 +1260,10 @@
     },
     {
         "ID": 1153,
-        "Name": "T人造恒星",
+        "Name": "聚变反应堆",
         "IconPath": "Icons/Tech/1144",
-        "Desc": "人造恒星描述",
-        "Conclusion": "人造恒星结果",
+        "Desc": "聚变反应堆描述",
+        "Conclusion": "聚变反应堆结果",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
@@ -2149,7 +2147,7 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            40.0,
+            44.0,
             -36.0
         ],
         "PreTechs": [
@@ -2182,29 +2180,29 @@
     },
     {
         "ID": 1417,
-        "Name": "T位面冶金",
+        "Name": "等离子熔炼",
         "IconPath": "Icons/Tech/1417",
-        "Desc": "位面冶金描述",
-        "Conclusion": "位面冶金结果",
+        "Desc": "T等离子熔炼",
+        "Conclusion": "等离子熔炼结果",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            68.0,
-            -8.0
+            48.0,
+            -4.0
         ],
         "PreTechs": [
-            1303
+            1414
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6279,
-            6004
+            6003,
+            6278
         ],
         "ItemPoints": [
             10,
-            10
+            8
         ],
-        "HashNeeded": 360000,
+        "HashNeeded": 288000,
         "UnlockRecipes": [
             116
         ],
@@ -3189,7 +3187,7 @@
         "PreItem": null,
         "Position": [
             52.0,
-            24.0
+            16.0
         ],
         "PreTechs": [
             1936
@@ -4130,10 +4128,10 @@
     },
     {
         "ID": 1811,
-        "Name": "T磁化电浆炮",
+        "Name": "轨道防御炮台",
         "IconPath": "Icons/Tech/1811",
-        "Desc": "磁化电浆炮描述",
-        "Conclusion": "磁化电浆炮结果",
+        "Desc": "T轨道防御炮台",
+        "Conclusion": "T轨道防御炮台",
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
@@ -4158,7 +4156,8 @@
         "UnlockRecipes": [
             128,
             142,
-            157
+            157,
+            820
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -4390,7 +4389,7 @@
     },
     {
         "ID": 1817,
-        "Name": "T战术核导弹",
+        "Name": "T任务一：璀璨的放射",
         "IconPath": "Icons/Tech/1817",
         "Desc": "T战术核导弹描述",
         "Conclusion": "战术核导弹结果",
@@ -4621,7 +4620,7 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            60.0,
+            64.0,
             -52.0
         ],
         "PreTechs": [
@@ -4947,7 +4946,7 @@
             5205
         ],
         "Position": [
-            72.0,
+            56.0,
             -8.0
         ],
         "PreTechs": [],
@@ -5068,6 +5067,48 @@
         "PropertyItemCounts": []
     },
     {
+        "ID": 1912,
+        "Name": "轨道熔炼站",
+        "IconPath": "Assets/texpack/玻璃科技",
+        "Desc": "T轨道熔炼站",
+        "Conclusion": "T轨道熔炼站",
+        "IsHiddenTech": false,
+        "PreItem": null,
+        "Position": [
+            52.0,
+            20.0
+        ],
+        "PreTechs": [
+            1936
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6003,
+            6278
+        ],
+        "ItemPoints": [
+            10,
+            8
+        ],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [
+            801
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
         "ID": 1915,
         "Name": "T航空物流",
         "IconPath": "Icons/Tech/1102",
@@ -5111,7 +5152,7 @@
     },
     {
         "ID": 1916,
-        "Name": "T启示录聚变弹",
+        "Name": "T任务二：太阳的距离",
         "IconPath": "Assets/texpack/反物质飞弹",
         "Desc": "T启示录聚变弹描述",
         "Conclusion": "启示录聚变弹结果",
@@ -5161,12 +5202,10 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            36.0,
+            40.0,
             -36.0
         ],
-        "PreTechs": [
-            1928
-        ],
+        "PreTechs": [],
         "PreTechsImplicit": [
             1923
         ],
@@ -5206,10 +5245,10 @@
         "PreItem": null,
         "Position": [
             44.0,
-            -36.0
+            -40.0
         ],
         "PreTechs": [
-            1416
+            1919
         ],
         "PreTechsImplicit": [],
         "Items": [
@@ -5432,7 +5471,9 @@
             412,
             413,
             414,
-            415
+            415,
+            811,
+            812
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -5536,7 +5577,7 @@
     },
     {
         "ID": 1928,
-        "Name": "燃油燃料棒",
+        "Name": "化学燃料棒",
         "IconPath": "Assets/texpack/燃料棒科技",
         "Desc": "T化学能燃料棒描述",
         "Conclusion": "T化学能燃料棒描述",
@@ -5888,17 +5929,17 @@
             48.0,
             24.0
         ],
-        "PreTechs": [ 1915 ],
+        "PreTechs": [ 1940 ],
         "PreTechsImplicit": [],
         "Items": [
             6003,
             6278
         ],
         "ItemPoints": [
-            20,
-            10
+            10,
+            6
         ],
-        "HashNeeded": 72000,
+        "HashNeeded": 288000,
         "UnlockRecipes": [
             515
         ],
@@ -5926,12 +5967,12 @@
         "PreItem": null,
         "Position": [
             72.0,
-            20.0
+            24.0
         ],
-        "PreTechs": [],
-        "PreTechsImplicit": [
-            1203
+        "PreTechs": [
+            1967
         ],
+        "PreTechsImplicit": [],
         "Items": [
             6279,
             6004,
@@ -6048,6 +6089,86 @@
         "PropertyItemCounts": []
     },
     {
+        "ID": 1940,
+        "Name": "太空电梯",
+        "IconPath": "Icons/Tech/1817",
+        "Desc": "T太空电梯",
+        "Conclusion": "T太空电梯",
+        "IsHiddenTech": false,
+        "PreItem": null,
+        "Position": [
+            36.0,
+            24.0
+        ],
+        "PreTechs": [
+            1152
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6003
+        ],
+        "ItemPoints": [
+            10
+        ],
+        "HashNeeded": 180000,
+        "UnlockRecipes": [
+            810
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1941,
+        "Name": "储氢钢罐",
+        "IconPath": "Icons/Tech/1817",
+        "Desc": "T储氢钢罐",
+        "Conclusion": "T储氢钢罐",
+        "IsHiddenTech": false,
+        "PreItem": null,
+        "Position": [
+            36.0,
+            -36.0
+        ],
+        "PreTechs": [
+            1928
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6003
+        ],
+        "ItemPoints": [
+            10
+        ],
+        "HashNeeded": 108000,
+        "UnlockRecipes": [
+            815
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
         "ID": 1942,
         "Name": "T生物塑料合成",
         "IconPath": "Icons/Tech/1122",
@@ -6117,6 +6238,7 @@
         "HashNeeded": 108000,
         "UnlockRecipes": [
             774,
+            813,
             776,
             778
         ],
@@ -6164,7 +6286,6 @@
             779,
             780,
             800,
-            801,
             624
         ],
         "UnlockFunctions": [],
@@ -6381,7 +6502,8 @@
         ],
         "HashNeeded": 576000,
         "UnlockRecipes": [
-            809
+            809,
+            818
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6432,6 +6554,44 @@
         "Published": true,
         "Level": 2,
         "MaxLevel": 1000,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": false,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1951,
+        "Name": "星环巨构",
+        "IconPath": "Assets/texpack/主机科技",
+        "Desc": "T星环巨构",
+        "Conclusion": "T星环巨构",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            60.0,
+            28.0
+        ],
+        "PreTechs": [
+            1936
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6228
+        ],
+        "ItemPoints": [
+            1
+        ],
+        "HashNeeded": 3600,
+        "UnlockRecipes": [],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
         "IsLabTech": false,
@@ -6494,14 +6654,16 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            48.0,
+            60.0,
             -52.0
         ],
         "PreTechs": [],
-        "PreTechsImplicit": [],
+        "PreTechsImplicit": [
+            1965
+        ],
         "Items": [
-            6003,
-            6278
+            6279,
+            6004
         ],
         "ItemPoints": [
             10,
@@ -6535,12 +6697,12 @@
         "PreItem": [],
         "Position": [
             72.0,
-            16.0
+            20.0
         ],
-        "PreTechs": [],
-        "PreTechsImplicit": [
-            1203
+        "PreTechs": [
+            1967
         ],
+        "PreTechsImplicit": [],
         "Items": [
             6279,
             6004,
@@ -6569,24 +6731,26 @@
     },
     {
         "ID": 1955,
-        "Name": "深空望远镜",
+        "Name": "轨道观测站",
         "IconPath": "Icons/Tech/1816",
-        "Desc": "T深空望远镜",
-        "Conclusion": "T深空望远镜",
+        "Desc": "T轨道观测站",
+        "Conclusion": "T轨道观测站",
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            36.0,
-            32.0
+            52.0,
+            24.0
         ],
         "PreTechs": [
-            1152
+            1936
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6003
+            6003,
+            6278
         ],
         "ItemPoints": [
+            10,
             10
         ],
         "HashNeeded": 288000,
@@ -6655,28 +6819,32 @@
     },
     {
         "ID": 1957,
-        "Name": "T星环电网",
-        "IconPath": "Icons/Tech/1813",
-        "Desc": "T星环电网描述",
-        "Conclusion": "T星环电网描述",
-        "IsHiddenTech": true,
-        "PreItem": [
-            6228
-        ],
+        "Name": "星环电网",
+        "IconPath": "Assets/texpack/护盾载波调制",
+        "Desc": "T星环电网",
+        "Conclusion": "T星环电网",
+        "IsHiddenTech": false,
+        "PreItem": [],
         "Position": [
             64.0,
-            16.0
+            28.0
         ],
-        "PreTechs": [],
+        "PreTechs": [
+            1951
+        ],
         "PreTechsImplicit": [],
         "Items": [
+            6279,
             6004
         ],
         "ItemPoints": [
+            10,
             10
         ],
-        "HashNeeded": 720000,
-        "UnlockRecipes": [],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [
+            816
+        ],
         "UnlockFunctions": [],
         "UnlockValues": [],
         "Published": true,
@@ -6701,7 +6869,7 @@
         "PreItem": [],
         "Position": [
             72.0,
-            28.0
+            16.0
         ],
         "PreTechs": [
             1605
@@ -6825,16 +6993,16 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            68.0,
-            -4.0
+            52.0,
+            -8.0
         ],
-        "PreTechs": [],
-        "PreTechsImplicit": [
+        "PreTechs": [
             1417
         ],
+        "PreTechsImplicit": [],
         "Items": [
-            6279,
-            6004
+            6003,
+            6278
         ],
         "ItemPoints": [
             10,
@@ -6942,5 +7110,205 @@
         "AddItemCounts": [],
         "PropertyOverrideItems": [],
         "PropertyItemCounts": []
+    },
+    {
+        "ID": 1964,
+        "Name": "星环对撞机",
+        "IconPath": "Icons/Tech/1607",
+        "Desc": "T星环对撞机",
+        "Conclusion": "T星环对撞机",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            64.0,
+            24.0
+        ],
+        "PreTechs": [
+            1951
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6279,
+            6004
+        ],
+        "ItemPoints": [
+            10,
+            10
+        ],
+        "HashNeeded": 288000,
+        "UnlockRecipes": [
+            817
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1965,
+        "Name": "模块化星舰建造",
+        "IconPath": "Icons/Tech/1607",
+        "Desc": "T模块化星舰建造",
+        "Conclusion": "T模块化星舰建造",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            64.0,
+            -4.0
+        ],
+        "PreTechs": [
+            1521
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6279,
+            6004
+        ],
+        "ItemPoints": [
+            10,
+            10
+        ],
+        "HashNeeded": 216000,
+        "UnlockRecipes": [
+            819
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1966,
+        "Name": "轨道空投",
+        "IconPath": "Icons/Tech/1607",
+        "Desc": "T轨道空投",
+        "Conclusion": "T轨道空投",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            56.0,
+            24.0
+        ],
+        "PreTechs": [
+            1605
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6279
+        ],
+        "ItemPoints": [
+            10
+        ],
+        "HashNeeded": 216000,
+        "UnlockRecipes": [
+            821
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1967,
+        "Name": "二选一科技",
+        "IconPath": "Icons/Tech/1607",
+        "Desc": "T二选一科技",
+        "Conclusion": "T二选一科技",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            68.0,
+            24.0
+        ],
+        "PreTechs": [],
+        "PreTechsImplicit": [
+            1705
+        ],
+        "Items": [
+            1101
+        ],
+        "ItemPoints": [
+            1
+        ],
+        "HashNeeded": 3600,
+        "UnlockRecipes": [],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": false,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
     }
+    //{
+    //    "ID": 1968,
+    //    "Name": "电磁霰射",
+    //    "IconPath": "Icons/Tech/1503",
+    //    "Desc": "T电磁霰射",
+    //    "Conclusion": "T电磁霰射",
+    //    "IsHiddenTech": false,
+    //    "PreItem": [],
+    //    "Position": [
+    //        88.0,
+    //        -28.0
+    //    ],
+    //    "PreTechs": [],
+    //    "PreTechsImplicit": [
+    //        1705
+    //    ],
+    //    "Items": [
+    //        1101
+    //    ],
+    //    "ItemPoints": [
+    //        1
+    //    ],
+    //    "HashNeeded": 3600,
+    //    "UnlockRecipes": [],
+    //    "UnlockFunctions": [],
+    //    "UnlockValues": [],
+    //    "Published": true,
+    //    "Level": 0,
+    //    "MaxLevel": 0,
+    //    "LevelCoef1": 0,
+    //    "LevelCoef2": 0,
+    //    "IsLabTech": false,
+    //    "PreTechsMax": false,
+    //    "AddItems": [],
+    //    "AddItemCounts": [],
+    //    "PropertyOverrideItems": [],
+    //    "PropertyItemCounts": []
+    //}
 ]

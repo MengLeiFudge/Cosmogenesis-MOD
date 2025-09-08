@@ -5,7 +5,7 @@ using HarmonyLib;
 // ReSharper disable InconsistentNaming
 
 namespace ProjectGenesis.Patches.Logic
-{/*
+{/* 这是让电厂发电量跟着燃料燃烧效率变化
     public static class PowerGeneratorEnergyCapPatches
     {
         [HarmonyPatch(typeof(PowerGeneratorComponent), nameof(PowerGeneratorComponent.EnergyCap_Fuel))]

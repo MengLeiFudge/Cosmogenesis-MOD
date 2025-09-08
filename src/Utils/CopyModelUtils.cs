@@ -19,18 +19,19 @@ namespace ProjectGenesis.Utils
     {
         internal static void AddCopiedModelProto()
         {
-            CopyModelProto(50, ProtoID.M太空物流港_瞎换ModelIndex导致存档报错, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
+            CopyModelProto(50, ProtoID.M轨道熔炼站, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
             CopyModelProto(117, ProtoID.M超空间中继器, null);
-            CopyModelProto(49, ProtoID.M天穹装配厂, Color.HSVToRGB(0.0710f, 0.7412f, 0.8941f));
-            CopyModelProto(68, ProtoID.M深空望远镜, Color.HSVToRGB(0.2275f, 0.3804f, 0.6431f));
+            CopyModelProto(50, ProtoID.M太空船坞, Color.HSVToRGB(0.5571f, 0.3188f, 0.8980f));
+            CopyModelProto(50, ProtoID.M轨道观测站, Color.HSVToRGB(0.2275f, 0.3804f, 0.6431f));
             CopyModelProto(49, ProtoID.M巨型化学反应釜, Color.HSVToRGB(0.1404f, 0.8294f, 0.9882f));
-            CopyModelProto(50, ProtoID.M深空物流港, new Color32(60, 179, 113, 255)); // Color.HSVToRGB(0.9814f, 0.6620f, 0.8471f));
-            CopyModelProto(56, ProtoID.M轨道反物质堆);
+            CopyModelProto(50, ProtoID.M深空物流港, new Color32(60, 179, 113, 255));
+            CopyModelProto(56, ProtoID.M轨道反物质堆核心);
+            CopyModelProto(56, ProtoID.M超空间中继器核心);
             CopyModelProto(68, ProtoID.M勘察卫星, Color.HSVToRGB(0.0833f, 0.8f, 1.0f));
             CopyModelProto(46, ProtoID.M同位素温差发电机, Color.HSVToRGB(0.4174f, 0.742f, 0.9686f));
             CopyModelProto(49, ProtoID.M生态穹顶, new Color(0.3216F, 0.8157F, 0.09020F));
-            CopyModelProto(49, ProtoID.M巨型粒子对撞机, new Color(0.3059F, 0.2196F, 0.4941F));
-            CopyModelProto(52, ProtoID.M量子储物仓, new Color(0.7373f, 0.2118f, 0.8510f));
+            CopyModelProto(50, ProtoID.M星环对撞机, new Color(0.3059F, 0.2196F, 0.4941F));
+            CopyModelProto(50, ProtoID.M轨道反物质堆基座);
             CopyModelProto(432, ProtoID.M反物质导弹组, new Color(0.3059F, 0.2196F, 0.4941F));
             CopyModelProto(375, ProtoID.M聚爆加农炮MK2, new Color(0.2275f, 0.3804f, 0.6431f));
             CopyModelProto(373, ProtoID.M高频激光塔MK2, new Color(0.5765f, 0.4392f, 0.8588f));
@@ -38,6 +39,9 @@ namespace ProjectGenesis.Utils
             CopyModelProto(488, ProtoID.M反物质炮弹);
             CopyModelProto(46, ProtoID.M蓄电器, Color.HSVToRGB(0.0833f, 0.8f, 1.0f));
             CopyModelProto(48, ProtoID.M深空货舰);
+            CopyModelProto(50, ProtoID.M星环电网枢纽, new Color(0.7373f, 0.2118f, 0.8510f)); 
+            CopyModelProto(72, ProtoID.M轨道弹射器, new Color(0.1404f, 0.8294f, 0.9882f)); 
+            CopyModelProto(49, ProtoID.M轨道空投站, new Color(0.9814f, 0.6620f, 0.8471f));
 
             //AddAtmosphericCollectStation();
             //AddHyperRelayReactor();
@@ -317,13 +321,21 @@ namespace ProjectGenesis.Utils
             //prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
             //prefabDescLODMaterial[2].SetColor("_TintColor", new Color(1.0000f, 0.6800f, 0.2267f));
 
-            //prefabDesc = LDB.models.Select(ProtoID.M轨道反物质堆).prefabDesc;
+            prefabDesc = LDB.models.Select(ProtoID.M轨道反物质堆核心).prefabDesc;
+            Texture texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
+            prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  // 亮部
+            prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f)); // 暗部
+            prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));   // 边缘特效
+
+            prefabDesc = LDB.models.Select(ProtoID.M超空间中继器核心).prefabDesc;
             //Texture texture = Resources.Load<Texture>("Assets/texpack/人造恒星MK2材质");
-            //prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
-            //prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
-            //prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.1804f, 0.4953f, 1.3584f));  // 亮部
-            //prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.1294f, 0.3130f, 1.1508f)); // 暗部
-            //prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.4157f, 0.6784f, 1.0000f));   // 边缘特效
+            prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
+            prefabDescLODMaterial[0].SetTexture("_EmissionTex", texture);
+            prefabDescLODMaterial[1].SetColor("_TintColor", new Color(0.0f, 0.1f, 0f));  // 亮部
+            prefabDescLODMaterial[1].SetColor("_TintColor1", new Color(0.0f, 0.0f, 0.0f)); // 暗部
+            prefabDescLODMaterial[1].SetColor("_RimColor", new Color(0.1f, 1.084f, 0.1000f));   // 边缘特效
 
             prefabDesc = LDB.models.Select(ProtoID.M矩阵研究站).prefabDesc;
             prefabDescLODMaterial = ref prefabDesc.lodMaterials[0];
@@ -353,12 +365,24 @@ namespace ProjectGenesis.Utils
             material.SetColor("_LabColor9", new Color(0.4020f, 0.4020f, 0.4020f));
         }
 
-        //internal static void ItemPostFix()
-        //{
-        //    LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto> { LDB.recipes.Select(ProtoID.R海水淡化), };
-        //    LDB.items.Select(ProtoID.I氢).isRaw = true;
-        //}
+        internal static void ItemPostFix()
+        {
+            ref int[] turretNeed = ref ItemProto.turretNeeds[(int)EAmmoType.Bullet];
+            turretNeed[1] = ProtoID.I钢芯弹箱;
+            turretNeed[2] = ProtoID.I超合金弹箱;
 
-        
+            turretNeed = ref ItemProto.turretNeeds[(int)EAmmoType.LocalPlasma];
+            turretNeed = new int[] { ProtoID.I氘核轨道弹, 0, 0 };
+
+            ItemProto item = LDB.items.Select(6514);
+            item.prefabDesc.stationShipPos = new Vector3(0f, 100f, 0f);
+
+            item = LDB.items.Select(3010);
+            item.prefabDesc.turretAmmoType = EAmmoType.LocalPlasma;
+            //LDB.items.Select(ProtoID.I水).recipes = new List<RecipeProto> { LDB.recipes.Select(ProtoID.R海水淡化), };
+            //LDB.items.Select(ProtoID.I氢).isRaw = true;
+        }
+
+
     }
 }

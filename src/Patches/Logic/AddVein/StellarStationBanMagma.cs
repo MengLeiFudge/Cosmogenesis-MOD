@@ -26,6 +26,14 @@ namespace ProjectGenesis.Patches.Logic.AddVein
                             remoteLogic = ELogisticStorage.None;
                         }
                     }
+
+                    if (stationComponent.workShipDatas.Length <= 0)
+                    {
+                        if (remoteLogic == ELogisticStorage.Supply)
+                        {
+                            remoteLogic = ELogisticStorage.None;
+                        }
+                    }
                 }
             }
         }

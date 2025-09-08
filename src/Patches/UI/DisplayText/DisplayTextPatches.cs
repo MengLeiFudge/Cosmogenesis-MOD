@@ -47,8 +47,8 @@ namespace ProjectGenesis.Patches.UI.DisplayText
 
                     break;
 
-                case Utils_ERecipeType.位面熔炉:
-                    __result = "位面熔炉".TranslateFromJson();
+                case Utils_ERecipeType.等离子熔炼:
+                    __result = "等离子熔炼".TranslateFromJson();
 
                     break;
 
@@ -115,8 +115,8 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     __result = "粒子打印".TranslateFromJson();
                     return;
 
-                case Utils_ERecipeType.位面熔炉:
-                    __result = "位面冶金".TranslateFromJson();
+                case Utils_ERecipeType.等离子熔炼:
+                    __result = "等离子熔炼".TranslateFromJson();
                     return;
 
                 case Utils_ERecipeType.物质重组:
@@ -193,8 +193,8 @@ namespace ProjectGenesis.Patches.UI.DisplayText
             }
         }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(ItemProto), nameof(ItemProto.FindRecipes))]
-        public static void ItemProto_FindRecipes(ItemProto __instance) => __instance.isRaw = __instance.recipes.Count == 0;
+        //[HarmonyPostfix]
+        //[HarmonyPatch(typeof(ItemProto), nameof(ItemProto.FindRecipes))]
+        //public static void ItemProto_FindRecipes(ItemProto __instance) => __instance.isRaw = __instance.recipes.Count == 0;
     }
 }

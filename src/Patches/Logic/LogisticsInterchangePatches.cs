@@ -12,6 +12,13 @@ namespace ProjectGenesis.Patches.Logic
 {
     public static class LogisticsInterchangePatches
     {
+        private static void DelStationPose(int modelIndex)
+        {
+            PrefabDesc megaPumper = LDB.models.Select(modelIndex).prefabDesc;
+            Pose[] newPortPoses = new Pose[] { };
+            megaPumper.portPoses = newPortPoses;
+        }
+
         internal static void StationPrefabDescPostAdd()
         {
             PrefabDesc megaPumper = LDB.models.Select(ProtoID.M物流立交).prefabDesc;
@@ -46,45 +53,7 @@ namespace ProjectGenesis.Patches.Logic
             }
             megaPumper.portPoses = newPortPoses;
 
-            megaPumper = LDB.models.Select(50).prefabDesc;
-            newPortPoses = new Pose[]{ new Pose(megaPumper.portPoses[0].position, megaPumper.portPoses[0].rotation),
-                new Pose(megaPumper.portPoses[1].position, megaPumper.portPoses[1].rotation),
-                new Pose(megaPumper.portPoses[2].position, megaPumper.portPoses[2].rotation),
-                new Pose(megaPumper.portPoses[3].position, megaPumper.portPoses[3].rotation),
-                new Pose(megaPumper.portPoses[4].position, megaPumper.portPoses[4].rotation),
-                new Pose(megaPumper.portPoses[5].position, megaPumper.portPoses[5].rotation),
-                new Pose(megaPumper.portPoses[6].position, megaPumper.portPoses[6].rotation),
-                new Pose(megaPumper.portPoses[7].position, megaPumper.portPoses[7].rotation),
-                new Pose(megaPumper.portPoses[8].position, megaPumper.portPoses[8].rotation),
-                new Pose(megaPumper.portPoses[9].position, megaPumper.portPoses[9].rotation),
-                new Pose(megaPumper.portPoses[10].position, megaPumper.portPoses[10].rotation),
-                new Pose(megaPumper.portPoses[11].position, megaPumper.portPoses[11].rotation),
-                new Pose(megaPumper.portPoses[1].position, megaPumper.portPoses[1].rotation),
-                new Pose(megaPumper.portPoses[4].position, megaPumper.portPoses[4].rotation),
-                new Pose(megaPumper.portPoses[7].position, megaPumper.portPoses[7].rotation),
-                new Pose(megaPumper.portPoses[10].position, megaPumper.portPoses[10].rotation),
-            };
-            for (int i = 12; i < newPortPoses.Length; i++)
-            {
-                newPortPoses[i].position.y = 22.5f;
-            }
-            megaPumper.portPoses = newPortPoses;
-
-            
-
-            //Debug.LogFormat("M物流运输站 {0} scppppppppppppppppppppppppp", megaPumper.portPoses.Length);
-            //Debug.LogFormat("portPoses 【0】position x{0} y{1} z{2} ", megaPumper.portPoses[0].position.x, megaPumper.portPoses[0].position.y, megaPumper.portPoses[0].position.z);
-            //Debug.LogFormat("portPoses 【1】position {0}", megaPumper.portPoses[1].position);
-            //Debug.LogFormat("portPoses 【2】position {0}", megaPumper.portPoses[2].position);
-            //Debug.LogFormat("portPoses 【3】position {0}", megaPumper.portPoses[3].position);
-            //Debug.LogFormat("portPoses 【4】position {0}", megaPumper.portPoses[4].position);
-            //Debug.LogFormat("portPoses 【5】position {0}", megaPumper.portPoses[5].position);
-            //Debug.LogFormat("portPoses 【6】position {0}", megaPumper.portPoses[6].position);
-            //Debug.LogFormat("portPoses 【7】position {0}", megaPumper.portPoses[7].position);
-            //Debug.LogFormat("portPoses 【8】position {0}", megaPumper.portPoses[8].position);
-            //Debug.LogFormat("portPoses 【9】position {0}", megaPumper.portPoses[9].position);
-            //Debug.LogFormat("portPoses 【10】position {0}", megaPumper.portPoses[10].position);
-
+            DelStationPose(50); // 太空物流港
 
         }
 
@@ -184,31 +153,18 @@ namespace ProjectGenesis.Patches.Logic
             }
             megaPumper.portPoses = newPortPoses;
 
-            megaPumper = LDB.models.Select(803).prefabDesc;
-            newPortPoses = new Pose[]{ new Pose(megaPumper.portPoses[0].position, megaPumper.portPoses[0].rotation),
-                new Pose(megaPumper.portPoses[1].position, megaPumper.portPoses[1].rotation),
-                new Pose(megaPumper.portPoses[2].position, megaPumper.portPoses[2].rotation),
-                new Pose(megaPumper.portPoses[3].position, megaPumper.portPoses[3].rotation),
-                new Pose(megaPumper.portPoses[4].position, megaPumper.portPoses[4].rotation),
-                new Pose(megaPumper.portPoses[5].position, megaPumper.portPoses[5].rotation),
-                new Pose(megaPumper.portPoses[6].position, megaPumper.portPoses[6].rotation),
-                new Pose(megaPumper.portPoses[7].position, megaPumper.portPoses[7].rotation),
-                new Pose(megaPumper.portPoses[8].position, megaPumper.portPoses[8].rotation),
-                new Pose(megaPumper.portPoses[9].position, megaPumper.portPoses[9].rotation),
-                new Pose(megaPumper.portPoses[10].position, megaPumper.portPoses[10].rotation),
-                new Pose(megaPumper.portPoses[11].position, megaPumper.portPoses[11].rotation),
-                new Pose(megaPumper.portPoses[1].position, megaPumper.portPoses[1].rotation),
-                new Pose(megaPumper.portPoses[4].position, megaPumper.portPoses[4].rotation),
-                new Pose(megaPumper.portPoses[7].position, megaPumper.portPoses[7].rotation),
-                new Pose(megaPumper.portPoses[10].position, megaPumper.portPoses[10].rotation),
-            };
-            for (int i = 12; i < newPortPoses.Length; i++)
-            {
-                newPortPoses[i].position.y = 22.5f;
-            }
-            megaPumper.portPoses = newPortPoses;
+            DelStationPose(801); // 轨道熔炼站
+            DelStationPose(803); // 太空船坞
+            DelStationPose(804); // 轨道观测站
+            DelStationPose(806); // 深空物流港
+            //DelStationPose(807); // 轨道反物质堆核心
+            DelStationPose(811); // 星环对撞机总控站
+            DelStationPose(814); // 轨道反物质堆基座
+            DelStationPose(820); // 星环电网枢纽
+            DelStationPose(821); // 超空间中继器核心
+            //DelStationPose(822); // 重型电磁弹射器
 
-            megaPumper = LDB.models.Select(806).prefabDesc;
+            megaPumper = LDB.models.Select(805).prefabDesc;
             newPortPoses = new Pose[]{ new Pose(megaPumper.portPoses[0].position, megaPumper.portPoses[0].rotation),
                 new Pose(megaPumper.portPoses[1].position, megaPumper.portPoses[1].rotation),
                 new Pose(megaPumper.portPoses[2].position, megaPumper.portPoses[2].rotation),
@@ -221,10 +177,10 @@ namespace ProjectGenesis.Patches.Logic
                 new Pose(megaPumper.portPoses[9].position, megaPumper.portPoses[9].rotation),
                 new Pose(megaPumper.portPoses[10].position, megaPumper.portPoses[10].rotation),
                 new Pose(megaPumper.portPoses[11].position, megaPumper.portPoses[11].rotation),
+                new Pose(megaPumper.portPoses[0].position, megaPumper.portPoses[0].rotation),
                 new Pose(megaPumper.portPoses[1].position, megaPumper.portPoses[1].rotation),
-                new Pose(megaPumper.portPoses[4].position, megaPumper.portPoses[4].rotation),
+                new Pose(megaPumper.portPoses[2].position, megaPumper.portPoses[2].rotation),
                 new Pose(megaPumper.portPoses[7].position, megaPumper.portPoses[7].rotation),
-                new Pose(megaPumper.portPoses[10].position, megaPumper.portPoses[10].rotation),
             };
             for (int i = 12; i < newPortPoses.Length; i++)
             {

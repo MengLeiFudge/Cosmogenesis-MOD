@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using HarmonyLib;
 using PowerNetworkStructures;
 using ProjectGenesis.Utils;
@@ -18,35 +19,56 @@ namespace ProjectGenesis.Patches.Logic
 
         private static readonly ConcurrentDictionary<int, List<int>> NodeIds = new ConcurrentDictionary<int, List<int>>();
 
-        [HarmonyPatch(typeof(PlanetATField), nameof(PlanetATField.GameTick))]
-        [HarmonyPostfix]
-        public static void PlanetATField_GameTick_Postfix(PlanetATField __instance)
+        public static void GlobalPowerActive(int planetId)
         {
-            if (!__instance.gameData.history.TechUnlocked(ProtoID.T护盾载波调制)) return;
-
-            int planetId = __instance.planet.id;
-            PowerSystem factoryPowerSystem = __instance.factory.powerSystem;
-
-            if (__instance.isSpherical)
+            PowerSystem factoryPowerSystem = null;
+            for (int i = 0; i < GameMain.data.factoryCount; i++)
             {
-                if (NodeIds.ContainsKey(planetId)) return;
+                PlanetFactory factory = GameMain.data.factories[i];
+                if (factory.planet.id == planetId && factory != null)
+                {
+                    factoryPowerSystem = factory.powerSystem;
+                }
+            }
+            if (factoryPowerSystem != null)
+            {
+                if (NodeIds.ContainsKey(planetId))
+                {
+                    return;
+                }
 
                 int nodeId = NewNodeComponent(factoryPowerSystem, 400, GlobalPowerCoverRadius);
 
                 NodeIds.TryAddOrInsert(planetId, nodeId);
-
                 SyncGlobalPowerSupplyNodeIdData.Sync(planetId, nodeId);
             }
-            else if (NodeIds.TryGetValue(planetId, out List<int> list))
+        }
+
+        public static void GlobalPowerInActive(int planetId)
+        {
+            PowerSystem factoryPowerSystem = null;
+            for (int i = 0; i < GameMain.data.factoryCount; i++)
             {
-                SyncSyncGlobalPowerSupplyRemoveData.Sync(planetId);
+                PlanetFactory factory = GameMain.data.factories[i];
+                if (factory.planet.id == planetId && factory != null)
+                {
+                    factoryPowerSystem = factory.powerSystem;
+                }
+            }
 
-                // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
-                foreach (int nodeId in list)
-                    if (factoryPowerSystem.nodePool[nodeId].powerPoint == Pos)
-                        factoryPowerSystem.RemoveNodeComponent(nodeId);
+            if (factoryPowerSystem != null)
+            {
+                if (NodeIds.TryGetValue(planetId, out List<int> list))
+                {
+                    SyncSyncGlobalPowerSupplyRemoveData.Sync(planetId);
 
-                NodeIds.Remove(planetId, out _);
+                    // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+                    foreach (int nodeId in list)
+                        if (factoryPowerSystem.nodePool[nodeId].powerPoint == Pos)
+                            factoryPowerSystem.RemoveNodeComponent(nodeId);
+
+                    NodeIds.Remove(planetId, out _);
+                }
             }
         }
 

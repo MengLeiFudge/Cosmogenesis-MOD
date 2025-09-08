@@ -13,7 +13,7 @@ namespace ProjectGenesis.Utils
         Fractionate = 8,
         太空船坞 = 9,
         粒子打印 = 10, // 4 + 10
-        位面熔炉 = 11, // 1 + 11
+        等离子熔炼 = 11, // 1 + 11
         物质重组 = 12, // 4 + 10 + 12
         生物化工 = 14,
         Research = 15,

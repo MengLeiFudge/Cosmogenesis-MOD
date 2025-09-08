@@ -15,16 +15,208 @@ using MoreMegaStructure;
 using System.IO;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine.Playables;
+using ProjectGenesis.Patches.Logic.OrbitalRing;
+using static ProjectGenesis.Patches.Logic.OrbitalRing.EquatorRing;
 
 namespace ProjectGenesis.Patches.Logic
 {
     internal class StarGate
     {
+        //[HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.GameTick))]
+        //[HarmonyPostfix]
+        //public static void PlanetFactory_GameTick_Patch(PlanetFactory __instance)
+        //{
+        //    for (int i = 0; i < __instance.entityPool.Length; i++)
+        //    {
+        //        if (__instance.entityPool[i].protoId == 6511)
+        //        {
+        //            __instance.entityAnimPool[i].state = 1U;
+        //            __instance.entityAnimPool[i].Step2(1U, 0.016666668f, 25000f, 1.0f);
+        //            //__instance.entityAnimPool[i].power = 25000f;
+        //        }
+        //    }
+        //}
+
+        private static bool CheckBuildingPos(Vector3 hasBuildPos, Vector3 wantBuildPos, float threshold = 0.9999f)
+        {
+            // 排除零向量（长度为0的向量无方向）
+            if (hasBuildPos.sqrMagnitude == 0 || wantBuildPos.sqrMagnitude == 0)
+            {
+                Debug.LogWarning("零向量无方向定义");
+                return false;
+            }
+
+            // 归一化向量（获取单位向量）
+            Vector3 normalizedA = hasBuildPos.normalized;
+            Vector3 normalizedB = wantBuildPos.normalized;
+
+            // 计算点积（即夹角余弦值）
+            float dotProduct = Vector3.Dot(normalizedA, normalizedB);
+
+            // 判断是否超过阈值（允许一定误差）
+            return dotProduct >= threshold;
+        }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BuildTool_Click), "CheckBuildConditions")]
+        public static bool CheckBuildConditionsPrePatch(BuildTool_Click __instance, ref bool __result)
+        {
+            if (__instance.planet.type != EPlanetType.Gas)
+            {
+                return true;
+            }
+            int count = __instance.buildPreviews.Count;
+            if (count == 0)
+            {
+                __result = false;
+                return false;
+            }
+            for (int i = 0; i < count; i++)
+            {
+                BuildPreview buildPreview = __instance.buildPreviews[i];
+                if (buildPreview.item.ID == 6511)
+                {
+                    for (int j = 0; j < __instance.factory.prebuildPool.Length; j++)
+                    {
+                        if (__instance.factory.prebuildPool[j].protoId != 0 && __instance.factory.prebuildPool[j].protoId != 6281)
+                        {
+                            if (CheckBuildingPos(__instance.factory.prebuildPool[j].pos, buildPreview.lpos))
+                            {
+                                buildPreview.condition = EBuildCondition.Collide;
+                                __result = false;
+                                return false;
+                            }
+                        }
+                    }
+                    if (count > 1)
+                    {
+                        buildPreview.condition = EBuildCondition.Failure;
+                        __result = false;
+                        return false;
+                    }
+
+                    var entityPool = __instance.planet.factory.entityPool;
+                    bool flag = false;
+                    for (int y = 0; y < entityPool.Length; y++)
+                    {
+                        if (entityPool[y].protoId == 0)
+                        {
+                            continue;
+                        }
+                        if (CheckBuildingPos(entityPool[y].pos, buildPreview.lpos))
+                        {
+                            if (entityPool[y].protoId != 6281)
+                            {
+                                buildPreview.condition = EBuildCondition.Collide;
+                                __result = false;
+                                return false;
+                            } else
+                            {
+                                flag = true;
+                            }
+                        }
+                        
+                    }
+                    if (!flag)
+                    {
+                        buildPreview.condition = (EBuildCondition)98;
+                        __result = false;
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        [HarmonyPatch(typeof(BuildTool_Click), "CheckBuildConditions")]
+        [HarmonyPostfix]
+        public static void CheckBuildConditionsPostPatch(BuildTool_Click __instance, ref bool __result)
+        {
+            if (__instance.planet.type != EPlanetType.Gas)
+            {
+                for (int i = 0; i < __instance.buildPreviews.Count; i++)
+                {
+                    BuildPreview buildPreview = __instance.buildPreviews[i];
+                    if (buildPreview.item.ID == 6281)
+                    {
+                        buildPreview.condition = EBuildCondition.Failure;
+                        __result = false;
+                        return;
+                    }
+                }
+            }
+            int count = __instance.buildPreviews.Count;
+            if (count == 0)
+            {
+                return;
+            }
+            for (int i = 0; i < __instance.buildPreviews.Count; i++)
+            {
+                BuildPreview buildPreview = __instance.buildPreviews[i];
+                if (buildPreview.item.ID == 6511)
+                {
+                    if (buildPreview.condition == EBuildCondition.OutOfReach || buildPreview.condition == EBuildCondition.OutOfVerticalConstructionHeight ||
+                        buildPreview.condition == EBuildCondition.NeedGround)
+                    {
+                        buildPreview.condition = EBuildCondition.Ok;
+                        __result = true;
+                        __instance.actionBuild.model.cursorState = 0;
+                        string text = ((__instance.dotCount > 1) ? ("    (" + __instance.dotCount + ")") : "");
+                        __instance.actionBuild.model.cursorText = "点击鼠标建造".Translate() + text;
+                    }
+                }
+                if (buildPreview.item.ID == 6281)
+                {
+                    if (buildPreview.lpos.y != 0)
+                    {
+                        buildPreview.condition = EBuildCondition.BuildInEquator;
+                        __result = false;
+                    }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(BuildTool_Dismantle), nameof(BuildTool_Dismantle.DismantleAction))]
+        [HarmonyPrefix]
+        public static bool DismantleActionPatch(BuildTool_Dismantle __instance)
+        {
+            if (((VFInput._buildConfirm.onDown && __instance.cursorType == 0) || (VFInput._buildConfirm.pressing && __instance.cursorType == 1)) && __instance.buildPreviews.Count > 0)
+            {
+                foreach (BuildPreview buildPreview in __instance.buildPreviews)
+                {
+                    if (buildPreview.condition == EBuildCondition.Ok)
+                    {
+                        if (BuildTool_Dismantle.showDemolishContainerQuery)
+                        {
+                            if (buildPreview.objId > 0 && buildPreview.item.ID == 6281)
+                            {
+                                var entityPool = __instance.planet.factory.entityPool;
+
+                                for (int y = 0; y < entityPool.Length; y++)
+                                {
+                                    if (entityPool[y].protoId == 0)
+                                    {
+                                        continue;
+                                    }
+                                    if (CheckBuildingPos(entityPool[y].pos, buildPreview.lpos) && buildPreview.objId != y)
+                                    {
+                                        __instance.dismantleQueryBox = UIMessageBox.Show("拆除基座标题".Translate(), "拆除基座文字".Translate(), "确定".Translate(), 1, new UIMessageBox.Response(__instance.DismantleQueryCancel));
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
         private static List<int> starGateList = new List<int>();
         //StationComponent  DetermineDispatch
         public static void RecordStarGate(int itemId, int plantId)
         {
-            if (itemId == 6281)
+            if (itemId == 6511)
             {
                 int starIndex = plantId / 100;
                 starGateList.Add(starIndex);
@@ -33,7 +225,7 @@ namespace ProjectGenesis.Patches.Logic
 
         public static void DismantleStarGate(int itemId, int plantId)
         {
-            if (itemId == 6281)
+            if (itemId == 6511)
             {
                 int starIndex = plantId / 100;
                 starGateList.Remove(starIndex);
@@ -191,28 +383,25 @@ namespace ProjectGenesis.Patches.Logic
             if (ProjectGenesis.MoreMegaStructureCompatibility)
             {
                 int thisStarIndex = thisStationComponent.planetId / 100;
-                Type targetType = AccessTools.TypeByName("MoreMegaStructure.WarpArray");
-                if (targetType == null) return;
-
-                FieldInfo starIsInWhichWarpArrayField = AccessTools.Field(targetType, "starIsInWhichWarpArray");
-                if (starIsInWhichWarpArrayField == null) return;
-                int[] starIsInWhichWarpArray = (int[])starIsInWhichWarpArrayField.GetValue(null);
-
-                FieldInfo tripEnergyCostRatioByStarIndexField = AccessTools.Field(targetType, "tripEnergyCostRatioByStarIndex");
-                if (tripEnergyCostRatioByStarIndexField == null) return;
-                double[] tripEnergyCostRatioByStarIndex = (double[])tripEnergyCostRatioByStarIndexField.GetValue(null);
-
-                if (starIsInWhichWarpArray[thisStarIndex] >= 0)
+                try
                 {
-                    if (tripEnergyCostRatioByStarIndex[thisStarIndex] > 0.2)
+                    var mmType = Type.GetType("MoreMegaStructure.WarpArray, MoreMegaStructure");
+                    var starIsInWhichWarpArray = mmType?.GetField("starIsInWhichWarpArray")?.GetValue(null) as int[];
+                    var tripEnergyCostRatioByStarIndex = mmType?.GetField("tripEnergyCostRatioByStarIndex")?.GetValue(null) as double[];
+
+                    if (starIsInWhichWarpArray[thisStarIndex] >= 0)
                     {
-                        if (StarGateExit(thisStationComponent.planetId) && StarGateExit(otherStationComponent.planetId))
+                        if (tripEnergyCostRatioByStarIndex[thisStarIndex] > 0.2)
                         {
-                            energy = (long)((energy / tripEnergyCostRatioByStarIndex[thisStarIndex]) * 0.2); // 中继器航线能量消耗降低为原来的20%
+                            if (StarGateExit(thisStationComponent.planetId) && StarGateExit(otherStationComponent.planetId))
+                            {
+                                energy = (long)((energy / tripEnergyCostRatioByStarIndex[thisStarIndex]) * 0.2); // 中继器航线能量消耗降低为原来的20%
+                            }
                         }
+                        return;
                     }
-                    return;
                 }
+                catch (Exception ex) { }
             }
             if (StarGateExit(thisStationComponent.planetId) && StarGateExit(otherStationComponent.planetId))
             {
