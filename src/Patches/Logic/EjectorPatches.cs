@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 
 namespace ProjectGenesis.Patches.Logic
 {
@@ -39,12 +40,12 @@ namespace ProjectGenesis.Patches.Logic
         public static void Ejector_PatchMethod(DysonSwarm swarm, SailBullet sailBullet, ref EjectorComponent component,
             int[] consumeRegister)
         {
-            int stationPilerLevel = GameMain.history.stationPilerLevel;
+            int PilerEjectorLevel = GetPilerEjectorLevel();
             ref int bulletCount = ref component.bulletCount;
 
-            if (component.bulletId != 1501) stationPilerLevel = 1;
+            if (component.bulletId != 1501) PilerEjectorLevel = 1;
 
-            var count = stationPilerLevel > bulletCount ? bulletCount : stationPilerLevel;
+            var count = PilerEjectorLevel > bulletCount ? bulletCount : PilerEjectorLevel;
 
             for (int i = 0; i < count; i++) swarm.AddBullet(sailBullet, component.runtimeOrbitId);
 

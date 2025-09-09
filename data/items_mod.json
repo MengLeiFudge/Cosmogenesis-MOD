@@ -3147,7 +3147,7 @@
         "Name": "重型电磁弹射器",
         "Description": "I重型电磁弹射器",
         "IconPath": "Icons/ItemRecipe/em-rail-ejector",
-        "GridIndex": 2604,
+        "GridIndex": 2603,
         "StackSize": 10,
         "Type": 6,
         "PreTechOverride": 0,

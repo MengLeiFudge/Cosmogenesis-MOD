@@ -80,6 +80,13 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
                     break;
 
+                case 3151:
+                case 3152:
+                case 3153:
+                    __result = "使弹射器发射太阳帆数量加一".TranslateFromJson();
+
+                    break;
+
                 case 5406:
                     __result += "\r\n" + "驱逐舰护卫舰射程增加".TranslateFromJson();
 

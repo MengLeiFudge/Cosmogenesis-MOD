@@ -20,6 +20,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             AddWreckageRecoveryUpgradeTechs();
             AddFleetUpgradeTechs();
             Add2choose1Techs();
+            AddPilerEjectorTechs();
             //AddWarpEngineTechs();
             //AddTempBugFixTechs();
         }
@@ -211,31 +212,43 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             NewTechProto.IsLabTech = false;
         }
 
-        internal static void AddWarpEngineTechs()
+        internal static void AddPilerEjectorTechs()
         {
-            int id = 2907;
-            string name = "跃迁引擎";
-            string description = "T跃迁引擎";
-            string conclusion = "T跃迁引擎";
-            string iconPath = "Assets/texpack/虫洞航行";
-
-            Vector2 oldPosition = new Vector2(0, 0);
-            TechProto tech = LDB.techs.Select(2906);
-            oldPosition = tech.Position;
+            int id = 3151;
+            string name = "电磁霰射";
+            string description = "T电磁霰射";
+            string conclusion = "T电磁霰射";
+            string iconPath = "Icons/Tech/1503";
 
             int[] preTechs = new int[] {  };
-            int[] costItems = new[] { 6261, 6227, 7805, };
-            long costHash = 3600;
-            int[] costItemsPoints = new int[] { 1, 12, 24 };
+            int[] costItems = new[] { 6279, 6004, };
+            long costHash = 108000;
+            int[] costItemsPoints = new int[] { 10, 10 };
             int[] unlockRecipes = new int[] { };
-            Vector2 position = new Vector2(oldPosition.x + 4, oldPosition.y);
+            Vector2 position = new Vector2(9, -11);
             TechProto NewTechProto = ProtoRegistry.RegisterTech(id, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
-            NewTechProto.PreTechsImplicit = new int[] { 1152 };
-            NewTechProto.Level = 0;
-            NewTechProto.MaxLevel = 0;
-            NewTechProto.UnlockFunctions = new int[] {  };
-            NewTechProto.UnlockValues = new double[] {  };
+            NewTechProto.PreTechsImplicit = new int[] { 1503 };
+            NewTechProto.Level = 1;
+            NewTechProto.MaxLevel = 1;
+
+            preTechs = new int[] { id };
+            costHash = 216000;
+            position = new Vector2(13, -11);
+            NewTechProto = ProtoRegistry.RegisterTech(id + 1, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
+            NewTechProto.Level = 2;
+            NewTechProto.MaxLevel = 2;
+
+            preTechs = new int[] { id + 1 };
+            costItems = new[] { 6279, 6004, 6005 };
+            costHash = 216000;
+            costItemsPoints = new int[] { 10, 10, 10 };
+            position = new Vector2(17, -11);
+            NewTechProto = ProtoRegistry.RegisterTech(id + 2, name, description, conclusion, iconPath, preTechs, costItems, costItemsPoints, costHash, unlockRecipes, position);
+            NewTechProto.Level = 3;
+            NewTechProto.MaxLevel = 3;
         }
+
+        
 
 
         internal static void AddTempBugFixTechs()

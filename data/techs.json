@@ -4156,7 +4156,6 @@
         "UnlockRecipes": [
             128,
             142,
-            157,
             820
         ],
         "UnlockFunctions": [],
@@ -7272,43 +7271,47 @@
         "AddItemCounts": [],
         "PropertyOverrideItems": [],
         "PropertyItemCounts": []
+    },
+    {
+        "ID": 1968,
+        "Name": "近防电浆炮",
+        "IconPath": "Icons/Tech/1811",
+        "Desc": "T近防电浆炮",
+        "Conclusion": "T近防电浆炮",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            64.0,
+            -60.0
+        ],
+        "PreTechs": [
+            1811
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6279,
+            6004
+        ],
+        "ItemPoints": [
+            10,
+            10
+        ],
+        "HashNeeded": 144000,
+        "UnlockRecipes": [
+            157
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": false,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
     }
-    //{
-    //    "ID": 1968,
-    //    "Name": "电磁霰射",
-    //    "IconPath": "Icons/Tech/1503",
-    //    "Desc": "T电磁霰射",
-    //    "Conclusion": "T电磁霰射",
-    //    "IsHiddenTech": false,
-    //    "PreItem": [],
-    //    "Position": [
-    //        88.0,
-    //        -28.0
-    //    ],
-    //    "PreTechs": [],
-    //    "PreTechsImplicit": [
-    //        1705
-    //    ],
-    //    "Items": [
-    //        1101
-    //    ],
-    //    "ItemPoints": [
-    //        1
-    //    ],
-    //    "HashNeeded": 3600,
-    //    "UnlockRecipes": [],
-    //    "UnlockFunctions": [],
-    //    "UnlockValues": [],
-    //    "Published": true,
-    //    "Level": 0,
-    //    "MaxLevel": 0,
-    //    "LevelCoef1": 0,
-    //    "LevelCoef2": 0,
-    //    "IsLabTech": false,
-    //    "PreTechsMax": false,
-    //    "AddItems": [],
-    //    "AddItemCounts": [],
-    //    "PropertyOverrideItems": [],
-    //    "PropertyItemCounts": []
-    //}
 ]

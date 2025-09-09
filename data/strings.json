@@ -306,8 +306,8 @@
     },
     {
         "Name": "I反物质轨道弹",
-        "ZHCN": "用粒子容器束缚反氢原子，注入回旋粒子加速器中，将反氢原子发射出去，最终在目标处以湮灭反应重创目标。一度被空间管理联盟列为违禁品。",
-        "ENUS": "Binding anti hydrogen atoms with particle containers, injecting them into a cyclotron particle accelerator, emitting anti hydrogen atoms, and ultimately annihilating and severely damaging the target at its location. Once listed as a prohibited item by the COSMO."
+        "ZHCN": "用粒子容器束缚反氢原子，注入回旋粒子加速器中，将反氢原子发射出去，最终在目标处以湮灭反应重创目标。被COSMO禁止在大气层内使用。",
+        "ENUS": "Binding anti hydrogen atoms with particle containers, injecting them into a cyclotron particle accelerator, emitting anti hydrogen atoms, and ultimately annihilating and severely damaging the target at its location. Prohibited from use in the atmosphere by COSMO."
     },
     {
         "Name": "轨道弹",
@@ -328,6 +328,11 @@
         "Name": "I近防电浆炮",
         "ZHCN": "由战舰的近防炮改造而来，发射以磁场约束的等离子霰流，在近距离上破坏力远超其他级别的炮台。以近防为目的的设计让它可以遭受大量攻击而正常运转。尽管行星内大气磁场与重力的扰动作用导致射程比太空更短，但当地面防线告急时，它依然是最可靠的近防武器。",
         "ENUS": "Adapted from the close range guns of warships, it fires plasma plumes constrained by magnetic fields, causing far greater destructive power at close range than other levels of turrets. The design aimed at close range defense allows it to withstand a large number of attacks and operate normally. Although the disturbance caused by the atmospheric magnetic field and gravity within the planet results in a shorter range than in space, it remains the most reliable close range weapon when ground defenses are in crisis."
+    },
+    {
+        "Name": "T近防电浆炮",
+        "ZHCN": "舰炮上陆是将星舰使用的舰炮系统改装部署到行星陆地上的战术，主要用于增强地面部队的火力支援能力。就如近防电浆炮，原为星舰上的近防武器，能发射连绵不绝的等离子霰流拦截导弹或重创近距离的对手，以近防为目的的设计让它可以遭受大量攻击而正常运转。尽管行星内大气磁场与重力的扰动作用导致射程比起太空严重缩短，但当地面防线告急时，它依然是最可靠的近防武器。\n由于COSMO禁止在大气层内使用湮灭武器，因此近防电浆炮<color=\"#FD965ECC\">禁止使用反物质轨道弹</color>",
+        "ENUS": "Naval gun landing is a tactic of modifying and deploying the naval gun system used by starships to planetary land, mainly used to enhance the firepower support capability of ground forces. Just like the close range plasma cannon, originally a close range weapon on starships, it can launch continuous plasma jet interception missiles or inflict heavy damage on close range opponents. Its design for close range defense allows it to withstand a large number of attacks and operate normally. Although the disturbance caused by the atmospheric magnetic field and gravity within the planet significantly shortens its range compared to space, it remains the most reliable close range weapon when ground defenses are in crisis.\nDue to COSMO's ban on the use of annihilation weapons in the atmosphere, close range plasma guns are <color=\"#FD965ECC\">prohibited from using Antimatter Orbital Shell</color>"
     },
     {
         "Name": "重型电浆炮",
@@ -1146,8 +1151,8 @@
     },
     {
         "Name": "I深空物流港",
-        "ZHCN": "一座巨型物流港，包含数个集装起重机、由奇异物质组成的重力井，作为通知飞船退出曲率航行的重力灯塔，以及跨星系量子通讯调度塔台。只有它才能撑起一个跨星系文明的物流需求。",
-        "ENUS": "A giant logistics port consisting of several container cranes, a gravity well composed of exotic matter, serving as a gravity lighthouse for notifying spacecraft to exit curvature navigation, and a cross galaxy quantum communication dispatch tower. Only it can sustain the logistics needs of a cross galaxy civilization."
+        "ZHCN": "一座巨型物流港，包含数个集装起重机、由奇异物质组成的重力井，作为通知飞船退出曲率航行的重力灯塔，以及跨星系量子通讯调度塔台。只有它才能撑起一个跨星系文明的物流需求。\n<color=\"#FD965ECC\">需要由底下的太空电梯提供物资的行星内转运</color>",
+        "ENUS": "A giant logistics port consisting of several container cranes, a gravity well composed of exotic matter, serving as a gravity lighthouse for notifying spacecraft to exit curvature navigation, and a cross galaxy quantum communication dispatch tower. Only it can sustain the logistics needs of a cross galaxy civilization.\n<color=\"#FD965ECC\">The planetary transportation of supplies needs to be provided by the space elevator below</color>"
     },
     {
         "Name": "生态穹顶",
@@ -2133,6 +2138,11 @@
         "Name": "T电磁霰射",
         "ZHCN": "通过将太阳帆进一步折叠压缩，发射到戴森云轨道后再拆分重组，使得电磁弹射器可以一次发射多枚太阳帆，犹如霰弹一般，可以大大加快太阳帆的铺设效率。\n<color=\"#FD965ECC\">只支持发射物是太阳帆的场景</color>",
         "ENUS": "By further folding and compressing the solar sail, launching it into Dyson Cloud orbit, and then splitting and reassembling it, the electromagnetic catapult can launch multiple solar sails at once, like shotgun shells, greatly accelerating the efficiency of solar sail deployment.\n<color=\"#FD965ECC\">Only supports scenarios where the launching object is a solar sail</color>"
+    },
+    {
+        "Name": "使弹射器发射太阳帆数量加一",
+        "ZHCN": "使电磁弹射器和重型电磁弹射器每次发射的太阳帆数量+1",
+        "ENUS": "Increase the number of solar sails launched each time by the electromagnetic catapult and heavy electromagnetic catapult by 1"
     },
     {
         "Name": "T岩浆冶炼处理",
@@ -3493,8 +3503,8 @@
     },
     {
         "Name": "I太空电梯",
-        "ZHCN": "作为有史以来最高的人造建筑，太空电梯是跨越行星与太空的垂直运输枢纽，千米级的高强度碳纳米管缆固定的电梯将为后续建造的同步轨道设施提供运力支撑。作为戴森球计划中最先接触到的航天工程，它将是文明迈向星际的起点。",
-        "ENUS": "As the tallest man-made building in history, the space elevator is a vertical transportation hub that spans planets and space. The kilometer level high-strength carbon nanotube cable fixed elevator will provide transportation support for the subsequent construction of synchronous orbit facilities. As the first aerospace project to be encountered in the Dyson Sphere program, it will be the starting point for civilization to move towards interstellar space."
+        "ZHCN": "作为有史以来最高的人造建筑，太空电梯是跨越行星与太空的垂直运输枢纽，千米级的高强度碳纳米管缆固定的电梯将为后续建造的同步轨道设施提供运力支撑。作为戴森球计划中最先接触到的航天工程，它将是文明迈向星际的起点。\n<color=\"#FD965ECC\">选择物品的槽位自动收/送上层轨道设施对应的需求物品/产出物品</color>\n<color=\"#FD965ECC\">只能建造在固定位置，纬度为赤道上下10格，经度为从0开始每隔25格</color>",
+        "ENUS": "As the tallest man-made building in history, the space elevator is a vertical transportation hub that spans planets and space. The kilometer level high-strength carbon nanotube cable fixed elevator will provide transportation support for the subsequent construction of synchronous orbit facilities. As the first aerospace project to be encountered in the Dyson Sphere program, it will be the starting point for civilization to move towards interstellar space.\n<color=\"#FD965ECC\">Select the slot for the item to automatically receive/deliver the required/output items corresponding to the upper level track facilities</color>\n<color=\"#FD965ECC\">It can only be built in a fixed location, with a latitude of 10 grids above and below the equator and a longitude of every 25 grids starting from 0</color>"
     },
     {
         "Name": "T太空电梯",
@@ -3613,8 +3623,8 @@
     },
     {
         "Name": "I轨道空投引导站",
-        "ZHCN": "装备了激光信标，可以引导在轨的运输船将货物精准空投到引导站，完成物资的星际接收，而不需要建造昂贵的太空电梯和物流港。",
-        "ENUS": "Equipped with laser beacons, it can guide transport ships in orbit to accurately airdrop goods to the guidance station, completing interstellar material reception without the need to build expensive space elevators and logistics ports."
+        "ZHCN": "装备了激光信标，可以引导在轨的运输船将货物精准空投到引导站，完成物资的星际接收，而不需要建造昂贵的太空电梯和物流港。\n<color=\"#FD965ECC\">不可选择星际供应</color>",
+        "ENUS": "Equipped with laser beacons, it can guide transport ships in orbit to accurately airdrop goods to the guidance station, completing interstellar material reception without the need to build expensive space elevators and logistics ports.\n<color=\"#FD965ECC\">Cannot choose interstellar supply</color>"
     },
     {
         "Name": "拆除基座标题",

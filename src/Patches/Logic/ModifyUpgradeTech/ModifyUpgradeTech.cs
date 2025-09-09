@@ -134,6 +134,13 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
 
         private static bool isOrbitalTurretUnlock = false;
 
+        public static int PilerEjectorLevel = 1;
+
+        public static int GetPilerEjectorLevel()
+        {
+            return PilerEjectorLevel;
+        }
+
         internal static void ModifyUpgradeTeches()
         {
             TechProto tech = LDB.techs.Select(ProtoID.T批量建造1);
@@ -169,44 +176,28 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             tech = LDB.techs.Select(ProtoID.T集装分拣6);
             tech.Items = Items5;
             tech.ItemPoints = Enumerable.Repeat(6, 5).ToArray();
-            /*
-            for (int i = 2501; i <= 2506; i++)
-            {
-                TechProto techProto = LDB.techs.Select(i);
-                Debug.LogFormat("scppppppppppppperppppppppp");
-                Debug.LogFormat("techProto.ID {0} techProto.Name {1} techProto.IconPath {2}", techProto.ID, techProto.Name, techProto.IconPath);
-                Debug.LogFormat("techProto.Position[0] {0} techProto.Position[1] {1} ", techProto.Position[0], techProto.Position[1]);
-                //Debug.LogFormat("techProto.PreTechsImplicit[0] {0} techProto.PreTechs {1}", techProto.PreTechsImplicit[0], techProto.PreTechs[0]);
-                if (techProto.PreTechs != null)
-                {
-                    for (int j = 0; j < techProto.PreTechs.Length; j++)
-                    {
-                        Debug.LogFormat("techProto.PreTechs {0} j = {1}", techProto.PreTechs[j], j);
-                    }
-                }
-                if (techProto.PreTechsImplicit != null)
-                {
-                    for (int j = 0; j < techProto.PreTechsImplicit.Length; j++)
-                    {
-                        Debug.LogFormat("techProto.PreTechsImplicit {0} j = {1}", techProto.PreTechsImplicit[j], j);
-                    }
-                }
-                if (techProto.UnlockValues != null)
-                {
-                    for (int j = 0; j < techProto.UnlockValues.Length; j++)
-                    {
-                        Debug.LogFormat("techProto.UnlockValues {0} j = {1}", techProto.UnlockValues[j], j);
-                    }
-                }
-                if (techProto.UnlockFunctions != null)
-                {
-                    for (int j = 0; j < techProto.UnlockFunctions.Length; j++)
-                    {
-                        Debug.LogFormat("techProto.UnlockFunctions {0} j = {1}", techProto.UnlockFunctions[j], j);
-                    }
-                }
-            }
-            */
+
+
+            //    TechProto techProto = LDB.techs.Select(2101);
+            //    Debug.LogFormat("scppppppppppppperppppppppp");
+            //    Debug.LogFormat("techProto.ID {0} techProto.Name {1} techProto.pos {2}, {3}", techProto.ID, techProto.Name, techProto.Position.x, techProto.Position.y);
+
+            //techProto = LDB.techs.Select(2801);
+            //Debug.LogFormat("scppppppppppppperppppppppp");
+            //Debug.LogFormat("techProto.ID {0} techProto.Name {1} techProto.pos {2}, {3}", techProto.ID, techProto.Name, techProto.Position.x, techProto.Position.y);
+
+            //techProto = LDB.techs.Select(3101);
+            //Debug.LogFormat("scppppppppppppperppppppppp");
+            //Debug.LogFormat("techProto.ID {0} techProto.Name {1} techProto.pos {2}, {3}", techProto.ID, techProto.Name, techProto.Position.x, techProto.Position.y);
+            
+            //techProto = LDB.techs.Select(3901);
+            //Debug.LogFormat("scppppppppppppperppppppppp");
+            //Debug.LogFormat("techProto.ID {0} techProto.Name {1} techProto.pos {2}, {3}", techProto.ID, techProto.Name, techProto.Position.x, techProto.Position.y);
+
+            //techProto = LDB.techs.Select(5001);
+            //Debug.LogFormat("scppppppppppppperppppppppp");
+            //Debug.LogFormat("techProto.ID {0} techProto.Name {1} techProto.pos {2}, {3}", techProto.ID, techProto.Name, techProto.Position.x, techProto.Position.y);
+
             ModifyAllUpgradeTechs();
 
             ModifyObservedTechs();
@@ -1027,6 +1018,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             NewECMUpgradeTechs(_techId);
             AntiMatterOutCountsTech(_techId);
             OrbitalTurretTech(_techId);
+            PilerEjectorTechs(_techId);
         }
 
         static void UAVHPAndfiringRateUpgrade(int level)
@@ -1639,6 +1631,22 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
             }
         }
 
+        static void PilerEjectorTechs(int techId)
+        {
+            switch (techId) {
+                case 3151:
+                    PilerEjectorLevel = 2;
+                    break;
+                case 3152:
+                    PilerEjectorLevel = 3;
+                    break;
+                case 3153:
+                    PilerEjectorLevel = 4;
+                    break;
+            }
+        }
+        
+
         internal static void Export(BinaryWriter w)
         {
             w.Write(WreckFallingLevel);
@@ -1661,6 +1669,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                 w.Write(UniverseObserveBuilding[i]);
             }
             w.Write(isOrbitalTurretUnlock);
+            w.Write(PilerEjectorLevel); 
         }
 
         internal static void Import(BinaryReader r)
@@ -1773,6 +1782,7 @@ namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
                     itemProto.Description = "I轨道炮座";
                     itemProto.RefreshTranslation();
                 }
+                PilerEjectorLevel = r.ReadInt32();
             }
             catch (EndOfStreamException)
             {
