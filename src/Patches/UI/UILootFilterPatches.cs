@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 // ReSharper disable InconsistentNaming
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {
     public static class UILootFilterPatches
     {

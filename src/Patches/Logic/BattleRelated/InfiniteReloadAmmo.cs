@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectGenesis.Patches.Logic.BattleRelated
+namespace ProjectOrbitalRing.Patches.Logic.BattleRelated
 {
     internal class InfiniteReloadAmmo
     {

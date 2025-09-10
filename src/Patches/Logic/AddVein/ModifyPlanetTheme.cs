@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 
-namespace ProjectGenesis.Patches.Logic.AddVein
+namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     internal static partial class ModifyPlanetTheme
     {

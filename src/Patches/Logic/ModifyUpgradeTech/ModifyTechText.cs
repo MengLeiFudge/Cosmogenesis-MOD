@@ -1,12 +1,12 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
+namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech
 {
     internal class ModifyTechText
     {

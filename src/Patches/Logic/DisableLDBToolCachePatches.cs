@@ -3,7 +3,7 @@ using BepInEx;
 using HarmonyLib;
 using xiaoye97;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class DisableLDBToolCachePatches
     {
@@ -12,7 +12,7 @@ namespace ProjectGenesis.Patches.Logic
         [HarmonyPatch(typeof(LDBTool), "Bind")]
         [HarmonyPriority(Priority.VeryHigh)]
         [HarmonyPrefix]
-        public static bool LDBTool_Bind() => ProjectGenesis.LDBToolCacheEntry.Value;
+        public static bool LDBTool_Bind() => ProjectOrbitalRing.LDBToolCacheEntry.Value;
 
         [HarmonyPatch(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded))]
         [HarmonyAfter(LDBToolPlugin.MODGUID)]
@@ -21,7 +21,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (_finished) return;
 
-            if (!ProjectGenesis.LDBToolCacheEntry.Value) return;
+            if (!ProjectOrbitalRing.LDBToolCacheEntry.Value) return;
 
             try
             {

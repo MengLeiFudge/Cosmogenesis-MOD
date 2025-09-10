@@ -11,7 +11,7 @@ using CommonAPI;
 using GalacticScale;
 using HarmonyLib;
 using Newtonsoft.Json.Linq;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.Playables;
 using static UnityEngine.UI.GridLayoutGroup;
@@ -22,7 +22,7 @@ using static UnityEngine.UI.InputField;
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.UnknownResource
 
-namespace ProjectGenesis.Patches.Logic.AddVein
+namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
     {

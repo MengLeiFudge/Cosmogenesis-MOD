@@ -1,4 +1,4 @@
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     public enum ERecipeType
     {

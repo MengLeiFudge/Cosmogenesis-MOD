@@ -3,12 +3,12 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
-using static ProjectGenesis.Patches.Logic.OrbitalRing.OrbitalAssembler;
+using ProjectOrbitalRing.Utils;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.OrbitalAssembler;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic.MegaAssembler
+namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {

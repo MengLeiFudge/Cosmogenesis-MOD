@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {
     internal static class FluidColorPatches
     {

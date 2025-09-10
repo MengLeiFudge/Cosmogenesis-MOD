@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable RemoveRedundantBraces
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 // ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class InitialTechPatches
     {
@@ -88,7 +88,7 @@ namespace ProjectGenesis.Patches.Logic
         //[HarmonyPostfix]
         //public static void UITechTree_OnQueueUpdate_Postfix(UITechTree __instance)
         //{
-        //    if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
+        //    if (!ProjectOrbitalRing.HideTechModeEntry.Value) { return; }
 
         //    RefreshNode(__instance);
         //}
@@ -97,7 +97,7 @@ namespace ProjectGenesis.Patches.Logic
         //[HarmonyPostfix]
         //public static void UITechTree_OnPageChanged_Postfix(UITechTree __instance)
         //{
-        //    if (!ProjectGenesis.HideTechModeEntry.Value) { return; }
+        //    if (!ProjectOrbitalRing.HideTechModeEntry.Value) { return; }
 
         //    if (__instance.page != 0) { return; }
 

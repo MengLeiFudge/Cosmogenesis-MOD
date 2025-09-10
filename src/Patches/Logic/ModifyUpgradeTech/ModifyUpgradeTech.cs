@@ -1,8 +1,8 @@
 ﻿using CommonAPI.Systems;
 using GalacticScale;
 using HarmonyLib;
-using ProjectGenesis.Compatibility;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Compatibility;
+using ProjectOrbitalRing.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,9 +13,9 @@ using System.Text;
 using UnityEngine;
 using WinAPI;
 using static GalacticScale.PatchOnUIGalaxySelect;
-using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.AddUpgradeTech;
+using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.AddUpgradeTech;
 
-namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
+namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech
 {
     internal static class ModifyUpgradeTech
     {

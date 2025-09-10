@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace ProjectGenesis.Patches.Logic.AddVein
+namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
     {

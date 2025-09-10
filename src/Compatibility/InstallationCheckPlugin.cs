@@ -3,8 +3,8 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
-using ProjectGenesis.Patches.UI;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Patches.UI;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 
 // ReSharper disable InconsistentNaming
@@ -12,12 +12,12 @@ using UnityEngine;
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable ClassNeverInstantiated.Global
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     /// <summary>
     ///     special thanks for https://github.com/kremnev8/DSP-Mods/blob/master/Mods/BlueprintTweaks/InstallationChecker.cs
     /// </summary>
-    [BepInPlugin(MODGUID, MODNAME, ProjectGenesis.VERSION)]
+    [BepInPlugin(MODGUID, MODNAME, ProjectOrbitalRing.VERSION)]
     [BepInDependency(BlueprintTweaks.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(Bottleneck.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(MoreMegaStructure.GUID, BepInDependency.DependencyFlags.SoftDependency)]
@@ -83,9 +83,9 @@ namespace ProjectGenesis.Compatibility
 
             string msg = null;
 
-            if (ProjectGenesis.ShowMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
+            if (ProjectOrbitalRing.ShowMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
 
-            if (!ProjectGenesis.LoadCompleted) msg = "ProjectGenesisNotLoaded";
+            if (!ProjectOrbitalRing.LoadCompleted) msg = "ProjectGenesisNotLoaded";
 
             if (!BepinExVersionMatch) msg = "BepinExVersionNotMatch";
 
@@ -99,6 +99,6 @@ namespace ProjectGenesis.Compatibility
 
         public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());
 
-        public static void OpenLog() => Application.OpenURL(Path.Combine(ProjectGenesis.ModPath, "CHANGELOG.md"));
+        public static void OpenLog() => Application.OpenURL(Path.Combine(ProjectOrbitalRing.ModPath, "CHANGELOG.md"));
     }
 }

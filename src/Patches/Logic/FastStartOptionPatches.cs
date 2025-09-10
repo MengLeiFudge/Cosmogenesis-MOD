@@ -1,12 +1,12 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class FastStartOptionPatches
     {

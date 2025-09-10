@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using System.Threading;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic.QuantumStorage
+namespace ProjectOrbitalRing.Patches.Logic.QuantumStorage
 {
     public static partial class QuantumStoragePatches
     {

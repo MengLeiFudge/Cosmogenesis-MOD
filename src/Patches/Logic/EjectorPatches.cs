@@ -5,9 +5,9 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
+using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     internal class EjectorPatches
     {

@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using static ProjectGenesis.Patches.Logic.GlobalPowerSupplyPatches;
-using static ProjectGenesis.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.GlobalPowerSupplyPatches;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
 
-namespace ProjectGenesis.Patches.Logic.OrbitalRing
+namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
 {
     internal class OrbitalStationManager
     {

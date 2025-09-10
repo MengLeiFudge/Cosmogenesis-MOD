@@ -1,10 +1,10 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Patches.UI.Utils;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Patches.UI.Utils;
+using ProjectOrbitalRing.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI.PlanetFocus
+namespace ProjectOrbitalRing.Patches.UI.PlanetFocus
 {
     public static class UIPlanetDetailExpand
     {
@@ -16,11 +16,11 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         {
             if (_planetFocusBtn) return;
 
-            ProjectGenesis.PlanetFocusWindow = UIPlanetFocusWindow.CreateWindow();
+            ProjectOrbitalRing.PlanetFocusWindow = UIPlanetFocusWindow.CreateWindow();
 
             _planetFocusBtn = Util.CreateButton("星球基地".TranslateFromJson());
             Util.NormalizeRectWithTopLeft(_planetFocusBtn, 5, -40, __instance.planetDetail.rectTrans);
-            _planetFocusBtn.onClick += _ => ProjectGenesis.PlanetFocusWindow.OpenWindow();
+            _planetFocusBtn.onClick += _ => ProjectOrbitalRing.PlanetFocusWindow.OpenWindow();
         }
 
         [HarmonyPatch(typeof(UIPlanetDetail), nameof(UIPlanetDetail.OnPlanetDataSet))]
@@ -29,7 +29,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
         {
             if (__instance.planet == null)
             {
-                ProjectGenesis.PlanetFocusWindow._Close();
+                ProjectOrbitalRing.PlanetFocusWindow._Close();
 
                 return;
             }
@@ -40,12 +40,12 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
 
             if (notgas)
             {
-                ProjectGenesis.PlanetFocusWindow.nameText.text = __instance.planet.displayName + " - " + "星球倾向".TranslateFromJson();
+                ProjectOrbitalRing.PlanetFocusWindow.nameText.text = __instance.planet.displayName + " - " + "星球倾向".TranslateFromJson();
 
                 if (UIPlanetFocusWindow.CurPlanetId != __instance.planet.id)
                 {
                     UIPlanetFocusWindow.CurPlanetId = __instance.planet.id;
-                    ProjectGenesis.PlanetFocusWindow.OnPlanetChanged(UIPlanetFocusWindow.CurPlanetId);
+                    ProjectOrbitalRing.PlanetFocusWindow.OnPlanetChanged(UIPlanetFocusWindow.CurPlanetId);
                 }
             }
         }

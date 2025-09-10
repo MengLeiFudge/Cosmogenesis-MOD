@@ -6,7 +6,7 @@ using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class ModelLoadingPatches
     {

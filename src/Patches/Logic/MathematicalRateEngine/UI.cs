@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
+namespace ProjectOrbitalRing.Patches.Logic.MathematicalRateEngine
 {
     internal class UI
     {
@@ -121,7 +121,7 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
         {
             try
             {
-                if (!ProjectGenesis.MoreMegaStructureCompatibility)
+                if (!ProjectOrbitalRing.MoreMegaStructureCompatibility)
                 {
                     if (star == null) return;
                     curStar = star;
@@ -164,7 +164,7 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
         {
             try
             {
-                if (!ProjectGenesis.MoreMegaStructureCompatibility)
+                if (!ProjectOrbitalRing.MoreMegaStructureCompatibility)
                 {
                     if (curStar.type == EStarType.BlackHole)
                     {

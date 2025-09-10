@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
+namespace ProjectOrbitalRing.Patches.Logic.MathematicalRateEngine
 {
     internal class SiloAndEjector
     {
@@ -34,7 +34,7 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
 
             if (GameMain.galaxy.stars[starIndex].type == EStarType.BlackHole)
             {
-                if (ProjectGenesis.MoreMegaStructureCompatibility)
+                if (ProjectOrbitalRing.MoreMegaStructureCompatibility)
                 {
                     try
                     {
@@ -101,7 +101,7 @@ namespace ProjectGenesis.Patches.Logic.MathematicalRateEngine
             int bulletIdExpected = 1501;
             if (GameMain.galaxy.stars[starIndex].type == EStarType.BlackHole)
             {
-                if (ProjectGenesis.MoreMegaStructureCompatibility)
+                if (ProjectOrbitalRing.MoreMegaStructureCompatibility)
                 {
                     try
                     {

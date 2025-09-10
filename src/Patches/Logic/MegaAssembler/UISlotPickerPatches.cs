@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
 
-namespace ProjectGenesis.Patches.Logic.MegaAssembler
+namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {

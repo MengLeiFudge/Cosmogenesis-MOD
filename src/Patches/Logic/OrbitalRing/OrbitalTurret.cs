@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ProjectGenesis.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
 using UnityEngine;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.Logic.OrbitalRing
+namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
 {
     internal class OrbitalTurret
     {

@@ -4,9 +4,9 @@ using System.Reflection;
 using Mono.Cecil;
 using FieldAttributes = Mono.Cecil.FieldAttributes;
 
-[assembly:AssemblyVersion(ProjectGenesis.ProjectGenesis.VERSION)]
+[assembly:AssemblyVersion(ProjectOrbitalRing.ProjectOrbitalRing.VERSION)]
 
-namespace ProjectGenesis
+namespace ProjectOrbitalRing
 {
     public static class Preloader
     {

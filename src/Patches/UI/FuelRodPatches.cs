@@ -1,11 +1,11 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {/*
     public static class FuelRodPatches
     {

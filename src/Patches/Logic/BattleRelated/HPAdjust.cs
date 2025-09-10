@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using System.Reflection.Emit;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace ProjectGenesis.Patches.Logic.BattleRelated
+namespace ProjectOrbitalRing.Patches.Logic.BattleRelated
 {
     internal class HPAdjust
     {

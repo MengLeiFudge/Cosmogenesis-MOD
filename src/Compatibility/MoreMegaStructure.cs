@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using BepInEx.Bootstrap;
 using HarmonyLib;
-using static ProjectGenesis.Patches.Logic.MathematicalRateEngine.UI;
+using static ProjectOrbitalRing.Patches.Logic.MathematicalRateEngine.UI;
 using UnityEngine;
 using xiaoye97;
 using PluginInfo = BepInEx.PluginInfo;
@@ -13,13 +13,13 @@ using UnityEngine.UI;
 // ReSharper disable InconsistentNaming
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     internal static class MoreMegaStructure
     {
         internal const string GUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
 
-        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectOrbitalRing.Compatibility." + GUID);
 
         private static readonly int[] AddedRecipes =
         {
@@ -55,7 +55,7 @@ namespace ProjectGenesis.Compatibility
                 {
                     after = new[] { LDBToolPlugin.MODGUID, },
                 });
-            ProjectGenesis.MoreMegaStructureCompatibility = true;
+            ProjectOrbitalRing.MoreMegaStructureCompatibility = true;
         }
 
         public static void LDBToolOnPostAddDataAction()

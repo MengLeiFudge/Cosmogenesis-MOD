@@ -5,7 +5,7 @@ using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI.BeltColorFix
+namespace ProjectOrbitalRing.Patches.UI.BeltColorFix
 {
     //public static class BeltFixPatches
     //{

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     public static class KvpDeconstruct
     {

@@ -8,8 +8,8 @@
     <ProjectGuid>{EFF66744-FAF7-461E-B86E-7130E64E16DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjectGenesis</RootNamespace>
-    <AssemblyName>ProjectGenesis</AssemblyName>
+    <RootNamespace>ProjectOrbitalRing</RootNamespace>
+    <AssemblyName>ProjectOrbitalRing</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -209,7 +209,7 @@
     <Compile Include="src\Patches\UI\UpdateLogoPatches.cs" />
     <Compile Include="src\Patches\UI\Utils\MyWindowCtl.cs" />
     <Compile Include="src\Patches\UI\Utils\Util.cs" />
-    <Compile Include="src\ProjectGenesis.cs" />
+    <Compile Include="src\ProjectOrbitalRing.cs" />
     <Compile Include="src\Utils\CopyModelUtils.cs" />
     <Compile Include="src\Utils\DictionaryExtend.cs" />
     <Compile Include="src\Utils\ERecipeType.cs" />

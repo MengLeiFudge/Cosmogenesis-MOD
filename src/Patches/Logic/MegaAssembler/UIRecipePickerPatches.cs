@@ -4,7 +4,7 @@ using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic.MegaAssembler
+namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {

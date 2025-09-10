@@ -2,9 +2,9 @@
 using System.Linq;
 using CommonAPI.Systems.ModLocalization;
 using UnityEngine;
-using static ProjectGenesis.Utils.JsonHelper;
+using static ProjectOrbitalRing.Utils.JsonHelper;
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     internal static class TranslateUtils
     {

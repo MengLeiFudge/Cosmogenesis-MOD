@@ -1,5 +1,5 @@
 ﻿using CommonAPI.Systems;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Playables;
 
-namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
+namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech
 {
     internal class AddUpgradeTech
     {

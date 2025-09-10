@@ -1,14 +1,14 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Compatibility;
+using ProjectOrbitalRing.Compatibility;
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     public static class TranspilerLogUtils
     {
         public static void LogInstructionEnumeration(this CodeMatcher matcher)
         {
             foreach (CodeInstruction codeInstruction in matcher.InstructionEnumeration())
-                ProjectGenesis.logger.LogInfo(codeInstruction.ToString());
+                ProjectOrbitalRing.logger.LogInfo(codeInstruction.ToString());
         }
 
         public static void LogInstructionEnumerationWhenChecking(this CodeMatcher matcher)

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.Playables;
 
-namespace ProjectGenesis.Patches.Logic.AddVein
+namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     internal class StellarStationBanMagma
     {

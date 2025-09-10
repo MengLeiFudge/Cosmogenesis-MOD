@@ -2,7 +2,7 @@
 using System.Reflection.Emit;
 using HarmonyLib;
 
-namespace ProjectGenesis.Patches
+namespace ProjectOrbitalRing.Patches
 {
     public static class DysonSpherePatches
     {

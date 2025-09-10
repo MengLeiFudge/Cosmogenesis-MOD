@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using static ProjectGenesis.ProjectGenesis;
+using static ProjectOrbitalRing.ProjectOrbitalRing;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {
     public static class UIOptionWindowPatches
     {

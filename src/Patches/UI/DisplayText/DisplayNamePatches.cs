@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.UI.DisplayText
+namespace ProjectOrbitalRing.Patches.UI.DisplayText
 {
     /// <summary>
     ///     special thanks for
@@ -27,7 +27,7 @@ namespace ProjectGenesis.Patches.UI.DisplayText
                     new CodeMatch(i => i.opcode == OpCodes.Call && ((MethodInfo)i.operand).Name == "get_usernameAndSuffix"));
 
             return codeMatcher.Advance(1).InsertAndAdvance(Transpilers.EmitDelegate<Func<string, string>>(text =>
-                    $"{ProjectGenesis.MODNAME.TranslateFromJson()} {ProjectGenesis.VERSION}{ProjectGenesis.DEBUGVERSION}\r\n{text}"))
+                    $"{ProjectOrbitalRing.MODNAME.TranslateFromJson()} {ProjectOrbitalRing.VERSION}{ProjectOrbitalRing.DEBUGVERSION}\r\n{text}"))
                .InstructionEnumeration();
         }
     }

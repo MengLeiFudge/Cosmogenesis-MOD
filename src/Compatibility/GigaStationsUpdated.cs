@@ -8,13 +8,13 @@ using BepInEx.Bootstrap;
 using HarmonyLib;
 using xiaoye97;
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     internal static class GigaStationsUpdated
     {
         internal const string GUID = "org.kremnev8.plugin.GigaStationsUpdated";
 
-        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectOrbitalRing.Compatibility." + GUID);
 
         internal static void Awake()
         {

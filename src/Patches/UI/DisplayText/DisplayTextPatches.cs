@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using HarmonyLib;
-using ProjectGenesis.Utils;
-using Utils_ERecipeType = ProjectGenesis.Utils.ERecipeType;
+using ProjectOrbitalRing.Utils;
+using Utils_ERecipeType = ProjectOrbitalRing.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI.DisplayText
+namespace ProjectOrbitalRing.Patches.UI.DisplayText
 {
     internal static class DisplayTextPatches
     {

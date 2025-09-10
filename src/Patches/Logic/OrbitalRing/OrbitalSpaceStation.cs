@@ -10,10 +10,10 @@ using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using UnityEngine;
 using static GalacticScale.PatchOnUIGalaxySelect;
-using static ProjectGenesis.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
 using static UIPlayerDeliveryPanel;
 
-namespace ProjectGenesis.Patches.Logic.OrbitalRing
+namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
 {
     internal class OrbitalSpaceStation
     {

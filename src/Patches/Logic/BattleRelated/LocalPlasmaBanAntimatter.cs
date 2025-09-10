@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectGenesis.Patches.Logic.BattleRelated
+namespace ProjectOrbitalRing.Patches.Logic.BattleRelated
 {
     internal class LocalPlasmaBanAntimatter
     {

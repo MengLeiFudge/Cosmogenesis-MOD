@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 
 // ReSharper disable Unity.UnknownResource
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {
     public static class UIPowerGeneratorWindowPatches
     {

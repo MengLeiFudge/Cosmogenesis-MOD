@@ -1,7 +1,7 @@
 ﻿using GalacticScale;
 using HarmonyLib;
-using ProjectGenesis.Patches.UI.Utils;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Patches.UI.Utils;
+using ProjectOrbitalRing.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using WinAPI;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     [HarmonyPatch]
     internal class FelTreeObjects

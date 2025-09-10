@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.Logic.AddVein
+namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     internal static partial class ModifyPlanetTheme
     {

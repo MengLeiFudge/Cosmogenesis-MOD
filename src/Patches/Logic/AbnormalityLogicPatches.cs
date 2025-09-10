@@ -4,7 +4,7 @@ using HarmonyLib;
 // ReSharper disable InconsistentNaming
 // ReSharper disable RedundantAssignment
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class AbnormalityLogicPatches
     {

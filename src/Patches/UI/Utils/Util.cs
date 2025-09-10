@@ -1,8 +1,8 @@
-﻿using ProjectGenesis.Utils;
+﻿using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectGenesis.Patches.UI.Utils
+namespace ProjectOrbitalRing.Patches.UI.Utils
 {
     /// <summary>
     ///     special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder

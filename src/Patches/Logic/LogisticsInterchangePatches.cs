@@ -4,11 +4,11 @@ using System.Reflection.Emit;
 using System.Security.Cryptography;
 using HarmonyLib;
 using UnityEngine;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using GalacticScale;
 using UnityEngine.Playables;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class LogisticsInterchangePatches
     {

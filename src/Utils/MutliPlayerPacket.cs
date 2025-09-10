@@ -4,16 +4,16 @@ using NebulaAPI;
 using NebulaAPI.Interfaces;
 using NebulaAPI.Networking;
 using NebulaAPI.Packets;
-using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.MegaAssembler;
-using ProjectGenesis.Patches.Logic.PlanetFocus;
-using ProjectGenesis.Patches.Logic.QuantumStorage;
+using ProjectOrbitalRing.Patches.Logic;
+using ProjectOrbitalRing.Patches.Logic.MegaAssembler;
+using ProjectOrbitalRing.Patches.Logic.PlanetFocus;
+using ProjectOrbitalRing.Patches.Logic.QuantumStorage;
 
 // ReSharper disable MemberCanBeInternal
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable ClassNeverInstantiated.Global
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     public class SyncSlotsData
     {

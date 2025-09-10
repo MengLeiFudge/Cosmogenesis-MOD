@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.Logic.MegaAssembler
+namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
 {
     internal static partial class MegaAssemblerPatches
     {

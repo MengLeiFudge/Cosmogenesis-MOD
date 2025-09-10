@@ -5,11 +5,11 @@ using CommonAPI.Systems;
 using HarmonyLib;
 using UnityEngine;
 using xiaoye97;
-using static ProjectGenesis.Utils.JsonHelper;
+using static ProjectOrbitalRing.Utils.JsonHelper;
 
 // ReSharper disable RemoveRedundantBraces
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     internal static class JsonDataUtils
     {
@@ -41,7 +41,7 @@ namespace ProjectGenesis.Utils
 
             foreach (ItemProtoJson itemjson in ItemModProtos())
             {
-                if (!ProjectGenesis.MoreMegaStructureCompatibility || !IsMoreMegaStructureItem(itemjson.ID)) {
+                if (!ProjectOrbitalRing.MoreMegaStructureCompatibility || !IsMoreMegaStructureItem(itemjson.ID)) {
                     itemjson.GridIndex = GetTableID(itemjson.GridIndex);
                     itemIconDescs.Add(itemjson.ID, IconDescUtils.GetIconDesc(itemjson.ID));
                     LDBTool.PreAddProto(itemjson.ToProto());
@@ -68,7 +68,7 @@ namespace ProjectGenesis.Utils
 
             foreach (RecipeProtoJson recipeJson in RecipeProtos())
             {
-                if (!ProjectGenesis.MoreMegaStructureCompatibility || !(recipeJson.ID >= 530 && recipeJson.ID <= 536))
+                if (!ProjectOrbitalRing.MoreMegaStructureCompatibility || !(recipeJson.ID >= 530 && recipeJson.ID <= 536))
                 {
                     recipeJson.GridIndex = GetTableID(recipeJson.GridIndex);
 

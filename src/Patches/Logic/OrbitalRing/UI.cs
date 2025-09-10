@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectGenesis.Patches.Logic.OrbitalRing
+namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
 {
     internal class UI
     {

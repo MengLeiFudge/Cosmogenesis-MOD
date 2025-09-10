@@ -3,17 +3,17 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     internal static class WeaponPlus
     {
         internal const string GUID = "org.weaponplus.plugins.Xiaokls";
 
-        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectOrbitalRing.Compatibility." + GUID);
 
         internal static void Awake()
         {

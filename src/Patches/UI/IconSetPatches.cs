@@ -4,7 +4,7 @@ using HarmonyLib;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {
     public static class IconSetPatches
     {

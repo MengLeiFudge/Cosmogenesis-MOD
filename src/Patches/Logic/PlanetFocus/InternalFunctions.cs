@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace ProjectGenesis.Patches.Logic.PlanetFocus
+namespace ProjectOrbitalRing.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {

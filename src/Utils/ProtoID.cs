@@ -1,6 +1,6 @@
 ﻿// ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     internal static class ProtoID
     {

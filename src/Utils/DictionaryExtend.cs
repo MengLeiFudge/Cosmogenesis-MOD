@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 // ReSharper disable RemoveRedundantBraces
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     internal static class DictionaryExtend
     {

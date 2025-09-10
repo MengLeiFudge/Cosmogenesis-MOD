@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using ProjectGenesis.Patches.Logic.AddVein;
+using ProjectOrbitalRing.Patches.Logic.AddVein;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using static UIPlayerDeliveryPanel;
 using CommonAPI;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using MoreMegaStructure;
 using System.IO;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine.Playables;
-using ProjectGenesis.Patches.Logic.OrbitalRing;
-using static ProjectGenesis.Patches.Logic.OrbitalRing.EquatorRing;
+using ProjectOrbitalRing.Patches.Logic.OrbitalRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     internal class StarGate
     {
@@ -380,7 +380,7 @@ namespace ProjectGenesis.Patches.Logic
         }
         public static void StarGateEnergyReduction(StationComponent thisStationComponent, StationComponent otherStationComponent, ref long energy)
         {
-            if (ProjectGenesis.MoreMegaStructureCompatibility)
+            if (ProjectOrbitalRing.MoreMegaStructureCompatibility)
             {
                 int thisStarIndex = thisStationComponent.planetId / 100;
                 try

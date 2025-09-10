@@ -13,7 +13,7 @@ using static VertaRecorder;
 // ReSharper disable Unity.UnknownResource
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     internal static class CopyModelUtils
     {

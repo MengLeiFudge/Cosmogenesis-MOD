@@ -4,12 +4,12 @@ using System.IO;
 using System.Reflection;
 using HarmonyLib;
 using PowerNetworkStructures;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class GlobalPowerSupplyPatches
     {

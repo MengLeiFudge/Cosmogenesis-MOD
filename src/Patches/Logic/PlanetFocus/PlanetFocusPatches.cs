@@ -1,11 +1,11 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
 // ReSharper disable MemberCanBeInternal
 
-namespace ProjectGenesis.Patches.Logic.PlanetFocus
+namespace ProjectOrbitalRing.Patches.Logic.PlanetFocus
 {
     public static partial class PlanetFocusPatches
     {

@@ -5,7 +5,7 @@ using CommonAPI;
 using HarmonyLib;
 using UnityEngine;
 
-namespace ProjectGenesis.Patches.Logic.AddVein
+namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     public static partial class AddVeinPatches
     {

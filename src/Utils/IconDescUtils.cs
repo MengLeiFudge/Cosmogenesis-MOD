@@ -4,7 +4,7 @@ using UnityEngine;
 
 // ReSharper disable PrivateFieldCanBeConvertedToLocalVariable
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     internal static partial class IconDescUtils
     {

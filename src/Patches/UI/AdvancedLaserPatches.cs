@@ -3,13 +3,13 @@ using System.IO;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.PreferAddressByIdToGraphicsParams
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {
     public static class AdvancedLaserPatches
     {

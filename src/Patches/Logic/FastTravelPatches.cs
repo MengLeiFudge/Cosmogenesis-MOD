@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Compatibility;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Compatibility;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class FastTravelPatches
     {

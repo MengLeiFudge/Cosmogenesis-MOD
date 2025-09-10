@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
+using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 
-namespace ProjectGenesis.Patches.Logic.ModifyUpgradeTech
+namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech
 {
     internal class UniverseObserveTech
     {

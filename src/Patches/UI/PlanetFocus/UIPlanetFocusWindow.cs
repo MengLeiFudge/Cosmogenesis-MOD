@@ -1,13 +1,13 @@
 ﻿using CommonAPI.Systems;
-using ProjectGenesis.Patches.UI.Utils;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Patches.UI.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using static ProjectGenesis.Patches.Logic.PlanetFocus.PlanetFocusPatches;
-using static ProjectGenesis.Patches.UI.Utils.Util;
-using static ProjectGenesis.Patches.UI.Utils.MyWindowCtl;
+using static ProjectOrbitalRing.Patches.Logic.PlanetFocus.PlanetFocusPatches;
+using static ProjectOrbitalRing.Patches.UI.Utils.Util;
+using static ProjectOrbitalRing.Patches.UI.Utils.MyWindowCtl;
 
-namespace ProjectGenesis.Patches.UI.PlanetFocus
+namespace ProjectOrbitalRing.Patches.UI.PlanetFocus
 {
     /// <summary>
     ///     special thanks to https://github.com/hetima/DSP_PlanetFinder/tree/main/PlanetFinder
@@ -108,7 +108,7 @@ namespace ProjectGenesis.Patches.UI.PlanetFocus
 
         private void OnIconBtnClick(int id)
         {
-            UIRoot.instance.uiGame.itemPicker.currentType = ProjectGenesis.TableID[0];
+            UIRoot.instance.uiGame.itemPicker.currentType = ProjectOrbitalRing.TableID[0];
             UIItemPickerExtension.Popup(new Vector2(-300f, 250f), j => OnPickReturn(j, id), true,
                 itemProto => FocusIds.ContainsKey(itemProto.ID) && GameMain.data.history.TechUnlocked(itemProto.PreTechOverride));
         }

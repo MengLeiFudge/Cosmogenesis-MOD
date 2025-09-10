@@ -1,6 +1,6 @@
 ﻿using BepInEx.Bootstrap;
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     internal static class FastTravelEnabler
     {

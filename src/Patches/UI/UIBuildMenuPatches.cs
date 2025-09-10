@@ -2,15 +2,15 @@
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Patches.UI.Utils;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Patches.UI.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable Unity.UnknownResource
 
-namespace ProjectGenesis.Patches.UI
+namespace ProjectOrbitalRing.Patches.UI
 {
     public static class UIBuildMenuPatches
     {

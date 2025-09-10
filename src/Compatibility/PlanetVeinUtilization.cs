@@ -5,17 +5,17 @@ using System.Reflection.Emit;
 using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
-using ProjectGenesis.Patches.Logic.AddVein;
+using ProjectOrbitalRing.Patches.Logic.AddVein;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     internal static class PlanetVeinUtilization
     {
         internal const string GUID = "testpostpleaseignore.dsp.planet_vein_utilization";
 
-        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectOrbitalRing.Compatibility." + GUID);
 
         internal static void Awake()
         {

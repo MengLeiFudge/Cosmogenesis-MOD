@@ -13,7 +13,7 @@ using ERecipeType_1 = ERecipeType;
 // ReSharper disable AssignNullToNotNullAttribute
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace ProjectGenesis.Utils
+namespace ProjectOrbitalRing.Utils
 {
     internal static class JsonHelper
     {
@@ -36,7 +36,7 @@ namespace ProjectGenesis.Utils
         internal static PrefabDescJson[] PrefabDescs() => GetJsonContent<PrefabDescJson>("prefabDescs");
 
         internal static T[] GetJsonContent<T>(string json) =>
-            JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectGenesis.data.{json}.json"))
+            JsonConvert.DeserializeObject<T[]>(new StreamReader(Assembly.GetManifestResourceStream($"ProjectOrbitalRing.data.{json}.json"))
                .ReadToEnd());
 
         internal static string SerializeObject(object obj) =>

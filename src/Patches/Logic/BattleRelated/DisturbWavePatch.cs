@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HarmonyLib;
 
-namespace ProjectGenesis.Patches.Logic.BattleRelated
+namespace ProjectOrbitalRing.Patches.Logic.BattleRelated
 {
     internal class DisturbWavePatch
     {

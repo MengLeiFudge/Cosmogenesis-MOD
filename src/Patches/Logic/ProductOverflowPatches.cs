@@ -2,11 +2,11 @@
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class ProductOverflowPatches
     {
@@ -60,7 +60,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            switch (ProjectGenesis.ProductOverflowEntry.Value)
+            switch (ProjectOrbitalRing.ProductOverflowEntry.Value)
             {
                 case 0:
                     var b = false;
@@ -85,7 +85,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            switch (ProjectGenesis.ProductOverflowEntry.Value)
+            switch (ProjectOrbitalRing.ProductOverflowEntry.Value)
             {
                 case 0:
                     var b = false;
@@ -114,7 +114,7 @@ namespace ProjectGenesis.Patches.Logic
         {
             if (component.products.Length < 2) return false;
 
-            switch (ProjectGenesis.ProductOverflowEntry.Value)
+            switch (ProjectOrbitalRing.ProductOverflowEntry.Value)
             {
                 case 0:
                     var b = false;

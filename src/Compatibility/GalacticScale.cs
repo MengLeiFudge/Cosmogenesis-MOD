@@ -6,22 +6,22 @@ using System.Reflection.Emit;
 using BepInEx.Bootstrap;
 using GalacticScale;
 using HarmonyLib;
-using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.AddVein;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Patches.Logic;
+using ProjectOrbitalRing.Patches.Logic.AddVein;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
-using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
+using static ProjectOrbitalRing.Patches.Logic.AddVein.ModifyPlanetTheme;
 using PluginInfo = BepInEx.PluginInfo;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     internal static class GalacticScale
     {
         internal const string GUID = "dsp.galactic-scale.2";
 
-        private static readonly Harmony HarmonyPatch = new Harmony("ProjectGenesis.Compatibility." + GUID);
+        private static readonly Harmony HarmonyPatch = new Harmony("ProjectOrbitalRing.Compatibility." + GUID);
 
         internal static void Awake()
         {

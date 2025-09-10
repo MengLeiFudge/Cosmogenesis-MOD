@@ -1,13 +1,13 @@
 ﻿using System;
 using HarmonyLib;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 // ReSharper disable InconsistentNaming
 
-namespace ProjectGenesis.Patches.Logic.QuantumStorage
+namespace ProjectOrbitalRing.Patches.Logic.QuantumStorage
 {
     public static partial class QuantumStoragePatches
     {

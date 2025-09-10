@@ -1,9 +1,9 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.Logic.QuantumStorage
+namespace ProjectOrbitalRing.Patches.Logic.QuantumStorage
 {
     internal readonly struct QuantumStorageData
     {

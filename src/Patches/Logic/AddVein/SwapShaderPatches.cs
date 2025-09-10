@@ -4,7 +4,7 @@ using UnityEngine;
 
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
-namespace ProjectGenesis.Patches.Logic.AddVein
+namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     public static class SwapShaderPatches
     {

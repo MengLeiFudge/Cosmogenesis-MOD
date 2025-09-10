@@ -14,30 +14,31 @@ using xiaoye97;
 using crecheng.DSPModSave;
 using NebulaAPI;
 using NebulaAPI.Interfaces;
-using ProjectGenesis.Compatibility;
-using ProjectGenesis.Patches.Logic;
-using ProjectGenesis.Patches.Logic.AddVein;
-using ProjectGenesis.Patches.Logic.MegaAssembler;
-using ProjectGenesis.Patches.Logic.PlanetFocus;
-using ProjectGenesis.Patches.Logic.QuantumStorage;
-using ProjectGenesis.Patches.Logic.BattleRelated;
-using ProjectGenesis.Patches.Logic.ModifyUpgradeTech;
-using ProjectGenesis.Patches.UI;
-using ProjectGenesis.Patches.UI.PlanetFocus;
-using ProjectGenesis.Utils;
-using static ProjectGenesis.Utils.JsonDataUtils;
-using static ProjectGenesis.Utils.CopyModelUtils;
-using static ProjectGenesis.Utils.TranslateUtils;
-using static ProjectGenesis.Patches.Logic.AddVein.AddVeinPatches;
-using static ProjectGenesis.Patches.Logic.AddVein.ModifyPlanetTheme;
-using static ProjectGenesis.Patches.Logic.LogisticsInterchangePatches;
-using static ProjectGenesis.Patches.UI.ChemicalRecipeFcolPatches;
-using static ProjectGenesis.Patches.Logic.BattleRelated.HPAdjust;
-using static ProjectGenesis.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
-using static ProjectGenesis.Patches.Logic.MathematicalRateEngine.UI;
-using static ProjectGenesis.Patches.Logic.SatellitePowerDistributionPatch;
-using static ProjectGenesis.Patches.Logic.OrbitalRing.OrbitalStationManager;
-using ProjectGenesis.Patches.Logic.OrbitalRing;
+using ProjectOrbitalRing.Compatibility;
+using ProjectOrbitalRing.Patches.Logic;
+using ProjectOrbitalRing.Patches.Logic.AddVein;
+using ProjectOrbitalRing.Patches.Logic.MegaAssembler;
+using ProjectOrbitalRing.Patches.Logic.PlanetFocus;
+using ProjectOrbitalRing.Patches.Logic.QuantumStorage;
+using ProjectOrbitalRing.Patches.Logic.BattleRelated;
+using ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech;
+using ProjectOrbitalRing.Patches.UI;
+using ProjectOrbitalRing.Patches.UI.PlanetFocus;
+using ProjectOrbitalRing.Utils;
+using static ProjectOrbitalRing.Utils.JsonDataUtils;
+using static ProjectOrbitalRing.Utils.CopyModelUtils;
+using static ProjectOrbitalRing.Utils.TranslateUtils;
+using static ProjectOrbitalRing.Patches.Logic.AddVein.AddVeinPatches;
+using static ProjectOrbitalRing.Patches.Logic.AddVein.ModifyPlanetTheme;
+using static ProjectOrbitalRing.Patches.Logic.LogisticsInterchangePatches;
+using static ProjectOrbitalRing.Patches.UI.ChemicalRecipeFcolPatches;
+using static ProjectOrbitalRing.Patches.Logic.BattleRelated.HPAdjust;
+using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
+using static ProjectOrbitalRing.Patches.Logic.MathematicalRateEngine.UI;
+using static ProjectOrbitalRing.Patches.Logic.SatellitePowerDistributionPatch;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.OrbitalStationManager;
+using ProjectOrbitalRing.Patches.Logic.OrbitalRing;
+//ProjectGenesis
 
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedMember.Local
@@ -47,7 +48,7 @@ using ProjectGenesis.Patches.Logic.OrbitalRing;
 // ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable LoopCanBePartlyConvertedToQuery
 
-namespace ProjectGenesis
+namespace ProjectOrbitalRing
 {
     [BepInPlugin(MODGUID, MODNAME, VERSION)]
     [BepInDependency(DSPModSavePlugin.MODGUID)]
@@ -57,10 +58,10 @@ namespace ProjectGenesis
     [BepInDependency(InstallationCheckPlugin.MODGUID, BepInDependency.DependencyFlags.SoftDependency)]
     [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(TabSystem), nameof(LocalizationModule))]
     [ModSaveSettings(LoadOrder = LoadOrder.Preload)]
-    public class ProjectGenesis : BaseUnityPlugin, IModCanSave, IMultiplayerMod
+    public class ProjectOrbitalRing : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
-        public const string MODGUID = "org.LoShin.Cosmogenesis";
-        public const string MODNAME = "Cosmogenesis";
+        public const string MODGUID = "org.LoShin.OrbitalRing";
+        public const string MODNAME = "OrbitalRing";
         public const string VERSION = "0.8.5";
         public const string DEBUGVERSION = "";
 
@@ -89,7 +90,7 @@ namespace ProjectGenesis
         #region Logger
 
             logger = Logger;
-            logger.Log(LogLevel.Info, "GenesisBook Awake");
+            logger.Log(LogLevel.Info, "OrbitalRing Awake");
 
         #endregion Logger
 
@@ -122,15 +123,15 @@ namespace ProjectGenesis
 
             ModPath = Path.GetDirectoryName(executingAssembly.Location);
 
-            var resources = new ResourceData("org.LoShin.GenesisBook", "texpack", ModPath);
+            var resources = new ResourceData("org.LoShin.OrbitalRing", "texpack", ModPath);
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
 
-            var resources_models = new ResourceData("org.LoShin.GenesisBook", "genesis-models", ModPath);
+            var resources_models = new ResourceData("org.LoShin.OrbitalRing", "genesis-models", ModPath);
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
 
-            var resources_lab = new ResourceData("org.LoShin.GenesisBook", "genesis-models-lab", ModPath);
+            var resources_lab = new ResourceData("org.LoShin.OrbitalRing", "genesis-models-lab", ModPath);
             resources_lab.LoadAssetBundle("genesis-models-lab");
             ProtoRegistry.AddResource(resources_lab);
 
@@ -165,7 +166,7 @@ namespace ProjectGenesis
 
             foreach (Type type in executingAssembly.GetTypes())
             {
-                if (type.Namespace?.StartsWith("ProjectGenesis.Patches", StringComparison.Ordinal) == true) { Harmony.PatchAll(type); }
+                if (type.Namespace?.StartsWith("ProjectOrbitalRing.Patches", StringComparison.Ordinal) == true) { Harmony.PatchAll(type); }
             }
 
             TableID = new int[]
@@ -338,7 +339,7 @@ namespace ProjectGenesis
             material.density = 19.35f;
             material.durability = 4.35f;
 
-            // JsonHelper.ExportAsJson(@"D:\Git\ProjectGenesis\data");
+            // JsonHelper.ExportAsJson(@"D:\Git\ProjectOrbitalRing\data");
         }
 
         private static void ProtoPreload()

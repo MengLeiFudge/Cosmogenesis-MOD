@@ -5,9 +5,9 @@ using System.Reflection.Emit;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.Logic
+namespace ProjectOrbitalRing.Patches.Logic
 {
     public static class SatellitePowerDistributionPatch
     {

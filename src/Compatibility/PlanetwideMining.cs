@@ -4,7 +4,7 @@ using BepInEx;
 using BepInEx.Bootstrap;
 using HarmonyLib;
 
-namespace ProjectGenesis.Compatibility
+namespace ProjectOrbitalRing.Compatibility
 {
     internal static class PlanetwideMining
     {

@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ProjectGenesis.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
 using UnityEngine;
 using System.Reflection.Emit;
-using ProjectGenesis.Patches.Logic.AddVein;
-using ProjectGenesis.Utils;
+using ProjectOrbitalRing.Patches.Logic.AddVein;
+using ProjectOrbitalRing.Utils;
 
-namespace ProjectGenesis.Patches.Logic.OrbitalRing
+namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
 {
     internal class OrbitalAssembler
     {

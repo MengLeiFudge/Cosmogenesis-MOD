@@ -10,7 +10,7 @@ using UnityEngine;
 using static GalacticScale.PatchOnUIGalaxySelect;
 using static System.Collections.Specialized.BitVector32;
 
-namespace ProjectGenesis.Patches.Logic.CurvatureLogistics
+namespace ProjectOrbitalRing.Patches.Logic.CurvatureLogistics
 {
     internal class CurvatureLogistics
     {
