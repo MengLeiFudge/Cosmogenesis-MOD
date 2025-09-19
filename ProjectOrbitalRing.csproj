@@ -228,6 +228,7 @@
     <None Include="lib\MoreMegaStructure.dll" />
     <None Include="*.md" />
     <None Include="DefaultPath.props" />
+    <None Include="DefaultPath.props.example" />
     <None Include="nuget.config" />
     <Content Include=".gitignore" />
   </ItemGroup>
