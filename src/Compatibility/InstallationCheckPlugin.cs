@@ -30,8 +30,8 @@ namespace ProjectOrbitalRing.Compatibility
     [BepInDependency(WeaponPlus.GUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class InstallationCheckPlugin : BaseUnityPlugin
     {
-        public const string MODGUID = "org.LoShin.GenesisBook.InstallationCheck";
-        public const string MODNAME = "GenesisBook.InstallationCheck";
+        public const string MODGUID = "org.ProfessorCat305.OrbitalRing.InstallationCheck";
+        public const string MODNAME = "OrbitalRing.InstallationCheck";
         public const string PreferBepinExVersion = "5.4.17";
         private static bool MessageShown, PreloaderInstalled, BepinExVersionMatch;
 

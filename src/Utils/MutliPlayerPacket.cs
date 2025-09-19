@@ -333,19 +333,19 @@ namespace ProjectOrbitalRing.Utils
             SyncSyncGlobalPowerSupplyRemoveData.OnReceive(packet.PlanetId);
     }
 
-    public class GenesisBookPlanetLoadRequest
+    public class OrbitalRingPlanetLoadRequest
     {
-        public GenesisBookPlanetLoadRequest() {}
+        public OrbitalRingPlanetLoadRequest() {}
 
-        public GenesisBookPlanetLoadRequest(int planetId) => PlanetId = planetId;
+        public OrbitalRingPlanetLoadRequest(int planetId) => PlanetId = planetId;
 
         public int PlanetId { get; set; }
     }
 
     [RegisterPacketProcessor]
-    public class GenesisBookPlanetLoadRequestProcessor : BasePacketProcessor<GenesisBookPlanetLoadRequest>
+    public class OrbitalRingPlanetLoadRequestProcessor : BasePacketProcessor<OrbitalRingPlanetLoadRequest>
     {
-        public override void ProcessPacket(GenesisBookPlanetLoadRequest packet, INebulaConnection conn)
+        public override void ProcessPacket(OrbitalRingPlanetLoadRequest packet, INebulaConnection conn)
         {
             if (IsClient) return;
 
@@ -359,15 +359,15 @@ namespace ProjectOrbitalRing.Utils
                 data = p.CloseAndGetBytes();
             }
 
-            conn.SendPacket(new GenesisBookPlanetData(packet.PlanetId, data));
+            conn.SendPacket(new OrbitalRingPlanetData(packet.PlanetId, data));
         }
     }
 
-    public class GenesisBookPlanetData
+    public class OrbitalRingPlanetData
     {
-        public GenesisBookPlanetData() {}
+        public OrbitalRingPlanetData() {}
 
-        public GenesisBookPlanetData(int id, byte[] data)
+        public OrbitalRingPlanetData(int id, byte[] data)
         {
             PlanetId = id;
             BinaryData = data;
@@ -378,11 +378,11 @@ namespace ProjectOrbitalRing.Utils
     }
 
     [RegisterPacketProcessor]
-    public class GenesisBookPlanetDataProcessor : BasePacketProcessor<GenesisBookPlanetData>
+    public class OrbitalRingPlanetDataProcessor : BasePacketProcessor<OrbitalRingPlanetData>
     {
         internal static readonly Dictionary<int, byte[]> PendingData = new Dictionary<int, byte[]>();
 
-        public override void ProcessPacket(GenesisBookPlanetData packet, INebulaConnection conn)
+        public override void ProcessPacket(OrbitalRingPlanetData packet, INebulaConnection conn)
         {
             if (IsHost) return;
 

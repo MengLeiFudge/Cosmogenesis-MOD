@@ -251,8 +251,8 @@
   },
   {
     "Name": "ShowMessageBoxAdditionalText",
-    "ZHCN": "（在MOD加载完成后禁用弹窗显示创世之书的额外信息）",
-    "ENUS": "(Show messagebox about additional information after GenesisBook mod loaded)"
+    "ZHCN": "（在MOD加载完成后禁用弹窗显示星环的额外信息）",
+    "ENUS": "(Show messagebox about additional information after OrbitalRing mod loaded)"
   },
   {
     "Name": "默认设置",

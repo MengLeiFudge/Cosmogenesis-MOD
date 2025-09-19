@@ -1,19 +1,18 @@
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/icon.png)
 
-构建真实宇宙，撰写创世之书。
+构建星环，探索宇宙。
 
-Construct Real Universe. Then leave a GenesisBook.
+Constructing the Orbital Ring, Exploring the Universe.
 
 ## 意见和反馈 | Feedback and suggestions
 
 如果您对本Mod有宝贵的意见或建议，
 请加QQ群（如下）向管理员反馈，欢迎加群交流。
 
-- 创世之书MOD一号节点 991895539
-- 群问题答案：戴森球计划
+- 星环MOD内测群 1035445959
+- 群问题答案：有机晶体
 
-If you have any problems, please contact us in [our Discord server](https://discord.gg/QwMEeaRZZR),
-or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
+If you have any problems, please open a issue via [github](https://github.com/ProfessorCat305/Cosmogenesis-MOD).
 
 ## 如何开始
 
@@ -26,8 +25,8 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 * [LDBTool](https://thunderstore.io/c/dyson-sphere-program/p/xiaoye97/LDBTool/)，向戴森球计划添加物品、配方、科技等
 * [CommonAPI](https://thunderstore.io/c/dyson-sphere-program/p/CommonAPI/CommonAPI/)，向戴森球计划添加物品、配方、科技等
 
-2. 在本项目下输入如下指令：`git update-index --assume-unchanged DefaultPath.props`，以屏蔽您本地的路径改动。
-3. 打开本项目，修改`DefaultPath.props`中的BepinExPath和DSPAssemblyPath，使其与您的实际路径一致，然后关闭/卸载项目。
+2. 打开本项目，将`DefaultPath.props.example`复制到`DefaultPath.props`。
+3. 修改`DefaultPath.props`中的BepinExPath和DSPAssemblyPath，使其与您的实际路径一致，然后关闭/卸载项目。
 4. 在R2中打开与上一步一致的Profile，在ConfigEditor中搜索`BepInEx.cfg`，修改Preloader-DumpAssemblies为true。
 5. 通过R2启动一次游戏（需要启用创世之书），将会自动生成`BepInEx\DumpedAssemblies\DSPGAME\Assembly-CSharp.dll`。
 6. 重新打开本项目，会自动在项目内生成`lib\Assembly-CSharp-publicized.dll`。至此，准备工作已经完成。现在项目不应有任何报错。
@@ -45,8 +44,8 @@ or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
 * [CommonAPI](https://thunderstore.io/c/dyson-sphere-program/p/CommonAPI/CommonAPI/), Add items, recipes, technologies,
   etc. to the Dyson Sphere Program.
 
-2. Enter the following command under this project: `git update-index --assume-unchanged DefaultPath.props` to mask your local path changes.
-3. Open this project, modify the BepinExPath and DSPAssemblyPath in `DefaultPath.props` to match your actual paths, then
+2. Open this project, copy `DefaultPath.props.example` to `DefaultPath.props`.
+3. Modify the BepinExPath and DSPAssemblyPath in `DefaultPath.props` to match your actual paths, then
    close/uninstall the project.
 4. Open a Profile in R2 that matches the previous step, search for `BepInEx.cfg` in the ConfigEditor, and change
    Preloader-DumpAssemblies to true.
