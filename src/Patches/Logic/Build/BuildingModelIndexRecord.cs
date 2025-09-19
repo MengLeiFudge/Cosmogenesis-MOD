@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using ProjectOrbitalRing.Utils;
 using UnityEngine;
-using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
+using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.Unlock_Save_Load;
 using static ProjectOrbitalRing.Patches.Logic.StarGate;
 using static UIPlayerDeliveryPanel;
 

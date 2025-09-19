@@ -805,7 +805,8 @@
         "UnlockRecipes": [
             31,
             32,
-            417
+            417,
+            823
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -830,7 +831,7 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            32.0,
+            36.0,
             -32.0
         ],
         "PreTechs": [
@@ -838,14 +839,12 @@
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6001,
-            6002
+            6003
         ],
         "ItemPoints": [
-            10,
-            15
+            10
         ],
-        "HashNeeded": 144000,
+        "HashNeeded": 216000,
         "UnlockRecipes": [
             33,
             35
@@ -1315,7 +1314,9 @@
         "PreTechs": [
             1001
         ],
-        "PreTechsImplicit": [],
+        "PreTechsImplicit": [
+            1101
+        ],
         "Items": [
             1301,
             1401
@@ -1404,10 +1405,7 @@
         "PreTechs": [
             1202
         ],
-        "PreTechsImplicit": [
-            1202,
-            1303
-        ],
+        "PreTechsImplicit": [],
         "Items": [
             6279,
             6004
@@ -1670,7 +1668,9 @@
         "PreTechs": [
             1124
         ],
-        "PreTechsImplicit": [],
+        "PreTechsImplicit": [
+            1948
+        ],
         "Items": [
             6003
         ],
@@ -2599,7 +2599,7 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": false,
+        "IsLabTech": true,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],
@@ -2608,10 +2608,10 @@
     },
     {
         "ID": 1509,
-        "Name": "T高效翘曲器",
+        "Name": "高效翘曲器",
         "IconPath": "Icons/Tech/1511",
-        "Desc": "能量储存描述",
-        "Conclusion": "能量储存结果",
+        "Desc": "T高效翘曲器",
+        "Conclusion": "T高效翘曲器",
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
@@ -2630,9 +2630,9 @@
         "ItemPoints": [
             10,
             10,
-            30
+            10
         ],
-        "HashNeeded": 360000,
+        "HashNeeded": 144000,
         "UnlockRecipes": [
             79
         ],
@@ -3277,7 +3277,9 @@
         "PreTechs": [
             1601
         ],
-        "PreTechsImplicit": [],
+        "PreTechsImplicit": [
+            1411
+        ],
         "Items": [
             6001
         ],
@@ -4181,7 +4183,7 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            24.0,
+            16.0,
             -48.0
         ],
         "PreTechs": [
@@ -4191,14 +4193,12 @@
             1411
         ],
         "Items": [
-            6001,
-            6002
+            6001
         ],
         "ItemPoints": [
-            10,
             10
         ],
-        "HashNeeded": 108000,
+        "HashNeeded": 18000,
         "UnlockRecipes": [
             781
         ],
@@ -4225,7 +4225,7 @@
         "IsHiddenTech": false,
         "PreItem": [],
         "Position": [
-            48.0,
+            36.0,
             -48.0
         ],
         "PreTechs": [
@@ -4235,14 +4235,12 @@
             1919
         ],
         "Items": [
-            6003,
-            6278
+            6003
         ],
         "ItemPoints": [
-            10,
             10
         ],
-        "HashNeeded": 288000,
+        "HashNeeded": 144000,
         "UnlockRecipes": [
             782
         ],
@@ -5202,12 +5200,12 @@
         "PreItem": null,
         "Position": [
             40.0,
-            -36.0
+            -40.0
         ],
-        "PreTechs": [],
-        "PreTechsImplicit": [
+        "PreTechs": [
             1923
         ],
+        "PreTechsImplicit": [],
         "Items": [
             6003
         ],
@@ -5710,8 +5708,8 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            24.0,
-            -40.0
+            28.0,
+            -44.0
         ],
         "PreTechs": [],
         "PreTechsImplicit": [
@@ -5777,8 +5775,7 @@
         "HashNeeded": 72000,
         "UnlockRecipes": [
             23,
-            701,
-            787
+            822
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -6176,7 +6173,7 @@
         "IsHiddenTech": false,
         "PreItem": null,
         "Position": [
-            28.0,
+            32.0,
             -40.0
         ],
         "PreTechs": [
@@ -6875,13 +6872,9 @@
         ],
         "PreTechsImplicit": [],
         "Items": [
-            6279,
-            6004,
             6005
         ],
         "ItemPoints": [
-            10,
-            10,
             10
         ],
         "HashNeeded": 720000,
@@ -7307,7 +7300,49 @@
         "MaxLevel": 0,
         "LevelCoef1": 0,
         "LevelCoef2": 0,
-        "IsLabTech": false,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    {
+        "ID": 1969,
+        "Name": "高级原油处理",
+        "IconPath": "Icons/Tech/1811",
+        "Desc": "T高级原油处理",
+        "Conclusion": "T高级原油处理",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            28.0,
+            -40.0
+        ],
+        "PreTechs": [
+            1932,
+            1103
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6002
+        ],
+        "ItemPoints": [
+            10
+        ],
+        "HashNeeded": 144000,
+        "UnlockRecipes": [
+            701,
+            787
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
         "PreTechsMax": false,
         "AddItems": [],
         "AddItemCounts": [],

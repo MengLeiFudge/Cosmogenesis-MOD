@@ -49,7 +49,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
 
         public static void CheckParticleColliderShouldRunning(FactorySystem factorySystem, int poolId, ref float power)
         {
-            if (factorySystem.assemblerPool[poolId].speed >= 100000)
+            if (factorySystem.assemblerPool[poolId].recipeType == ERecipeType.Particle && factorySystem.assemblerPool[poolId].speed >= 100000)
             {
                 Vector3 pos = factorySystem.factory.entityPool[factorySystem.assemblerPool[poolId].entityId].pos;
                 int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(pos);
@@ -171,18 +171,18 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
                         {
                             for (int needIdx = 0; needIdx < __instance.needs.Length; needIdx++)
                             {
-                                if (storage[k].itemId == __instance.needs[needIdx] && storage[k].count >= 1 && __instance.served[needIdx] <= 40)
+                                if (storage[k].itemId == __instance.needs[needIdx] && storage[k].count >= 4 && __instance.served[needIdx] <= 40)
                                 {
-                                    __instance.served[needIdx] += 1;
+                                    __instance.served[needIdx] += 4;
                                     //storage[k].count -= 1;
-                                    int inc = OrbitalStationManager.Instance.split_inc(ref storage[k].count, ref storage[k].inc, 1);
+                                    int inc = OrbitalStationManager.Instance.split_inc(ref storage[k].count, ref storage[k].inc, 4);
                                     __instance.incServed[needIdx] += inc;
                                     //storage[k].inc -= inc;
                                 }
                             }
                             for (int productIndex = 0; productIndex < __instance.products.Length; productIndex++)
                             {
-                                if (storage[k].itemId == __instance.products[productIndex] && __instance.produced[productIndex] > 0)
+                                if (storage[k].itemId == __instance.products[productIndex] && __instance.produced[productIndex] > 0 && storage[k].count <= storage[k].max)
                                 {
                                     __instance.produced[productIndex] -= 1;
                                     storage[k].count += 1;

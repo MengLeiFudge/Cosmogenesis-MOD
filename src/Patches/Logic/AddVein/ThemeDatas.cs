@@ -8,6 +8,25 @@ namespace ProjectOrbitalRing.Patches.Logic.AddVein
     {
         internal static readonly Dictionary<int, ThemeData> ThemeDatas = new Dictionary<int, ThemeData>
         {
+            //0 铁
+            //1 铜
+            //2 硅
+            //3 钛
+            //4 石
+            //5 煤
+            //6 油
+            //7 可燃冰
+            //8 金伯利
+            //9 莫桑石
+            //10 有机
+            //11 光栅
+            //12 刺笋
+            //13 单极磁石
+            //14 石墨
+            //15 深层岩浆
+            //16 铀 17
+            //17 黄铁 18
+            //18 冰 19
             {
                 1, // 地中海
                 new ThemeData(new[] { 1, 14 }, new[] { 5, 2 }, new[] { 0.5f, 0.2f }, new[] { 0.4f, 1.0f },
@@ -51,7 +70,7 @@ namespace ProjectOrbitalRing.Patches.Logic.AddVein
             },
             {
                 9, // 熔岩
-                new ThemeData(new[] { 0, 1, 2, 5, 14, 15 }, new[] { 2, 2, 3, 0, 6, 22 }, new[] { 0.2f, 0.2f, 0.3f, 0, 0.3f, 1.0f }, new[] { 0.6f, 0.6f, 0.6f, 0, 0.3f, 1.0f },
+                new ThemeData(new[] { 0, 1, 2, 3, 5, 14, 15 }, new[] { 2, 2, 3, 6, 0, 6, 22 }, new[] { 0.2f, 0.2f, 0.3f, 0.4f, 0, 0.3f, 1.0f }, new[] { 0.6f, 0.6f, 0.6f, 0.7f, 0, 0.3f, 1.0f },
                     new[] { 0, 1, }, new[]
                 {
                     0.0f, 0.5f, 0.8f, 0.3f,
@@ -90,7 +109,7 @@ namespace ProjectOrbitalRing.Patches.Logic.AddVein
             },
             {
                 12, // 戈壁
-                new ThemeData(new[] { 0, 3, 5, 14, 15 }, new[] { 7, 7, 0, 3, 12 }, new[] { 0.4f, 0.4f, 0, 0.7f, 1.0f }, new[] { 0.8f, 1f, 0, 0.7f, 0.9f },
+                new ThemeData(new[] { 0, 3, 5, 14, 15 }, new[] { 7, 4, 0, 3, 12 }, new[] { 0.4f, 0.4f, 0, 0.7f, 1.0f }, new[] { 0.8f, 1f, 0, 0.7f, 0.9f },
                     new[] { 0 }, new[]
                 {
                     0.0f, 0.8f, 0.6f, 0.6f,
@@ -103,7 +122,7 @@ namespace ProjectOrbitalRing.Patches.Logic.AddVein
             },
             {
                 13, // 火山灰
-                new ThemeData(new[] { 2, 5, 14, 15 }, new[] { 10, 0, 6, 18 }, new[] { 0.6f, 0, 0.5f, 1.0f }, new[] { 0.6f, 0, 0.3f, 1.0f },
+                new ThemeData(new[] { 2, 3, 5, 14, 15 }, new[] { 10, 5, 0, 6, 18 }, new[] { 0.6f, 0.5f, 0, 0.5f, 1.0f }, new[] { 0.6f, 0.6f, 0, 0.3f, 1.0f },
                     Array.Empty<int>(), Array.Empty<float>(), new[] { 9, 17, 18}, new[]
                 {
                     0.0f, 1.0f, 0.6f, 0.4f, //

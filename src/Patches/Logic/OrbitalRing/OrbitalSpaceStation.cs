@@ -370,7 +370,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
         public static bool RematchLocalPairsPatch(ref StationComponent __instance)
         {
             // 屏蔽轨道物流港的行星内运输航线计算，让运输机只送太空电梯
-            if (__instance.workDroneDatas.Length <= 0)
+            if (!__instance.isVeinCollector && __instance.workDroneDatas.Length <= 0)
             {
                 return false;
             }

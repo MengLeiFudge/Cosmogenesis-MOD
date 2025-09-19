@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -275,9 +276,11 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
 
         private void isOrbitalRingTechunlock()
         {
+            if (GameMain.history == null) { return; }
             if (GameMain.history.TechUnlocked(1951)) { return; }
             if (IsFull())
             {
+                Debug.LogFormat("scpppppppppppppppppppp spaceStationCount {0} Capacity {1}", spaceStationCount, Capacity);
                 GameMain.history.UnlockTech(1951);
             }
         }

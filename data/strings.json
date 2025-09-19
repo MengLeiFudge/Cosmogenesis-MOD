@@ -1090,14 +1090,24 @@
         "ENUS": "The cyclotron particle accelerator composed of a circular particle channel and an electromagnetic field is an important tool in high-energy physics."
     },
     {
+        "Name": "高效翘曲器",
+        "ZHCN": "高效翘曲器",
+        "ENUS": "Efficient Warper"
+    },
+    {
+        "Name": "T高效翘曲器",
+        "ZHCN": "由奇异物质直接做翘曲器是种浪费，经过工程师们的多次迭代，使用引力透镜制作翘曲器的原料利用率是奇异物质的10倍。",
+        "ENUS": "It is a waste to directly make a warping device from exotic matter. After multiple iterations by engineers, the utilization rate of raw materials for using gravitational lenses to make warping devices is 10 times that of exotic matter."
+    },
+    {
         "Name": "曲率引擎",
         "ZHCN": "曲率引擎",
         "ENUS": "Curvature Engine"
     },
     {
         "Name": "I曲率引擎",
-        "ZHCN": "通过量子计算机精细操控引力透镜组成的空间曲率扭曲核心，组成了深空航行的关键——曲率引擎。",
-        "ENUS": "The key to deep space navigation, the curvature engine, is formed by finely manipulating the spatial curvature distortion core composed of gravitational lenses through quantum computers."
+        "ZHCN": "通过量子计算机精细操控引力发生装置组成的空间曲率扭曲核心，组成了深空航行的关键——曲率引擎。",
+        "ENUS": "The key to deep space navigation, the curvature engine, is formed by finely manipulating the spatial curvature distortion core composed of Gravity generator through quantum computers."
     },
     {
         "Name": "I湮灭约束球",
@@ -1670,6 +1680,26 @@
         "ENUS": "Under the high temperature and high pressure of plasma, heavy oil undergoes hydrogenation, cracking, and isomerization reactions, converting into light oil."
     },
     {
+        "Name": "玻璃基板电路",
+        "ZHCN": "玻璃基板电路",
+        "ENUS": "Glass Substrate Circuit"
+    },
+    {
+        "Name": "R玻璃基板电路",
+        "ZHCN": "电路板即导电的铜作为电路刻蚀在绝缘的基板上，在没有塑料的场合，可以使用玻璃作为基板，尽管其精度不高且易碎。",
+        "ENUS": "The circuit board is made of conductive copper etched onto an insulating substrate. In the absence of plastic, glass can be used as the substrate, although its accuracy is not high and it is fragile."
+    },
+    {
+        "Name": "石墨烯基板电路",
+        "ZHCN": "石墨烯基板电路",
+        "ENUS": "Graphene Substrate Circuit"
+    },
+    {
+        "Name": "R石墨烯基板电路",
+        "ZHCN": "石墨烯基板是以单层碳原子组成的二维材料为核心的高性能基板，兼具超高导热性、高电子迁移率和优异机械强度。在高频通信、热管理、柔性基板领域有重要应用。",
+        "ENUS": "Graphene substrate is a high-performance substrate composed of a two-dimensional material consisting of a single layer of carbon atoms, which combines ultra-high thermal conductivity, high electron mobility, and excellent mechanical strength. It has important applications in high-frequency communication, thermal management, and flexible substrate fields."
+    },
+    {
         "Name": "菌丝母株",
         "ZHCN": "菌丝母株",
         "ENUS": "Mycelium Mother Plant"
@@ -2006,8 +2036,8 @@
     },
     {
         "Name": "R晶圆（四代半导体）",
-        "ZHCN": "将工业级金刚石用粒子打印重整修补为晶圆级金刚石，并在其上雕刻超大规模集成电路。",
-        "ENUS": "Print and repair industrial grade diamond particles into wafer level diamond, and engrave ultra large-scale integrated circuits on it."
+        "ZHCN": "将工业级金刚石用粒子打印重整修补为晶圆级金刚石，并与铜粒子一起在其上打印出超大规模集成电路。",
+        "ENUS": "Transforming industrial grade diamond into wafer level diamond through particle printing and repairing, and printing ultra large scale integrated circuits on it together with copper particles."
     },
     {
         "Name": "晶圆",
@@ -2016,8 +2046,8 @@
     },
     {
         "Name": "R晶圆",
-        "ZHCN": "将纯净碳化硅用金刚石线或激光切割，得到一片片薄如蝉翼，刚硬易碎的晶圆。",
-        "ENUS": "Cut pure silicon carbide with diamond wire or laser to obtain thin, rigid and fragile wafers like cicada wings."
+        "ZHCN": "将纯净碳化硅用金刚石线或激光切割，得到一片片薄如蝉翼，刚硬易碎的晶圆，随后在其上进行光刻，注铜，沉积，清洗，得到一层纳米级的电路，将这个工艺重复80遍，最终叠出80层超大规模集成电路。",
+        "ENUS": "Pure silicon carbide is cut with diamond wire or laser to obtain thin, rigid and fragile wafers, which are then subjected to photolithography, copper injection, deposition, and cleaning to obtain a layer of nanoscale circuits. This process is repeated 80 times to finally stack 80 layers of ultra large scale integrated circuits."
     },
     {
         "Name": "酸中和",
@@ -2834,6 +2864,11 @@
         "Name": "钢材冶炼描述",
         "ZHCN": "利用熔炉对铁块铁块进一步冶炼，在极其严格可控的温度条件下，进一步改善材料的晶型，锻造出S136、310S、2205、D32钢等高机械性能钢材。",
         "ENUS": "Using a furnace to further refine iron blocks, under extremely strict and controllable temperature conditions, the crystal structure of the material is further improved, forging high mechanical performance steels such as S136, 310S, 2205, D32, etc."
+    },
+    {
+        "Name": "T高级原油处理",
+        "ZHCN": "石油作为工业的“血液”，其产量直接决定了诸多工业的产能，每年依旧有数不清的经费用于如何提高石油的利用率，高级原油处理便是其中一个成果，更高的轻油产量，还能副产硫酸，当然，这也要求伊卡洛斯有更高级的产线布局能力。",
+        "ENUS": "As the \"blood\" of industry, the output of oil directly determines the production capacity of many industries. Every year, there are still countless funds used to improve the utilization rate of oil, and advanced crude oil processing is one of the achievements. Higher light oil production can also produce sulfuric acid as a byproduct. Of course, this also requires Icarus to have more advanced production line layout capabilities."
     },
     {
         "Name": "R高级原油处理",

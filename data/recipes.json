@@ -127,14 +127,14 @@
     },
     {
         "ID": 6,
-        "Name": "电路板",
-        "Description": "",
+        "Name": "玻璃基板电路",
+        "Description": "R玻璃基板电路",
         "IconPath": "",
         "Type": 4,
         "GridIndex": 1102,
-        "Time": 60,
+        "Time": 120,
         "Input": [
-            1101,
+            1110,
             1104
         ],
         "InCounts": [
@@ -145,9 +145,9 @@
             1301
         ],
         "OutCounts": [
-            2
+            1
         ],
-        "Explicit": false,
+        "Explicit": true,
         "Handcraft": true,
         "NonProductive": false
     },
@@ -541,7 +541,7 @@
         "InCounts": [
             5,
             2,
-            2
+            1
         ],
         "Output": [
             1406
@@ -745,7 +745,7 @@
         "Description": "R光量子比特",
         "IconPath": "", // Icons/ItemRecipe/casimir-crystal-lv2
         "Type": 10,
-        "GridIndex": 1407,
+        "GridIndex": 1408,
         "Time": 240,
         "Input": [
             1014,
@@ -1099,7 +1099,7 @@
         ],
         "InCounts": [
             12,
-            6,
+            4,
             2,
             4
         ],
@@ -1220,7 +1220,7 @@
         "InCounts": [
             1,
             4,
-            2,
+            1,
             4
         ],
         "Output": [
@@ -1347,7 +1347,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 1305,
+        "GridIndex": 1306,
         "Time": 120,
         "Input": [
             1301,
@@ -1355,7 +1355,7 @@
             1115
         ],
         "InCounts": [
-            2,
+            1,
             2,
             2
         ],
@@ -1375,7 +1375,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 1307,
+        "GridIndex": 1308,
         "Time": 240,
         "Input": [
             1206,
@@ -1403,8 +1403,8 @@
         "Description": "R晶圆",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 1304,
-        "Time": 120,
+        "GridIndex": 1305,
+        "Time": 480,
         "Input": [
             1113,
             1104
@@ -1429,8 +1429,8 @@
         "Description": "R晶圆（四代半导体）",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 1404,
-        "Time": 120,
+        "GridIndex": 1405,
+        "Time": 240,
         "Input": [
             1112,
             1104
@@ -1885,7 +1885,7 @@
         ],
         "InCounts": [
             20,
-            2,
+            1,
             2,
             10
         ],
@@ -1918,7 +1918,7 @@
             20,
             20,
             10,
-            10,
+            6,
             20
         ],
         "Output": [
@@ -1942,13 +1942,11 @@
         "Input": [
             2202,
             1205,
-            1118,
             6266
         ],
         "InCounts": [
             1,
             10,
-            2,
             1
         ],
         "Output": [
@@ -2083,7 +2081,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 1308,
+        "GridIndex": 1309,
         "Time": 60,
         "Input": [
             1127,
@@ -2109,7 +2107,7 @@
         "Description": "R空间翘曲器（高级）",
         "IconPath": "Icons/ItemRecipe/space-warper-lv2",
         "Type": 10,
-        "GridIndex": 1408,
+        "GridIndex": 1409,
         "Time": 240,
         "Input": [
             1303,
@@ -2204,7 +2202,7 @@
         "InCounts": [
             15,
             15,
-            10
+            6
         ],
         "Output": [
             2312
@@ -2544,7 +2542,7 @@
         ],
         "InCounts": [
             50,
-            20,
+            10,
             10,
             10
         ],
@@ -2574,7 +2572,7 @@
         ],
         "InCounts": [
             10,
-            4,
+            2,
             1,
             2
         ],
@@ -2646,7 +2644,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 1306,
+        "GridIndex": 1307,
         "Time": 240,
         "Input": [
             1205,
@@ -2674,7 +2672,7 @@
         "Description": "R粒子容器（高效）",
         "IconPath": "Icons/ItemRecipe/partical-capacitor-lv2",
         "Type": 4,
-        "GridIndex": 1406,
+        "GridIndex": 1407,
         "Time": 240,
         "Input": [
             1016,
@@ -3039,7 +3037,7 @@
         ],
         "InCounts": [
             20,
-            5,
+            6,
             50,
             10,
             4
@@ -3125,7 +3123,7 @@
         "InCounts": [
             8,
             4,
-            4,
+            1,
             12
         ],
         "Output": [
@@ -3297,7 +3295,7 @@
         ],
         "InCounts": [
             8,
-            2,
+            1,
             1
         ],
         "Output": [
@@ -3416,7 +3414,7 @@
         "InCounts": [
             9,
             2,
-            4,
+            2,
             8,
             8
         ],
@@ -3477,7 +3475,7 @@
         ],
         "InCounts": [
             20,
-            6,
+            10,
             10,
             15,
             4
@@ -3567,7 +3565,7 @@
         "InCounts": [
             2,
             12,
-            4,
+            6,
             4
         ],
         "Output": [
@@ -4068,7 +4066,7 @@
         ],
         "InCounts": [
             1,
-            4,
+            1,
             12,
             4
         ],
@@ -5220,12 +5218,12 @@
     },
     {
         "ID": 516,
-        "Name": "燃油燃料棒",
+        "Name": "化学燃料棒",
         "Description": "",
         "IconPath": "",
         "Type": 4,
         "GridIndex": 1214,
-        "Time": 600,
+        "Time": 360,
         "Input": [
             7009,
             1103
@@ -5250,7 +5248,7 @@
         "Description": "R主板（金属封装）",
         "IconPath": "Assets/texpack/高效处理器",
         "Type": 4,
-        "GridIndex": 1405,
+        "GridIndex": 1406,
         "Time": 120,
         "Input": [
             1301,
@@ -5258,7 +5256,7 @@
             1106
         ],
         "InCounts": [
-            2,
+            1,
             2,
             1
         ],
@@ -5952,20 +5950,20 @@
         "IconPath": "",
         "Type": 14,
         "GridIndex": 4411,
-        "Time": 60,
+        "Time": 180,
         "Input": [
             1030,
             1000
         ],
         "InCounts": [
-            12,
+            9,
             4
         ],
         "Output": [
             1115
         ],
         "OutCounts": [
-            1
+            3
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -6652,9 +6650,9 @@
             1104
         ],
         "InCounts": [
-            16,
+            32,
             40,
-            10,
+            8,
             40
         ],
         "Output": [
@@ -6698,7 +6696,7 @@
         "IconPath": "",
         "Type": 15,
         "GridIndex": 1804,
-        "Time": 480,
+        "Time": 960,
         "Input": [
             1303,
             7804
@@ -6711,7 +6709,7 @@
             6278
         ],
         "OutCounts": [
-            1
+            2
         ],
         "Explicit": false,
         "Handcraft": false,
@@ -6811,7 +6809,7 @@
         ],
         "InCounts": [
             40,
-            8,
+            6,
             16,
             8
         ],
@@ -6898,7 +6896,7 @@
         "InCounts": [
             80,
             40,
-            10,
+            8,
             6
         ],
         "Output": [
@@ -7024,7 +7022,7 @@
         "IconPath": "",
         "Type": 4,
         "GridIndex": 1114,
-        "Time": 600,
+        "Time": 360,
         "Input": [
             1120,
             1103
@@ -7212,7 +7210,7 @@
         "InCounts": [
             40,
             12,
-            10,
+            4,
             6
         ],
         "Output": [
@@ -7222,6 +7220,58 @@
             1
         ],
         "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 822,
+        "Name": "电路板",
+        "Description": "I电路板",
+        "IconPath": "",
+        "Type": 4,
+        "GridIndex": 1304,
+        "Time": 60,
+        "Input": [
+            1115,
+            1104
+        ],
+        "InCounts": [
+            1,
+            1
+        ],
+        "Output": [
+            1301
+        ],
+        "OutCounts": [
+            2
+        ],
+        "Explicit": false,
+        "Handcraft": true,
+        "NonProductive": false
+    },
+    {
+        "ID": 823,
+        "Name": "石墨烯基板电路",
+        "Description": "R石墨烯基板电路",
+        "IconPath": "",
+        "Type": 4,
+        "GridIndex": 1404,
+        "Time": 60,
+        "Input": [
+            1123,
+            1104
+        ],
+        "InCounts": [
+            1,
+            1
+        ],
+        "Output": [
+            1301
+        ],
+        "OutCounts": [
+            2
+        ],
+        "Explicit": true,
         "Handcraft": false,
         "NonProductive": false
     }

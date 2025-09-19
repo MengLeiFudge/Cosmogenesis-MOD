@@ -83,9 +83,9 @@ namespace ProjectOrbitalRing.Compatibility
 
             string msg = null;
 
-            if (ProjectOrbitalRing.ShowMessageBoxEntry.Value) msg = "GenesisBookLoadMessage";
+            if (ProjectOrbitalRing.ShowMessageBoxEntry.Value) msg = "OrbitalRingLoadMessage";
 
-            if (!ProjectOrbitalRing.LoadCompleted) msg = "ProjectGenesisNotLoaded";
+            if (!ProjectOrbitalRing.LoadCompleted) msg = "ProjectOrbitalRingNotLoaded";
 
             if (!BepinExVersionMatch) msg = "BepinExVersionNotMatch";
 
@@ -93,11 +93,11 @@ namespace ProjectOrbitalRing.Compatibility
 
             if (string.IsNullOrEmpty(msg)) return;
 
-            UIMessageBox.Show("GenesisBookLoadTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(),
+            UIMessageBox.Show("OrbitalRingTitle".TranslateFromJson(), msg.TranslateFromJson(), "确定".TranslateFromJson(),
                 "跳转交流群".TranslateFromJson(), "跳转日志".TranslateFromJson(), UIMessageBox.INFO, null, OpenBrowser, OpenLog);
         }
 
-        public static void OpenBrowser() => Application.OpenURL("创世之书链接".TranslateFromJson());
+        public static void OpenBrowser() => Application.OpenURL("星环链接".TranslateFromJson());
 
         public static void OpenLog() => Application.OpenURL(Path.Combine(ProjectOrbitalRing.ModPath, "CHANGELOG.md"));
     }

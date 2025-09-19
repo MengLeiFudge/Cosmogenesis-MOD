@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
+using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.Unlock_Save_Load;
 
 namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech
 {

@@ -62,7 +62,7 @@ namespace ProjectOrbitalRing
     {
         public const string MODGUID = "org.LoShin.OrbitalRing";
         public const string MODNAME = "OrbitalRing";
-        public const string VERSION = "0.8.5";
+        public const string VERSION = "0.8.8";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -200,7 +200,7 @@ namespace ProjectOrbitalRing
             QuantumStoragePatches.Export(w);
             AdvancedLaserPatches.Export(w);
             GlobalPowerSupplyPatches.Export(w);
-            ModifyUpgradeTech.Export(w);
+            Unlock_Save_Load.Export(w);
             StarGate.Export(w);
             OrbitalStationManager.Export(w);
         }
@@ -213,7 +213,7 @@ namespace ProjectOrbitalRing
             QuantumStoragePatches.Import(r);
             AdvancedLaserPatches.Import(r);
             GlobalPowerSupplyPatches.Import(r);
-            ModifyUpgradeTech.Import(r);
+            Unlock_Save_Load.Import(r);
             StarGate.Import(r);
             OrbitalStationManager.Import(r);
         }

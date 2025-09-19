@@ -52,9 +52,6 @@
     <Reference Include="GalacticScale">
       <HintPath>lib\GalacticScale-publicized.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="MoreMegaStructure">
       <HintPath>lib\MoreMegaStructure.dll</HintPath>
     </Reference>
@@ -101,6 +98,9 @@
     <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.2.0" />
     <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0" />
     <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Compatibility\BlueprintTweaks.cs" />
@@ -156,7 +156,9 @@
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\ModifyTechText.cs" />
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\ModifyUpgradeTech.cs" />
     <Compile Include="src\Patches\Logic\ModifyUpgradeTech\UniverseObserveTech.cs" />
+    <Compile Include="src\Patches\Logic\ModifyUpgradeTech\Unlock_Save_Load.cs" />
     <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalAssembler.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalATField.cs" />
     <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalPowerGen.cs" />
     <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalStationManager.cs" />
     <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalSpaceStation.cs" />
@@ -223,7 +225,10 @@
     <Compile Include="src\Utils\TranspilerLogUtils.cs" />
     <EmbeddedResource Include="data\*.json" />
     <None Include="assets\*" />
-    <None Include="lib\*" />
+    <None Include="lib\Assembly-CSharp-publicized.dll" />
+    <None Include="lib\BepInEx.AssemblyPublicizer.Cli.exe" />
+    <None Include="lib\GalacticScale-publicized.dll" />
+    <None Include="lib\MoreMegaStructure.dll" />
     <None Include="*.md" />
     <None Include="DefaultPath.props" />
     <None Include="nuget.config" />
@@ -250,6 +255,7 @@
     <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack" />
     <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models" />
     <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(ReleasePath)plugins\genesis-models-lab" />
-    <Copy SourceFiles="$(SolutionDir)lib\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll" />
+    <Copy SourceFiles="C:\Users\45106\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll" /> 
   </Target>
 </Project>
+
