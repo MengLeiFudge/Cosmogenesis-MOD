@@ -58,9 +58,6 @@
     <Reference Include="mscorlib">
       <HintPath>$(DSPAssemblyPath)mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="netstandard">
-      <HintPath>$(DSPAssemblyPath)netstandard.dll</HintPath>
-    </Reference>
     <Reference Include="System.Diagnostics.StackTrace">
       <HintPath>$(DSPAssemblyPath)System.Diagnostics.StackTrace.dll</HintPath>
     </Reference>
@@ -99,7 +96,7 @@
     <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0" />
     <PackageReference Include="DysonSphereProgram.Modding.NebulaMultiplayerModApi" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1</Version>
+      <Version>13.0.4</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -255,7 +252,7 @@
     <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(ReleasePath)plugins\texpack" />
     <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(ReleasePath)plugins\genesis-models" />
     <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(ReleasePath)plugins\genesis-models-lab" />
-    <Copy SourceFiles="C:\Users\45106\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll" /> 
+    <Copy SourceFiles="$(SolutionDir)bin\Debug\Newtonsoft.Json.dll" DestinationFiles="$(ReleasePath)plugins\Newtonsoft.Json.dll" />
   </Target>
 </Project>
 

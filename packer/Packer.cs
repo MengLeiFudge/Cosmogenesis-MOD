@@ -8,7 +8,7 @@ namespace ProjectOrbitalRing
 {
     internal static class Packer
     {
-        private const string SolutionPath = @"D:\Git\ProjectOrbitalRing";
+        private const string SolutionPath = @"..\..\..";
 
         internal static void Main()
         {
