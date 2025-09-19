@@ -60,7 +60,7 @@ namespace ProjectOrbitalRing
     [ModSaveSettings(LoadOrder = LoadOrder.Preload)]
     public class ProjectOrbitalRing : BaseUnityPlugin, IModCanSave, IMultiplayerMod
     {
-        public const string MODGUID = "org.LoShin.OrbitalRing";
+        public const string MODGUID = "org.ProfessorCat305.OrbitalRing";
         public const string MODNAME = "OrbitalRing";
         public const string VERSION = "0.8.8";
         public const string DEBUGVERSION = "";
@@ -105,7 +105,7 @@ namespace ProjectOrbitalRing
             //    "Enable Tech Exploration Mode, which will hide locked techs in tech tree.\n启用科技探索模式，启用后将隐藏未解锁的科技");
 
             ShowMessageBoxEntry = Config.Bind("config", "ShowMessageBox", true,
-                "Show message when GenesisBook is loaded.\n首次加载时的提示信息");
+                "Show message when OrbitalRing is loaded.\n首次加载时的提示信息");
 
             //ProductOverflowEntry = Config.Bind("config", "ProductOverflow", 0,
             //    "Changing the condition for stopping production of some recipes from single product pile up to all product pile up.\n将部分配方停止生产的条件由单产物堆积改为所有产物均堆积");
@@ -123,15 +123,15 @@ namespace ProjectOrbitalRing
 
             ModPath = Path.GetDirectoryName(executingAssembly.Location);
 
-            var resources = new ResourceData("org.LoShin.OrbitalRing", "texpack", ModPath);
+            var resources = new ResourceData("org.ProfessorCat305.OrbitalRing", "texpack", ModPath);
             resources.LoadAssetBundle("texpack");
             ProtoRegistry.AddResource(resources);
 
-            var resources_models = new ResourceData("org.LoShin.OrbitalRing", "genesis-models", ModPath);
+            var resources_models = new ResourceData("org.ProfessorCat305.OrbitalRing", "genesis-models", ModPath);
             resources_models.LoadAssetBundle("genesis-models");
             ProtoRegistry.AddResource(resources_models);
 
-            var resources_lab = new ResourceData("org.LoShin.OrbitalRing", "genesis-models-lab", ModPath);
+            var resources_lab = new ResourceData("org.ProfessorCat305.OrbitalRing", "genesis-models-lab", ModPath);
             resources_lab.LoadAssetBundle("genesis-models-lab");
             ProtoRegistry.AddResource(resources_lab);
 
@@ -155,10 +155,10 @@ namespace ProjectOrbitalRing
 
             NebulaModAPI.OnPlanetLoadRequest += planetId =>
             {
-                NebulaModAPI.MultiplayerSession.Network.SendPacket(new GenesisBookPlanetLoadRequest(planetId));
+                NebulaModAPI.MultiplayerSession.Network.SendPacket(new OrbitalRingPlanetLoadRequest(planetId));
             };
 
-            NebulaModAPI.OnPlanetLoadFinished += GenesisBookPlanetDataProcessor.ProcessBytesLater;
+            NebulaModAPI.OnPlanetLoadFinished += OrbitalRingPlanetDataProcessor.ProcessBytesLater;
 
         #endregion NebulaModAPI
 

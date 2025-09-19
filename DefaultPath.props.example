@@ -4,7 +4,7 @@
         <!-- BepinExPath for debug output -->
         <BepinExPath>C:\Users\45106\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx\</BepinExPath>
         <!-- DebugModDir for debug output -->
-        <DebugModDir>ProfessorCat305-OrbitalRingTest</DebugModDir>
+        <DebugModDir>ProfessorCat305-OrbitalRing</DebugModDir>
         <!-- DSPAssemblyPath for import unity dll -->
         <DSPAssemblyPath>D:\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\</DSPAssemblyPath>
         <!-- ReleasePath for release -->

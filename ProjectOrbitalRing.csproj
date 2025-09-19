@@ -246,6 +246,7 @@
     <Copy SourceFiles="$(SolutionDir)assets\texpack" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\texpack" />
     <Copy SourceFiles="$(SolutionDir)assets\genesis-models" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models" />
     <Copy SourceFiles="$(SolutionDir)assets\genesis-models-lab" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\genesis-models-lab" />
+    <Copy SourceFiles="$(SolutionDir)bin\Debug\Newtonsoft.Json.dll" DestinationFiles="$(BepinExPath)plugins\$(DebugModDir)\Newtonsoft.Json.dll" />
     <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(ReleasePath)plugins\$(TargetName).dll" />
     <Copy SourceFiles="README.md" DestinationFiles="$(ReleasePath)README.md" />
     <Copy SourceFiles="CHANGELOG.md" DestinationFiles="$(ReleasePath)CHANGELOG.md" />

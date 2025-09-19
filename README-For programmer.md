@@ -1,19 +1,18 @@
 ![img.png](https://assets.awbugl.top/dsp-genesisbook/icon.png)
 
-构建真实宇宙，撰写创世之书。
+构建星环，探索宇宙。
 
-Construct Real Universe. Then leave a GenesisBook.
+Constructing the Orbital Ring, Exploring the Universe.
 
 ## 意见和反馈 | Feedback and suggestions
 
 如果您对本Mod有宝贵的意见或建议，
 请加QQ群（如下）向管理员反馈，欢迎加群交流。
 
-- 创世之书MOD一号节点 991895539
-- 群问题答案：戴森球计划
+- 星环MOD内测群 1035445959
+- 群问题答案：有机晶体
 
-If you have any problems, please contact us in [our Discord server](https://discord.gg/QwMEeaRZZR),
-or open a issue via [github](https://github.com/Awbugl/ProjectGenesis).
+If you have any problems, please open a issue via [github](https://github.com/ProfessorCat305/Cosmogenesis-MOD).
 
 ## 如何开始
 

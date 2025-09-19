@@ -19,7 +19,7 @@ namespace ProjectOrbitalRing
             File.WriteAllText(Path.Combine(releasePath, "manifest.json"),
                 JsonConvert.SerializeObject(new ManifestObject(), Formatting.Indented));
 
-            var zipName = $"GenesisBook-v{ProjectOrbitalRing.VERSION}{ProjectOrbitalRing.DEBUGVERSION}.zip";
+            var zipName = $"OrbitalRing-v{ProjectOrbitalRing.VERSION}{ProjectOrbitalRing.DEBUGVERSION}.zip";
 
             string archive = Path.Combine(SolutionPath, zipName);
 
@@ -35,14 +35,16 @@ namespace ProjectOrbitalRing
 
     public class ManifestObject
     {
-        [JsonProperty("name")] public string Name { get; set; } = "GenesisBook";
+        [JsonProperty("name")] public string Name { get; set; } = "OrbitalRing";
+
+        [JsonProperty("author")] public string Author { get; set; } = "ProfessorCat305";
 
         [JsonProperty("version_number")] public string VersionNumber { get; set; } = ProjectOrbitalRing.VERSION;
 
-        [JsonProperty("website_url")] public string WebsiteURL { get; set; } = "https://github.com/Awbugl/ProjectOrbitalRing";
+        [JsonProperty("website_url")] public string WebsiteURL { get; set; } = "https://github.com/ProfessorCat305/Cosmogenesis-MOD";
 
         [JsonProperty("description")]
-        public string Description { get; set; } = "构建真实宇宙，撰写创世之书。新矿物，新材料，新配方，新科技，新机制。Construct Real Universe. Then leave a GenesisBook. New vein, new material, new recipe, new technology, new structure.";
+        public string Description { get; set; } = "构建星环，探索宇宙。Constructing the Orbital Ring, Exploring the Universe.";
 
         [JsonProperty("dependencies")]
         public string[] Dependencies { get; set; } = { "CommonAPI-CommonAPI-1.6.5", "nebula-NebulaMultiplayerModApi-2.0.0", };
