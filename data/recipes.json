@@ -4482,7 +4482,7 @@
         "Description": "R石墨（高效）",
         "IconPath": "",
         "Type": 1,
-        "GridIndex": 3705,
+        "GridIndex": 3706,
         "Time": 60,
         "Input": [
             7706
@@ -4536,7 +4536,7 @@
             6202
         ],
         "InCounts": [
-            4
+            3
         ],
         "Output": [
             6251,
@@ -4694,7 +4694,7 @@
         "Description": "R铜板浇筑",
         "IconPath": "",
         "Type": 1,
-        "GridIndex": 3502,
+        "GridIndex": 3503,
         "Time": 60,
         "Input": [
             6251
@@ -4718,7 +4718,7 @@
         "Description": "R钢浇筑",
         "IconPath": "",
         "Type": 1,
-        "GridIndex": 3503,
+        "GridIndex": 3502,
         "Time": 180,
         "Input": [
             6251
@@ -4742,7 +4742,7 @@
         "Description": "R岩浆冷却",
         "IconPath": "",
         "Type": 1,
-        "GridIndex": 3504,
+        "GridIndex": 3604,
         "Time": 120,
         "Input": [
             6251
@@ -4766,7 +4766,7 @@
         "Description": "R岩浆炼硅",
         "IconPath": "",
         "Type": 1,
-        "GridIndex": 3505,
+        "GridIndex": 3504,
         "Time": 240,
         "Input": [
             6251
@@ -4871,8 +4871,8 @@
         "Name": "高级岩浆炼磁铁",
         "Description": "R高级岩浆炼磁铁",
         "IconPath": "",
-        "Type": 11,
-        "GridIndex": 3507,
+        "Type": 1,
+        "GridIndex": 3509,
         "Time": 120,
         "Input": [
             6203,
@@ -4880,13 +4880,13 @@
         ],
         "InCounts": [
             1,
-            6
+            12
         ],
         "Output": [
             1102
         ],
         "OutCounts": [
-            4
+            12
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -4948,23 +4948,27 @@
     },
     {
         "ID": 422,
-        "Name": "高级岩浆炼钛",
-        "Description": "R高级岩浆炼钛",
+        "Name": "钛铁联产处理",
+        "Description": "R钛铁联产处理",
         "IconPath": "",
-        "Type": 11,
-        "GridIndex": 3506,
-        "Time": 120,
+        "Type": 1,
+        "GridIndex": 3508,
+        "Time": 60,
         "Input": [
-            6203
+            1004,
+            6251
         ],
         "InCounts": [
-            1
+            1,
+            6
         ],
         "Output": [
-            1106
+            1106,
+            1102
         ],
         "OutCounts": [
-            2
+            1,
+            4
         ],
         "Explicit": true,
         "Handcraft": false,
@@ -6650,7 +6654,7 @@
             1104
         ],
         "InCounts": [
-            32,
+            24,
             40,
             8,
             40
@@ -6915,7 +6919,7 @@
         "Description": "R棱镜浇筑",
         "IconPath": "",
         "Type": 1,
-        "GridIndex": 3604,
+        "GridIndex": 3704,
         "Time": 180,
         "Input": [
             6251
@@ -7270,6 +7274,62 @@
         ],
         "OutCounts": [
             2
+        ],
+        "Explicit": true,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 824,
+        "Name": "轨道连接组件",
+        "Description": "I轨道连接组件",
+        "IconPath": "",
+        "Type": 4,
+        "GridIndex": 2801,
+        "Time": 300,
+        "Input": [
+            1118,
+            1301,
+            7804
+        ],
+        "InCounts": [
+            5,
+            3,
+            2
+        ],
+        "Output": [
+            6515
+        ],
+        "OutCounts": [
+            10
+        ],
+        "Explicit": false,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 825,
+        "Name": "高级钛矿冶炼",
+        "Description": "R高级钛矿冶炼",
+        "IconPath": "",
+        "Type": 11,
+        "GridIndex": 3608,
+        "Time": 60,
+        "Input": [
+            1004,
+            6203,
+            6251
+        ],
+        "InCounts": [
+            1,
+            1,
+            1
+        ],
+        "Output": [
+            1106
+        ],
+        "OutCounts": [
+            4
         ],
         "Explicit": true,
         "Handcraft": false,

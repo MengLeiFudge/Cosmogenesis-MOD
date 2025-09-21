@@ -407,14 +407,12 @@
             1411
         ],
         "Items": [
-            6001,
             6002
         ],
         "ItemPoints": [
-            10,
             10
         ],
-        "HashNeeded": 360000,
+        "HashNeeded": 216000,
         "UnlockRecipes": [
             20
         ],
@@ -1239,7 +1237,7 @@
             10,
             10
         ],
-        "HashNeeded": 216000,
+        "HashNeeded": 144000,
         "UnlockRecipes": [
             643
         ],
@@ -3556,8 +3554,7 @@
             406,
             407,
             421,
-            419,
-            422
+            419
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],
@@ -4826,14 +4823,14 @@
         "LevelCoef2": 0,
         "IsLabTech": false,
         "PreTechsMax": false,
-        "AddItems": [
+        "AddItems": [ // 4采矿机，6满蓄电器MK1，4电力感应塔，4熔炉
             2301,
-            2203,
+            6219,
             2201,
             2302
         ],
         "AddItemCounts": [
-            5,
+            4,
             6,
             4,
             4
@@ -6408,9 +6405,9 @@
             6214
         ],
         "ItemPoints": [
-            1
+            10
         ],
-        "HashNeeded": 7200,
+        "HashNeeded": 360,
         "UnlockRecipes": [],
         "UnlockFunctions": [
             7
@@ -6537,15 +6534,15 @@
             6214
         ],
         "ItemPoints": [
-            1
+            10
         ],
-        "HashNeeded": 14400,
+        "HashNeeded": 360,
         "UnlockRecipes": [],
         "UnlockFunctions": [
             7
         ],
         "UnlockValues": [
-            0.1
+            0.5
         ],
         "Published": true,
         "Level": 2,
@@ -6572,7 +6569,7 @@
             28.0
         ],
         "PreTechs": [
-            1936
+            1936 //1970
         ],
         "PreTechsImplicit": [],
         "Items": [
@@ -7334,6 +7331,93 @@
         "UnlockRecipes": [
             701,
             787
+        ],
+        "UnlockFunctions": [],
+        "UnlockValues": [],
+        "Published": true,
+        "Level": 0,
+        "MaxLevel": 0,
+        "LevelCoef1": 0,
+        "LevelCoef2": 0,
+        "IsLabTech": true,
+        "PreTechsMax": false,
+        "AddItems": [],
+        "AddItemCounts": [],
+        "PropertyOverrideItems": [],
+        "PropertyItemCounts": []
+    },
+    //{
+    //    "ID": 1970,
+    //    "Name": "轨道设施连接工程",
+    //    "IconPath": "Icons/Tech/1811",
+    //    "Desc": "T轨道设施连接工程",
+    //    "Conclusion": "T轨道设施连接工程",
+    //    "IsHiddenTech": true,
+    //    "PreItem": [
+    //        6228
+    //    ],
+    //    "Position": [
+    //        52.0,
+    //        28.0
+    //    ],
+    //    "PreTechs": [
+    //        //1936
+    //    ],
+    //    "PreTechsImplicit": [],
+    //    "Items": [
+    //        6003,
+    //        6278
+    //    ],
+    //    "ItemPoints": [
+    //        10,
+    //        10
+    //    ],
+    //    "HashNeeded": 180000,
+    //    "UnlockRecipes": [
+    //        824
+    //    ],
+    //    "UnlockFunctions": [],
+    //    "UnlockValues": [],
+    //    "Published": true,
+    //    "Level": 0,
+    //    "MaxLevel": 0,
+    //    "LevelCoef1": 0,
+    //    "LevelCoef2": 0,
+    //    "IsLabTech": true,
+    //    "PreTechsMax": false,
+    //    "AddItems": [],
+    //    "AddItemCounts": [],
+    //    "PropertyOverrideItems": [],
+    //    "PropertyItemCounts": []
+    //},
+    {
+        "ID": 1972,
+        "Name": "高级钛矿冶炼",
+        "IconPath": "Icons/Tech/1811",
+        "Desc": "T高级钛矿冶炼",
+        "Conclusion": "T高级钛矿冶炼",
+        "IsHiddenTech": false,
+        "PreItem": [],
+        "Position": [
+            52.0,
+            -20.0
+        ],
+        "PreTechs": [
+            1706
+        ],
+        "PreTechsImplicit": [],
+        "Items": [
+            6003,
+            6278
+        ],
+        "ItemPoints": [
+            10,
+            10
+        ],
+        "HashNeeded": 108000,
+        "UnlockRecipes": [
+            422,
+            825
         ],
         "UnlockFunctions": [],
         "UnlockValues": [],

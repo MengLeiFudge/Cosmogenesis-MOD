@@ -5,6 +5,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectOrbitalRing.Utils;
 using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.OrbitalAssembler;
+using static ProjectOrbitalRing.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
 
@@ -112,7 +113,7 @@ namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
             bool b = power >= 0.1f;
 
             // MegaBuildings
-            if (__instance.speed >= MegaAssemblerSpeed)
+            if (factory.entityPool[__instance.entityId].protoId == 6264)
             {
                 SlotData[] slotdata = GetSlots(factory.planetId, __instance.entityId);
                 CargoTraffic cargoTraffic = factory.cargoTraffic;
@@ -120,28 +121,41 @@ namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
 
                 int stationPilerLevel = GameMain.history.stationPilerLevel;
 
-                if (__instance.recipeId != ProtoID.R物质分解)
-                {
+                //if (__instance.recipeId != ProtoID.R物质分解)
+                //{
                     UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                     UpdateInputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool);
-                }
-                else if (b)
-                {
-                    UpdateTrashInputSlots(ref __instance, power, factory, cargoTraffic, slotdata);
+                //}
+                //else if (b)
+                //{
+                //    UpdateTrashInputSlots(ref __instance, power, factory, cargoTraffic, slotdata);
 
-                    int sandCount = __instance.produced[0];
+                //    int sandCount = __instance.produced[0];
 
-                    if (sandCount >= 800 && GameMain.mainPlayer != null)
-                    {
-                        GameMain.mainPlayer.sandCount += sandCount;
-                        __instance.produced[0] = 0;
-                    }
-                }
+                //    if (sandCount >= 800 && GameMain.mainPlayer != null)
+                //    {
+                //        GameMain.mainPlayer.sandCount += sandCount;
+                //        __instance.produced[0] = 0;
+                //    }
+                //}
             }
 
+            bool flag = false;
             if (factory.entityPool[__instance.entityId].protoId == ProtoID.I量子化工厂 && __instance.replicating)
+            {
+                flag = true;
+            }
+            if (factory.entityPool[__instance.entityId].protoId == 6501 && __instance.replicating)
+            {
+                if (__instance.recipeId == 66 || __instance.recipeId == 37 || __instance.recipeId == 62)
+                    flag = true;
+            }
+
+            if (flag)
+            {
                 __instance.extraTime += (int)(power * __instance.extraSpeed)
                                       + (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
+            }
 
             return b;
         }

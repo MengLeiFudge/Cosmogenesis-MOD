@@ -171,7 +171,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
                         {
                             for (int needIdx = 0; needIdx < __instance.needs.Length; needIdx++)
                             {
-                                if (storage[k].itemId == __instance.needs[needIdx] && storage[k].count >= 4 && __instance.served[needIdx] <= 40)
+                                if (storage[k].itemId == __instance.needs[needIdx] && storage[k].count >= 4)
                                 {
                                     __instance.served[needIdx] += 4;
                                     //storage[k].count -= 1;

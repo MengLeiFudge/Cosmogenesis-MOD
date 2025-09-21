@@ -335,50 +335,45 @@
         "ENUS": "The heavy-duty anti orbital plasma cannon uses specialized plasma railshells to extract atoms from the core, ionize them, and then confine and launch them with a strong magnetic field to form a concentrated energy beam. It has a decent range and excellent destructive power in space without atmospheric interference, and is also the standard main gun of the COSMO space fleet."
     },
     {
-        "Name": "巨型建筑工程学文字描述",
-        "ZHCN": "解锁巨型建筑的蓝图。",
-        "ENUS": "Unlock the blueprints of the Mega Building."
+        "Name": "原油涌泉或原油海",
+        "ZHCN": "原油涌泉或原油海",
+        "ENUS": "Crude Oil Spring or Crude Oil Sea"
     },
     {
-        "Name": "铁矿",
-        "ZHCN": "铁矿",
-        "ENUS": "Iron ore"
+        "Name": "甲烷海",
+        "ZHCN": "甲烷海",
+        "ENUS": "Methane Sea"
     },
+    //{
+    //    "Name": "硅石",
+    //    "ZHCN": "硅石",
+    //    "ENUS": "Silicon ore"
+    //},
     {
-        "Name": "铜矿",
-        "ZHCN": "铜矿",
-        "ENUS": "Copper ore"
-    },
-    {
-        "Name": "硅石",
-        "ZHCN": "硅石",
-        "ENUS": "Silicon ore"
-    },
-    {
-        "Name": "钛石",
-        "ZHCN": "钛石",
+        "Name": "钛矿",
+        "ZHCN": "钛矿",
         "ENUS": "Titanium ore"
     },
-    {
-        "Name": "石矿",
-        "ZHCN": "石矿",
-        "ENUS": "Stone"
-    },
-    {
-        "Name": "煤矿",
-        "ZHCN": "煤矿",
-        "ENUS": "Coal"
-    },
-    {
-        "Name": "星辉碳氢体",
-        "ZHCN": "星辉碳氢体",
-        "ENUS": "Starry hydrocarbon"
-    },
-    {
-        "Name": "金伯利矿石",
-        "ZHCN": "金伯利矿石",
-        "ENUS": "Kimberlite ore"
-    },
+    //{
+    //    "Name": "石矿",
+    //    "ZHCN": "石矿",
+    //    "ENUS": "Stone"
+    //},
+    //{
+    //    "Name": "煤矿",
+    //    "ZHCN": "煤矿",
+    //    "ENUS": "Coal"
+    //},
+    //{
+    //    "Name": "星辉碳氢体",
+    //    "ZHCN": "星辉碳氢体",
+    //    "ENUS": "Starry hydrocarbon"
+    //},
+    //{
+    //    "Name": "金伯利矿石",
+    //    "ZHCN": "金伯利矿石",
+    //    "ENUS": "Kimberlite ore"
+    //},
     {
         "Name": "莫桑石矿脉",
         "ZHCN": "莫桑石矿脉",
@@ -394,16 +389,16 @@
         "ZHCN": "莫桑石为天然存在的一种碳化硅晶体矿物，在高温、高压等极端条件下表现出优异的性能，可用于制作高性能的碳化硅陶瓷材料。",
         "ENUS": "Moissanite is a naturally occurring silicon carbide crystal mineral that exhibits excellent properties under extreme conditions such as high temperature and high pressure, and can be used to produce high-performance silicon carbide ceramic materials."
     },
-    {
-        "Name": "光栅石",
-        "ZHCN": "光栅石",
-        "ENUS": "Optical grating crystal"
-    },
-    {
-        "Name": "刺笋结晶",
-        "ZHCN": "刺笋结晶",
-        "ENUS": "Spiniform stalagmite crystal"
-    },
+    //{
+    //    "Name": "光栅石",
+    //    "ZHCN": "光栅石",
+    //    "ENUS": "Optical grating crystal"
+    //},
+    //{
+    //    "Name": "刺笋结晶",
+    //    "ZHCN": "刺笋结晶",
+    //    "ENUS": "Spiniform stalagmite crystal"
+    //},
     {
         "Name": "黑雾",
         "ZHCN": "黑雾",
@@ -669,7 +664,7 @@
         "ZHCN": "加工磁流体的副产物，内部的纳米结构已无法成型，只有加热熔融将微观结构全部抹除才能重新加工。",
         "ENUS": "As a byproduct of processing magnetic fluids, the internal nanostructures cannot be formed and can only be reprocessed by heating and melting to completely remove the microstructure."
     },
-    {
+    { // 废弃物品
         "Name": "增殖燃料棒",
         "ZHCN": "增殖燃料棒",
         "ENUS": "Proliferation Fuel Rod"
@@ -698,11 +693,6 @@
         "Name": "I碳化钛合金",
         "ZHCN": "利用钛在不同温度下晶格结构的特点，加入准确比例的碳元素，使相变温度及相分含量达到完美平衡的一种新型合金材料，有更高的强度，更好的韧性。",
         "ENUS": "A new type of alloy material that utilizes the lattice structure characteristics of titanium at different temperatures and adds accurate proportions of carbon elements to achieve a perfect balance between phase transition temperature and phase composition content. It has higher strength and better toughness."
-    },
-    {
-        "Name": "I氢燃料棒",
-        "ZHCN": "将气态氢冷凝为液态，精密封装成液氢燃料棒，是一种高效且可再生的清洁能源。",
-        "ENUS": "Gaseous hydrogen is condensed to liquid form and precision encapsulated into liquid hydrogen fuel rods, an efficient and renewable source of clean energy."
     },
     {
         "Name": "I氘核燃料棒",
@@ -1950,14 +1940,24 @@
         "ENUS": "Extracting molten iron from magma, smelting it into steel, and pouring it into shape."
     },
     {
-        "Name": "高级岩浆炼钛",
-        "ZHCN": "高级岩浆炼钛",
-        "ENUS": "Advanced Magma refining of titanium"
+        "Name": "钛铁联产处理",
+        "ZHCN": "钛铁联产处理",
+        "ENUS": "Titanium Iron Co Production Processing"
     },
     {
-        "Name": "R高级岩浆炼钛",
-        "ZHCN": "从熔融金属中提炼熔融的钛元素。",
-        "ENUS": "Extracting molten titanium from molten metal."
+        "Name": "R钛铁联产处理",
+        "ZHCN": "将钛矿进行破碎球磨磁选后，得到钛铁矿，与岩浆一并冶炼后分离钛和铁元素，最终得到钛和磁铁。",
+        "ENUS": "After crushing, ball milling, and magnetic separation of titanium ore, ilmenite is obtained, which is then smelted together with magma to separate titanium and iron elements, ultimately yielding titanium and magnets."
+    },
+    {
+        "Name": "高级钛矿冶炼",
+        "ZHCN": "高级钛矿冶炼",
+        "ENUS": "Advanced Titanium Ore Smelting"
+    },
+    {
+        "Name": "R高级钛矿冶炼",
+        "ZHCN": "直接用岩浆溶解钛矿中的杂质，分离杂质后，将熔融金属与分离出的杂质钛混合，利用熔融金属内的稀有金属还原剩余杂质并析出钛，最终得到高产量的钛。",
+        "ENUS": "Directly dissolve impurities in titanium ore with magma, separate the impurities, mix the molten metal with the separated impurities titanium, use the rare metals in the molten metal to reduce the remaining impurities and precipitate titanium, and finally obtain high-yield titanium."
     },
     {
         "Name": "高级岩浆炼磁铁",
@@ -2181,8 +2181,8 @@
     },
     {
         "Name": "T深层熔岩处理描述",
-        "ZHCN": "地幔物质熔融着丰富的稀有金属元素，一路渗透移动到表层时已经掺杂了太多杂质，如果能直接获得深层的地幔岩浆，那就能量产工业最尖端的金属产品——液态金属。\n<color=\"#FD965ECC\">衰减保底最低为2/s（0.1倍资源1.5/s）</color>",
-        "ENUS": "The mantle material melts rich rare metal elements, and when it infiltrates and moves to the surface, it is already mixed with too many impurities. If we can directly obtain deep mantle magma, we can mass produce the most advanced metal product in industry - liquid metal.\n<color=\"#FD965ECC\"> The minimum attenuation guarantee is 2/s (0.1 times the resource of 1.5/s)</color>"
+        "ZHCN": "地幔物质熔融着丰富的稀有金属元素，一路渗透移动到表层时已经掺杂了太多杂质，如果能直接获得深层的地幔岩浆，那就能量产工业最尖端的金属产品——液态金属。\n<color=\"#FD965ECC\">在任何资源倍率下都不会衰减</color>",
+        "ENUS": "The mantle material melts rich rare metal elements, and when it infiltrates and moves to the surface, it is already mixed with too many impurities. If we can directly obtain deep mantle magma, we can mass produce the most advanced metal product in industry - liquid metal.\n<color=\"#FD965ECC\"> It will not decay at any resource multiplier</color>"
     },
     {
         "Name": "T裂变重水堆",
@@ -2520,21 +2520,6 @@
         "ENUS": "By utilizing the lattice structure characteristics of titanium at different temperatures, precise proportions of carbon elements are added during the smelting process to produce titanium carbide alloy materials with higher strength and better toughness."
     },
     {
-        "Name": "T行星协调中心",
-        "ZHCN": "行星协调中心",
-        "ENUS": "Coordination Center"
-    },
-    {
-        "Name": "T行星协调中心描述",
-        "ZHCN": "随着星球生产线的不断扩大和算力的发展，部署一个协调中心可以更精确地控制星球工厂。",
-        "ENUS": "As the production lines on the planet are constantly expanding and the computing power is developing, deploying a coordination center can more accurately control the planet's factories."
-    },
-    {
-        "Name": "行星协调中心文字描述",
-        "ZHCN": "打开行星视图可以对本星球的协调中心进行调整",
-        "ENUS": "Can open the planet view to adjust the coordination center"
-    },
-    {
         "Name": "T物品仓储描述",
         "ZHCN": "小型储物仓可以搭建在四向分流器上，而大型储物仓具有更大的储量。",
         "ENUS": "Storage Mk.I can be built on Splitter.\nStorage Mk.II has twice the capacity."
@@ -2659,11 +2644,11 @@
         "ZHCN": "你解锁了速度更快的传送带与分拣器，以及监测物流系统工作状态的流速监测器。",
         "ENUS": "You have unlocked a conveyor belt with a larger carrying capacity, a sorter with faster speed. Traffic Monitor is built on the conveyor belt to monitor the real-time cargo flow rate at the corresponding location. Conditions can be set to trigger an alarm."
     },
-    {
-        "Name": "I铁矿",
-        "ZHCN": "采集铁矿脉获得，可以直接冶炼成铁块，是重要的原料。",
-        "ENUS": "Used to smelt iron ingots. Obtained by gathering iron vein.\n"
-    },
+    //{
+    //    "Name": "I铁矿",
+    //    "ZHCN": "采集铁矿脉获得，可以直接冶炼成铁块，是重要的原料。",
+    //    "ENUS": "Used to smelt iron ingots. Obtained by gathering iron vein.\n"
+    //},
     {
         "Name": "I有机晶体",
         "ZHCN": "稀有矿物。如此多的有机物以非生命的晶体形式存在，这种奇特的矿物或许在尖端工业生产中可以发挥特殊作用。",
@@ -3031,6 +3016,11 @@
         "ENUS": "Metal hydrogen is applied in the field of batteries due to its excellent energy storage capacity, which also means that the potential of metal hydrogen as an explosive is equally significant."
     },
     {
+        "Name": "混凝土高斯机枪碉堡",
+        "ZHCN": "混凝土高斯机枪碉堡",
+        "ENUS": "Concrete Gauss Machine Gun Bunker"
+    },
+    {
         "Name": "轨道加农炮",
         "ZHCN": "轨道加农炮",
         "ENUS": "Rail Cannon"
@@ -3094,11 +3084,6 @@
         "Name": "钢芯弹箱结果",
         "ZHCN": "你解锁了钢芯铜被甲弹，拥有更好的穿透效果。",
         "ENUS": "You unlocked the steel core copper armor bullet, which has better penetration effect.."
-    },
-    {
-        "Name": "T超合金弹箱",
-        "ZHCN": "钛金强化弹壳",
-        "ENUS": "Titanium Cases"
     },
     {
         "Name": "T金属氢单元",
@@ -3535,6 +3520,26 @@
         "Name": "T太空电梯",
         "ZHCN": "使用化学燃料火箭支撑星际物流是不现实的，必须要更方便，消耗更低的跳出行星重力井的手段。在选型阶段，工程师们最终决定跳过“天钩”，直接一步到位，使用太空电梯作为同步轨道设施的对接点。",
         "ENUS": "It is not realistic to use chemical fuel rockets to support interstellar logistics, and a more convenient and cost-effective way to escape from planetary gravity wells is necessary. In the selection stage, the engineers ultimately decided to skip the \"sky hook\" and directly use the space elevator as the docking point for the synchronous orbit facility."
+    },
+    {
+        "Name": "轨道连接组件",
+        "ZHCN": "轨道连接组件",
+        "ENUS": "Orbital Connection Components"
+    },
+    {
+        "Name": "I轨道连接组件",
+        "ZHCN": "将同步轨道设施连接起来的连接结构，坚固强韧的钛晶石保证连接的可靠，光纤连接的电路控制则为后续以环行星巨构为载体的组件提供控制基础。",
+        "ENUS": "The connection structure that connects synchronous orbit facilities, with sturdy and strong titanium crystals ensuring reliable connections, and the circuit control of fiber optic connections providing a control basis for subsequent components carried by planetary structures."
+    },
+    {
+        "Name": "轨道设施连接工程",
+        "ZHCN": "轨道设施连接工程",
+        "ENUS": "Orbital Infrastructure Connection Project"
+    },
+    {
+        "Name": "T轨道设施连接工程",
+        "ZHCN": "一个同步轨道设施在旧时代或许能算作大型太空建筑，但对于三级文明来说，单个轨道设施只能算作一个节点，将一个个节点连接起来，才算是大型太空结构工程的开始。",
+        "ENUS": "A synchronous orbit facility may have been considered a large space building in the old times, but for a third level civilization, a single orbit facility can only be considered a node. Connecting nodes together is the beginning of large-scale space structural engineering."
     },
     {
         "Name": "轨道熔炼站",

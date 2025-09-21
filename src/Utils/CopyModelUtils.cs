@@ -42,6 +42,7 @@ namespace ProjectOrbitalRing.Utils
             CopyModelProto(50, ProtoID.M星环电网枢纽, new Color(0.7373f, 0.2118f, 0.8510f)); 
             CopyModelProto(72, ProtoID.M轨道弹射器, new Color(0.1404f, 0.8294f, 0.9882f)); 
             CopyModelProto(49, ProtoID.M轨道空投站, new Color(0.9814f, 0.6620f, 0.8471f));
+            CopyModelProto(35, ProtoID.M轨道连接组件, new Color(0, 0, 0));
 
             //AddAtmosphericCollectStation();
             //AddHyperRelayReactor();

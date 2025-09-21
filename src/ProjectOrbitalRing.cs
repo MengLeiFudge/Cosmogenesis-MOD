@@ -62,7 +62,7 @@ namespace ProjectOrbitalRing
     {
         public const string MODGUID = "org.ProfessorCat305.OrbitalRing";
         public const string MODNAME = "OrbitalRing";
-        public const string VERSION = "0.8.8";
+        public const string VERSION = "0.8.10";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -249,8 +249,8 @@ namespace ProjectOrbitalRing
         {
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
-            vegeProto.MiningItem = new[] { 2303, 2001, 2011, 7609, 6219 }; // 4黄台，500黄带，300黄爪，1零素矢，4满蓄电器MK1
-            vegeProto.MiningCount = new[] { 4, 500, 300, 1, 4 };
+            vegeProto.MiningItem = new[] { 2303, 2001, 2011, 7609, 2204 }; // 4黄台，500黄带，300黄爪，1零素矢，1火电
+            vegeProto.MiningCount = new[] { 4, 500, 300, 1, 1 };
             vegeProto.MiningChance = new float[] { 1, 1, 1, 1, 1 };
             vegeProto.Preload();
 

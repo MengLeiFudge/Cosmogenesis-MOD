@@ -122,6 +122,138 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             }
         }
 
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), "CheckBuildConditions")]
+        public static bool BlueprintPaste_CheckBuildConditionsPrePatch(BuildTool_BlueprintPaste __instance, ref bool __result)
+        {
+            int count = __instance.bpPool.Length;
+            //if (count == 0)
+            //{
+            //    __result = false;
+            //    return false;
+            //}
+            BuildPreview buildPreview;
+            int previewItem;
+            for (int i = 0; i < count; i++)
+            {
+                buildPreview = __instance.bpPool[i];
+                if (buildPreview == null) continue;
+                previewItem = buildPreview.item.ID;
+                bool flag1 = IsBuildingItemIdisOrbitalStation(previewItem, true);
+                bool flag2 = IsBuildingItemIdisOrbitalCore(previewItem);
+                if (flag1 || flag2)
+                {
+                    //if (count > 1)
+                    //{
+                    //    buildPreview.condition = EBuildCondition.Failure;
+                    //    __instance.AddErrorMessage(EBuildCondition.Failure, buildPreview);
+                    //    __result = false;
+                    //    return false;
+                    //}
+                    int position = OrbitalStationManager.IsBuildingPosXZCorrect(buildPreview.lpos.x, buildPreview.lpos.z);
+                    int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(buildPreview.lpos);
+                    if (position == -1 || ringIndex == -1)
+                    {
+                        buildPreview.condition = (EBuildCondition)99;
+                        __instance.AddErrorMessage((EBuildCondition)99, buildPreview);
+                        __result = false;
+                        return false;
+                    }
+
+                    OrbitalStationManager.Instance.AddPlanetId(__instance.planet.id);
+                    PlanetOrbitalRingData planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(__instance.planet.id);
+                    if (previewItem != 6258) // 太空电梯不检查重合
+                    {
+                        bool flag = false;
+
+                        if (flag2)
+                        {
+                            if (PreBuild.TryGetValue(__instance.planet.id, out var values) && values.Contains((ringIndex, position, true)))
+                            {
+                                flag = true;
+                            }
+                            if (planetOrbitalRingData != null)
+                            {
+                                var pair = planetOrbitalRingData.Rings[ringIndex].GetPair(position);
+                                if (pair.OrbitalCorePoolId != -1)
+                                {
+                                    flag = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (PreBuild.TryGetValue(__instance.planet.id, out var values) && values.Contains((ringIndex, position, false)))
+                            {
+                                flag = true;
+                            }
+                            if (planetOrbitalRingData != null)
+                            {
+                                var pair = planetOrbitalRingData.Rings[ringIndex].GetPair(position);
+                                if (pair.OrbitalStationPoolId != -1)
+                                {
+                                    flag = true;
+                                }
+                            }
+                        }
+                        if (flag)
+                        {
+                            buildPreview.condition = EBuildCondition.Collide;
+                            __instance.AddErrorMessage(EBuildCondition.Collide, buildPreview);
+                            __result = false;
+                            return false;
+                        }
+                    }
+
+                    if (IsBuildingItemIdisOrbitalCore(previewItem))
+                    {
+                        if (planetOrbitalRingData == null)
+                        {
+                            buildPreview.condition = (EBuildCondition)98;
+                            __instance.AddErrorMessage((EBuildCondition)98, buildPreview);
+                            __result = false;
+                            return false;
+                        }
+                        var result = planetOrbitalRingData.Rings[ringIndex].GetPair(position);
+                        if (previewItem == 6261)
+                        {
+                            if (result.stationType != StationType.PowerGenBase)
+                            {
+                                buildPreview.condition = (EBuildCondition)98;
+                                __instance.AddErrorMessage((EBuildCondition)98, buildPreview);
+                                __result = false;
+                                return false;
+                            }
+                        }
+                        else if (previewItem == 3004 || previewItem == 6513)
+                        {
+                            if (result.stationType != StationType.TurretBase)
+                            {
+                                buildPreview.condition = (EBuildCondition)98;
+                                __instance.AddErrorMessage((EBuildCondition)98, buildPreview);
+                                __result = false;
+                                return false;
+                            }
+                        }
+                    }
+
+                    if (buildPreview.item.ID == 6265) // 星环对撞机，检查该圈有无
+                    {
+                        if (planetOrbitalRingData.Rings[ringIndex].isParticleCollider)
+                        {
+                            buildPreview.condition = (EBuildCondition)97;
+                            __instance.AddErrorMessage((EBuildCondition)97, buildPreview);
+                            __result = false;
+                            return false;
+                        }
+                    }
+                    // 继续原可否建造判断流程
+                    return true;
+                }
+            }
+            return true;
+        }
+
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(BuildTool_Click), "CheckBuildConditions")]
@@ -280,8 +412,35 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             }
         }
 
+        [HarmonyPatch(typeof(BuildTool_BlueprintPaste), "CheckBuildConditions")]
+        [HarmonyPostfix]
+        public static void BlueprintPaste_CheckBuildConditionsPostPatch(BuildTool_BlueprintPaste __instance, ref bool __result)
+        {
+            int count = __instance.bpPool.Length;
+            if (count == 0)
+            {
+                return;
+            }
+            for (int i = 0; i < count; i++)
+            {
+                BuildPreview buildPreview = __instance.bpPool[i];
+                if (buildPreview.item == null) continue;
+                if (IsBuildingItemIdisOrbitalStation(buildPreview.item.ID, false) || IsBuildingItemIdisOrbitalCore(buildPreview.item.ID))
+                {
+                    if (buildPreview.condition == EBuildCondition.OutOfReach || buildPreview.condition == EBuildCondition.OutOfVerticalConstructionHeight ||
+                        buildPreview.condition == EBuildCondition.NeedGround)
+                    {
+                        buildPreview.condition = EBuildCondition.Ok;
+                        __instance.actionBuild.model.cursorState = 0;
+                        __result = true;
+                    }
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(BuildTool_Click), "CheckBuildConditions")]
         [HarmonyPatch(typeof(BuildTool_Addon), "CheckBuildConditions")]
+        //[HarmonyPatch(typeof(BuildTool_BlueprintPaste), "CheckBuildConditions")]
         [HarmonyPostfix]
         public static void CheckBuildConditionsPostPatch(BuildTool_Click __instance, ref bool __result)
         {
@@ -393,6 +552,10 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
                     StationStore[] storage = null;
                     if (pair.elevatorPoolId != -1)
                     {
+                        if (__instance.transport.stationPool == null) continue;
+                        if (__instance.transport.stationPool.Length == 0) continue;
+                        if (__instance.transport.stationPool.Length <= pair.elevatorPoolId) continue;
+                        if (__instance.transport.stationPool[pair.elevatorPoolId] == null) continue;
                         storage = __instance.transport.stationPool[pair.elevatorPoolId].storage;
                         data.Rings[i].SetElevatorStorage(j, storage);
                     }

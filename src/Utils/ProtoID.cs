@@ -141,7 +141,8 @@ namespace ProjectOrbitalRing.Utils
                            M星环电网枢纽 = 820,
                            M超空间中继器核心 = 821,
                            M轨道弹射器 = 822,
-                           M轨道空投站 = 823;
+                           M轨道空投站 = 823,
+                           M轨道连接组件 = 824;
 
         internal const int T戴森球计划 = 1,
                            T电磁学 = 1001,
