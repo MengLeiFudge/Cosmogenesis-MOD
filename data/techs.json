@@ -1942,6 +1942,7 @@
         "HashNeeded": 43200,
         "UnlockRecipes": [
             5,
+            826,
             63
         ],
         "UnlockFunctions": [
@@ -7352,16 +7353,14 @@
     //    "IconPath": "Icons/Tech/1811",
     //    "Desc": "T轨道设施连接工程",
     //    "Conclusion": "T轨道设施连接工程",
-    //    "IsHiddenTech": true,
-    //    "PreItem": [
-    //        6228
-    //    ],
+    //    "IsHiddenTech": false,
+    //    "PreItem": [],
     //    "Position": [
     //        52.0,
     //        28.0
     //    ],
     //    "PreTechs": [
-    //        //1936
+    //        1936
     //    ],
     //    "PreTechsImplicit": [],
     //    "Items": [

@@ -2316,7 +2316,7 @@
         "Name": "地基",
         "Description": "I地基",
         "IconPath": "Icons/ItemRecipe/terrain-tool",
-        "GridIndex": 1104,
+        "GridIndex": 1105,
         "StackSize": 1000,
         "Type": 3,
         "PreTechOverride": 0,

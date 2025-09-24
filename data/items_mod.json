@@ -1757,7 +1757,7 @@
         "Name": "碳粉",
         "Description": "I碳粉",
         "IconPath": "Assets/texpack/煤矿粉",
-        "GridIndex": 1105,
+        "GridIndex": 1501,
         "StackSize": 100,
         "Type": 2,
         "PreTechOverride": 0,

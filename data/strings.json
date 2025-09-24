@@ -425,6 +425,16 @@
         "ENUS": "A material that has existed since ancient times and can be used to build large structures."
     },
     {
+        "Name": "优质混凝土",
+        "ZHCN": "优质混凝土",
+        "ENUS": "High Quality Concrete"
+    },
+    {
+        "Name": "R优质混凝土",
+        "ZHCN": "通过在混凝土中添加硅灰，能促进水泥水化，生成硅酸钙凝胶，显著提高混凝土强度和抗裂性。",
+        "ENUS": "Adding silica fume into concrete can promote cement hydration, generate calcium silicate gel, and significantly improve concrete strength and crack resistance."
+    },
+    {
         "Name": "火力发电厂",
         "ZHCN": "火力发电厂",
         "ENUS": "thermal Power Plant"

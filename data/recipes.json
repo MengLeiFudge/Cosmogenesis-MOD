@@ -79,7 +79,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 1105,
+        "GridIndex": 1501,
         "Time": 60,
         "Input": [
             1109
@@ -104,14 +104,14 @@
         "IconPath": "",
         "Type": 4,
         "GridIndex": 1103,
-        "Time": 60,
+        "Time": 180,
         "Input": [
             1005,
             1103,
             1000
         ],
         "InCounts": [
-            1,
+            3,
             1,
             1
         ],
@@ -119,7 +119,7 @@
             1108
         ],
         "OutCounts": [
-            1
+            3
         ],
         "Explicit": false,
         "Handcraft": true,
@@ -667,7 +667,7 @@
         "Description": "R碳纳米管（粒子打印）",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 1501,
+        "GridIndex": 1502,
         "Time": 240,
         "Input": [
             1123
@@ -3002,7 +3002,7 @@
         "Description": "",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 1104,
+        "GridIndex": 1105,
         "Time": 60,
         "Input": [
             1108
@@ -4765,14 +4765,14 @@
         "Name": "岩浆炼硅",
         "Description": "R岩浆炼硅",
         "IconPath": "",
-        "Type": 1,
+        "Type": 11,
         "GridIndex": 3504,
-        "Time": 240,
+        "Time": 360,
         "Input": [
             6251
         ],
         "InCounts": [
-            3
+            4
         ],
         "Output": [
             1003
@@ -5821,7 +5821,7 @@
         "Description": "R石墨烯（碳解离）",
         "IconPath": "",
         "Type": 10,
-        "GridIndex": 1502,
+        "GridIndex": 1503,
         "Time": 360,
         "Input": [
             1109
@@ -7276,7 +7276,7 @@
             2
         ],
         "Explicit": true,
-        "Handcraft": false,
+        "Handcraft": true,
         "NonProductive": false
     },
     {
@@ -7285,7 +7285,7 @@
         "Description": "I轨道连接组件",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 2801,
+        "GridIndex": 0,//2801,
         "Time": 300,
         "Input": [
             1118,
@@ -7330,6 +7330,34 @@
         ],
         "OutCounts": [
             4
+        ],
+        "Explicit": true,
+        "Handcraft": false,
+        "NonProductive": false
+    },
+    {
+        "ID": 826,
+        "Name": "优质混凝土",
+        "Description": "R优质混凝土",
+        "IconPath": "",
+        "Type": 4,
+        "GridIndex": 1104,
+        "Time": 180,
+        "Input": [
+            1005,
+            1103,
+            1003
+        ],
+        "InCounts": [
+            3,
+            1,
+            1
+        ],
+        "Output": [
+            1108
+        ],
+        "OutCounts": [
+            3
         ],
         "Explicit": true,
         "Handcraft": false,

@@ -137,7 +137,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             for (int i = 0; i < count; i++)
             {
                 buildPreview = __instance.bpPool[i];
-                if (buildPreview == null) continue;
+                if (buildPreview == null || buildPreview.item == null) continue;
                 previewItem = buildPreview.item.ID;
                 bool flag1 = IsBuildingItemIdisOrbitalStation(previewItem, true);
                 bool flag2 = IsBuildingItemIdisOrbitalCore(previewItem);

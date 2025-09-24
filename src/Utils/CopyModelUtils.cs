@@ -42,9 +42,8 @@ namespace ProjectOrbitalRing.Utils
             CopyModelProto(50, ProtoID.M星环电网枢纽, new Color(0.7373f, 0.2118f, 0.8510f)); 
             CopyModelProto(72, ProtoID.M轨道弹射器, new Color(0.1404f, 0.8294f, 0.9882f)); 
             CopyModelProto(49, ProtoID.M轨道空投站, new Color(0.9814f, 0.6620f, 0.8471f));
-            CopyModelProto(35, ProtoID.M轨道连接组件, new Color(0, 0, 0));
+            CopyModelProto(35, ProtoID.M轨道连接组件, new Color(1f, 1f, 1f));
 
-            //AddAtmosphericCollectStation();
             //AddHyperRelayReactor();
             ChangeAccumulatorColor();
         }
@@ -70,126 +69,6 @@ namespace ProjectOrbitalRing.Utils
                     material.SetColor("_Color", new Color(0.3529f, 0.8235f, 1.0f));
                 }
             }
-        }
-
-        private static void AddHyperRelayReactor()
-        {
-            ModelProto oriModel = LDB.models.Select(117);
-            PrefabDesc desc = oriModel.prefabDesc;
-
-            var newMats = new List<Material>();
-
-            foreach (Material[] lodMats in desc.lodMaterials)
-            {
-                if (lodMats == null) continue;
-
-                foreach (Material mat in lodMats)
-                {
-                    if (mat == null) continue;
-
-                    var newMaterial = new Material(mat);
-                    newMaterial.SetColor("_Color", new Color32(60, 179, 113, 255));
-                    newMats.Add(newMaterial);
-                }
-            }
-            //oriModel = LDB.models.Select(ProtoID.M星际物流运输站); // ray receiver
-            //var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
-
-            //foreach (Material[] lodMats in oriModel.prefabDesc.lodMaterials)
-            //{
-            //    if (lodMats == null) continue;
-            //    Debug.LogFormat("====================================");
-            //    foreach (Material mat in lodMats)
-            //    {
-            //        if (mat == null) continue;
-
-            //        Debug.LogFormat("------------");
-            //        Debug.LogFormat("Material Name: {0}", mat.name);
-            //    }
-            //}
-            //foreach (Mesh lodMeshe in oriModel.prefabDesc.lodMeshes)
-            //{
-            //    if (lodMeshe == null) continue;
-            //    Debug.LogFormat("====================================");
-
-            //    Debug.LogFormat("lodMeshe Name: {0}", lodMeshe.name);
-            //}
-            //foreach (Mesh meshes in oriModel.prefabDesc.meshes)
-            //{
-            //    if (meshes == null) continue;
-            //    Debug.LogFormat("====================================");
-
-            //    Debug.LogFormat("meshes Name: {0}", meshes.name);
-            //}
-
-            //if (oriModel.prefabDesc.mesh != null)
-            //{
-            //    Debug.LogFormat("====================================");
-
-            //    Debug.LogFormat("mesh Name: {0}", oriModel.prefabDesc.mesh);
-            //}
-
-//[Info   : Unity Log] ====================================
-//[Info   : Unity Log]------------
-//[Info: Unity Log] Material Name: interstellar - logistic - station
-//[Info: Unity Log]------------
-//[Info: Unity Log] Material Name: station - black
-//[Info: Unity Log] ====================================
-//[Info   : Unity Log] lodMeshe Name:
-//[Info   : Unity Log] ====================================
-//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 1
-//[Info   : Unity Log] ====================================
-//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
-//            [Info: Unity Log] ====================================
-//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
-//            [Info: Unity Log] ====================================
-//[Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
-//            [Info: Unity Log] ====================================
-//            [Info   : Unity Log] meshes Name: interstellar - logistic - station - 2
-//[Info: Unity Log] ====================================
-//[Info   : Unity Log] mesh Name: interstellar - logistic - station - 1(UnityEngine.Mesh)
-//[Info: Unity Log] 666666666666666666666 ====================
-//[Info   : Unity Log]------------
-//[Info: Unity Log] Material Name: ray - receiver
-//[Info: Unity Log]------------
-//[Info: Unity Log] Material Name: ray - receiver - black
-//[Info: Unity Log]------------
-//[Info: Unity Log] Material Name: ray - receiver - effect
-//[Info: Unity Log]------------
-//[Info: Unity Log] Material Name: ray - receiver - eff
-
-
-            oriModel = LDB.models.Select(ProtoID.M射线接收站); // ray receiver
-            //foreach (Material[] lodMats in oriModel.prefabDesc.lodMaterials)
-            //{
-            //    if (lodMats == null) continue;
-            //    Debug.LogFormat("666666666666666666666====================");
-            //    foreach (Material mat in lodMats)
-            //    {
-            //        if (mat == null) continue;
-
-            //        Debug.LogFormat("------------");
-            //        Debug.LogFormat("Material Name: {0}", mat.name);
-            //    }
-            //}
-            var collectEffectMat = new Material(oriModel.prefabDesc.lodMaterials[0][3]);
-
-            collectEffectMat.SetColor("_TintColor", new Color32(131, 127, 197, 255));
-            collectEffectMat.SetColor("_PolarColor", new Color32(234, 255, 253, 170));
-            collectEffectMat.SetVector("_Aurora", new Vector4(75f, 1f, 20f, 0.1f));
-            collectEffectMat.SetVector("_Beam", new Vector4(12f, 78f, 24f, 1f));
-            collectEffectMat.SetVector("_Particle", new Vector4(2f, 30f, 5f, 0.8f));
-            collectEffectMat.SetVector("_Circle", new Vector4(2.5f, 34f, 1f, 0.04f));
-
-            newMats.Add(collectEffectMat);
-
-            ModelProto registerModel = ProtoRegistry.RegisterModel(ProtoID.M超空间中继器,
-                "Assets/genesis-models/entities/prefabs/atmospheric-collect-station", newMats.ToArray());
-
-            registerModel.HpMax = 300000;
-            registerModel.RuinId = 384;
-            registerModel.RuinType = ERuinType.Normal;
-            registerModel.RuinCount = 1;
         }
 
         //private static void AddAtmosphericCollectStation()
