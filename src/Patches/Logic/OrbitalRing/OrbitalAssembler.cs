@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.PosTool;
 using UnityEngine;
 using System.Reflection.Emit;
 using ProjectOrbitalRing.Patches.Logic.AddVein;
@@ -52,7 +53,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             if (factorySystem.assemblerPool[poolId].recipeType == ERecipeType.Particle && factorySystem.assemblerPool[poolId].speed >= 100000)
             {
                 Vector3 pos = factorySystem.factory.entityPool[factorySystem.assemblerPool[poolId].entityId].pos;
-                int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(pos);
+                int ringIndex = isBuildingPosYCorrect(pos);
                 var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(factorySystem.planet.id);
                 if (planetOrbitalRingData != null)
                 {
@@ -201,8 +202,8 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
         public static void BuildOrbitalAssembler(FactorySystem __instance, int thisAssemblerId, int thisEntityId, int itemId)
         {
             Vector3 thisPos = __instance.factory.entityPool[thisEntityId].pos;
-            int position = OrbitalStationManager.IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
-            int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(thisPos);
+            int position = IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
+            int ringIndex = isBuildingPosYCorrect(thisPos);
             OrbitalStationManager.Instance.AddPlanetId(__instance.planet.id);
             var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(__instance.planet.id);
             // 在赤道上/下圈？号位置添加轨道设施
@@ -210,7 +211,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             {
                 planetOrbitalRingData.Rings[ringIndex].AddOrbitalStation(position, thisAssemblerId, StationType.Assembler);
             } else { // 轨道弹射器
-                planetOrbitalRingData.Rings[ringIndex].AddOrbitalCore(position, thisAssemblerId, StationType.TurretCore);
+                planetOrbitalRingData.Rings[ringIndex].AddOrbitalCore(position, thisAssemblerId, StationType.EjectorCore);
             }
             if (itemId == 6265)
             {

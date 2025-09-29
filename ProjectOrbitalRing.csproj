@@ -160,6 +160,7 @@
     <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalStationManager.cs" />
     <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalSpaceStation.cs" />
     <Compile Include="src\Patches\Logic\OrbitalRing\OrbitalTurret.cs" />
+    <Compile Include="src\Patches\Logic\OrbitalRing\PosTool.cs" />
     <Compile Include="src\Patches\Logic\OrbitalRing\UI.cs" />
     <Compile Include="src\Patches\Logic\OverWriteBirthGalaxy.cs" />
     <Compile Include="src\Patches\Logic\PlanetFocus\DarkFrogPatches.cs" />

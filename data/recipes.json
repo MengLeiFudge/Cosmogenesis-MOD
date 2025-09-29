@@ -3014,7 +3014,7 @@
             1131
         ],
         "OutCounts": [
-            5
+            2
         ],
         "Explicit": false,
         "Handcraft": true,
@@ -7285,7 +7285,7 @@
         "Description": "I轨道连接组件",
         "IconPath": "",
         "Type": 4,
-        "GridIndex": 0,//2801,
+        "GridIndex": 0, //2801,
         "Time": 300,
         "Input": [
             1118,

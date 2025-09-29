@@ -36,7 +36,7 @@ using static ProjectOrbitalRing.Patches.Logic.BattleRelated.HPAdjust;
 using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 using static ProjectOrbitalRing.Patches.Logic.MathematicalRateEngine.UI;
 using static ProjectOrbitalRing.Patches.Logic.SatellitePowerDistributionPatch;
-using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.OrbitalStationManager;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.PosTool;
 using ProjectOrbitalRing.Patches.Logic.OrbitalRing;
 //ProjectGenesis
 
@@ -62,7 +62,7 @@ namespace ProjectOrbitalRing
     {
         public const string MODGUID = "org.ProfessorCat305.OrbitalRing";
         public const string MODNAME = "OrbitalRing";
-        public const string VERSION = "0.8.11";
+        public const string VERSION = "0.8.14";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -233,7 +233,7 @@ namespace ProjectOrbitalRing
 
         private void PreAddDataAction()
         {
-            OrbitalStationManager.Instance.InitializeMarkerAngles();
+            InitializeMarkerAngles();
             GetDysonVanillaUITexts();
             LDB.items.OnAfterDeserialize();
             ModifyPlanetThemeDataVanilla();

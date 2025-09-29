@@ -92,7 +92,7 @@ namespace ProjectOrbitalRing.Patches.Logic.MathematicalRateEngine
             int starIndex = planetId / 100 - 1;
             PlanetFactory factory = GameMain.galaxy.stars[starIndex].planets[planetId % 100 - 1].factory;
             int gmProtoId = factory.entityPool[__instance.entityId].protoId;
-            if (gmProtoId != 2311) return; //只修改原始弹射器
+            if (gmProtoId != 2311 && gmProtoId != 6513) return; //只修改原始弹射器
 
             if (starIndex < 0 || starIndex > 999)
             {
