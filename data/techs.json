@@ -6414,8 +6414,7 @@
             7
         ],
         "UnlockValues": [
-            0.1,
-            1
+            0.1
         ],
         "Published": true,
         "Level": 1,
@@ -6676,6 +6675,7 @@
         "LevelCoef2": 0,
         "IsLabTech": true,
         "PreTechsMax": false,
+        "AddItems": [],
         "AddItems": [],
         "AddItemCounts": [],
         "PropertyOverrideItems": [],

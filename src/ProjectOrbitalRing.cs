@@ -62,7 +62,7 @@ namespace ProjectOrbitalRing
     {
         public const string MODGUID = "org.ProfessorCat305.OrbitalRing";
         public const string MODNAME = "OrbitalRing";
-        public const string VERSION = "0.8.14";
+        public const string VERSION = "0.8.15";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -281,7 +281,7 @@ namespace ProjectOrbitalRing
             {
                 GameMain.instance.CreateGPUInstancing();
                 GameMain.instance.CreateBPGPUInstancing();
-                GameMain.instance.CreateMultithreadSystem();
+                // GameMain.instance.CreateMultithreadSystem();
             }
 
             PrefabDescPostFix();
@@ -385,6 +385,8 @@ namespace ProjectOrbitalRing
         }
 
         internal static void LogInfo(object data) => logger.LogInfo(data);
+        internal static void LogWarning(object data) => logger.LogWarning(data);
+        internal static void LogError(object data) => logger.LogError(data);
 
         internal static int VersionNumber()
         {
