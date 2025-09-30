@@ -36,7 +36,7 @@ using static ProjectOrbitalRing.Patches.Logic.BattleRelated.HPAdjust;
 using static ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech.ModifyUpgradeTech;
 using static ProjectOrbitalRing.Patches.Logic.MathematicalRateEngine.UI;
 using static ProjectOrbitalRing.Patches.Logic.SatellitePowerDistributionPatch;
-using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.OrbitalStationManager;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.PosTool;
 using ProjectOrbitalRing.Patches.Logic.OrbitalRing;
 //ProjectGenesis
 
@@ -62,7 +62,7 @@ namespace ProjectOrbitalRing
     {
         public const string MODGUID = "org.ProfessorCat305.OrbitalRing";
         public const string MODNAME = "OrbitalRing";
-        public const string VERSION = "0.8.8";
+        public const string VERSION = "0.8.15";
         public const string DEBUGVERSION = "";
 
         public static bool LoadCompleted;
@@ -233,7 +233,7 @@ namespace ProjectOrbitalRing
 
         private void PreAddDataAction()
         {
-            OrbitalStationManager.Instance.InitializeMarkerAngles();
+            InitializeMarkerAngles();
             GetDysonVanillaUITexts();
             LDB.items.OnAfterDeserialize();
             ModifyPlanetThemeDataVanilla();
@@ -249,8 +249,8 @@ namespace ProjectOrbitalRing
         {
             //飞行舱拆除
             VegeProto vegeProto = LDB.veges.Select(9999);
-            vegeProto.MiningItem = new[] { 2303, 2001, 2011, 7609, 6219 }; // 4黄台，500黄带，300黄爪，1零素矢，4满蓄电器MK1
-            vegeProto.MiningCount = new[] { 4, 500, 300, 1, 4 };
+            vegeProto.MiningItem = new[] { 2303, 2001, 2011, 7609, 2204 }; // 4黄台，500黄带，300黄爪，1零素矢，1火电
+            vegeProto.MiningCount = new[] { 4, 500, 300, 1, 1 };
             vegeProto.MiningChance = new float[] { 1, 1, 1, 1, 1 };
             vegeProto.Preload();
 
@@ -281,7 +281,7 @@ namespace ProjectOrbitalRing
             {
                 GameMain.instance.CreateGPUInstancing();
                 GameMain.instance.CreateBPGPUInstancing();
-                GameMain.instance.CreateMultithreadSystem();
+                // GameMain.instance.CreateMultithreadSystem();
             }
 
             PrefabDescPostFix();
@@ -385,6 +385,8 @@ namespace ProjectOrbitalRing
         }
 
         internal static void LogInfo(object data) => logger.LogInfo(data);
+        internal static void LogWarning(object data) => logger.LogWarning(data);
+        internal static void LogError(object data) => logger.LogError(data);
 
         internal static int VersionNumber()
         {

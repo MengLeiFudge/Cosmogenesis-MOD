@@ -9,31 +9,15 @@ namespace ProjectOrbitalRing.Patches.Logic.AddVein
 {
     internal class OilVeinPatch
     {
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         [HarmonyPatch(typeof(MinerComponent), "InternalUpdate")]
-        public static void InternalUpdatePatch(MinerComponent __instance, PlanetFactory factory, VeinData[] veinPool)
+        public static void InternalUpdatePatch(MinerComponent __instance, VeinData[] veinPool, ref float miningRate)
         {
             if (__instance.type == EMinerType.Oil)
             {
-                bool isRareResource = GameMain.data.gameDesc.isRareResource;
                 if (veinPool[__instance.veins[0]].type == EVeinType.DeepMagma)
                 {
-                    if (isRareResource)
-                    {
-                        if (veinPool[__instance.veins[0]].amount < 37500)
-                        {
-                            veinPool[__instance.veins[0]].amount = 37500;
-                            factory.veinGroups[veinPool[__instance.veins[0]].groupIndex].amount = 37500;
-                        }
-                    }
-                    else
-                    {
-                        if (veinPool[__instance.veins[0]].amount < 50000)
-                        {
-                            veinPool[__instance.veins[0]].amount = 50000;
-                            factory.veinGroups[veinPool[__instance.veins[0]].groupIndex].amount = 50000;
-                        }
-                    }
+                    miningRate = 0f; // 深层熔岩不衰减
                 }
             }
         }

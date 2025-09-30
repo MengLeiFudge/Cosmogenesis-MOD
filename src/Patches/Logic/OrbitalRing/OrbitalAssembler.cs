@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.PosTool;
 using UnityEngine;
 using System.Reflection.Emit;
 using ProjectOrbitalRing.Patches.Logic.AddVein;
@@ -52,7 +53,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             if (factorySystem.assemblerPool[poolId].recipeType == ERecipeType.Particle && factorySystem.assemblerPool[poolId].speed >= 100000)
             {
                 Vector3 pos = factorySystem.factory.entityPool[factorySystem.assemblerPool[poolId].entityId].pos;
-                int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(pos);
+                int ringIndex = isBuildingPosYCorrect(pos);
                 var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(factorySystem.planet.id);
                 if (planetOrbitalRingData != null)
                 {
@@ -109,51 +110,6 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
-            typeof(int))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_isParticleColliderRunning4_Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var matcher = new CodeMatcher(instructions);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldfld, AccessTools.Field(typeof(FactorySystem), nameof(FactorySystem.assemblerPool))));
-            object V_30 = matcher.Advance(1).Operand; // 变量索引
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.UpdateNeeds))));
-            object V_34 = matcher.Advance(2).Operand; // 变量索引
-
-            matcher.Advance(-3).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldloc_S, V_30),
-                new CodeInstruction(OpCodes.Ldloca_S, V_34),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(OrbitalAssembler), nameof(CheckParticleColliderShouldRunning),
-                new System.Type[] {
-                    typeof(FactorySystem),
-                    typeof(int),    // ref int
-                    typeof(float).MakeByRefType(),  // ref float
-                }
-            )));
-
-            matcher.Advance(10);
-
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(AssemblerComponent), nameof(AssemblerComponent.UpdateNeeds))));
-            object V_35 = matcher.Advance(3).Operand; // 变量索引
-            object V_37 = matcher.Advance(2).Operand; // 变量索引
-
-            matcher.Advance(-9).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldloc_S, V_35),
-                new CodeInstruction(OpCodes.Ldloca_S, V_37),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(OrbitalAssembler), nameof(CheckParticleColliderShouldRunning),
-                new System.Type[] {
-                    typeof(FactorySystem),
-                    typeof(int),    // ref int
-                    typeof(float).MakeByRefType(),  // ref float
-                }
-            )));
-
-            //matcher.LogInstructionEnumeration();
-            return matcher.InstructionEnumeration();
-        }
         public static void OrbitalAssemblerInternalUpdate(ref AssemblerComponent __instance, int planetId)
         {
             var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(planetId);
@@ -171,7 +127,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
                         {
                             for (int needIdx = 0; needIdx < __instance.needs.Length; needIdx++)
                             {
-                                if (storage[k].itemId == __instance.needs[needIdx] && storage[k].count >= 4 && __instance.served[needIdx] <= 40)
+                                if (storage[k].itemId == __instance.needs[needIdx] && storage[k].count >= 4)
                                 {
                                     __instance.served[needIdx] += 4;
                                     //storage[k].count -= 1;
@@ -201,8 +157,8 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
         public static void BuildOrbitalAssembler(FactorySystem __instance, int thisAssemblerId, int thisEntityId, int itemId)
         {
             Vector3 thisPos = __instance.factory.entityPool[thisEntityId].pos;
-            int position = OrbitalStationManager.IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
-            int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(thisPos);
+            int position = IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
+            int ringIndex = isBuildingPosYCorrect(thisPos);
             OrbitalStationManager.Instance.AddPlanetId(__instance.planet.id);
             var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(__instance.planet.id);
             // 在赤道上/下圈？号位置添加轨道设施
@@ -210,7 +166,7 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             {
                 planetOrbitalRingData.Rings[ringIndex].AddOrbitalStation(position, thisAssemblerId, StationType.Assembler);
             } else { // 轨道弹射器
-                planetOrbitalRingData.Rings[ringIndex].AddOrbitalCore(position, thisAssemblerId, StationType.TurretCore);
+                planetOrbitalRingData.Rings[ringIndex].AddOrbitalCore(position, thisAssemblerId, StationType.EjectorCore);
             }
             if (itemId == 6265)
             {

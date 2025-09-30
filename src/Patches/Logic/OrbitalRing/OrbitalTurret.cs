@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.PosTool;
 using UnityEngine;
 using ProjectOrbitalRing.Utils;
 
@@ -78,8 +79,8 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             if (modelId == ProtoID.M轨道观测站)
             {
                 Vector3 thisPos = __instance.entityPool[entityId].pos;
-                int position = OrbitalStationManager.IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
-                int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(thisPos);
+                int position = IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
+                int ringIndex = isBuildingPosYCorrect(thisPos);
                 OrbitalStationManager.Instance.AddPlanetId(__instance.planet.id);
                 var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(__instance.planet.id);
                 // 在赤道上/下圈？号位置添加轨道设施
@@ -90,8 +91,8 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
         public static void BuildOrbitalTurret(DefenseSystem __instance, int thisTurretId, int thisEntityId, int itemId)
         {
             Vector3 thisPos = __instance.factory.entityPool[thisEntityId].pos;
-            int position = OrbitalStationManager.IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
-            int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(thisPos);
+            int position = IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
+            int ringIndex = isBuildingPosYCorrect(thisPos);
             OrbitalStationManager.Instance.AddPlanetId(__instance.planet.id);
             var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(__instance.planet.id);
             // 在赤道上/下圈？号位置添加轨道设施

@@ -429,7 +429,7 @@ namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech
             techProto = LDB.techs.Select(2902);
             techProto.Items = new int[] { 1405 };
             techProto.ItemPoints = new int[] { 150 };
-            techProto.HashNeeded = 1200;
+            techProto.HashNeeded = 600;
             techProto.IsLabTech = false;
 
             techProto = LDB.techs.Select(2903);

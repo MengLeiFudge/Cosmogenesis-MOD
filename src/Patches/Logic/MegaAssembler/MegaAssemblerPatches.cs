@@ -5,6 +5,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using ProjectOrbitalRing.Utils;
 using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.OrbitalAssembler;
+using static ProjectOrbitalRing.Utils.ERecipeType;
 
 // ReSharper disable InconsistentNaming
 
@@ -29,8 +30,6 @@ namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
                                                    nameof(GameTick_AssemblerComponent_InternalUpdate_Patch));
 
         [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool))]
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
-            typeof(int))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler(IEnumerable<CodeInstruction> instructions,
             ILGenerator generator)
@@ -70,33 +69,6 @@ namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
             return matcher.InstructionEnumeration();
         }
 
-        [HarmonyPatch(typeof(FactorySystem), nameof(FactorySystem.GameTick), typeof(long), typeof(bool), typeof(int), typeof(int),
-            typeof(int))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> FactorySystem_GameTick_Transpiler_2(IEnumerable<CodeInstruction> instructions,
-            ILGenerator generator)
-        {
-            var matcher = new CodeMatcher(instructions, generator);
-
-            matcher.MatchForward(false, new CodeMatch(OpCodes.Ldarg_0), new CodeMatch(OpCodes.Ldfld), new CodeMatch(OpCodes.Ldloc_S),
-                new CodeMatch(OpCodes.Ldelema), new CodeMatch(OpCodes.Ldloc_S), new CodeMatch(OpCodes.Ldloc_1),
-                new CodeMatch(OpCodes.Ldloc_2), new CodeMatch(OpCodes.Call, AssemblerComponent_InternalUpdate_Method));
-
-            object index = matcher.Advance(2).Operand;
-            object power = matcher.Advance(2).Operand;
-
-            matcher.CreateLabelAt(matcher.Pos + 4, out Label label);
-
-            matcher.Advance(-4).InsertAndAdvance(new CodeInstruction(OpCodes.Ldc_I4_0), new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldfld, FactorySystem_AssemblerPool_Field), new CodeInstruction(OpCodes.Ldloc_S, index),
-                new CodeInstruction(OpCodes.Ldelema, typeof(AssemblerComponent)), new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldloc_S, power),
-                new CodeInstruction(OpCodes.Call, MegaAssembler_AssemblerComponent_InternalUpdate_Patch_Method),
-                new CodeInstruction(OpCodes.Brfalse_S, label), new CodeInstruction(OpCodes.Pop));
-
-            return matcher.InstructionEnumeration();
-        }
-
         public static bool GameTick_AssemblerComponent_InternalUpdate_Patch(ref AssemblerComponent __instance, FactorySystem factorySystem,
             float power)
         {
@@ -112,7 +84,7 @@ namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
             bool b = power >= 0.1f;
 
             // MegaBuildings
-            if (__instance.speed >= MegaAssemblerSpeed)
+            if (factory.entityPool[__instance.entityId].protoId == 6264)
             {
                 SlotData[] slotdata = GetSlots(factory.planetId, __instance.entityId);
                 CargoTraffic cargoTraffic = factory.cargoTraffic;
@@ -120,28 +92,41 @@ namespace ProjectOrbitalRing.Patches.Logic.MegaAssembler
 
                 int stationPilerLevel = GameMain.history.stationPilerLevel;
 
-                if (__instance.recipeId != ProtoID.R物质分解)
-                {
+                //if (__instance.recipeId != ProtoID.R物质分解)
+                //{
                     UpdateOutputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool, stationPilerLevel);
                     UpdateInputSlots(ref __instance, cargoTraffic, slotdata, entitySignPool);
-                }
-                else if (b)
-                {
-                    UpdateTrashInputSlots(ref __instance, power, factory, cargoTraffic, slotdata);
+                //}
+                //else if (b)
+                //{
+                //    UpdateTrashInputSlots(ref __instance, power, factory, cargoTraffic, slotdata);
 
-                    int sandCount = __instance.produced[0];
+                //    int sandCount = __instance.produced[0];
 
-                    if (sandCount >= 800 && GameMain.mainPlayer != null)
-                    {
-                        GameMain.mainPlayer.sandCount += sandCount;
-                        __instance.produced[0] = 0;
-                    }
-                }
+                //    if (sandCount >= 800 && GameMain.mainPlayer != null)
+                //    {
+                //        GameMain.mainPlayer.sandCount += sandCount;
+                //        __instance.produced[0] = 0;
+                //    }
+                //}
             }
 
+            bool flag = false;
             if (factory.entityPool[__instance.entityId].protoId == ProtoID.I量子化工厂 && __instance.replicating)
+            {
+                flag = true;
+            }
+            if (factory.entityPool[__instance.entityId].protoId == 6501 && __instance.replicating)
+            {
+                if (__instance.recipeId == 66 || __instance.recipeId == 37 || __instance.recipeId == 62)
+                    flag = true;
+            }
+
+            if (flag)
+            {
                 __instance.extraTime += (int)(power * __instance.extraSpeed)
                                       + (int)(power * __instance.speedOverride * __instance.extraTimeSpend / __instance.timeSpend);
+            }
 
             return b;
         }

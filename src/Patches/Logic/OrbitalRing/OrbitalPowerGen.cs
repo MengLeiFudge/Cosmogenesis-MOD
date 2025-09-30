@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.EquatorRing;
+using static ProjectOrbitalRing.Patches.Logic.OrbitalRing.PosTool;
 using UnityEngine;
 using ProjectOrbitalRing.Utils;
 using Newtonsoft.Json.Linq;
@@ -84,8 +85,8 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             if (modelId == ProtoID.M轨道反物质堆基座 || modelId == ProtoID.M星环电网枢纽)
             {
                 Vector3 thisPos = __instance.entityPool[entityId].pos;
-                int position = OrbitalStationManager.IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
-                int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(thisPos);
+                int position = IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
+                int ringIndex = isBuildingPosYCorrect(thisPos);
                 OrbitalStationManager.Instance.AddPlanetId(__instance.planet.id);
                 var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(__instance.planet.id);
                 // 在赤道上/下圈？号位置添加轨道设施
@@ -107,8 +108,8 @@ namespace ProjectOrbitalRing.Patches.Logic.OrbitalRing
             if (__instance.factory.entityPool[entityId].protoId == 6261)
             {
                 Vector3 thisPos = __instance.factory.entityPool[entityId].pos;
-                int position = OrbitalStationManager.IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
-                int ringIndex = OrbitalStationManager.isBuildingPosYCorrect(thisPos);
+                int position = IsBuildingPosXZCorrect(thisPos.x, thisPos.z);
+                int ringIndex = isBuildingPosYCorrect(thisPos);
                 var planetOrbitalRingData = OrbitalStationManager.Instance.GetPlanetOrbitalRingData(__instance.planet.id);
                 // 在赤道上/下圈？号位置添加轨道设施
                 planetOrbitalRingData.Rings[ringIndex].AddOrbitalCore(position, __result, StationType.PowerGenCore);

@@ -303,8 +303,8 @@
         "isStation": false,
         "assemblerRecipeType": 1,
         "idleEnergyPerTick": 20000,
-        "workEnergyPerTick": 250000,
-        "assemblerSpeed": 160000,
+        "workEnergyPerTick": 200000,
+        "assemblerSpeed": 120000,
         "stationMaxEnergyAcc": 0,
         "stationMaxItemCount": 0,
         "stationMaxItemKinds": 0,
@@ -514,5 +514,10 @@
         "stationMaxItemKinds": 5,
         "stationMaxDroneCount": 30,
         "stationMaxShipCount": 0
+    },
+    {
+        "ModelID": 824,
+        "isBelt": false,
+        "beltSpeed": 0
     }
 ]
