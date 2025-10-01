@@ -69,35 +69,48 @@ namespace ProjectOrbitalRing.Patches.UI {
         [HarmonyPatch(typeof(UILabWindow), nameof(UILabWindow._OnUpdate))]
         [HarmonyPostfix]
         public static void UILabWindow_OnUpdate_Postfix(UILabWindow __instance) {
+            // 1. 获取实验室组件并验证有效性
             LabComponent lab = __instance.factorySystem.labPool[__instance.labId];
             if (lab.id != __instance.labId) {
-                __instance._Close();
+                __instance._Close();  // 如果实验室ID不匹配，关闭窗口
                 return;
             }
 
+            // 2. 根据实验室模式设置UI布局
             if (lab.matrixMode) {
+                // 矩阵模式：水平排列启用的按钮
                 for (var index = 0; index < __instance.itemButtons.Length; ++index) {
                     bool enabled = __instance.itemIcons[index].enabled;
                     UIButton button = __instance.itemButtons[index];
-                    if (enabled) {
-                        RectTransform rectTransform = button.gameObject.GetComponent<RectTransform>();
-                        float x = rectTransform.anchoredPosition.x;
-                        rectTransform.anchoredPosition = new Vector2(x, 0);
-                    }
 
+                    // if (enabled) {
+                    //     // 启用的按钮：保持X坐标，Y坐标设为0（水平排列）
+                    //     RectTransform rectTransform = button.gameObject.GetComponent<RectTransform>();
+                    //     float x = rectTransform.anchoredPosition.x;
+                    //     rectTransform.anchoredPosition = new Vector2(x, 0);
+                    // }
+
+                    // 只显示启用的按钮，隐藏未启用的
                     button.gameObject.SetActive(enabled);
                 }
             } else {
+                // 非矩阵模式：3x3网格布局
                 for (var i = 0; i < __instance.itemButtons.Length; i++) {
                     UIButton button = __instance.itemButtons[i];
-                    button.gameObject.SetActive(true);
-                    button.gameObject.GetComponent<RectTransform>().anchoredPosition =
+                    button.gameObject.SetActive(true);  // 显示所有按钮
 
-                        // ReSharper disable once PossibleLossOfFraction
+                    // 计算3x3网格位置
+                    // X坐标：(i % 3 - 1) * 105 → 第0,1,2列对应 -105, 0, 105
+                    // Y坐标：i / 3 * -105 + 105 → 第0,1,2行对应 105, 0, -105
+                    button.gameObject.GetComponent<RectTransform>().anchoredPosition =
                         new Vector2((i % 3 - 1) * 105, i / 3 * -105 + 105);
                 }
 
-                SwapPosition(__instance, 4, 5);
+                // 交换按钮位置
+                SwapPosition(__instance, 3, 6);//紫橙
+                SwapPosition(__instance, 4, 7);//绿粉
+                SwapPosition(__instance, 3, 5);//紫白
+                SwapPosition(__instance, 4, 5);//绿白
             }
         }
 
