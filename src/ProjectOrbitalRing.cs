@@ -348,11 +348,7 @@ namespace ProjectOrbitalRing
 
             foreach (JournalPatternProto journalPattern in LDB.journalPatterns.dataArray) journalPattern.Preload();
 
-            foreach (VeinProto proto in LDB.veins.dataArray)
-            {
-                proto.Preload();
-                proto.name = proto.Name.Translate();
-            }
+            foreach (VeinProto proto in LDB.veins.dataArray) proto.Preload();
 
             foreach (TechProto proto in LDB.techs.dataArray) proto.Preload();
 

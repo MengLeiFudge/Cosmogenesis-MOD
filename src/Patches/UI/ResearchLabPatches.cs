@@ -185,67 +185,21 @@ namespace ProjectOrbitalRing.Patches.UI {
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> LabMatrixEffect_Update_Transpiler(
             IEnumerable<CodeInstruction> instructions) {
-            // var matcher = new CodeMatcher(instructions);
-            //
-            // matcher.MatchForward(false,
-            //     new CodeMatch(OpCodes.Ldloc_S),
-            //     new CodeMatch(OpCodes.Brfalse),
-            //     new CodeMatch(OpCodes.Ldc_I4_0));
-            //
-            // object label = matcher.Advance(1).Operand;
-            //
-            // matcher.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Ldarg_0),
-            //     new CodeInstruction(OpCodes.Ldloc_3),
-            //     new CodeInstruction(OpCodes.Call,
-            //         AccessTools.Method(typeof(ResearchLabPatches), nameof(LabMatrixEffect_Patch_Method))),
-            //     new CodeInstruction(OpCodes.Br_S, label));
-            //
-            // return matcher.InstructionEnumeration();
-
             var matcher = new CodeMatcher(instructions);
 
-            // 查找 if (flag) 的模式
             matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldloc_S),// 加载 flag 变量
-                new CodeMatch(OpCodes.Brfalse));// 如果 flag 为 false 则跳转到 IL_015d
+                new CodeMatch(OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Brfalse),
+                new CodeMatch(OpCodes.Ldc_I4_0));
 
-            if (!matcher.IsValid) {
-                Debug.LogError("LabMatrixEffect_Update_Transpiler: 找不到 if (flag) 模式");
-                return instructions;
-            }
+            object label = matcher.Advance(1).Operand;
 
-            // 获取跳转标签 (IL_015d)
-            object skipLabel = matcher.Advance(1).Operand;
-
-            // 查找 techProto 变量的存储位置
-            var tempMatcher = new CodeMatcher(instructions);
-            tempMatcher.MatchForward(false,
-                new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(LDB), "get_techs")),
-                new CodeMatch(OpCodes.Ldloc_3),// currentTech
-                new CodeMatch(OpCodes.Callvirt),
-                new CodeMatch(OpCodes.Stloc_S));// techProto
-
-            if (!tempMatcher.IsValid) {
-                Debug.LogError("LabMatrixEffect_Update_Transpiler: 找不到 techProto 存储位置");
-                return instructions;
-            }
-
-            object techProtoLocal = tempMatcher.Advance(3).Operand;// 获取 techProto 的局部变量
-
-            // 回到插入点，在 for 循环开始前插入补丁代码
-            matcher.Start();
-            matcher.MatchForward(false,
-                new CodeMatch(OpCodes.Ldloc_S),// 加载 flag 变量
-                new CodeMatch(OpCodes.Brfalse),// 如果 flag 为 false 则跳转
-                new CodeMatch(OpCodes.Ldc_I4_0));// for 循环初始值 0
-
-            // 在 for 循环开始处 (IL_0127) 插入补丁代码
-            matcher.Advance(2).InsertAndAdvance(
-                new CodeInstruction(OpCodes.Ldarg_0),// 加载 this
-                new CodeInstruction(OpCodes.Ldloc_S, techProtoLocal),// 加载 techProto
+            matcher.Advance(1).InsertAndAdvance(
+                new CodeInstruction(OpCodes.Ldarg_0),//LabMatrixEffect
+                new CodeInstruction(OpCodes.Ldloc_3),//int currentTech
                 new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(ResearchLabPatches), nameof(LabMatrixEffect_Patch_Method))),
-                new CodeInstruction(OpCodes.Br_S, skipLabel));// 跳过原始循环到 IL_015d
+                new CodeInstruction(OpCodes.Br_S, label));
 
             return matcher.InstructionEnumeration();
         }
@@ -373,7 +327,8 @@ namespace ProjectOrbitalRing.Patches.UI {
             return speed;
         }
 
-        public static void LabMatrixEffect_Patch_Method(LabMatrixEffect labMatrixEffect, TechProto techProto) {
+        public static void LabMatrixEffect_Patch_Method(LabMatrixEffect labMatrixEffect, int techId) {
+            TechProto techProto = LDB.techs.Select(techId);
             foreach (int item in techProto.Items) {
                 switch (item) {
                     case ProtoID.I通量矩阵:
