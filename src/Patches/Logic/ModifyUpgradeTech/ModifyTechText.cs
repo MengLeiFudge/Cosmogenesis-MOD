@@ -4,23 +4,6 @@ using ProjectOrbitalRing.Utils;
 
 namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech {
     internal class ModifyTechText {
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
-        public static bool TechProto_UnlockFunctionText_Prefix(TechProto __instance, ref string __result,
-            StringBuilder sb) {
-            if (__instance.UnlockFunctions == null || __instance.UnlockValues == null) {
-                __result = "解锁信息为空";
-                ProjectOrbitalRing.LogWarning($"科技 {__instance.name} {__result}");
-                return false;
-            }
-            if (__instance.UnlockFunctions.Length > __instance.UnlockValues.Length) {
-                __result = $"UnlockFunctions.Length={__instance.UnlockFunctions.Length}，UnlockValues.Length={__instance.UnlockValues.Length}，UnlockFunctions过多";
-                ProjectOrbitalRing.LogWarning($"科技 {__instance.name} {__result}");
-                return false;
-            }
-            return true;
-        }
-
         [HarmonyPostfix]
         [HarmonyPatch(typeof(TechProto), nameof(TechProto.UnlockFunctionText))]
         public static void TechProto_UnlockFunctionText_Postfix(TechProto __instance, ref string __result,
@@ -60,6 +43,18 @@ namespace ProjectOrbitalRing.Patches.Logic.ModifyUpgradeTech {
                     break;
                 case 1954:
                     __result = "电动机电磁涡轮时间减半".TranslateFromJson();
+                    break;
+                case 1959:
+                    double[] upgrades = Unlock_Save_Load.AntiMatterOutCountsUpgrades;
+                    int count = Unlock_Save_Load.AntiMatterOutCounts;
+                    if (count == 1) {
+                        __result = string.Format("开弦修正描述".TranslateFromJson(), upgrades[0], 0);
+                    } else if (count == 4) {
+                        __result = string.Format("开弦修正描述".TranslateFromJson(), 0, 0);
+                    } else {
+                        __result = string.Format("开弦修正描述".TranslateFromJson(), upgrades[count - 1],
+                            1 - upgrades[count - 1]);
+                    }
                     break;
                 case 3151:
                 case 3152:

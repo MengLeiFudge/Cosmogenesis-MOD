@@ -225,6 +225,7 @@ namespace ProjectOrbitalRing
             QuantumStoragePatches.IntoOtherSave();
             AdvancedLaserPatches.IntoOtherSave();
             GlobalPowerSupplyPatches.IntoOtherSave();
+            Unlock_Save_Load.IntoOtherSave();
         }
 
         public string Version => VERSION;
